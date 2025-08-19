@@ -59,22 +59,59 @@ const cursorTrail = document.querySelector('.cursor-trail');
 const trails = [];
 const trailCount = 10;
 
+// Create trail elements
 for (let i = 0; i < trailCount; i++) {
     const trail = document.createElement('div');
     trail.className = 'cursor-trail';
     trail.style.opacity = 1 - (i / trailCount);
     trail.style.transform = `scale(${1 - (i * 0.08)})`;
+    trail.style.position = 'fixed'; // Ensure proper positioning
+    trail.style.pointerEvents = 'none'; // Prevent interaction with trail dots
     document.body.appendChild(trail);
     trails.push(trail);
 }
 
-document.addEventListener('mousemove', (e) => {
+// Function to update trail positions
+function updateTrailPosition(x, y) {
     trails.forEach((trail, index) => {
         setTimeout(() => {
-            trail.style.left = `${e.clientX}px`;
-            trail.style.top = `${e.clientY}px`;
+            trail.style.left = `${x}px`;
+            trail.style.top = `${y}px`;
+            trail.style.display = 'block'; // Show trail
         }, index * 30);
     });
+}
+
+// Function to hide all trails
+function hideTrails() {
+    trails.forEach(trail => {
+        trail.style.display = 'none';
+    });
+}
+
+// Handle touch events
+document.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    updateTrailPosition(touch.clientX, touch.clientY);
+});
+
+document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    updateTrailPosition(touch.clientX, touch.clientY);
+});
+
+document.addEventListener('touchend', () => {
+    hideTrails(); // Hide trails when touch ends
+});
+
+// Handle mouse events (for desktop)
+document.addEventListener('mousemove', (e) => {
+    updateTrailPosition(e.clientX, e.clientY);
+});
+
+// Clear trails on scroll
+window.addEventListener('scroll', () => {
+    hideTrails();
 });
 
 // Back to top button
