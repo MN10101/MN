@@ -576,7 +576,7 @@ const translations = {
     },
     title: {
         "java-backend": "JAVA BACKEND GELİŞTİRİCİ",
-        "full-stack": "FULL STACK MÜHENDİSİ",
+        "full-stack": "FULL-STACK MÜHENDİSİ",
         ai: "YAPAY ZEKA TUTKUNU"
     },
     project: {
