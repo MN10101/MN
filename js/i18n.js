@@ -509,138 +509,137 @@ const translations = {
         }
     },
     tr: {
-        title: "Mahmoud Najmeh | Java Backend Mimar",
-        name: {
-            first: "Mahmoud",
-            last: "Najmeh"
+    title: "Mahmoud Najmeh | Java Backend Mimar",
+    name: {
+        first: "Mahmoud",
+        last: "Najmeh"
+    },
+    explore: "Keşfet",
+    section: {
+        about: "Hakkımda",
+        projects: "Öne Çıkan Projeler",
+        contact: "İletişime Geç"
+    },
+    about: {
+        description: "Nesne Tabanlı Programlama, web ve yapay zeka geliştirme konularında uzmanlığa sahip kararlı bir yazılım geliştiriciyim. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin, sağlam backend ve Full Stack uygulamalar geliştirme konusunda kanıtlanmış bir geçmişim var.",
+        education: "Eğitim"
+    },
+    education: {
+        java: {
+            title: "Java Backend Geliştirici",
+            details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
         },
-        explore: "Keşfet",
-        section: {
-            about: "Hakkımda",
-            projects: "Öne Çıkan Projeler",
-            contact: "İletişime Geç"
+        it_specialist: {
+            title: "Uygulama Geliştirme için BT Uzmanı",
+            details: "- Java SE, C# (.NET), JavaScript, PHP ile OOP<br>- Web ve veritabanı geliştirme, Linux sistemleri<br>- BT proje yönetimi, iş süreçleri<br>- BT süreçleri için Matematik ve MS Office<br>- Teknik İngilizce, iletişim becerileri"
         },
-        about: {
-            description: "Nesneye yönelik programlama, web ve yapay zeka geliştirme konularında uzmanlığa sahip kararlı bir yazılım geliştirici. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin, sağlam backend ve tam yığın uygulamalar geliştirme konusunda kanıtlanmış bir geçmişe sahip.",
-            education: "Eğitim"
+        toggle: "Detayları Göster"
+    },
+    skills: {
+        title: "Teknik Beceriler",
+        languages: "Programlama Dilleri",
+        frameworks: "Çerçeveler",
+        tools: "Araçlar ve Platformlar"
+    },
+    tech: {
+        java: "Java",
+        python: "Python",
+        csharp: "C#",
+        javascript: "JavaScript",
+        sql: "SQL",
+        spring: "Spring Boot",
+        swiftui: "SwiftUI",
+        jetpack: "Jetpack Compose",
+        firebase: "Firebase",
+        integration: "Entegrasyon Testleri",
+        mockito: "Mockito",
+        react: "React",
+        rest_api: "REST API",
+        ai: "Yapay Zeka",
+        nlp: "Doğal Dil İşleme",
+        django: "Django",
+        role_auth: "Rol Tabanlı Yetkilendirme",
+        pdf_export: "PDF Dışa Aktarma",
+        ui_validation: "Kullanıcı Arayüzü Doğrulama",
+        tensorflow: "TensorFlow",
+        computer_vision: "Bilgisayarlı Görü",
+        html5: "HTML5",
+        canvas: "Canvas",
+        frontend: "Ön Uç",
+        dotnet: ".NET",
+        aws: "AWS",
+        gcp: "GCP",
+        docker: "Docker",
+        git: "Git",
+        postgresql: "PostgreSQL",
+        mysql: "MySQL"
+    },
+    title: {
+        "java-backend": "JAVA BACKEND GELİŞTİRİCİ",
+        "full-stack": "FULL STACK MÜHENDİSİ",
+        ai: "YAPAY ZEKA TUTKUNU"
+    },
+    project: {
+        missing: {
+            title: "Kayıp Kişi Uyarı Sistemi Full Stack",
+            description: "Spring Boot, SwiftUI ve Jetpack Compose ile geliştirilen polis aracı, Firebase push bildirimleri, coğrafi konum takibi ve yönetici paneli içerir.",
+            duration: "6 Ay"
         },
-        education: {
-            java: {
-                title: "Java Backend Geliştirici",
-                details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
-            },
-            it_specialist: {
-                title: "Uygulama Geliştirme için BT Uzmanı",
-                details: "- Java SE, C# (.NET), JavaScript, PHP ile OOP<br>- Web ve veritabanı geliştirme, Linux sistemleri<br>- BT proje yönetimi, iş süreçleri<br>- BT süreçleri için Matematik ve MS Office<br>- Teknik İngilizce, iletişim becerileri"
-            },
-            toggle: "Detayları Göster"
+        banking: {
+            title: "Bankacılık Sistemi Full Stack",
+            description: "E-posta/IP takibi, çoklu para birimi desteği, işlem işleme ve Mockito ile kapsamlı testler içeren tam yığın bankacılık uygulaması.",
+            duration: "6 Ay"
         },
-        skills: {
-            title: "Teknik Beceriler",
-            languages: "Programlama Dilleri",
-            frameworks: "Çerçeveler",
-            tools: "Araçlar ve Platformlar"
+        ai_text: {
+            title: "Yapay Zeka Metin Özetleyici Full Stack",
+            description: "Spring Boot REST API ile desteklenen, gelişmiş doğal dil işleme yeteneklerine sahip çok dilli metin özetleme uygulaması.",
+            duration: "2 Ay"
         },
-        tech: {
-            java: "Java",
-            python: "Python",
-            csharp: "C#",
-            javascript: "JavaScript",
-            sql: "SQL",
-            spring: "Spring Boot",
-            swiftui: "SwiftUI",
-            jetpack: "Jetpack Compose",
-            firebase: "Firebase",
-            integration: "Entegrasyon Testleri",
-            mockito: "Mockito",
-            react: "React",
-            rest_api: "REST API",
-            ai: "Yapay Zeka",
-            nlp: "Doğal Dil İşleme",
-            django: "Django",
-            role_auth: "Rol Tabanlı Yetkilendirme",
-            pdf_export: "PDF Dışa Aktarma",
-            ui_validation: "Kullanıcı Arayüzü Doğrulama",
-            tensorflow: "TensorFlow",
-            computer_vision: "Bilgisayarlı Görü",
-            html5: "HTML5",
-            canvas: "Canvas",
-            frontend: "Ön Uç",
-            dotnet: ".NET",
-            aws: "AWS",
-            gcp: "GCP",
-            docker: "Docker",
-            git: "Git",
-            postgresql: "PostgreSQL",
-            mysql: "MySQL"
+        student: {
+            title: "Öğrenci Portalı Full Stack",
+            description: "Rol tabanlı erişim kontrolü, notlandırma sistemi, PDF dışa aktarma işlevi ve çevrimiçi testler içeren kapsamlı bir eğitim platformu.",
+            duration: "4 Ay"
         },
-        title: {
-            "java-backend": "JAVA BACKEND GELİŞTİRİCİ",
-            "full-stack": "TAM YIĞIN MÜHENDİS",
-            ai: "YAPAY ZEKA TUTKUNU"
+        face_analysis: {
+            title: "Yapay Zeka Yüz Analizi",
+            description: "Django ve TensorFlow ile geliştirilen, otomatik işleme ve özel GUI arayüzü içeren görüntü sınıflandırma sistemi.",
+            duration: "4 Ay"
         },
-        project: {
-            missing: {
-                title: "Kayıp Kişi Uyarı Sistemi Tam Yığın",
-                description: "Spring Boot, SwiftUI ve Jetpack Compose ile geliştirilen polis aracı, Firebase push bildirimleri, coğrafi konum takibi ve yönetici paneli içerir.",
-                duration: "6 Ay"
-            },
-            banking: {
-                title: "Bankacılık Sistemi Tam Yığın",
-                description: "E-posta/IP takibi, çoklu para birimi desteği, işlem işleme ve Mockito ile kapsamlı testler içeren tam yığın bankacılık uygulaması.",
-                duration: "6 Ay"
-            },
-            ai_text: {
-                title: "Yapay Zeka Metin Özetleyici Tam Yığın",
-                description: "Spring Boot REST API ile desteklenen, gelişmiş doğal dil işleme yeteneklerine sahip çok dilli metin özetleme uygulaması.",
-                duration: "2 Ay"
-            },
-            student: {
-                title: "Öğrenci Portalı Tam Yığın",
-                description: "Rol tabanlı erişim kontrolü, notlandırma sistemi, PDF dışa aktarma işlevi ve çevrimiçi testler içeren kapsamlı bir eğitim platformu.",
-                duration: "4 Ay"
-            },
-            face_analysis: {
-                title: "Yapay Zeka Yüz Analizi",
-                description: "Django ve TensorFlow ile geliştirilen, otomatik işleme ve özel GUI arayüzü içeren görüntü sınıflandırma sistemi.",
-                duration: "4 Ay"
-            },
-            image_editor: {
-                title: "Tarayıcı İçi Görüntü Düzenleyici",
-                description: "HTML5 Canvas ve JavaScript ile geliştirilen, tarayıcıda doğrudan çeşitli düzenleme yetenekleri sunan istemci tarafı görüntü düzenleme aracı.",
-                duration: "1,5 Ay"
-            },
-            view: "Projeyi Görüntüle"
+        image_editor: {
+            title: "Tarayıcı İçi Görüntü Düzenleyici",
+            description: "HTML5 Canvas ve JavaScript ile geliştirilen, tarayıcıda doğrudan çeşitli düzenleme yetenekleri sunan istemci tarafı görüntü düzenleme aracı.",
+            duration: "1,5 Ay"
         },
-        contact: {
-            info: "İletişim Bilgileri",
-            location: "Berlin, Almanya",
-            video: "Hakkımda Video",
-            phone: "+49 163 9769764"
-        },
-        form: {
-            name: "Adınız",
-            email: "E-postanız",
-            subject: "Konu",
-            message: "Mesajınız",
-            submit: "Mesaj Gönder"
-        },
-        footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Tüm hakları saklıdır."
-        },
-        thank_you: {
-            title: "Teşekkürler",
-            heading: "Teşekkürler!",
-            message: "Mesajınız başarıyla gönderildi. Yakında size geri döneceğim.",
-            back: "Ana Sayfaya Geri Dön"
-        }
+        view: "Projeyi Görüntüle"
+    },
+    contact: {
+        info: "İletişim Bilgileri",
+        location: "Berlin, Almanya",
+        video: "Hakkımda Video",
+        phone: "+49 163 9769764"
+    },
+    form: {
+        name: "Adınız",
+        email: "E-postanız",
+        subject: "Konu",
+        message: "Mesajınız",
+        submit: "Mesaj Gönder"
+    },
+    footer: {
+        copyright: "© 2025 Mahmoud Najmeh. Tüm hakları saklıdır."
+    },
+    thank_you: {
+        title: "Teşekkürler",
+        heading: "Teşekkürler!",
+        message: "Mesajınız başarıyla gönderildi. Yakında size geri döneceğim.",
+        back: "Ana Sayfaya Geri Dön"
     }
-};
+}};
 
 // Function to update content based on language
 function updateContent(lang) {
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; // Arabic uses RTL, Turkish uses LTR
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
     // Update text content
     document.querySelectorAll('[data-i18n]').forEach(element => {
