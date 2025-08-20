@@ -638,6 +638,13 @@ const translations = {
 
 // Function to update content based on language
 function updateContent(lang) {
+    // Validate language
+    if (!translations[lang]) {
+        console.warn(`Invalid language: ${lang}. Defaulting to 'en'.`);
+        lang = 'en';
+    }
+
+    console.log(`Updating content to language: ${lang}`);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
@@ -714,7 +721,35 @@ function getSupportedLanguage(browserLang) {
         'tr-TR': 'tr'
     };
     const primaryLang = browserLang.split('-')[0];
-    return langMap[browserLang] || langMap[primaryLang] || 'en';
+    const supportedLang = langMap[browserLang] || langMap[primaryLang] || 'en';
+    console.log(`Browser language: ${browserLang}, mapped to: ${supportedLang}`);
+    return supportedLang;
+}
+
+// Function to get country code using geolocation API
+async function getCountryCode() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        console.log(`Geolocation API returned country code: ${data.country_code}`);
+        return data.country_code;
+    } catch (error) {
+        console.error('Error fetching geolocation:', error);
+        return null;
+    }
+}
+
+// Function to map country code to supported language
+function getLanguageFromCountry(countryCode) {
+    const countryLangMap = {
+        'DE': 'de',
+        'PL': 'pl',
+        'FR': 'fr',
+        'TR': 'tr'
+    };
+    const lang = countryLangMap[countryCode] || 'en';
+    console.log(`Country code: ${countryCode}, mapped to language: ${lang}`);
+    return lang;
 }
 
 // Language switcher event listener with geolocation
@@ -725,44 +760,48 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // Function to get country code using geolocation API
-    async function getCountryCode() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            return data.country_code;
-        } catch (error) {
-            console.error('Error fetching geolocation:', error);
-            return null;
-        }
-    }
+    // Log initial localStorage state
+    console.log('Initial localStorage:', {
+        language: localStorage.getItem('language'),
+        manualSelection: localStorage.getItem('manual-language-selection')
+    });
 
-    // Function to map country code to supported language
-    function getLanguageFromCountry(countryCode) {
-        const countryLangMap = {
-            'DE': 'de',
-            'PL': 'pl',
-            'FR': 'fr',
-            'TR': 'tr'
-        };
-        return countryLangMap[countryCode] || 'en';
-    }
-
-    // Check for saved language in localStorage, else use geolocation or browser language
+    // Check if the user has manually selected a language
+    const isManualSelection = localStorage.getItem('manual-language-selection') === 'true';
     let selectedLang = localStorage.getItem('language');
-    if (!selectedLang) {
+
+    // Validate saved language
+    if (selectedLang && !translations[selectedLang]) {
+        console.warn(`Invalid saved language: ${selectedLang}. Clearing localStorage.`);
+        localStorage.removeItem('language');
+        localStorage.removeItem('manual-language-selection');
+        selectedLang = null;
+    }
+
+    // Always prioritize geolocation unless manual selection is confirmed
+    if (!isManualSelection || !selectedLang) {
+        console.log('No manual selection or invalid language, using geolocation');
         const countryCode = await getCountryCode();
         selectedLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
+        localStorage.removeItem('language'); // Clear old language
+        localStorage.removeItem('manual-language-selection'); // Clear manual flag
     }
 
     // Set the language select value and update content
+    console.log(`Setting language to: ${selectedLang}`);
     languageSelect.value = selectedLang;
     updateContent(selectedLang);
 
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
-        localStorage.setItem('language', lang);
-        updateContent(lang);
+        if (['en', 'de', 'pl', 'fr', 'tr'].includes(lang)) {
+            console.log(`Manual language selection: ${lang}`);
+            localStorage.setItem('language', lang);
+            localStorage.setItem('manual-language-selection', 'true');
+            updateContent(lang);
+        } else {
+            console.warn(`Invalid language selected: ${lang}`);
+        }
     });
 });
