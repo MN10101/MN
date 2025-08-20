@@ -698,19 +698,68 @@ function updateContent(lang) {
     });
 }
 
-// Language switcher event listener
-document.addEventListener('DOMContentLoaded', () => {
+// Function to map browser language to supported languages
+function getSupportedLanguage(browserLang) {
+    const langMap = {
+        'en': 'en',
+        'en-US': 'en',
+        'en-GB': 'en',
+        'de': 'de',
+        'de-DE': 'de',
+        'pl': 'pl',
+        'pl-PL': 'pl',
+        'fr': 'fr',
+        'fr-FR': 'fr',
+        'tr': 'tr',
+        'tr-TR': 'tr'
+    };
+    const primaryLang = browserLang.split('-')[0];
+    return langMap[browserLang] || langMap[primaryLang] || 'en';
+}
+
+// Language switcher event listener with geolocation
+document.addEventListener('DOMContentLoaded', async () => {
     const languageSelect = document.getElementById('language-select');
     if (!languageSelect) {
         console.error('Language select element not found');
         return;
     }
 
-    // Load saved language or default to English
-    const savedLang = localStorage.getItem('language') || 'en';
-    languageSelect.value = savedLang;
-    updateContent(savedLang);
+    // Function to get country code using geolocation API
+    async function getCountryCode() {
+        try {
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            return data.country_code;
+        } catch (error) {
+            console.error('Error fetching geolocation:', error);
+            return null;
+        }
+    }
 
+    // Function to map country code to supported language
+    function getLanguageFromCountry(countryCode) {
+        const countryLangMap = {
+            'DE': 'de',
+            'PL': 'pl',
+            'FR': 'fr',
+            'TR': 'tr'
+        };
+        return countryLangMap[countryCode] || 'en';
+    }
+
+    // Check for saved language in localStorage, else use geolocation or browser language
+    let selectedLang = localStorage.getItem('language');
+    if (!selectedLang) {
+        const countryCode = await getCountryCode();
+        selectedLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
+    }
+
+    // Set the language select value and update content
+    languageSelect.value = selectedLang;
+    updateContent(selectedLang);
+
+    // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
         localStorage.setItem('language', lang);
