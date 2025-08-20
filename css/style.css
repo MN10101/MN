@@ -1968,3 +1968,52 @@ html[lang="ar"] .language-toggle {
     border-color: var(--accent-dark);
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
+
+/* Mobile (default you already had up to 768px) */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 column on phones */
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr; /* stacked */
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet / small laptops (769px–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 1.5rem;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+        gap: 2rem;
+    }
+
+    .main-title {
+        font-size: clamp(2rem, 4vw, 3rem); /* scale smoothly */
+    }
+}
+
+/* Large desktop (1201px and up) */
+@media (min-width: 1201px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 2rem;
+    }
+
+    .contact-container {
+        grid-template-columns: 2fr 3fr; /* wider form area */
+        gap: 3rem;
+    }
+
+    .main-title {
+        font-size: clamp(3rem, 3vw, 4rem); /* big screens */
+    }
+}
