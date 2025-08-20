@@ -761,31 +761,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Log initial localStorage state
-    console.log('Initial localStorage:', {
-        language: localStorage.getItem('language'),
-        manualSelection: localStorage.getItem('manual-language-selection')
-    });
+    console.log('Initial localStorage:', { language: localStorage.getItem('language') });
 
-    // Check if the user has manually selected a language
-    const isManualSelection = localStorage.getItem('manual-language-selection') === 'true';
-    let selectedLang = localStorage.getItem('language');
+    // Clear localStorage on every load to force geolocation
+    localStorage.removeItem('language');
+    console.log('Cleared localStorage.language');
 
-    // Validate saved language
-    if (selectedLang && !translations[selectedLang]) {
-        console.warn(`Invalid saved language: ${selectedLang}. Clearing localStorage.`);
-        localStorage.removeItem('language');
-        localStorage.removeItem('manual-language-selection');
-        selectedLang = null;
-    }
-
-    // Always prioritize geolocation unless manual selection is confirmed
-    if (!isManualSelection || !selectedLang) {
-        console.log('No manual selection or invalid language, using geolocation');
-        const countryCode = await getCountryCode();
-        selectedLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
-        localStorage.removeItem('language'); // Clear old language
-        localStorage.removeItem('manual-language-selection'); // Clear manual flag
-    }
+    // Use geolocation or browser language
+    const countryCode = await getCountryCode();
+    const selectedLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
 
     // Set the language select value and update content
     console.log(`Setting language to: ${selectedLang}`);
@@ -798,7 +782,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (['en', 'de', 'pl', 'fr', 'tr'].includes(lang)) {
             console.log(`Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
-            localStorage.setItem('manual-language-selection', 'true');
             updateContent(lang);
         } else {
             console.warn(`Invalid language selected: ${lang}`);
