@@ -97,10 +97,10 @@ const translations = {
                 description: "Image classification system built with Django and TensorFlow, featuring automated processing and custom GUI interface.",
                 duration: "4 Months"
             },
-            image_editor: {
-                title: "In-browser Image Editor",
-                description: "Client-side image manipulation tool built with HTML5 Canvas and JavaScript, offering various editing capabilities directly in the browser.",
-                duration: "1.5 Months"
+            medical_diagnosis: {
+                title: "Medical Diagnosis System",
+                description: "A machine learning-based desktop application built with .NET and ML.NET that predicts potential diseases from user-provided symptoms. Features include natural language symptom input, disease prediction with confidence score, and a WPF-based user-friendly interface.",
+                duration: "5 Months"
             },
             view: "View Project"
         },
@@ -224,10 +224,10 @@ const translations = {
                 description: "Bildklassifikationssystem, entwickelt mit Django und TensorFlow, mit automatisierter Verarbeitung und benutzerdefiniertem GUI.",
                 duration: "4 Monate"
             },
-            image_editor: {
-                title: "Browserbasierter Bildeditor",
-                description: "Clientseitiges Bildbearbeitungstool, entwickelt mit HTML5 Canvas und JavaScript, bietet verschiedene Bearbeitungsfunktionen direkt im Browser.",
-                duration: "1,5 Monate"
+            medical_diagnosis: {
+                title: "Medizinisches Diagnosesystem",
+                description: "Eine auf maschinellem Lernen basierende Desktop-Anwendung, entwickelt mit .NET und ML.NET, die potenzielle Krankheiten aus benutzerdefinierten Symptomen vorhersagt. Funktionen umfassen Eingabe von Symptomen in natürlicher Sprache, Krankheitsvorhersage mit Konfidenzwert und eine benutzerfreundliche WPF-basierte Oberfläche.",
+                duration: "5 Monate"
             },
             view: "Projekt ansehen"
         },
@@ -351,10 +351,10 @@ const translations = {
                 description: "System klasyfikacji obrazów zbudowany z użyciem Django i TensorFlow, z automatycznym przetwarzaniem i niestandardowym interfejsem GUI.",
                 duration: "4 miesiące"
             },
-            image_editor: {
-                title: "Edytor Obrazów w Przeglądarce",
-                description: "Narzędzie do edycji obrazów po stronie klienta, zbudowane z użyciem HTML5 Canvas i JavaScript, oferujące różne możliwości edycji bezpośrednio w przeglądarce.",
-                duration: "1,5 miesiąca"
+            medical_diagnosis: {
+                title: "System Diagnostyki Medycznej",
+                description: "Aplikacja desktopowa oparta na uczeniu maszynowym, zbudowana z użyciem .NET i ML.NET, przewidująca potencjalne choroby na podstawie objawów podanych przez użytkownika. Funkcje obejmują wprowadzanie objawów w języku naturalnym, przewidywanie chorób z oceną pewności oraz przyjazny dla użytkownika interfejs oparty na WPF.",
+                duration: "5 miesiące"
             },
             view: "Zobacz projekt"
         },
@@ -478,10 +478,10 @@ const translations = {
                 description: "Système de classification d'images construit avec Django et TensorFlow, avec traitement automatisé et interface graphique personnalisée.",
                 duration: "4 mois"
             },
-            image_editor: {
-                title: "Éditeur d'images dans le navigateur",
-                description: "Outil de manipulation d'images côté client, construit avec HTML5 Canvas et JavaScript, offrant diverses capacités d'édition directement dans le navigateur.",
-                duration: "1,5 mois"
+            medical_diagnosis: {
+                title: "Système de diagnostic médical",
+                description: "Application de bureau basée sur l'apprentissage automatique, construite avec .NET et ML.NET, qui prédit les maladies potentielles à partir des symptômes fournis par l'utilisateur. Les fonctionnalités incluent la saisie des symptômes en langage naturel, la prédiction des maladies avec un score de confiance et une interface conviviale basée sur WPF.",
+                duration: "5 mois"
             },
             view: "Voir le projet"
         },
@@ -605,12 +605,12 @@ const translations = {
             description: "Django ve TensorFlow ile geliştirilen, otomatik işleme ve özel GUI arayüzü içeren görüntü sınıflandırma sistemi.",
             duration: "4 Ay"
         },
-        image_editor: {
-            title: "Tarayıcı İçi Görüntü Düzenleyici",
-            description: "HTML5 Canvas ve JavaScript ile geliştirilen, tarayıcıda doğrudan çeşitli düzenleme yetenekleri sunan istemci tarafı görüntü düzenleme aracı.",
-            duration: "1,5 Ay"
-        },
-        view: "Projeyi Görüntüle"
+        medical_diagnosis: {
+                title: "Tıbbi Teşhis Sistemi",
+                description: "Kullanıcı tarafından sağlanan semptomlardan potansiyel hastalıkları tahmin eden, .NET ve ML.NET ile geliştirilmiş makine öğrenimi tabanlı bir masaüstü uygulaması. Özellikler arasında doğal dilde semptom girişi, güven skoru ile hastalık tahmini ve WPF tabanlı kullanıcı dostu bir arayüz bulunur.",
+                duration: "5 Ay"
+            },
+            view: "Projeyi Görüntüle"
     },
     contact: {
         info: "İletişim Bilgileri",
