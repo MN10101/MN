@@ -332,4 +332,3 @@ indicatorsContainer.addEventListener('click', (e) => {
 handleScroll();
 
 });
-
