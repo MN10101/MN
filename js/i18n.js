@@ -13,7 +13,7 @@ const translations = {
             contact: "Get In Touch"
         },
         about: {
-            description: "Dedicated software developer with expertise in OOP, web, and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET, with a proven track record in building robust backend and full-stack applications.",
+            description: "Dedicated software developer with expertise in OOP, web, and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET, with hands-on experience in machine learning, computer vision, and NLP projects. Proven track record in building robust backend, full-stack, and AI-powered applications.",
             education: "Education"
         },
         education: {
@@ -31,7 +31,8 @@ const translations = {
             title: "Technical Skills",
             languages: "Languages",
             frameworks: "Frameworks",
-            tools: "Tools & Platforms"
+            tools: "Tools & Platforms",
+            ai: "AI & Machine Learning"
         },
         tech: {
             java: "Java",
@@ -64,7 +65,10 @@ const translations = {
             docker: "Docker",
             git: "Git",
             postgresql: "PostgreSQL",
-            mysql: "MySQL"
+            mysql: "MySQL",
+            ml: "Machine Learning",
+            cv: "Computer Vision",
+            "python-ai": "Python AI Libraries"
         },
         title: {
             "java-backend": "JAVA BACKEND DEVELOPER",
@@ -217,7 +221,7 @@ const translations = {
             contact: "Kontakt aufnehmen"
         },
         about: {
-            description: "Engagierter Softwareentwickler mit Expertise in objektorientierter Programmierung, Web- und KI-Entwicklung. Versiert in Java, Spring Boot, Python, Django und C# .NET, mit nachgewiesener Erfahrung im Aufbau robuster Backend- und Full-Stack-Anwendungen.",
+            description: "Engagierter Softwareentwickler mit Expertise in objektorientierter Programmierung, Web- und KI-Entwicklung. Versiert in Java, Spring Boot, Python, Django und C# .NET, mit praktischer Erfahrung in Machine-Learning-, Computer-Vision- und NLP-Projekten. Nachgewiesene Erfolge im Aufbau robuster Backend-, Full-Stack- und KI-gestützter Anwendungen.",
             education: "Ausbildung"
         },
         education: {
@@ -235,7 +239,8 @@ const translations = {
             title: "Technische Fähigkeiten",
             languages: "Programmiersprachen",
             frameworks: "Frameworks",
-            tools: "Tools & Plattformen"
+            tools: "Tools & Plattformen",
+            ai: "KI & Machine Learning"
         },
         tech: {
             java: "Java",
@@ -268,7 +273,10 @@ const translations = {
             docker: "Docker",
             git: "Git",
             postgresql: "PostgreSQL",
-            mysql: "MySQL"
+            mysql: "MySQL",
+            ml: "Machine Learning",
+            cv: "Computer Vision",
+            "python-ai": "Python AI-Bibliotheken"
         },
         title: {
             "java-backend": "JAVA BACKEND ENTWICKLER",
@@ -421,7 +429,7 @@ const translations = {
             contact: "Skontaktuj się"
         },
         about: {
-            description: "Zaangażowany programista z doświadczeniem w programowaniu obiektowym, rozwoju aplikacji webowych i sztucznej inteligencji. Biegły w Java, Spring Boot, Python, Django oraz C# .NET, z udokumentowanym doświadczeniem w tworzeniu solidnych aplikacji backendowych i full-stack.",
+            description: "Zaangażowany programista z doświadczeniem w programowaniu obiektowym, rozwoju aplikacji webowych i sztucznej inteligencji. Biegły w Java, Spring Boot, Python, Django oraz C# .NET, z praktycznym doświadczeniem w projektach uczenia maszynowego, wizji komputerowej i przetwarzania języka naturalnego. Udokumentowane sukcesy w tworzeniu solidnych aplikacji backendowych, full-stack i opartych na AI.",
             education: "Wykształcenie"
         },
         education: {
@@ -439,7 +447,8 @@ const translations = {
             title: "Umiejętności techniczne",
             languages: "Języki programowania",
             frameworks: "Frameworki",
-            tools: "Narzędzia i platformy"
+            tools: "Narzędzia i platformy",
+            ai: "SI i Uczenie Maszynowe"
         },
         tech: {
             java: "Java",
@@ -472,7 +481,10 @@ const translations = {
             docker: "Docker",
             git: "Git",
             postgresql: "PostgreSQL",
-            mysql: "MySQL"
+            mysql: "MySQL",
+            ml: "Uczenie Maszynowe",
+            cv: "Wizja Komputerowa",
+            "python-ai": "Biblioteki AI Pythona"
         },
         title: {
             "java-backend": "PROGRAMISTA BACKEND JAVA",
@@ -625,7 +637,7 @@ const translations = {
             contact: "Me contacter"
         },
         about: {
-            description: "Développeur logiciel dévoué avec une expertise en programmation orientée objet, développement web et IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET, avec une expérience prouvée dans la création d'applications backend et full-stack robustes.",
+            description: "Développeur logiciel dévoué avec une expertise en programmation orientée objet, développement web et IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET, avec une expérience pratique dans des projets de machine learning, vision par ordinateur et traitement du langage naturel. Expérience prouvée dans la création d'applications backend, full-stack et alimentées par l'IA.",
             education: "Formation"
         },
         education: {
@@ -643,7 +655,8 @@ const translations = {
             title: "Compétences techniques",
             languages: "Langages",
             frameworks: "Frameworks",
-            tools: "Outils & Plateformes"
+            tools: "Outils & Plateformes",
+            ai: "IA & Apprentissage Automatique"
         },
         tech: {
             java: "Java",
@@ -676,7 +689,10 @@ const translations = {
             docker: "Docker",
             git: "Git",
             postgresql: "PostgreSQL",
-            mysql: "MySQL"
+            mysql: "MySQL",
+            ml: "Apprentissage Automatique",
+            cv: "Vision par Ordinateur",
+            "python-ai": "Bibliothèques IA Python"
         },
         title: {
             "java-backend": "DÉVELOPPEUR BACKEND JAVA",
@@ -817,77 +833,81 @@ const translations = {
         }
     },
     tr: {
-    title: "Mahmoud Najmeh | Java Backend Mimar",
-    name: {
-        first: "Mahmoud",
-        last: "Najmeh"
-    },
-    explore: "Keşfet",
-    section: {
-        about: "Hakkımda",
-        projects: "Öne Çıkan Projeler",
-        contact: "İletişime Geç"
-    },
-    about: {
-        description: "Nesne Tabanlı Programlama, web ve yapay zeka geliştirme konularında uzmanlığa sahip kararlı bir yazılım geliştiriciyim. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin, sağlam backend ve Full Stack uygulamalar geliştirme konusunda kanıtlanmış bir geçmişim var.",
-        education: "Eğitim"
-    },
-    education: {
-        java: {
-            title: "Java Backend Geliştirici",
-            details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
+        title: "Mahmoud Najmeh | Java Backend Mimar",
+        name: {
+            first: "Mahmoud",
+            last: "Najmeh"
         },
-        it_specialist: {
-            title: "Uygulama Geliştirme için BT Uzmanı",
-            details: "- Java SE, C# (.NET), JavaScript, PHP ile OOP<br>- Web ve veritabanı geliştirme, Linux sistemleri<br>- BT proje yönetimi, iş süreçleri<br>- BT süreçleri için Matematik ve MS Office<br>- Teknik İngilizce, iletişim becerileri"
+        explore: "Keşfet",
+        section: {
+            about: "Hakkımda",
+            projects: "Öne Çıkan Projeler",
+            contact: "İletişime Geç"
         },
-        toggle: "Detayları Göster"
-    },
-    skills: {
-        title: "Teknik Beceriler",
-        languages: "Programlama Dilleri",
-        frameworks: "Çerçeveler",
-        tools: "Araçlar ve Platformlar"
-    },
-    tech: {
-        java: "Java",
-        python: "Python",
-        csharp: "C#",
-        javascript: "JavaScript",
-        sql: "SQL",
-        spring: "Spring Boot",
-        swiftui: "SwiftUI",
-        jetpack: "Jetpack Compose",
-        firebase: "Firebase",
-        integration: "Entegrasyon Testleri",
-        mockito: "Mockito",
-        react: "React",
-        rest_api: "REST API",
-        ai: "Yapay Zeka",
-        nlp: "Doğal Dil İşleme",
-        django: "Django",
-        role_auth: "Rol Tabanlı Yetkilendirme",
-        pdf_export: "PDF Dışa Aktarma",
-        ui_validation: "Kullanıcı Arayüzü Doğrulama",
-        tensorflow: "TensorFlow",
-        computer_vision: "Bilgisayarlı Görü",
-        html5: "HTML5",
-        canvas: "Canvas",
-        frontend: "Ön Uç",
-        dotnet: ".NET",
-        aws: "AWS",
-        gcp: "GCP",
-        docker: "Docker",
-        git: "Git",
-        postgresql: "PostgreSQL",
-        mysql: "MySQL"
-    },
-    title: {
-        "java-backend": "JAVA BACKEND GELİŞTİRİCİ",
-        "full-stack": "FULL-STACK MÜHENDİSİ",
-        ai: "YAPAY ZEKA TUTKUNU"
-    },
-    services: {
+        about: {
+            description: "Nesne Tabanlı Programlama, web ve yapay zeka geliştirme konularında uzmanlığa sahip kararlı bir yazılım geliştiriciyim. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin, makine öğrenimi, bilgisayarlı görü ve doğal dil işleme projelerinde pratik deneyimim var. Sağlam backend, full stack ve yapay zeka destekli uygulamalar geliştirme konusunda kanıtlanmış bir geçmişim var.",
+            education: "Eğitim"
+        },
+        education: {
+            java: {
+                title: "Java Backend Geliştirici",
+                details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
+            },
+            it_specialist: {
+                title: "Uygulama Geliştirme için BT Uzmanı",
+                details: "- Java SE, C# (.NET), JavaScript, PHP ile OOP<br>- Web ve veritabanı geliştirme, Linux sistemleri<br>- BT proje yönetimi, iş süreçleri<br>- BT süreçleri için Matematik ve MS Office<br>- Teknik İngilizce, iletişim becerileri"
+            },
+            toggle: "Detayları Göster"
+        },
+        skills: {
+            title: "Teknik Beceriler",
+            languages: "Programlama Dilleri",
+            frameworks: "Çerçeveler",
+            tools: "Araçlar ve Platformlar",
+            ai: "Yapay Zeka ve Makine Öğrenimi"
+        },
+        tech: {
+            java: "Java",
+            python: "Python",
+            csharp: "C#",
+            javascript: "JavaScript",
+            sql: "SQL",
+            spring: "Spring Boot",
+            swiftui: "SwiftUI",
+            jetpack: "Jetpack Compose",
+            firebase: "Firebase",
+            integration: "Entegrasyon Testleri",
+            mockito: "Mockito",
+            react: "React",
+            rest_api: "REST API",
+            ai: "Yapay Zeka",
+            nlp: "Doğal Dil İşleme",
+            django: "Django",
+            role_auth: "Rol Tabanlı Yetkilendirme",
+            pdf_export: "PDF Dışa Aktarma",
+            ui_validation: "Kullanıcı Arayüzü Doğrulama",
+            tensorflow: "TensorFlow",
+            computer_vision: "Bilgisayarlı Görü",
+            html5: "HTML5",
+            canvas: "Canvas",
+            frontend: "Ön Uç",
+            dotnet: ".NET",
+            aws: "AWS",
+            gcp: "GCP",
+            docker: "Docker",
+            git: "Git",
+            postgresql: "PostgreSQL",
+            mysql: "MySQL",
+            ml: "Makine Öğrenimi",
+            cv: "Bilgisayarlı Görü",
+            "python-ai": "Python AI Kütüphaneleri"
+        },
+        title: {
+            "java-backend": "JAVA BACKEND GELİŞTİRİCİ",
+            "full-stack": "FULL-STACK MÜHENDİSİ",
+            ai: "YAPAY ZEKA TUTKUNU"
+        },
+        services: {
             subtitle: "İş ihtiyaçlarınıza göre uyarlanmış profesyonel geliştirme hizmetleri",
             note: "<strong>Not:</strong> Tüm fiyatlar tahmini. Nihai fiyat, proje kapsamına ve gereksinimlere bağlıdır. Spesifik ihtiyaçlarınıza uygun kişiselleştirilmiş bir teklif için benimle iletişime geçin.",
             cta: "Başla",
@@ -964,62 +984,63 @@ const translations = {
                 ]
             }
         },
-    project: {
-        missing: {
-            title: "Kayıp Kişi Uyarı Sistemi Full Stack",
-            description: "Spring Boot, SwiftUI ve Jetpack Compose ile geliştirilen polis aracı, Firebase push bildirimleri, coğrafi konum takibi ve yönetici paneli içerir.",
-            duration: "6 Ay"
-        },
-        banking: {
-            title: "Bankacılık Sistemi Full Stack",
-            description: "E-posta/IP takibi, çoklu para birimi desteği, işlem işleme ve Mockito ile kapsamlı testler içeren tam yığın bankacılık uygulaması.",
-            duration: "6 Ay"
-        },
-        ai_text: {
-            title: "Yapay Zeka Metin Özetleyici Full Stack",
-            description: "Spring Boot REST API ile desteklenen, gelişmiş doğal dil işleme yeteneklerine sahip çok dilli metin özetleme uygulaması.",
-            duration: "2 Ay"
-        },
-        student: {
-            title: "Öğrenci Portalı Full Stack",
-            description: "Rol tabanlı erişim kontrolü, notlandırma sistemi, PDF dışa aktarma işlevi ve çevrimiçi testler içeren kapsamlı bir eğitim platformu.",
-            duration: "4 Ay"
-        },
-        face_analysis: {
-            title: "Yapay Zeka Yüz Analizi",
-            description: "Django ve TensorFlow ile geliştirilen, otomatik işleme ve özel GUI arayüzü içeren görüntü sınıflandırma sistemi.",
-            duration: "4 Ay"
-        },
-        medical_diagnosis: {
+        project: {
+            missing: {
+                title: "Kayıp Kişi Uyarı Sistemi Full Stack",
+                description: "Spring Boot, SwiftUI ve Jetpack Compose ile geliştirilen polis aracı, Firebase push bildirimleri, coğrafi konum takibi ve yönetici paneli içerir.",
+                duration: "6 Ay"
+            },
+            banking: {
+                title: "Bankacılık Sistemi Full Stack",
+                description: "E-posta/IP takibi, çoklu para birimi desteği, işlem işleme ve Mockito ile kapsamlı testler içeren tam yığın bankacılık uygulaması.",
+                duration: "6 Ay"
+            },
+            ai_text: {
+                title: "Yapay Zeka Metin Özetleyici Full Stack",
+                description: "Spring Boot REST API ile desteklenen, gelişmiş doğal dil işleme yeteneklerine sahip çok dilli metin özetleme uygulaması.",
+                duration: "2 Ay"
+            },
+            student: {
+                title: "Öğrenci Portalı Full Stack",
+                description: "Rol tabanlı erişim kontrolü, notlandırma sistemi, PDF dışa aktarma işlevi ve çevrimiçi testler içeren kapsamlı bir eğitim platformu.",
+                duration: "4 Ay"
+            },
+            face_analysis: {
+                title: "Yapay Zeka Yüz Analizi",
+                description: "Django ve TensorFlow ile geliştirilen, otomatik işleme ve özel GUI arayüzü içeren görüntü sınıflandırma sistemi.",
+                duration: "4 Ay"
+            },
+            medical_diagnosis: {
                 title: "Tıbbi Teşhis Sistemi",
                 description: "Kullanıcı tarafından sağlanan semptomlardan potansiyel hastalıkları tahmin eden, .NET ve ML.NET ile geliştirilmiş makine öğrenimi tabanlı bir masaüstü uygulaması. Özellikler arasında doğal dilde semptom girişi, güven skoru ile hastalık tahmini ve WPF tabanlı kullanıcı dostu bir arayüz bulunur.",
                 duration: "5 Ay"
             },
             view: "Projeyi Görüntüle"
-    },
-    contact: {
-        info: "İletişim Bilgileri",
-        location: "Berlin, Almanya",
-        video: "Hakkımda Video",
-        phone: "+49 163 9769764"
-    },
-    form: {
-        name: "Adınız",
-        email: "E-postanız",
-        subject: "Konu",
-        message: "Mesajınız",
-        submit: "Mesaj Gönder"
-    },
-    footer: {
-        copyright: "© 2025 Mahmoud Najmeh. Tüm hakları saklıdır."
-    },
-    thank_you: {
-        title: "Teşekkürler",
-        heading: "Teşekkürler!",
-        message: "Mesajınız başarıyla gönderildi. Yakında size geri döneceğim.",
-        back: "Ana Sayfaya Geri Dön"
+        },
+        contact: {
+            info: "İletişim Bilgileri",
+            location: "Berlin, Almanya",
+            video: "Hakkımda Video",
+            phone: "+49 163 9769764"
+        },
+        form: {
+            name: "Adınız",
+            email: "E-postanız",
+            subject: "Konu",
+            message: "Mesajınız",
+            submit: "Mesaj Gönder"
+        },
+        footer: {
+            copyright: "© 2025 Mahmoud Najmeh. Tüm hakları saklıdır."
+        },
+        thank_you: {
+            title: "Teşekkürler",
+            heading: "Teşekkürler!",
+            message: "Mesajınız başarıyla gönderildi. Yakında size geri döneceğim.",
+            back: "Ana Sayfaya Geri Dön"
+        }
     }
-}};
+};
 
 // Function to update content based on language
 function updateContent(lang) {
