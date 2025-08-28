@@ -42,8 +42,8 @@ body {
 
 .section-indicator {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background: var(--secondary);
     border-radius: 50%;
     display: flex;
@@ -82,6 +82,33 @@ body {
         0 0 50px rgba(255, 147, 0, 0.8),
         0 0 70px rgba(255, 102, 0, 0.6);
     animation: flame-pulse-hover 1s ease-in-out infinite;
+}
+
+.section-indicator span {
+    color: var(--text);
+    font-size: 0.75rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0.9; 
+    padding: 0.1rem;
+    max-width: 90%; 
+    overflow: visible; 
+    text-overflow: clip; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    white-space: normal; 
+    word-break: normal; 
+}
+
+.section-indicator:hover span {
+    text-shadow:
+        0 0 10px var(--text),
+        0 0 20px rgba(255, 204, 0, 0.8),
+        0 0 30px rgba(255, 147, 0, 0.6);
+    transform: scale(1.05);
 }
 
 @keyframes flame-pulse {
