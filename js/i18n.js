@@ -71,6 +71,83 @@ const translations = {
             "full-stack": "FULL-STACK ENGINEER",
             ai: "AI ENTHUSIAST"
         },
+        services: {
+            subtitle: "Professional development services tailored to your business needs",
+            note: "<strong>Note:</strong> All prices are estimates. Final pricing depends on project scope and requirements. Contact me for a personalized quote tailored to your specific needs.",
+            cta: "Get Started",
+            backend: {
+                title: "Backend Development",
+                price: "€2,500+",
+                features: [
+                    "Spring Boot REST API development",
+                    "Database design & optimization",
+                    "Authentication & security implementation",
+                    "Microservices architecture",
+                    "API documentation & testing",
+                    "Deployment to cloud platforms"
+                ]
+            },
+            fullstack: {
+                title: "Full-Stack Development",
+                price: "€4,000+",
+                features: [
+                    "Complete web application development",
+                    "Spring Boot backend + React frontend",
+                    "Responsive UI/UX design",
+                    "Database integration",
+                    "User authentication system",
+                    "Admin dashboard"
+                ]
+            },
+            api: {
+                title: "API Development",
+                price: "€1,800+",
+                features: [
+                    "Custom REST API development",
+                    "Database integration (PostgreSQL/MySQL)",
+                    "JWT authentication",
+                    "API documentation with Swagger/OpenAPI",
+                    "Performance optimization",
+                    "Deployment ready"
+                ]
+            },
+            website: {
+                title: "Business Website Package",
+                price: "€1,500-€3,000",
+                features: [
+                    "Professional portfolio website",
+                    "Contact form with email notifications",
+                    "Mobile responsive design",
+                    "Basic SEO optimization",
+                    "Content management system",
+                    "Social media integration"
+                ]
+            },
+            ai: {
+                title: "AI Integration",
+                price: "€3,500+",
+                features: [
+                    "Text processing/summarization APIs",
+                    "Image analysis with TensorFlow",
+                    "Chatbot integration",
+                    "Machine learning model deployment",
+                    "Data visualization dashboards",
+                    "Custom AI solutions"
+                ]
+            },
+            maintenance: {
+                title: "Maintenance & Support",
+                price: "€500/month",
+                features: [
+                    "Regular software updates",
+                    "Bug fixes and troubleshooting",
+                    "Performance monitoring",
+                    "Security patches",
+                    "Database maintenance",
+                    "24/7 emergency support"
+                ]
+            }
+        },
         project: {
             missing: {
                 title: "Missing Person Alert System FullStack",
@@ -197,6 +274,83 @@ const translations = {
             "java-backend": "JAVA BACKEND ENTWICKLER",
             "full-stack": "FULL-STACK INGENIEUR",
             ai: "KI-BEGEISTERTER"
+        },
+        services: {
+            subtitle: "Professionelle Entwicklungsdienste, angepasst an Ihre Geschäftsanforderungen",
+            note: "<strong>Hinweis:</strong> Alle Preise sind Schätzungen. Die endgültigen Kosten hängen vom Projektumfang und den Anforderungen ab. Kontaktieren Sie mich für ein maßgeschneidertes Angebot, das auf Ihre spezifischen Bedürfnisse zugeschnitten ist.",
+            cta: "Loslegen",
+            backend: {
+                title: "Backend-Entwicklung",
+                price: "€2.500+",
+                features: [
+                    "Entwicklung von Spring Boot REST APIs",
+                    "Datenbankdesign & -optimierung",
+                    "Authentifizierung & Sicherheitsumsetzung",
+                    "Microservices-Architektur",
+                    "API-Dokumentation & -Tests",
+                    "Bereitstellung auf Cloud-Plattformen"
+                ]
+            },
+            fullstack: {
+                title: "Full-Stack-Entwicklung",
+                price: "€4.000+",
+                features: [
+                    "Komplette Webapplikationsentwicklung",
+                    "Spring Boot Backend + React Frontend",
+                    "Responsive UI/UX-Design",
+                    "Datenbankintegration",
+                    "Benutzerauthentifizierungssystem",
+                    "Admin-Dashboard"
+                ]
+            },
+            api: {
+                title: "API-Entwicklung",
+                price: "€1.800+",
+                features: [
+                    "Benutzerdefinierte REST-API-Entwicklung",
+                    "Datenbankintegration (PostgreSQL/MySQL)",
+                    "JWT-Authentifizierung",
+                    "API-Dokumentation mit Swagger/OpenAPI",
+                    "Leistungsoptimierung",
+                    "Bereitstellungsfertig"
+                ]
+            },
+            website: {
+                title: "Business-Website-Paket",
+                price: "€1.500-€3.000",
+                features: [
+                    "Professionelle Portfolio-Website",
+                    "Kontaktformular mit E-Mail-Benachrichtigungen",
+                    "Mobil responsives Design",
+                    "Grundlegende SEO-Optimierung",
+                    "Content-Management-System",
+                    "Soziale Medien-Integration"
+                ]
+            },
+            ai: {
+                title: "KI-Integration",
+                price: "€3.500+",
+                features: [
+                    "Textverarbeitungs-/Zusammenfassungs-APIs",
+                    "Bildanalyse mit TensorFlow",
+                    "Chatbot-Integration",
+                    "Bereitstellung von Machine-Learning-Modellen",
+                    "Datenvisualisierungs-Dashboards",
+                    "Benutzerdefinierte KI-Lösungen"
+                ]
+            },
+            maintenance: {
+                title: "Wartung & Support",
+                price: "€500/Monat",
+                features: [
+                    "Regelmäßige Software-Updates",
+                    "Fehlerbehebung und Troubleshooting",
+                    "Leistungsüberwachung",
+                    "Sicherheitsupdates",
+                    "Datenbankwartung",
+                    "24/7 Notfallunterstützung"
+                ]
+            }
         },
         project: {
             missing: {
@@ -325,6 +479,83 @@ const translations = {
             "full-stack": "INŻYNIER FULL-STACK",
             ai: "ENTUZJASTA SZTUCZNEJ INTELIGENCJI"
         },
+        services: {
+            subtitle: "Profesjonalne usługi programistyczne dostosowane do potrzeb Twojej firmy",
+            note: "<strong>Uwaga:</strong> Wszystkie ceny są szacunkowe. Ostateczna cena zależy od zakresu projektu i wymagań. Skontaktuj się ze mną, aby uzyskać spersonalizowaną ofertę dostosowaną do Twoich specyficznych potrzeb.",
+            cta: "Zacznij",
+            backend: {
+                title: "Rozwój Backend",
+                price: "€2 500+",
+                features: [
+                    "Rozwój API REST Spring Boot",
+                    "Projektowanie i optymalizacja bazy danych",
+                    "Implementacja uwierzytelniania i bezpieczeństwa",
+                    "Architektura mikrousług",
+                    "Dokumentacja i testy API",
+                    "Wdrożenie na platformach chmurowych"
+                ]
+            },
+            fullstack: {
+                title: "Rozwój Full-Stack",
+                price: "€4 000+",
+                features: [
+                    "Kompletny rozwój aplikacji webowych",
+                    "Backend Spring Boot + frontend React",
+                    "Responsywny design UI/UX",
+                    "Integracja z bazą danych",
+                    "System uwierzytelniania użytkowników",
+                    "Panel administracyjny"
+                ]
+            },
+            api: {
+                title: "Rozwój API",
+                price: "€1 800+",
+                features: [
+                    "Niestandardowy rozwój API REST",
+                    "Integracja z bazą danych (PostgreSQL/MySQL)",
+                    "Uwierzytelnianie JWT",
+                    "Dokumentacja API z Swagger/OpenAPI",
+                    "Optymalizacja wydajności",
+                    "Gotowy do wdrożenia"
+                ]
+            },
+            website: {
+                title: "Pakiet strony biznesowej",
+                price: "€1 500-€3 000",
+                features: [
+                    "Profesjonalna strona portfolio",
+                    "Formularz kontaktowy z powiadomieniami e-mail",
+                    "Responsywny design mobilny",
+                    "Podstawowa optymalizacja SEO",
+                    "System zarządzania treścią",
+                    "Integracja z mediami społecznościowymi"
+                ]
+            },
+            ai: {
+                title: "Integracja AI",
+                price: "€3 500+",
+                features: [
+                    "API przetwarzania/zusammenfassungs tekstu",
+                    "Analiza obrazów z TensorFlow",
+                    "Integracja chatbotów",
+                    "Wdrożenie modeli uczenia maszynowego",
+                    "Pulpity danych wizualizacyjnych",
+                    "Niestandardowe rozwiązania AI"
+                ]
+            },
+            maintenance: {
+                title: "Utrzymanie i wsparcie",
+                price: "€500/miesiąc",
+                features: [
+                    "Regularne aktualizacje oprogramowania",
+                    "Naprawa błędów i rozwiązywanie problemów",
+                    "Monitorowanie wydajności",
+                    "Poprawki bezpieczeństwa",
+                    "Utrzymanie bazy danych",
+                    "Wsparcie awaryjne 24/7"
+                ]
+            }
+        },
         project: {
             missing: {
                 title: "System Alarmowy dla Osób Zaginionych FullStack",
@@ -451,6 +682,83 @@ const translations = {
             "java-backend": "DÉVELOPPEUR BACKEND JAVA",
             "full-stack": "INGÉNIEUR FULL-STACK",
             ai: "ENTHOUSIASTE D'IA"
+        },
+        services: {
+            subtitle: "Services de développement professionnels adaptés aux besoins de votre entreprise",
+            note: "<strong>Remarque :</strong> Tous les prix sont des estimations. Le prix final dépend de la portée et des exigences du projet. Contactez-moi pour un devis personnalisé adapté à vos besoins spécifiques.",
+            cta: "Commencer",
+            backend: {
+                title: "Développement Backend",
+                price: "€2 500+",
+                features: [
+                    "Développement d'API REST Spring Boot",
+                    "Conception et optimisation de bases de données",
+                    "Mise en œuvre d'authentification et de sécurité",
+                    "Architecture de microservices",
+                    "Documentation et tests d'API",
+                    "Déploiement sur des plateformes cloud"
+                ]
+            },
+            fullstack: {
+                title: "Développement Full-Stack",
+                price: "€4 000+",
+                features: [
+                    "Développement complet d'applications web",
+                    "Backend Spring Boot + frontend React",
+                    "Design UI/UX responsive",
+                    "Intégration de base de données",
+                    "Système d'authentification des utilisateurs",
+                    "Tableau de bord administrateur"
+                ]
+            },
+            api: {
+                title: "Développement d'API",
+                price: "€1 800+",
+                features: [
+                    "Développement d'API REST personnalisées",
+                    "Intégration de base de données (PostgreSQL/MySQL)",
+                    "Authentification JWT",
+                    "Documentation d'API avec Swagger/OpenAPI",
+                    "Optimisation des performances",
+                    "Prêt pour le déploiement"
+                ]
+            },
+            website: {
+                title: "Forfait site web professionnel",
+                price: "€1 500-€3 000",
+                features: [
+                    "Site portfolio professionnel",
+                    "Formulaire de contact avec notifications par email",
+                    "Design responsive mobile",
+                    "Optimisation SEO de base",
+                    "Système de gestion de contenu",
+                    "Intégration des réseaux sociaux"
+                ]
+            },
+            ai: {
+                title: "Intégration d'IA",
+                price: "€3 500+",
+                features: [
+                    "API de traitement/résumé de texte",
+                    "Analyse d'images avec TensorFlow",
+                    "Intégration de chatbots",
+                    "Déploiement de modèles d'apprentissage automatique",
+                    "Tableaux de bord de visualisation de données",
+                    "Solutions IA personnalisées"
+                ]
+            },
+            maintenance: {
+                title: "Maintenance et support",
+                price: "€500/mois",
+                features: [
+                    "Mises à jour logicielles régulières",
+                    "Corrections de bugs et dépannage",
+                    "Surveillance des performances",
+                    "Correctifs de sécurité",
+                    "Maintenance de la base de données",
+                    "Support d'urgence 24/7"
+                ]
+            }
         },
         project: {
             missing: {
@@ -579,6 +887,83 @@ const translations = {
         "full-stack": "FULL-STACK MÜHENDİSİ",
         ai: "YAPAY ZEKA TUTKUNU"
     },
+    services: {
+            subtitle: "İş ihtiyaçlarınıza göre uyarlanmış profesyonel geliştirme hizmetleri",
+            note: "<strong>Not:</strong> Tüm fiyatlar tahmini. Nihai fiyat, proje kapsamına ve gereksinimlere bağlıdır. Spesifik ihtiyaçlarınıza uygun kişiselleştirilmiş bir teklif için benimle iletişime geçin.",
+            cta: "Başla",
+            backend: {
+                title: "Backend Geliştirme",
+                price: "€2.500+",
+                features: [
+                    "Spring Boot REST API geliştirme",
+                    "Veritabanı tasarımı ve optimizasyonu",
+                    "Kimlik doğrulama ve güvenlik uygulaması",
+                    "Mikro servis mimarisi",
+                    "API dokümantasyonu ve testleri",
+                    "Bulut platformlarına dağıtım"
+                ]
+            },
+            fullstack: {
+                title: "Full Stack Geliştirme",
+                price: "€4.000+",
+                features: [
+                    "Tam web uygulaması geliştirme",
+                    "Spring Boot backend + React frontend",
+                    "Duyarlı UI/UX tasarımı",
+                    "Veritabanı entegrasyonu",
+                    "Kullanıcı kimlik doğrulama sistemi",
+                    "Yönetici paneli"
+                ]
+            },
+            api: {
+                title: "API Geliştirme",
+                price: "€1.800+",
+                features: [
+                    "Özel REST API geliştirme",
+                    "Veritabanı entegrasyonu (PostgreSQL/MySQL)",
+                    "JWT kimlik doğrulama",
+                    "Swagger/OpenAPI ile API dokümantasyonu",
+                    "Performans optimizasyonu",
+                    "Dağıtım için hazır"
+                ]
+            },
+            website: {
+                title: "İş Web Sitesi Paketi",
+                price: "€1.500-€3.000",
+                features: [
+                    "Profesyonel portföy web sitesi",
+                    "E-posta bildirimleriyle iletişim formu",
+                    "Mobil duyarlı tasarım",
+                    "Temel SEO optimizasyonu",
+                    "İçerik yönetim sistemi",
+                    "Sosyal medya entegrasyonu"
+                ]
+            },
+            ai: {
+                title: "AI Entegrasyonu",
+                price: "€3.500+",
+                features: [
+                    "Metin işleme/özetleme API'leri",
+                    "TensorFlow ile görüntü analizi",
+                    "Sohbet botu entegrasyonu",
+                    "Makine öğrenimi model dağıtımı",
+                    "Veri görselleştirme panoları",
+                    "Özel AI çözümleri"
+                ]
+            },
+            maintenance: {
+                title: "Bakım ve Destek",
+                price: "€500/ay",
+                features: [
+                    "Düzenli yazılım güncellemeleri",
+                    "Hata düzeltmeleri ve sorun giderme",
+                    "Performans izleme",
+                    "Güvenlik yamaları",
+                    "Veritabanı bakımı",
+                    "24/7 acil destek"
+                ]
+            }
+        },
     project: {
         missing: {
             title: "Kayıp Kişi Uyarı Sistemi Full Stack",
