@@ -9,6 +9,7 @@ const translations = {
         explore: "Explore",
         section: {
             about: "About Me",
+            services: "Services & Pricing",
             projects: "Featured Projects",
             contact: "Get In Touch"
         },
@@ -217,6 +218,7 @@ const translations = {
         explore: "Entdecken",
         section: {
             about: "Über mich",
+            services: "Dienste & Preise",
             projects: "Ausgewählte Projekte",
             contact: "Kontakt aufnehmen"
         },
@@ -425,6 +427,7 @@ const translations = {
         explore: "Odkrywaj",
         section: {
             about: "O mnie",
+            services: "Usługi i Ceny",
             projects: "Wybrane projekty",
             contact: "Skontaktuj się"
         },
@@ -633,6 +636,7 @@ const translations = {
         explore: "Explorer",
         section: {
             about: "À propos",
+            services: "Services & Tarifs",
             projects: "Projets phares",
             contact: "Me contacter"
         },
@@ -841,6 +845,7 @@ const translations = {
         explore: "Keşfet",
         section: {
             about: "Hakkımda",
+            services: "Hizmetler ve Fiyatlar",
             projects: "Öne Çıkan Projeler",
             contact: "İletişime Geç"
         },
