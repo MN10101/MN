@@ -807,6 +807,9 @@ color: var(--text);
     color: var(--text);
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
+    white-space: normal;
+    overflow-wrap: break-word; 
+    padding: 0.2rem; 
 }
 
 .icon-list {
