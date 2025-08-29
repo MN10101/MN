@@ -1592,74 +1592,126 @@ html[lang="ar"] .main-title .title-line::after {
     }
 
     .orbit {
-        font-size: 0.55rem;
-        border-width: 1px;
-        animation-duration: 15s;
+        position: absolute;
+        border-radius: 50%;
+        border: 2px dashed;
+        animation: orbit-rotate linear infinite;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+        will-change: transform;
     }
 
     .orbit span {
-        font-size: 0.55rem;
-        padding: 0.2rem 0.4rem;
-        top: -0.7rem;
-        border-width: 1px;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(30, 41, 59, 0.6) 70%);
+        position: absolute;
+        top: -1.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: inherit;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(30, 41, 59, 0.7) 70%);
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        max-width: 100%;
         text-shadow:
-            0 0 5px currentColor,
-            0 0 10px rgba(255, 204, 0, 0.6);
-        animation: sun-glow 2s ease-in-out infinite;
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 30px rgba(255, 204, 0, 0.8),
+            0 0 40px rgba(255, 147, 0, 0.6);
+        transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease, text-shadow 0.3s ease;
+        animation:
+            sun-glow 1.5s ease-in-out infinite,
+            sun-shimmer 3s ease-in-out infinite,
+            keep-upright linear infinite;
+        border: 1px solid rgba(255, 204, 0, 0.3);
     }
 
     .orbit.java {
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
+        width: 140%;
+        height: 140%;
+        top: -20%;
+        left: -20%;
+        border-color: var(--java);
+        color: var(--java);
+        animation-duration: 20s;
     }
 
     .orbit.python {
-        width: 135%;
-        height: 135%;
-        top: -17.5%;
-        left: -17.5%;
+        width: 170%;
+        height: 170%;
+        top: -35%;
+        left: -35%;
+        border-color: var(--python);
+        color: var(--python);
+        animation-duration: 25s;
+        animation-direction: reverse;
     }
 
     .orbit.csharp {
-        width: 150%;
-        height: 150%;
-        top: -25%;
-        left: -25%;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        border-color: var(--csharp);
+        color: var(--csharp);
+        animation-duration: 30s;
     }
 
     .orbit.javascript {
-        width: 165%;
-        height: 165%;
-        top: -32.5%;
-        left: -32.5%;
+        width: 230%;
+        height: 230%;
+        top: -65%;
+        left: -65%;
+        border-color: var(--javascript);
+        color: var(--javascript);
+        animation-duration: 35s;
+        animation-direction: reverse;
     }
 
     .orbit.sql {
-        width: 180%;
-        height: 180%;
-        top: -40%;
-        left: -40%;
+        width: 260%;
+        height: 260%;
+        top: -80%;
+        left: -80%;
+        border-color: var(--sql);
+        color: var(--sql);
+        animation-duration: 40s;
     }
 
     .orbit.spring {
-        width: 195%;
-        height: 195%;
-        top: -47.5%;
-        left: -47.5%;
+        width: 290%;
+        height: 290%;
+        top: -95%;
+        left: -95%;
+        border-color: var(--spring);
+        color: var(--spring);
+        animation-duration: 45s;
+        animation-direction: reverse;
     }
 
     .orbit:hover {
-        box-shadow: none;
+        border-style: solid;
+        box-shadow: 0 0 15px var(--accent);
+        opacity: 1;
     }
 
     .orbit:hover span {
-        transform: translateX(-50%);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(30, 41, 59, 0.9) 70%);
+        transform: translateX(-50%) scale(1.1);
         text-shadow:
-            0 0 10px currentColor,
-            0 0 20px rgba(255, 204, 0, 0.8);
+            0 0 20px currentColor,
+            0 0 40px currentColor,
+            0 0 60px rgba(255, 204, 0, 1),
+            0 0 80px rgba(255, 147, 0, 0.9);
+        border-color: rgba(255, 204, 0, 0.5);
+        opacity: 1;
+        animation: sun-glow-hover 1s ease-in-out infinite;
     }
 
     .main-title {
