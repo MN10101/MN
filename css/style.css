@@ -1592,76 +1592,75 @@ html[lang="ar"] .main-title .title-line::after {
     }
 
     .orbit {
-    font-size: 0.55rem;
-    border-width: 1px;
-    border-color: rgba(255, 204, 0, 1); 
-    animation-duration: 15s;
-}
+        font-size: 0.55rem;
+        border-width: 1px;
+        animation-duration: 15s;
+    }
 
-.orbit span {
-    font-size: 0.55rem;
-    padding: 0.2rem 0.4rem;
-    top: -0.7rem;
-    border-width: 1px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(30, 41, 59, 0.8) 70%); 
-    text-shadow:
-        0 0 7px currentColor,
-        0 0 12px rgba(255, 204, 0, 0.8); 
-    animation: sun-glow 2s ease-in-out infinite;
-}
+    .orbit span {
+        font-size: 0.55rem;
+        padding: 0.2rem 0.4rem;
+        top: -0.7rem;
+        border-width: 1px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(30, 41, 59, 0.6) 70%);
+        text-shadow:
+            0 0 5px currentColor,
+            0 0 10px rgba(255, 204, 0, 0.6);
+        animation: sun-glow 2s ease-in-out infinite;
+    }
 
-.orbit.java {
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
-}
+    .orbit.java {
+        width: 120%;
+        height: 120%;
+        top: -10%;
+        left: -10%;
+    }
 
-.orbit.python {
-    width: 135%;
-    height: 135%;
-    top: -17.5%;
-    left: -17.5%;
-}
+    .orbit.python {
+        width: 135%;
+        height: 135%;
+        top: -17.5%;
+        left: -17.5%;
+    }
 
-.orbit.csharp {
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
-}
+    .orbit.csharp {
+        width: 150%;
+        height: 150%;
+        top: -25%;
+        left: -25%;
+    }
 
-.orbit.javascript {
-    width: 165%;
-    height: 165%;
-    top: -32.5%;
-    left: -32.5%;
-}
+    .orbit.javascript {
+        width: 165%;
+        height: 165%;
+        top: -32.5%;
+        left: -32.5%;
+    }
 
-.orbit.sql {
-    width: 180%;
-    height: 180%;
-    top: -40%;
-    left: -40%;
-}
+    .orbit.sql {
+        width: 180%;
+        height: 180%;
+        top: -40%;
+        left: -40%;
+    }
 
-.orbit.spring {
-    width: 195%;
-    height: 195%;
-    top: -47.5%;
-    left: -47.5%;
-}
+    .orbit.spring {
+        width: 195%;
+        height: 195%;
+        top: -47.5%;
+        left: -47.5%;
+    }
 
-.orbit:hover {
-    box-shadow: none;
-}
+    .orbit:hover {
+        box-shadow: none;
+    }
 
-.orbit:hover span {
-    transform: translateX(-50%);
-    text-shadow:
-        0 0 12px currentColor,
-        0 0 25px rgba(255, 204, 0, 1); 
-}
+    .orbit:hover span {
+        transform: translateX(-50%);
+        text-shadow:
+            0 0 10px currentColor,
+            0 0 20px rgba(255, 204, 0, 0.8);
+    }
 
     .main-title {
         font-size: clamp(1.8rem, 7vw, 2.5rem);
