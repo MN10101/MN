@@ -24,7 +24,7 @@ const translations = {
             },
             it_specialist: {
                 title: "IT Specialist for Application Development",
-                details: "- OOP with Java SE, C# (.NET), JavaScript, PHP<br>- Web and database development, Linux systems<br>- IT project management, business processes<br>- Mathematics and MS Office for IT Processes<br>- Technical English, communication skills"
+                details: "- OOP with Java SE, C# (.NET), Python, JavaScript, PHP<br>- Web and database development, Linux systems<br>- IT project management, business processes<br>- Mathematics and MS Office for IT Processes<br>- Technical English, communication skills"
             },
             toggle: "Show Details"
         },
@@ -233,7 +233,7 @@ const translations = {
             },
             it_specialist: {
                 title: "Fachinformatiker für Anwendungsentwicklung",
-                details: "- OOP mit Java SE, C# (.NET), JavaScript, PHP<br>- Web- und Datenbankentwicklung, Linux-Systeme<br>- IT-Projektmanagement, Geschäftsprozesse<br>- Mathematik und MS Office für IT-Prozesse<br>- Technisches Englisch, Kommunikationsfähigkeiten"
+                details: "- OOP mit Java SE, C# (.NET), Python, JavaScript, PHP<br>- Web- und Datenbankentwicklung, Linux-Systeme<br>- IT-Projektmanagement, Geschäftsprozesse<br>- Mathematik und MS Office für IT-Prozesse<br>- Technisches Englisch, Kommunikationsfähigkeiten"
             },
             toggle: "Details anzeigen"
         },
@@ -442,7 +442,7 @@ const translations = {
             },
             it_specialist: {
                 title: "Specjalista IT ds. Rozwoju Aplikacji",
-                details: "- OOP z Java SE, C# (.NET), JavaScript, PHP<br>- Rozwój aplikacji webowych i baz danych, systemy Linux<br>- Zarządzanie projektami IT, procesy biznesowe<br>- Matematyka i MS Office w procesach IT<br>- Angielski techniczny, umiejętności komunikacyjne"
+                details: "- OOP z Java SE, C# (.NET), Python, JavaScript, PHP<br>- Rozwój aplikacji webowych i baz danych, systemy Linux<br>- Zarządzanie projektami IT, procesy biznesowe<br>- Matematyka i MS Office w procesach IT<br>- Angielski techniczny, umiejętności komunikacyjne"
             },
             toggle: "Pokaż szczegóły"
         },
@@ -651,7 +651,7 @@ const translations = {
             },
             it_specialist: {
                 title: "Spécialiste IT en développement d'applications",
-                details: "- POO avec Java SE, C# (.NET), JavaScript, PHP<br>- Développement web et bases de données, systèmes Linux<br>- Gestion de projets IT, processus métier<br>- Mathématiques et MS Office pour les processus IT<br>- Anglais technique, compétences en communication"
+                details: "- POO avec Java SE, C# (.NET), Python, JavaScript, PHP<br>- Développement web et bases de données, systèmes Linux<br>- Gestion de projets IT, processus métier<br>- Mathématiques et MS Office pour les processus IT<br>- Anglais technique, compétences en communication"
             },
             toggle: "Afficher les détails"
         },
@@ -860,7 +860,7 @@ const translations = {
             },
             it_specialist: {
                 title: "Uygulama Geliştirme için BT Uzmanı",
-                details: "- Java SE, C# (.NET), JavaScript, PHP ile OOP<br>- Web ve veritabanı geliştirme, Linux sistemleri<br>- BT proje yönetimi, iş süreçleri<br>- BT süreçleri için Matematik ve MS Office<br>- Teknik İngilizce, iletişim becerileri"
+                details: "- Java SE, C# (.NET), Python, JavaScript, PHP ile OOP<br>- Web ve veritabanı geliştirme, Linux sistemleri<br>- BT proje yönetimi, iş süreçleri<br>- BT süreçleri için Matematik ve MS Office<br>- Teknik İngilizce, iletişim becerileri"
             },
             toggle: "Detayları Göster"
         },
