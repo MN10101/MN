@@ -239,8 +239,9 @@ document.querySelectorAll('.toggle-details').forEach(button => {
     button.addEventListener('click', () => {
         const details = button.nextElementSibling;
         const isHidden = details.style.display === 'none' || !details.style.display;
+        const currentLang = document.documentElement.lang || 'en'; 
         details.style.display = isHidden ? 'block' : 'none';
-        button.textContent = isHidden ? 'Hide Details' : 'Show Details';
+        button.textContent = isHidden ? translations[currentLang].education.toggleHide : translations[currentLang].education.toggle;
     });
 });
 
