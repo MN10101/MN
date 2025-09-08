@@ -2,7 +2,7 @@
 (function() {
     // List of allowed titles
     const allowedTitles = [
-        "Mahmoud Najmeh | Java Backend Architect",
+        "Mahmoud Najmeh | Full-Stack Engineer",
         "MN Portfolio",
         "Mahmoud Najmeh - Portfolio"
     ];
@@ -65,8 +65,8 @@ for (let i = 0; i < trailCount; i++) {
     trail.className = 'cursor-trail';
     trail.style.opacity = 1 - (i / trailCount);
     trail.style.transform = `scale(${1 - (i * 0.08)})`;
-    trail.style.position = 'fixed'; // Ensure proper positioning
-    trail.style.pointerEvents = 'none'; // Prevent interaction with trail dots
+    trail.style.position = 'fixed'; 
+    trail.style.pointerEvents = 'none'; 
     document.body.appendChild(trail);
     trails.push(trail);
 }
@@ -77,7 +77,7 @@ function updateTrailPosition(x, y) {
         setTimeout(() => {
             trail.style.left = `${x}px`;
             trail.style.top = `${y}px`;
-            trail.style.display = 'block'; // Show trail
+            trail.style.display = 'block'; 
         }, index * 30);
     });
 }
@@ -332,3 +332,4 @@ indicatorsContainer.addEventListener('click', (e) => {
 handleScroll();
 
 });
+
