@@ -1,7 +1,7 @@
 // Translation map
 const translations = {
     en: {
-        title: "Mahmoud Najmeh | Java Backend Architect",
+        title: "Mahmoud Najmeh | Full-Stack Engineer",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -14,12 +14,12 @@ const translations = {
             contact: "Get In Touch"
         },
         about: {
-            description: "Dedicated software developer with expertise in OOP, web, and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET, with hands-on experience in machine learning, computer vision, and NLP projects. Proven track record in building robust backend, full-stack, and AI-powered applications.",
+            description: "Dedicated Full-Stack Engineer with solid experience in OOP and a strong interest in web and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET. Successful implementation of web projects with a focus on full-stack development (backend and frontend) and teamwork.",
             education: "Education"
         },
         education: {
             java: {
-                title: "Java Backend Developer",
+                title: "Java Developer",
                 details: "- Programming fundamentals, Agile methodologies<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- Databases: JDBC, Advanced SQL<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs and Cloud: AWS, GCP"
             },
             it_specialist: {
@@ -62,6 +62,7 @@ const translations = {
             css: "CSS",
             javascript: "JavaScript",
             postgresql: "PostgreSQL",
+            database: "Database",
             canvas: "Canvas",
             frontend: "Frontend",
             dotnet: ".NET",
@@ -76,7 +77,7 @@ const translations = {
             "python-ai": "Python AI Libraries",
         },
         title: {
-            "java-backend": "JAVA BACKEND DEVELOPER",
+            "java-backend": "JAVA DEVELOPER",
             "full-stack": "FULL-STACK ENGINEER",
             ai: "AI ENTHUSIAST"
         },
@@ -214,7 +215,7 @@ const translations = {
         }
     },
     de: {
-        title: "Mahmoud Najmeh | Java Backend Architekt",
+        title: "Mahmoud Najmeh | Full-Stack Engineer",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -227,12 +228,12 @@ const translations = {
             contact: "Kontakt aufnehmen"
         },
         about: {
-            description: "Engagierter Softwareentwickler mit Expertise in objektorientierter Programmierung, Web- und KI-Entwicklung. Versiert in Java, Spring Boot, Python, Django und C# .NET, mit praktischer Erfahrung in Machine-Learning-, Computer-Vision- und NLP-Projekten. Nachgewiesene Erfolge im Aufbau robuster Backend-, Full-Stack- und KI-gestützter Anwendungen.",
+            description: "Engagierter Full-Stack-Ingenieur mit fundierter Erfahrung in objektorientierter Programmierung und großem Interesse an Web- und KI-Entwicklung. Versiert in Java, Spring Boot, Python, Django und C# .NET. Erfolgreiche Umsetzung von Webprojekten mit Fokus auf Full-Stack-Entwicklung (Backend und Frontend) und Teamarbeit.",
             education: "Ausbildung"
         },
         education: {
             java: {
-                title: "Java Backend Entwickler",
+                title: "Java Entwickler",
                 details: "- Programmiergrundlagen, agile Methoden<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- Datenbanken: JDBC, fortgeschrittenes SQL<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs und Cloud: AWS, GCP"
             },
             it_specialist: {
@@ -289,7 +290,7 @@ const translations = {
             "python-ai": "Python AI-Bibliotheken"
         },
         title: {
-            "java-backend": "JAVA BACKEND ENTWICKLER",
+            "java-backend": "JAVA ENTWICKLER",
             "full-stack": "FULL-STACK INGENIEUR",
             ai: "KI-BEGEISTERTER"
         },
@@ -427,7 +428,7 @@ const translations = {
         }
     },
     pl: {
-        title: "Mahmoud Najmeh | Architekt Backend Java",
+        title: "Mahmoud Najmeh | Full-Stack Engineer",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -440,12 +441,12 @@ const translations = {
             contact: "Skontaktuj się"
         },
         about: {
-            description: "Zaangażowany programista z doświadczeniem w programowaniu obiektowym, rozwoju aplikacji webowych i sztucznej inteligencji. Biegły w Java, Spring Boot, Python, Django oraz C# .NET, z praktycznym doświadczeniem w projektach uczenia maszynowego, wizji komputerowej i przetwarzania języka naturalnego. Udokumentowane sukcesy w tworzeniu solidnych aplikacji backendowych, full-stack i opartych na AI.",
+            description: "Zaangażowany inżynier Full-Stack z solidnym doświadczeniem w programowaniu obiektowym i dużym zainteresowaniem rozwojem aplikacji webowych oraz sztuczną inteligencją. Biegły w Java, Spring Boot, Python, Django oraz C# .NET. Pomyślna realizacja projektów webowych z naciskiem na rozwój full-stack (backend i frontend) oraz pracę zespołową.",
             education: "Wykształcenie"
         },
         education: {
             java: {
-                title: "Programista Backend Java",
+                title: "Programista Java",
                 details: "- Podstawy programowania, metodologie Agile<br>- Java: OOP, Strumienie, Współbieżność, Maven, Gradle, Testowanie<br>- Bazy danych: JDBC, Zaawansowany SQL<br>- Frameworki: Spring Boot, Hibernate, Spring Security<br>- API REST i Chmura: AWS, GCP"
             },
             it_specialist: {
@@ -502,7 +503,7 @@ const translations = {
             "python-ai": "Biblioteki AI Pythona"
         },
         title: {
-            "java-backend": "PROGRAMISTA BACKEND JAVA",
+            "java-backend": "PROGRAMISTA JAVA",
             "full-stack": "INŻYNIER FULL-STACK",
             ai: "ENTUZJASTA SZTUCZNEJ INTELIGENCJI"
         },
@@ -640,7 +641,7 @@ const translations = {
         }
     },
     fr: {
-        title: "Mahmoud Najmeh | Architecte Backend Java",
+        title: "Mahmoud Najmeh | Full-Stack Engineer",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -653,12 +654,11 @@ const translations = {
             contact: "Me contacter"
         },
         about: {
-            description: "Développeur logiciel dévoué avec une expertise en programmation orientée objet, développement web et IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET, avec une expérience pratique dans des projets de machine learning, vision par ordinateur et traitement du langage naturel. Expérience prouvée dans la création d'applications backend, full-stack et alimentées par l'IA.",
-            education: "Formation"
+            description: "Ingénieur Full-Stack dévoué avec une solide expérience en programmation orientée objet et un vif intérêt pour le développement web et l'IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET. Mise en œuvre réussie de projets web avec un accent sur le développement full-stack (backend et frontend) et le travail d'équipe.",
         },
         education: {
             java: {
-                title: "Développeur Backend Java",
+                title: "Développeur Java",
                 details: "- Fondamentaux de la programmation, méthodologies Agiles<br>- Java : POO, Streams, Concurrence, Maven, Gradle, Tests<br>- Bases de données : JDBC, SQL avancé<br>- Frameworks : Spring Boot, Hibernate, Spring Security<br>- API REST et Cloud : AWS, GCP"
             },
             it_specialist: {
@@ -715,7 +715,7 @@ const translations = {
             "python-ai": "Bibliothèques IA Python"
         },
         title: {
-            "java-backend": "DÉVELOPPEUR BACKEND JAVA",
+            "java-backend": "DÉVELOPPEUR JAVA",
             "full-stack": "INGÉNIEUR FULL-STACK",
             ai: "ENTHOUSIASTE D'IA"
         },
@@ -853,7 +853,7 @@ const translations = {
         }
     },
     tr: {
-        title: "Mahmoud Najmeh | Java Backend Mimar",
+        title: "Mahmoud Najmeh | Full-Stack Mühendisi",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -866,12 +866,12 @@ const translations = {
             contact: "İletişime Geç"
         },
         about: {
-            description: "Nesne Tabanlı Programlama, web ve yapay zeka geliştirme konularında uzmanlığa sahip kararlı bir yazılım geliştiriciyim. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin, makine öğrenimi, bilgisayarlı görü ve doğal dil işleme projelerinde pratik deneyimim var. Sağlam backend, full stack ve yapay zeka destekli uygulamalar geliştirme konusunda kanıtlanmış bir geçmişim var.",
+            description: "Nesne tabanlı programlamada sağlam deneyime ve web ile yapay zeka geliştirmeye güçlü bir ilgiye sahip kararlı bir Full-Stack Mühendisi. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin. Full-stack geliştirme (backend ve frontend) ve ekip çalışmasına odaklanarak web projelerinin başarılı bir şekilde uygulanması.",
             education: "Eğitim"
         },
         education: {
             java: {
-                title: "Java Backend Geliştirici",
+                title: "Java Geliştirici",
                 details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
             },
             it_specialist: {
@@ -929,7 +929,7 @@ const translations = {
             "python-ai": "Python AI Kütüphaneleri"
         },
         title: {
-            "java-backend": "JAVA BACKEND GELİŞTİRİCİ",
+            "java-backend": "JAVA GELİŞTİRİCİ",
             "full-stack": "FULL-STACK MÜHENDİSİ",
             ai: "YAPAY ZEKA TUTKUNU"
         },
@@ -1065,6 +1065,220 @@ const translations = {
             message: "Mesajınız başarıyla gönderildi. Yakında size geri döneceğim.",
             back: "Ana Sayfaya Geri Dön"
         }
+    },
+        ar: {
+        title: "محمود نجمة | مهندس برمجيات فول ستاك",
+        name: {
+            first: "محمود",
+            last: "نجمة"
+        },
+        explore: "استكشف",
+        section: {
+            about: "عني",
+            services: "الخدمات والأسعار",
+            projects: "المشاريع المميزة",
+            contact: "تواصل معي"
+        },
+        about: {
+            description: "مهندس برمجيات فول ستاك متفانٍ يتمتع بخبرة قوية في البرمجة الكائنية واهتمام كبير بتطوير الويب والذكاء الاصطناعي. يتقن Java، Spring Boot، Python، Django، وC# .NET. تنفيذ ناجح لمشاريع الويب مع التركيز على تطوير فول ستاك (الواجهة الخلفية والأمامية) والعمل الجماعي.",
+            education: "التعليم"
+        },
+        education: {
+            java: {
+                title: "مطور Java",
+                details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: JDBC، SQL متقدم<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
+            },
+            it_specialist: {
+                title: "اخصائي تكنولوجيا المعلومات في مجال تطوير التطبيقات",
+                details: "- البرمجة الكائنية باستخدام Java SE، C# (.NET)، Python، JavaScript، PHP<br>- تطوير الويب وقواعد البيانات، أنظمة Linux<br>- إدارة مشاريع تقنية المعلومات، العمليات التجارية<br>- الرياضيات وMS Office لعمليات تقنية المعلومات<br>- الإنجليزية التقنية، مهارات التواصل"
+            },
+            toggle: "إظهار التفاصيل",
+            toggleHide: "إخفاء التفاصيل"
+        },
+        skills: {
+            title: "المهارات التقنية",
+            languages: "لغات البرمجة",
+            frameworks: "إطارات العمل",
+            tools: "الأدوات والمنصات",
+            ai: "الذكاء الاصطناعي والتعلم الآلي"
+        },
+        tech: {
+            java: "Java",
+            python: "Python",
+            csharp: "#C",
+            javascript: "JavaScript",
+            sql: "SQL",
+            spring: "Spring Boot",
+            swiftui: "SwiftUI",
+            jetpack: "Jetpack Compose",
+            firebase: "Firebase",
+            integration: "اختبارات التكامل",
+            mockito: "Mockito",
+            react: "React",
+            rest_api: "REST API",
+            ai: "الذكاء الاصطناعي",
+            nlp: "معالجة اللغة الطبيعية",
+            django: "Django",
+            role_auth: "التفويض القائم على الأدوار",
+            pdf_export: "تصدير PDF",
+            ui_validation: "التحقق من واجهة المستخدم",
+            tensorflow: "TensorFlow",
+            computer_vision: "الرؤية الحاسوبية",
+            html5: "HTML5",
+            css: "CSS",
+            javascript: "JavaScript",
+            postgresql: "PostgreSQL",
+            database: "قاعدة بيانات",
+            canvas: "Canvas",
+            frontend: "الواجهة الأمامية",
+            dotnet: ".NET",
+            aws: "AWS",
+            gcp: "GCP",
+            docker: "Docker",
+            git: "Git",
+            postgresql: "PostgreSQL",
+            mysql: "MySQL",
+            ml: "التعلم الآلي",
+            cv: "الرؤية الحاسوبية",
+            "python-ai": "مكتبات Python للذكاء الاصطناعي"
+        },
+        title: {
+            "java-backend": "مطور Java",
+            "full-stack": "مهندس برمجيات فول ستاك",
+            ai: "متحمس للذكاء الاصطناعي"
+        },
+        services: {
+            subtitle: "خدمات تطوير احترافية مصممة خصيصًا لتلبية احتياجات عملك",
+            note: "<strong>ملاحظة:</strong> جميع الأسعار تقديرية. تعتمد التسعيرة النهائية على نطاق المشروع والمتطلبات. تواصل معي للحصول على عرض سعر مخصص يتناسب مع احتياجاتك الخاصة.",
+            cta: "ابدأ الآن",
+            backend: {
+                title: "تطوير الواجهة الخلفية",
+                price: "€2,500+",
+                features: [
+                    "تطوير واجهة برمجة تطبيقات REST باستخدام Spring Boot",
+                    "تصميم قواعد البيانات وتحسينها",
+                    "تنفيذ التوثيق والأمان",
+                    "هيكلية الخدمات المصغرة",
+                    "توثيق واختبار واجهة برمجة التطبيقات",
+                    "النشر على منصات السحابة"
+                ]
+            },
+            fullstack: {
+                title: "تطوير كامل فول ستاك",
+                price: "€4,000+",
+                features: [
+                    "تطوير تطبيقات ويب كاملة",
+                    "واجهة خلفية Spring Boot + واجهة أمامية React",
+                    "تصميم واجهة مستخدم/تجربة مستخدم متجاوب",
+                    "تكامل قواعد البيانات",
+                    "نظام توثيق المستخدمين",
+                    "لوحة تحكم إدارية"
+                ]
+            },
+            api: {
+                title: "تطوير واجهة برمجة التطبيقات",
+                price: "€1,800+",
+                features: [
+                    "تطوير واجهة برمجة تطبيقات REST مخصصة",
+                    "تكامل قواعد البيانات (PostgreSQL/MySQL)",
+                    "توثيق JWT",
+                    "توثيق واجهة برمجة التطبيقات باستخدام Swagger/OpenAPI",
+                    "تحسين الأداء",
+                    "جاهز للنشر"
+                ]
+            },
+            website: {
+                title: "حزمة موقع ويب تجاري",
+                price: "€1,500-€3,000",
+                features: [
+                    "موقع ويب احترافي للمحفظة",
+                    "نموذج اتصال مع إشعارات البريد الإلكتروني",
+                    "تصميم متجاوب للأجهزة المحمولة",
+                    "تحسين أساسي لمحركات البحث",
+                    "نظام إدارة المحتوى",
+                    "تكامل الوسائط الاجتماعية"
+                ]
+            },
+            ai: {
+                title: "تكامل الذكاء الاصطناعي",
+                price: "€3,500+",
+                features: [
+                    "واجهات برمجة تطبيقات معالجة النصوص/التلخيص",
+                    "تحليل الصور باستخدام TensorFlow",
+                    "تكامل الروبوتات الدردشية",
+                    "نشر نماذج التعلم الآلي",
+                    "لوحات بيانات تصور البيانات",
+                    "حلول ذكاء اصطناعي مخصصة"
+                ]
+            },
+            maintenance: {
+                title: "الصيانة والدعم",
+                price: "€500/شهر",
+                features: [
+                    "تحديثات البرمجيات المنتظمة",
+                    "إصلاح الأخطاء واستكشاف الأخطاء",
+                    "مراقبة الأداء",
+                    "تحديثات الأمان",
+                    "صيانة قواعد البيانات",
+                    "دعم طارئ على مدار الساعة"
+                ]
+            }
+        },
+        project: {
+            missing: {
+                title: "نظام تنبيه الأشخاص المفقودين فول ستاك",
+                description: "أداة شرطة تم تطويرها باستخدام Spring Boot، SwiftUI، وJetpack Compose، مع إشعارات Firebase، تتبع الموقع الجغرافي، ولوحة تحكم إدارية.",
+                duration: "6 أشهر"
+            },
+            banking: {
+                title: "نظام مصرفي فول ستاك",
+                description: "تطبيق مصرفي كامل التكامل مع تتبع البريد الإلكتروني/عنوان IP، دعم العملات المتعددة، معالجة المعاملات، واختبارات شاملة باستخدام Mockito.",
+                duration: "6 أشهر"
+            },
+            ai_text: {
+                title: "ملخص نصوص بالذكاء الاصطناعي فول ستاك",
+                description: "تطبيق تلخيص نصوص متعدد اللغات مدعوم بواجهة برمجة تطبيقات REST باستخدام Spring Boot مع قدرات متقدمة في معالجة اللغة الطبيعية.",
+                duration: "شهرين"
+            },
+            student: {
+                title: "بوابة طلابية فول ستاك",
+                description: "منصة تعليمية شاملة تتضمن التحكم في الوصول القائم على الأدوار، نظام الدرجات، وظيفة تصدير PDF، والاختبارات عبر الإنترنت.",
+                duration: "4 أشهر"
+            },
+            face_analysis: {
+                title: "تحليل الوجه بالذكاء الاصطناعي",
+                description: "نظام تصنيف الصور تم تطويره باستخدام Django وTensorFlow، مع معالجة تلقائية وواجهة مستخدم رسومية مخصصة.",
+                duration: "4 أشهر"
+            },
+            medical_diagnosis: {
+                title: "نظام التشخيص الطبي",
+                description: "تطبيق سطح مكتب يعتمد على التعلم الآلي، تم تطويره باستخدام .NET وML.NET، يتنبأ بالأمراض المحتملة من الأعراض التي يقدمها المستخدم. يتضمن ميزات مثل إدخال الأعراض باللغة الطبيعية، التنبؤ بالأمراض مع درجة الثقة، وواجهة مستخدم سهلة الاستخدام تعتمد على WPF.",
+                duration: "5 أشهر"
+            },
+            view: "عرض المشروع"
+        },
+        contact: {
+            info: "معلومات الاتصال",
+            location: "برلين، ألمانيا",
+            video: "فيديو عني",
+            phone: "+49 163 9769764"
+        },
+        form: {
+            name: "اسمك",
+            email: "بريدك الإلكتروني",
+            subject: "الموضوع",
+            message: "رسالتك",
+            submit: "إرسال الرسالة"
+        },
+       footer: {
+            copyright: "جميع الحقوق محفوظة محمود نجمة © 2025"
+        },
+        thank_you: {
+            title: "شكرًا",
+            heading: "شكرًا لك!",
+            message: "تم إرسال رسالتك بنجاح. سأتواصل معك قريبًا.",
+            back: "العودة إلى الصفحة الرئيسية"
+        }
     }
 };
 
@@ -1121,13 +1335,14 @@ function updateContent(lang) {
 
     // Update toggle buttons dynamically
     document.querySelectorAll('.toggle-details').forEach(button => {
-        const details = button.nextElementSibling;
-        const isHidden = details.style.display === 'none' || !details.style.display;
-        button.textContent = isHidden ? translations[lang].education.toggle : 
-            lang === 'pl' ? 'Ukryj szczegóły' : 
-            lang === 'fr' ? 'Masquer les détails' : 
-            lang === 'tr' ? 'Detayları Gizle' : 
-            'Details ausblenden';
+    const details = button.nextElementSibling;
+    const isHidden = details.style.display === 'none' || !details.style.display;
+    button.textContent = isHidden ? translations[lang].education.toggle : 
+        lang === 'ar' ? 'إخفاء التفاصيل' :
+        lang === 'pl' ? 'Ukryj szczegóły' : 
+        lang === 'fr' ? 'Masquer les détails' : 
+        lang === 'tr' ? 'Detayları Gizle' : 
+        'Details ausblenden';
     });
 
     // Update section indicators
@@ -1150,7 +1365,10 @@ function getSupportedLanguage(browserLang) {
         'fr': 'fr',
         'fr-FR': 'fr',
         'tr': 'tr',
-        'tr-TR': 'tr'
+        'tr-TR': 'tr',
+        'ar': 'ar',
+        'ar-SA': 'ar',
+        'ar-EG': 'ar'
     };
     const primaryLang = browserLang.split('-')[0];
     const supportedLang = langMap[browserLang] || langMap[primaryLang] || 'en';
@@ -1177,7 +1395,12 @@ function getLanguageFromCountry(countryCode) {
         'DE': 'de',
         'PL': 'pl',
         'FR': 'fr',
-        'TR': 'tr'
+        'TR': 'tr',
+        'SA': 'ar',
+        'EG': 'ar', 
+        'JO': 'ar', 
+        'LB': 'ar', 
+        'QA': 'ar'  
     };
     const lang = countryLangMap[countryCode] || 'en';
     console.log(`Country code: ${countryCode}, mapped to language: ${lang}`);
@@ -1210,13 +1433,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
-        const lang = e.target.value;
-        if (['en', 'de', 'pl', 'fr', 'tr'].includes(lang)) {
-            console.log(`Manual language selection: ${lang}`);
-            localStorage.setItem('language', lang);
-            updateContent(lang);
-        } else {
-            console.warn(`Invalid language selected: ${lang}`);
-        }
+    const lang = e.target.value;
+    if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
+        console.log(`Manual language selection: ${lang}`);
+        localStorage.setItem('language', lang);
+        updateContent(lang);
+    } else {
+        console.warn(`Invalid language selected: ${lang}`);
+    }
     });
 });
