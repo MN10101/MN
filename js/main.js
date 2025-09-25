@@ -30,32 +30,113 @@
     });
 })();
 
-// Dynamic title animation
+// Dynamic title animation - WITH ARABIC SUPPORT (FIXED)
 const titleSlider = document.querySelector('.title-slider');
 const titleUnderline = document.querySelector('.title-underline');
 const titleSegments = document.querySelectorAll('.title-segment');
 
 let currentIndex = 0;
+let titleInterval;
 
 function rotateTitle() {
+    const isArabic = document.documentElement.lang === 'ar';
+    
     currentIndex = (currentIndex + 1) % titleSegments.length;
-    const offset = -currentIndex * 3.5;
     
-    titleSegments.forEach((seg, index) => {
-        seg.classList.toggle('active', index === currentIndex);
-    });
+    // Different behavior for Arabic vs other languages
+    if (isArabic) {
+        // For Arabic: Use opacity and position instead of display none/flex
+        titleSegments.forEach((seg, index) => {
+            if (index === currentIndex) {
+                seg.style.opacity = '1';
+                seg.style.visibility = 'visible';
+                seg.style.position = 'relative';
+                seg.classList.add('active');
+            } else {
+                seg.style.opacity = '0';
+                seg.style.visibility = 'hidden';
+                seg.style.position = 'absolute';
+                seg.classList.remove('active');
+            }
+        });
+        
+        // No translation needed for Arabic
+        titleSlider.style.transform = 'translateY(0)';
+    } else {
+        // Original behavior for other languages
+        const offset = -currentIndex * 3.5;
+        
+        titleSegments.forEach((seg, index) => {
+            seg.style.opacity = '1';
+            seg.style.visibility = 'visible';
+            seg.style.position = 'relative';
+            seg.classList.toggle('active', index === currentIndex);
+        });
+        
+        titleSlider.style.transform = `translateY(${offset}rem)`;
+    }
     
-    titleSlider.style.transform = `translateY(${offset}rem)`;
-    
+    // Animate the underline
     titleUnderline.style.animation = 'none';
     void titleUnderline.offsetWidth;
     titleUnderline.style.animation = 'underlineGrow 1s ease forwards';
 }
 
-setInterval(rotateTitle, 3000);
+// Initialize titles based on language
+function initializeTitles() {
+    const isArabic = document.documentElement.lang === 'ar';
+    
+    if (isArabic) {
+        // For Arabic: Show only the first title initially using opacity/position
+        titleSegments.forEach((seg, index) => {
+            if (index === 0) {
+                seg.style.opacity = '1';
+                seg.style.visibility = 'visible';
+                seg.style.position = 'relative';
+                seg.classList.add('active');
+            } else {
+                seg.style.opacity = '0';
+                seg.style.visibility = 'hidden';
+                seg.style.position = 'absolute';
+                seg.classList.remove('active');
+            }
+        });
+        titleSlider.style.transform = 'translateY(0)';
+    } else {
+        // For other languages: Show all titles in slider
+        titleSegments.forEach((seg, index) => {
+            seg.style.opacity = '1';
+            seg.style.visibility = 'visible';
+            seg.style.position = 'relative';
+            seg.classList.toggle('active', index === 0);
+        });
+    }
+}
+
+// Restart title animation with new language settings
+function restartTitleAnimation() {
+    if (titleInterval) {
+        clearInterval(titleInterval);
+    }
+    initializeTitles();
+    titleInterval = setInterval(rotateTitle, 3000);
+}
+
+// Call initialization on page load
+document.addEventListener('DOMContentLoaded', () => {
+    restartTitleAnimation();
+    
+    // Also re-initialize when language changes
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', () => {
+            // Small delay to allow the language change to take effect
+            setTimeout(restartTitleAnimation, 100);
+        });
+    }
+});
 
 // Cursor trail effect
-const cursorTrail = document.querySelector('.cursor-trail');
 const trails = [];
 const trailCount = 10;
 
@@ -173,251 +254,162 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
 
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Make orbits interactive
+    document.querySelectorAll('.orbit').forEach(orbit => {
+        orbit.addEventListener('mouseenter', () => {
+            orbit.style.boxShadow = `0 0 15px ${getComputedStyle(orbit).color}`;
+            orbit.style.borderStyle = 'solid';
+        });
         
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Make orbits interactive
-document.querySelectorAll('.orbit').forEach(orbit => {
-    orbit.addEventListener('mouseenter', () => {
-        orbit.style.boxShadow = `0 0 15px ${getComputedStyle(orbit).color}`;
-        orbit.style.borderStyle = 'solid';
-    });
-    
-    orbit.addEventListener('mouseleave', () => {
-        orbit.style.boxShadow = 'none';
-        orbit.style.borderStyle = 'dashed';
-    });
-});
-
-// Pause animation on hover for better readability
-document.querySelector('.tech-orbits').addEventListener('mouseenter', () => {
-    document.querySelectorAll('.orbit').forEach(orbit => {
-        orbit.style.animationPlayState = 'paused';
-    });
-});
-
-document.querySelector('.tech-orbits').addEventListener('mouseleave', () => {
-    document.querySelectorAll('.orbit').forEach(orbit => {
-        orbit.style.animationPlayState = 'running';
-    });
-});
-
-// Keep orbit labels upright
-const orbitWrappers = document.querySelectorAll('.orbit');
-
-function updateLabelRotations() {
-    orbitWrappers.forEach(orbit => {
-        const wrapper = orbit.querySelector('.label-wrapper');
-        const computedStyle = getComputedStyle(orbit);
-        const transform = computedStyle.transform;
-
-        if (transform && transform !== 'none') {
-            const values = transform.split('(')[1].split(')')[0].split(',');
-            const a = values[0], b = values[1];
-            const angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
-            wrapper.style.transform = `translateX(-50%) rotate(${-angle}deg)`;
-        }
+        orbit.addEventListener('mouseleave', () => {
+            orbit.style.boxShadow = 'none';
+            orbit.style.borderStyle = 'dashed';
+        });
     });
 
-    requestAnimationFrame(updateLabelRotations);
-}
-
-updateLabelRotations();
-
-// Toggle education details
-document.querySelectorAll('.toggle-details').forEach(button => {
-    button.addEventListener('click', () => {
-        const details = button.nextElementSibling;
-        const isHidden = details.style.display === 'none' || !details.style.display;
-        const currentLang = document.documentElement.lang || 'en'; 
-        details.style.display = isHidden ? 'block' : 'none';
-        button.textContent = isHidden ? translations[currentLang].education.toggleHide : translations[currentLang].education.toggle;
+    // Pause animation on hover for better readability
+    document.querySelector('.tech-orbits').addEventListener('mouseenter', () => {
+        document.querySelectorAll('.orbit').forEach(orbit => {
+            orbit.style.animationPlayState = 'paused';
+        });
     });
-});
 
-// Section Indicator Logic
-const sections = document.querySelectorAll('.section');
-const indicatorsContainer = document.querySelector('.section-indicators');
-let lastScrollY = window.scrollY;
+    document.querySelector('.tech-orbits').addEventListener('mouseleave', () => {
+        document.querySelectorAll('.orbit').forEach(orbit => {
+            orbit.style.animationPlayState = 'running';
+        });
+    });
 
-// Map section IDs to custom indicator labels
-const sectionLabels = {
-    'about': 'About Me',
-    'projects': 'Projects',
-    'contact': 'Contact'
-};
+    // Keep orbit labels upright
+    const orbitWrappers = document.querySelectorAll('.orbit');
 
-// Create indicators dynamically
-sections.forEach((section, index) => {
-    const sectionId = section.getAttribute('id');
-    const sectionTitle = sectionLabels[sectionId] || section.querySelector('.section-title')?.textContent || sectionId;
-    const indicator = document.createElement('div');
-    indicator.classList.add('section-indicator');
-    indicator.setAttribute('data-section', sectionId);
-    indicator.innerHTML = `<span>${sectionTitle}</span>`;
-    indicatorsContainer.appendChild(indicator);
-});
+    function updateLabelRotations() {
+        orbitWrappers.forEach(orbit => {
+            const wrapper = orbit.querySelector('.label-wrapper');
+            const computedStyle = getComputedStyle(orbit);
+            const transform = computedStyle.transform;
 
-// Handle scroll events
-function handleScroll() {
-    const currentScrollY = window.scrollY;
-    const indicators = document.querySelectorAll('.section-indicator');
+            if (transform && transform !== 'none') {
+                const values = transform.split('(')[1].split(')')[0].split(',');
+                const a = values[0], b = values[1];
+                const angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+                wrapper.style.transform = `translateX(-50%) rotate(${-angle}deg)`;
+            }
+        });
 
-    // Hide indicators when near the top of the page
-    if (currentScrollY <= 100) {
-        indicatorsContainer.classList.add('hidden');
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        lastScrollY = currentScrollY;
-        return;
-    } else {
-        indicatorsContainer.classList.remove('hidden');
+        requestAnimationFrame(updateLabelRotations);
     }
 
-    sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        const indicator = indicators[index];
+    updateLabelRotations();
 
-        // Check if section is in viewport
-        const isInView = rect.top >= -window.innerHeight * 0.2 && rect.top <= window.innerHeight * 0.5;
-
-        if (isInView) {
-            indicator.classList.add('active');
-        } else {
-            indicator.classList.remove('active');
-        }
+    // Toggle education details
+    document.querySelectorAll('.toggle-details').forEach(button => {
+        button.addEventListener('click', () => {
+            const details = button.nextElementSibling;
+            const isHidden = details.style.display === 'none' || !details.style.display;
+            const currentLang = document.documentElement.lang || 'en'; 
+            details.style.display = isHidden ? 'block' : 'none';
+            button.textContent = isHidden ? translations[currentLang].education.toggleHide : translations[currentLang].education.toggle;
+        });
     });
 
-    lastScrollY = currentScrollY;
-}
+    // Section Indicator Logic
+    const sections = document.querySelectorAll('.section');
+    const indicatorsContainer = document.querySelector('.section-indicators');
+    let lastScrollY = window.scrollY;
 
-// Throttle scroll event for performance
-function throttle(fn, wait) {
-    let lastCall = 0;
-    return function (...args) {
-        const now = new Date().getTime();
-        if (now - lastCall < wait) return;
-        lastCall = now;
-        return fn(...args);
+    // Map section IDs to custom indicator labels
+    const sectionLabels = {
+        'about': 'About Me',
+        'projects': 'Projects',
+        'contact': 'Contact'
     };
-}
 
-// Dynamic title animation - WITH ARABIC SUPPORT
-const titleSlider = document.querySelector('.title-slider');
-const titleUnderline = document.querySelector('.title-underline');
-const titleSegments = document.querySelectorAll('.title-segment');
+    // Create indicators dynamically
+    sections.forEach((section, index) => {
+        const sectionId = section.getAttribute('id');
+        const sectionTitle = sectionLabels[sectionId] || section.querySelector('.section-title')?.textContent || sectionId;
+        const indicator = document.createElement('div');
+        indicator.classList.add('section-indicator');
+        indicator.setAttribute('data-section', sectionId);
+        indicator.innerHTML = `<span>${sectionTitle}</span>`;
+        indicatorsContainer.appendChild(indicator);
+    });
 
-let currentIndex = 0;
+    // Handle scroll events
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        const indicators = document.querySelectorAll('.section-indicator');
 
-function rotateTitle() {
-    const isArabic = document.documentElement.lang === 'ar';
-    
-    currentIndex = (currentIndex + 1) % titleSegments.length;
-    
-    // Different behavior for Arabic vs other languages
-    if (isArabic) {
-        // For Arabic: Hide all segments except the active one
-        titleSegments.forEach((seg, index) => {
-            if (index === currentIndex) {
-                seg.style.display = 'flex';
-                seg.classList.add('active');
-            } else {
-                seg.style.display = 'none';
-                seg.classList.remove('active');
-            }
-        });
-        
-        // No translation needed for Arabic since we're showing/hiding
-        titleSlider.style.transform = 'translateY(0)';
-    } else {
-        // Original behavior for other languages
-        const offset = -currentIndex * 3.5;
-        
-        titleSegments.forEach((seg, index) => {
-            seg.style.display = 'flex'; 
-            seg.classList.toggle('active', index === currentIndex);
-        });
-        
-        titleSlider.style.transform = `translateY(${offset}rem)`;
-    }
-    
-    // Animate the underline
-    titleUnderline.style.animation = 'none';
-    void titleUnderline.offsetWidth;
-    titleUnderline.style.animation = 'underlineGrow 1s ease forwards';
-}
-
-// Initialize titles based on language
-function initializeTitles() {
-    const isArabic = document.documentElement.lang === 'ar';
-    
-    if (isArabic) {
-        // For Arabic: Show only the first title initially, hide others
-        titleSegments.forEach((seg, index) => {
-            if (index === 0) {
-                seg.style.display = 'flex';
-                seg.classList.add('active');
-            } else {
-                seg.style.display = 'none';
-                seg.classList.remove('active');
-            }
-        });
-        titleSlider.style.transform = 'translateY(0)';
-    } else {
-        // For other languages: Show all titles in slider
-        titleSegments.forEach((seg, index) => {
-            seg.style.display = 'flex';
-            seg.classList.toggle('active', index === 0);
-        });
-    }
-}
-
-// Call initialization on page load
-document.addEventListener('DOMContentLoaded', () => {
-    initializeTitles();
-    
-    // Also re-initialize when language changes
-    const languageSelect = document.getElementById('language-select');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', () => {
-            // Small delay to allow the language change to take effect
-            setTimeout(initializeTitles, 100);
-        });
-    }
-});
-
-setInterval(rotateTitle, 3000);
-
-// Add scroll event listener
-window.addEventListener('scroll', throttle(handleScroll, 100));
-
-// Make indicators clickable
-indicatorsContainer.addEventListener('click', (e) => {
-    const indicator = e.target.closest('.section-indicator');
-    if (indicator) {
-        const sectionId = indicator.getAttribute('data-section');
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        // Hide indicators when near the top of the page
+        if (currentScrollY <= 100) {
+            indicatorsContainer.classList.add('hidden');
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            lastScrollY = currentScrollY;
+            return;
+        } else {
+            indicatorsContainer.classList.remove('hidden');
         }
+
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const indicator = indicators[index];
+
+            // Check if section is in viewport
+            const isInView = rect.top >= -window.innerHeight * 0.2 && rect.top <= window.innerHeight * 0.5;
+
+            if (isInView) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+
+        lastScrollY = currentScrollY;
     }
+
+    // Throttle scroll event for performance
+    function throttle(fn, wait) {
+        let lastCall = 0;
+        return function (...args) {
+            const now = new Date().getTime();
+            if (now - lastCall < wait) return;
+            lastCall = now;
+            return fn(...args);
+        };
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', throttle(handleScroll, 100));
+
+    // Make indicators clickable
+    indicatorsContainer.addEventListener('click', (e) => {
+        const indicator = e.target.closest('.section-indicator');
+        if (indicator) {
+            const sectionId = indicator.getAttribute('data-section');
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+
+    // Initial check on page load
+    handleScroll();
 });
-
-// Initial check on page load
-handleScroll();
-
-});
-
-
