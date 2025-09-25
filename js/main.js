@@ -101,7 +101,7 @@ document.addEventListener('touchmove', (e) => {
 });
 
 document.addEventListener('touchend', () => {
-    hideTrails(); // Hide trails when touch ends
+    hideTrails(); 
 });
 
 // Handle mouse events (for desktop)
@@ -311,6 +311,92 @@ function throttle(fn, wait) {
     };
 }
 
+// Dynamic title animation - WITH ARABIC SUPPORT
+const titleSlider = document.querySelector('.title-slider');
+const titleUnderline = document.querySelector('.title-underline');
+const titleSegments = document.querySelectorAll('.title-segment');
+
+let currentIndex = 0;
+
+function rotateTitle() {
+    const isArabic = document.documentElement.lang === 'ar';
+    
+    currentIndex = (currentIndex + 1) % titleSegments.length;
+    
+    // Different behavior for Arabic vs other languages
+    if (isArabic) {
+        // For Arabic: Hide all segments except the active one
+        titleSegments.forEach((seg, index) => {
+            if (index === currentIndex) {
+                seg.style.display = 'flex';
+                seg.classList.add('active');
+            } else {
+                seg.style.display = 'none';
+                seg.classList.remove('active');
+            }
+        });
+        
+        // No translation needed for Arabic since we're showing/hiding
+        titleSlider.style.transform = 'translateY(0)';
+    } else {
+        // Original behavior for other languages
+        const offset = -currentIndex * 3.5;
+        
+        titleSegments.forEach((seg, index) => {
+            seg.style.display = 'flex'; 
+            seg.classList.toggle('active', index === currentIndex);
+        });
+        
+        titleSlider.style.transform = `translateY(${offset}rem)`;
+    }
+    
+    // Animate the underline
+    titleUnderline.style.animation = 'none';
+    void titleUnderline.offsetWidth;
+    titleUnderline.style.animation = 'underlineGrow 1s ease forwards';
+}
+
+// Initialize titles based on language
+function initializeTitles() {
+    const isArabic = document.documentElement.lang === 'ar';
+    
+    if (isArabic) {
+        // For Arabic: Show only the first title initially, hide others
+        titleSegments.forEach((seg, index) => {
+            if (index === 0) {
+                seg.style.display = 'flex';
+                seg.classList.add('active');
+            } else {
+                seg.style.display = 'none';
+                seg.classList.remove('active');
+            }
+        });
+        titleSlider.style.transform = 'translateY(0)';
+    } else {
+        // For other languages: Show all titles in slider
+        titleSegments.forEach((seg, index) => {
+            seg.style.display = 'flex';
+            seg.classList.toggle('active', index === 0);
+        });
+    }
+}
+
+// Call initialization on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initializeTitles();
+    
+    // Also re-initialize when language changes
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', () => {
+            // Small delay to allow the language change to take effect
+            setTimeout(initializeTitles, 100);
+        });
+    }
+});
+
+setInterval(rotateTitle, 3000);
+
 // Add scroll event listener
 window.addEventListener('scroll', throttle(handleScroll, 100));
 
@@ -333,4 +419,5 @@ indicatorsContainer.addEventListener('click', (e) => {
 handleScroll();
 
 });
+
 
