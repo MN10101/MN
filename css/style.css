@@ -1422,427 +1422,497 @@ footer {
     animation: flame-pulse 1.5s ease-in-out infinite;
 }
 
-/* Arabic RTL Specific Styles */
-html[lang="ar"] {
-    direction: rtl;
-    font-family: 'Noto Naskh Arabic', 'Tahoma', 'Arial', sans-serif;
-}
+/* Arabic RTL Specific Styles - DESKTOP ONLY */
+@media (min-width: 1025px) {
+    html[lang="ar"] {
+        direction: rtl;
+        font-family: 'Noto Naskh Arabic', 'Tahoma', 'Arial', sans-serif;
+    }
 
-html[lang="ar"] body {
-    direction: rtl;
-}
+    html[lang="ar"] body {
+        direction: rtl;
+    }
 
-/* MOVED TO LEFT SIDE FOR ARABIC ONLY */
-html[lang="ar"] .section-indicators {
-    left: 2rem !important;
-    right: auto !important;
-}
-
-/* Scroll indicator moved to LEFT for Arabic - MORE SPECIFIC SELECTOR */
-html[lang="ar"] .hero .scroll-indicator,
-html[lang="ar"] header.hero .scroll-indicator {
-    left: 2rem !important;
-    right: auto !important;
-    transform: none !important;
-    align-items: flex-start !important;
-}
-
-/* Language Toggle MOVED TO LEFT SIDE FOR ARABIC */
-html[lang="ar"] .language-toggle {
-    left: 1rem !important;
-    right: auto !important;
-}
-
-/* Mobile adjustments for Arabic left positioning */
-@media (max-width: 768px) {
+    /* MOVED TO LEFT SIDE FOR ARABIC ONLY - DESKTOP */
     html[lang="ar"] .section-indicators {
-        left: 0.5rem !important;
+        left: 2rem !important;
         right: auto !important;
     }
-    
-    /* FIX: Mobile scroll indicator moved to LEFT for Arabic */
+
+    /* Scroll indicator moved to LEFT for Arabic - DESKTOP ONLY */
     html[lang="ar"] .hero .scroll-indicator,
     html[lang="ar"] header.hero .scroll-indicator {
-        left: 0.8rem !important;
+        left: 2rem !important;
         right: auto !important;
-        bottom: 1rem !important;
+        transform: none !important;
+        align-items: flex-start !important;
     }
-    
-    html[lang="ar"] .language-toggle {
-        left: 0.5rem !important;
-        right: auto !important;
-    }
-}
 
-/* Tablet adjustments for Arabic left positioning */
-@media (min-width: 769px) and (max-width: 1024px) {
-    html[lang="ar"] .section-indicators {
-        left: 1rem !important;
-        right: auto !important;
-    }
-    
-    /* Tablet scroll indicator moved to LEFT for Arabic */
-    html[lang="ar"] .hero .scroll-indicator,
-    html[lang="ar"] header.hero .scroll-indicator {
-        left: 1.5rem !important;
-        right: auto !important;
-    }
-    
+    /* Language Toggle MOVED TO LEFT SIDE FOR ARABIC - DESKTOP */
     html[lang="ar"] .language-toggle {
         left: 1rem !important;
         right: auto !important;
     }
-}
 
-/* Rest of your existing Arabic styles remain exactly the same below this line */
-html[lang="ar"] .title-segment {
-    font-size: 1.3rem; 
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-light);
-    padding: 0.5rem 2.5rem 0.5rem 1rem; 
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: unset;
-    min-width: max-content;
-    width: 100%;
-    font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif; 
-}
+    /* BACK-TO-TOP MOVED TO LEFT SIDE FOR ARABIC - DESKTOP */
+    html[lang="ar"] .back-to-top {
+        left: 2rem !important;
+        right: auto !important;
+    }
 
-html[lang="ar"] .main-title .title-line[data-i18n="name.last"] {
-    display: inline-block;
-    transform: translateY(0.8rem);
-}
-
-html[lang="ar"] .title-segment.active {
-    color: var(--text);
-    font-weight: 700; 
-}
-
-html[lang="ar"] .dynamic-title {
-    width: 100%;
-    max-width: 90vw;
-    margin: 0 auto;
-    height: 3.5rem; 
-}
-
-html[lang="ar"] .title-mask {
-    width: 100%;
-    overflow: visible;
-    height: 100%;
-}
-
-html[lang="ar"] .title-slider {
-    width: 100%;
-    height: 100%;
-}
-
-html[lang="ar"] .title-segment::before {
-    content: '' !important;
-    position: absolute;
-    left: auto !important;
-    right: 1rem !important;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0.6rem; 
-    height: 0.6rem;
-    border-radius: 50%;
-}
-
-html[lang="ar"] .title-segment.java-backend::before {
-    background: var(--java);
-}
-
-html[lang="ar"] .title-segment.full-stack::before {
-    background: var(--accent);
-}
-
-html[lang="ar"] .title-segment.ai::before {
-    background: var(--python);
-}
-
-html[lang="ar"] .contact-link[href*="tel"] span {
-    direction: ltr !important;
-    unicode-bidi: embed !important;
-    display: inline-block;
-}
-
-@media (max-width: 768px) {
+    /* Arabic title styles for desktop */
     html[lang="ar"] .title-segment {
-        font-size: 0.85rem;
-        height: 3.2rem;
-        padding: 0 1.8rem 0 0.6rem;
-        letter-spacing: 0.02em;
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        padding: 0.5rem 2.5rem 0.5rem 1rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
         white-space: nowrap;
-        overflow: visible !important;
-        text-overflow: unset !important;
+        overflow: visible;
+        text-overflow: unset;
         min-width: max-content;
-        width: auto !important;
-        max-width: none !important;
-        flex-shrink: 0;
+        width: 100%;
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
     }
-    
+
+    html[lang="ar"] .main-title .title-line[data-i18n="name.last"] {
+        display: inline-block;
+        transform: translateY(0.8rem);
+    }
+
+    html[lang="ar"] .title-segment.active {
+        color: var(--text);
+        font-weight: 700;
+    }
+
     html[lang="ar"] .dynamic-title {
-        max-width: 100vw !important;
-        height: 3.2rem;
-        overflow: visible !important;
+        width: 100%;
+        max-width: 90vw;
+        margin: 0 auto;
+        height: 3.5rem;
     }
-    
+
     html[lang="ar"] .title-mask {
-        overflow: visible !important;
-        width: auto !important;
-        max-width: none !important;
+        width: 100%;
+        overflow: visible;
+        height: 100%;
     }
-    
+
     html[lang="ar"] .title-slider {
-        width: auto !important;
-        max-width: none !important;
+        width: 100%;
+        height: 100%;
     }
-    
+
     html[lang="ar"] .title-segment::before {
-        width: 0.4rem;
-        height: 0.4rem;
-        right: 0.6rem !important;
+        content: '' !important;
+        position: absolute;
+        left: auto !important;
+        right: 1rem !important;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
     }
-    
-    html[lang="ar"] .hero-content {
-        max-width: 100vw !important;
-        padding: 1rem 0.5rem !important;
+
+    html[lang="ar"] .title-segment.java-backend::before {
+        background: var(--java);
     }
-    
-    html[lang="ar"] .title-container {
-        max-width: 100vw !important;
-        width: 100% !important;
+
+    html[lang="ar"] .title-segment.full-stack::before {
+        background: var(--accent);
     }
-    
-    html[lang="ar"] .contact-link[href*="tel"] {
-        direction: ltr !important;
-        unicode-bidi: isolate !important;
+
+    html[lang="ar"] .title-segment.ai::before {
+        background: var(--python);
     }
-    
+
     html[lang="ar"] .contact-link[href*="tel"] span {
         direction: ltr !important;
         unicode-bidi: embed !important;
-        text-align: left !important;
+        display: inline-block;
+    }
+
+    /* Fix for Arabic title transitions to prevent layout shift - DESKTOP */
+    html[lang="ar"] .title-slider {
+        position: relative;
+        height: 3.5rem;
+        width: 100%;
+    }
+
+    html[lang="ar"] .title-segment {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    html[lang="ar"] .title-segment:not(.active) {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    html[lang="ar"] .title-segment.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    html[lang="ar"] .about-content {
+        text-align: right;
+    }
+
+    html[lang="ar"] .education-list li {
+        text-align: right;
+    }
+
+    html[lang="ar"] .education-detail {
+        border-left: none;
+        border-right: 2px solid var(--accent);
+        padding-left: 0;
+        padding-right: 1.2rem;
+    }
+
+    html[lang="ar"] .skills-grid {
+        text-align: right;
+    }
+
+    html[lang="ar"] .project-details {
+        text-align: right;
+    }
+
+    html[lang="ar"] .form-group input,
+    html[lang="ar"] .form-group textarea {
+        text-align: right;
+        direction: rtl;
+    }
+
+    html[lang="ar"] .main-title {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        letter-spacing: normal;
+    }
+
+    html[lang="ar"] .section-title {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+    }
+
+    html[lang="ar"] .service-title,
+    html[lang="ar"] .project-details h3,
+    html[lang="ar"] .skill-category h4 {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+    }
+
+    html[lang="ar"] .contact-link[href*="tel"],
+    html[lang="ar"] .contact-link[href*="mailto"] {
+        direction: ltr;
+        unicode-bidi: isolate;
+        flex-direction: row;
+    }
+
+    html[lang="ar"] .contact-link i {
+        margin-left: 0.5rem;
+        margin-right: 0;
+    }
+
+    html[lang="ar"] .contact-link.phone span {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+        display: inline-block;
+    }
+
+    /* Ensure RTL layout for other elements */
+    html[lang="ar"] .about-text,
+    html[lang="ar"] .service-card,
+    html[lang="ar"] .contact-info {
+        text-align: right;
+    }
+
+    html[lang="ar"] .toggle-details {
+        margin-right: 0;
+        margin-left: 0.5rem;
+    }
+
+    html[lang="ar"] .contact-link {
+        justify-content: flex-end;
+        text-align: right;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/*  NON-DESKTOP DEVICES (Tablet & Mobile)  */
+@media (max-width: 1024px) {
+    html[lang="ar"] { direction: rtl; }
+
+    html[lang="ar"] .hero .scroll-indicator,
+    html[lang="ar"] header.hero .scroll-indicator,
+    html[lang="ar"] .back-to-top,
+    .section-indicators {
+        left: 0.8rem !important; /* moved to left like back-to-top */
+        right: auto !important;
+        transform: none !important;
+    }
+
+    .hero .scroll-indicator,
+    header.hero .scroll-indicator {
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+    }
+
+    html[lang="ar"] .title-underline { display: block !important; }
+
     html[lang="ar"] .title-segment {
-        font-size: 1rem;
-        padding: 0 2rem 0 0.8rem;
-        letter-spacing: 0.03em;
-        white-space: nowrap;
+        font-size: clamp(0.7rem, 3vw, 1rem) !important;
+        white-space: normal !important;
         overflow: visible !important;
         text-overflow: unset !important;
-        min-width: max-content;
-        width: auto !important;
-        max-width: none !important;
-    }
-    
-    html[lang="ar"] .dynamic-title {
+        line-height: 1.4 !important;
+        height: auto !important;
+        min-height: 3.2rem;
+        padding: 0.5rem 2rem 0.5rem 1.2rem !important;
+        text-align: right !important;
+        word-break: keep-all;
+        word-wrap: normal;
         max-width: 100vw !important;
-        overflow: visible !important;
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        position: static;
+        box-sizing: border-box !important;
+        unicode-bidi: embed;
+        letter-spacing: 0.02em;
     }
-    
+
+    html[lang="ar"] .title-segment.active {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    html[lang="ar"] .dynamic-title {
+        height: auto !important;
+        min-height: 3.2rem;
+        max-width: 95vw !important;
+        overflow: visible !important;
+        width: 100%;
+        box-sizing: border-box !important;
+    }
+
     html[lang="ar"] .title-mask {
         overflow: visible !important;
-        width: auto !important;
-        max-width: none !important;
+        height: auto !important;
     }
-    
+
+    html[lang="ar"] .title-slider {
+        position: relative !important;
+        height: auto !important;
+        transform: none !important;
+        width: 100%;
+    }
+
+    html[lang="ar"] .title-segment:not(.active) {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+
+    html[lang="ar"] .title-segment.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+    }
+
+    html[lang="ar"] .title-segment span {
+        display: block;
+        width: 100%;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="ar"] .title-segment.ai::before {
+        content: '' !important;
+        position: absolute !important;
+        right: 1rem !important;
+        left: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 0.5rem !important;
+        height: 0.5rem !important;
+        border-radius: 50% !important;
+        margin: 0 !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before { background: var(--java) !important; }
+    html[lang="ar"] .title-segment.full-stack::before { background: var(--accent) !important; }
+    html[lang="ar"] .title-segment.ai::before       { background: var(--python) !important; }
+
+    html[lang="ar"] .about-content,
+    html[lang="ar"] .education-list li,
+    html[lang="ar"] .skills-grid,
+    html[lang="ar"] .project-details,
+    html[lang="ar"] .about-text,
+    html[lang="ar"] .service-card,
+    html[lang="ar"] .contact-info,
+    html[lang="ar"] .contact-link {
+        text-align: right !important;
+        direction: rtl !important;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .education-detail {
+        border-left: none;
+        border-right: 2px solid var(--accent);
+        padding-left: 0;
+        padding-right: 1.2rem;
+    }
+
+    html[lang="ar"] .form-group input,
+    html[lang="ar"] .form-group textarea {
+        text-align: right !important;
+        direction: rtl !important;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .toggle-details { margin-right: 0; margin-left: 0.5rem; }
+    html[lang="ar"] .contact-link { justify-content: flex-end; }
+
+    html[lang="ar"] .section-title,
+    html[lang="ar"] .service-title,
+    html[lang="ar"] .project-details h3,
+    html[lang="ar"] .skill-category h4 {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        text-align: center !important;
+        unicode-bidi: embed;
+    }
+
     html[lang="ar"] .contact-link[href*="tel"] span {
         direction: ltr !important;
         unicode-bidi: embed !important;
     }
+
+    html[lang="ar"] .contact-link[href^="tel"],
+    html[lang="ar"] .contact-link[href^="mailto"],
+    html[lang="ar"] a.contact-link[href^="tel"],
+    html[lang="ar"] a.contact-link[href^="mailto"] {
+        direction: ltr !important;
+        unicode-bidi: isolate-override !important;
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        padding-inline-start: 0.25rem !important;
+        padding-inline-end: 0.25rem !important;
+    }
+
+    html[lang="ar"] .contact-link[href^="tel"] span,
+    html[lang="ar"] .contact-link[href^="mailto"] span {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+        white-space: nowrap !important;
+    }
+
+    html[lang="ar"] .contact-link .icon,
+    html[lang="ar"] .contact-link svg,
+    html[lang="ar"] .contact-link i {
+        flex-shrink: 0 !important;
+        order: -1 !important;
+        margin-inline-end: 0.35rem !important;
+        margin-inline-start: 0 !important;
+    }
+
+    html[lang="ar"] .contact-link[href^="tel"] span::before {
+        content: '\200E' !important;
+        display: inline-block !important;
+        width: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-indicators,
+    .back-to-top { left: 0.8rem; right: auto; }
+
+    .hero .scroll-indicator,
+    header.hero .scroll-indicator {
+        left: 50%;
+        bottom: 0.8rem;
+    }
+
+    html[lang="ar"] .title-segment {
+        font-size: clamp(0.8rem, 3.5vw, 1.1rem) !important;
+        padding: 0.6rem 1.8rem 0.6rem 0.8rem !important;
+        letter-spacing: 0.02em !important;
+        line-height: 1.5 !important;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .dynamic-title {
+        max-width: 98vw !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="ar"] .title-segment.ai::before {
+        right: 0.8rem !important;
+        width: 0.4rem !important;
+        height: 0.4rem !important;
+    }
+
+    html[lang="ar"] .hero-content {
+        padding-left: 0.3rem !important;
+        padding-right: 0.3rem !important;
+    }
+
+    html[lang="tr"] .title-segment { font-size: clamp(0.55rem, 2.3vw, 0.75rem); }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section-indicators,
+    .back-to-top { left: 1.5rem; right: auto; }
+
+    .hero .scroll-indicator,
+    header.hero .scroll-indicator { left: 50%; }
 }
 
 @media (max-width: 480px) {
     html[lang="ar"] .title-segment {
-        font-size: 0.75rem;
-        padding: 0 1.2rem 0 0.4rem;
-        letter-spacing: 0.01em;
+        font-size: clamp(0.75rem, 4vw, 1rem) !important;
+        padding: 0.5rem 1.5rem 0.5rem 0.5rem !important;
+        line-height: 1.5 !important;
+        unicode-bidi: embed;
     }
-    
-    html[lang="ar"] .title-segment::before {
-        width: 0.3rem;
-        height: 0.3rem;
-        right: 0.4rem !important;
-    }
-    
-    html[lang="ar"] .hero {
-        overflow-x: visible !important;
-    }
-    
-    html[lang="ar"] .container {
+
+    html[lang="ar"] .dynamic-title {
         max-width: 100vw !important;
-        overflow-x: visible !important;
+        box-sizing: border-box !important;
     }
-    
-    html[lang="ar"] .contact-link[href*="tel"] span {
-        font-size: 0.9rem;
-        direction: ltr !important;
-        unicode-bidi: embed !important;
-    }
-}
 
-html[lang="ar"] .contact-link[href*="tel"],
-html[lang="ar"] .contact-link[href*="mailto"] {
-    direction: ltr;
-    unicode-bidi: isolate;
-    flex-direction: row;
-}
-
-html[lang="ar"] .contact-link i {
-    margin-left: 0.5rem;
-    margin-right: 0;
-}
-
-html[lang="ar"] .contact-link.phone span {
-    direction: ltr !important;
-    unicode-bidi: embed !important;
-    display: inline-block;
-}
-
-@media (max-width: 768px) {
-    .language-toggle {
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="ar"] .title-segment.ai::before {
         right: 0.5rem !important;
-        left: auto !important;
+        width: 0.3rem !important;
+        height: 0.3rem !important;
     }
 }
 
-html[lang="ar"] .about-content {
-    text-align: right;
-}
 
-html[lang="ar"] .education-list li {
-    text-align: right;
-}
 
-html[lang="ar"] .education-detail {
-    border-left: none;
-    border-right: 2px solid var(--accent);
-    padding-left: 0;
-    padding-right: 1.2rem;
-}
-
-html[lang="ar"] .skills-grid {
-    text-align: right;
-}
-
-html[lang="ar"] .project-details {
-    text-align: right;
-}
-
-html[lang="ar"] .form-group input,
-html[lang="ar"] .form-group textarea {
-    text-align: right;
-    direction: rtl;
-}
-
-/* BACK-TO-TOP MOVED TO LEFT SIDE FOR ALL VERSIONS */
-html[lang="ar"] .back-to-top {
-    left: 2rem !important;
-    right: auto !important;
-}
-
-@media (max-width: 768px) {
-    html[lang="ar"] .back-to-top {
-        left: 0.8rem !important;
-        right: auto !important;
-    }
-}
-
-html[lang="ar"] .main-title {
-    font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
-    letter-spacing: normal;
-}
-
-html[lang="ar"] .section-title {
-    font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
-}
-
-html[lang="ar"] .service-title,
-html[lang="ar"] .project-details h3,
-html[lang="ar"] .skill-category h4 {
-    font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
-}
-
-html[lang="ar"] .title-segment {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-html[lang="ar"] .title-segment:not(.active) {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-}
-
-html[lang="ar"] .title-segment.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-html[lang="ar"] .title-mask {
-    position: relative;
-    height: 3.5rem;
-}
-
-html[lang="ar"] .title-slider {
-    position: relative;
-    height: 100%;
-}
-
-@media (max-width: 768px) {
-    html[lang="ar"] .title-mask {
-        height: 3.2rem;
-    }
-    
-    html[lang="ar"] .title-segment:not(.active) {
-        transform: translateY(-5px);
-    }
-}
-
-/* Fix for Arabic title transitions to prevent layout shift */
-html[lang="ar"] .title-slider {
-    position: relative;
-    height: 3.5rem; 
-    width: 100%;
-}
-
-html[lang="ar"] .title-segment {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    display: flex !important; 
-    align-items: center;
-    justify-content: center;
-}
-
-html[lang="ar"] .title-segment:not(.active) {
-    opacity: 0;
-    visibility: hidden;
-}
-
-html[lang="ar"] .title-segment.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-@media (max-width: 768px) {
-    html[lang="ar"] .title-slider {
-        height: 3.2rem;
-    }
-}
 
 
 @media (max-width: 768px) {
@@ -2422,13 +2492,13 @@ html[lang="ar"] .title-segment.active {
 .language-toggle {
     position: fixed;
     top: 1rem;
-    right: 1rem;
+    right: 1.5rem; /* moved slightly to the right */
     z-index: 1000;
 }
 
 html[lang="ar"] .language-toggle {
     right: auto;
-    left: 1rem;
+    left: 1.5rem; /* moved slightly to the right for RTL */
 }
 
 #language-select {
@@ -2461,9 +2531,9 @@ img {
   height: auto;
 }
 
-/* Nest Hub (1280x600) and Nest Hub Max (1280x800) specific fixes */
+
+/* Nest Hub Max (1280x800) specific fixes */
 @media (max-width: 1280px) and (max-height: 800px) {
-  /* Adjust layout for smaller height screens */
   body {
     overflow-x: hidden;
   }
@@ -2487,6 +2557,33 @@ img {
     padding: 40px 0 !important;
   }
 }
+
+/* Nest Hub (1280x600) - same behavior as Nest Hub Max */
+@media (max-width: 1280px) and (max-height: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 40px 20px !important;
+    min-height: auto !important;
+  }
+
+  .profile-container {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  .projects-grid,
+  .contact-container {
+    gap: 1rem !important;
+  }
+
+  .section {
+    padding: 40px 0 !important;
+  }
+}
+
 
 /* Mobile (up to 768px) */
 @media (max-width: 768px) {
