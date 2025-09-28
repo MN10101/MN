@@ -1392,15 +1392,15 @@ async function getCountryCode() {
 // Function to map country code to supported language
 function getLanguageFromCountry(countryCode) {
     const countryLangMap = {
-        'DE': 'de',
-        'PL': 'pl',
-        'FR': 'fr',
-        'TR': 'tr',
-        'SA': 'ar',
-        'EG': 'ar', 
-        'JO': 'ar', 
-        'LB': 'ar', 
-        'QA': 'ar'  
+        'DE': 'de',      
+        'PL': 'pl',     
+        'FR': 'fr',      
+        'TR': 'tr',      
+        // Arabic countries
+        'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
+        'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
+        'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
+        'TN': 'ar', 'LY': 'ar', 'SD': 'ar', 'SO': 'ar'
     };
     const lang = countryLangMap[countryCode] || 'en';
     console.log(`Country code: ${countryCode}, mapped to language: ${lang}`);
@@ -1433,13 +1433,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
-        console.log(`Manual language selection: ${lang}`);
-        localStorage.setItem('language', lang);
-        updateContent(lang);
-    } else {
-        console.warn(`Invalid language selected: ${lang}`);
-    }
+        const lang = e.target.value;
+        if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
+            console.log(`Manual language selection: ${lang}`);
+            localStorage.setItem('language', lang);
+            updateContent(lang);
+        } else {
+            console.warn(`Invalid language selected: ${lang}`);
+        }
     });
 });
