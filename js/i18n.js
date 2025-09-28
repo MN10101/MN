@@ -1085,7 +1085,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "مطور Java",
+                title: "Java مطور",
                 details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: JDBC، SQL متقدم<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
             },
             it_specialist: {
