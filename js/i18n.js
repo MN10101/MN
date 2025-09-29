@@ -185,7 +185,7 @@ const translations = {
                 duration: "4 Months"
             },
             medical_diagnosis: {
-                title: "Medical Diagnosis System",
+                title: "AI Medical Diagnosis System",
                 description: "A machine learning-based desktop application built with .NET and ML.NET that predicts potential diseases from user-provided symptoms. Features include natural language symptom input, disease prediction with confidence score, and a WPF-based user-friendly interface.",
                 duration: "5 Months"
             },
@@ -398,7 +398,7 @@ const translations = {
                 duration: "4 Monate"
             },
             medical_diagnosis: {
-                title: "Medizinisches Diagnosesystem",
+                title: "KI-Medizinisches Diagnosesystem",
                 description: "Eine auf maschinellem Lernen basierende Desktop-Anwendung, entwickelt mit .NET und ML.NET, die potenzielle Krankheiten aus benutzerdefinierten Symptomen vorhersagt. Funktionen umfassen Eingabe von Symptomen in natürlicher Sprache, Krankheitsvorhersage mit Konfidenzwert und eine benutzerfreundliche WPF-basierte Oberfläche.",
                 duration: "5 Monate"
             },
@@ -611,7 +611,7 @@ const translations = {
                 duration: "4 miesiące"
             },
             medical_diagnosis: {
-                title: "System Diagnostyki Medycznej",
+                title: "System Diagnostyki Medycznej z SI",
                 description: "Aplikacja desktopowa oparta na uczeniu maszynowym, zbudowana z użyciem .NET i ML.NET, przewidująca potencjalne choroby na podstawie objawów podanych przez użytkownika. Funkcje obejmują wprowadzanie objawów w języku naturalnym, przewidywanie chorób z oceną pewności oraz przyjazny dla użytkownika interfejs oparty na WPF.",
                 duration: "5 miesiące"
             },
@@ -823,7 +823,7 @@ const translations = {
                 duration: "4 mois"
             },
             medical_diagnosis: {
-                title: "Système de diagnostic médical",
+                title: "Système de diagnostic médical IA",
                 description: "Application de bureau basée sur l'apprentissage automatique, construite avec .NET et ML.NET, qui prédit les maladies potentielles à partir des symptômes fournis par l'utilisateur. Les fonctionnalités incluent la saisie des symptômes en langage naturel, la prédiction des maladies avec un score de confiance et une interface conviviale basée sur WPF.",
                 duration: "5 mois"
             },
@@ -1037,7 +1037,7 @@ const translations = {
                 duration: "4 Ay"
             },
             medical_diagnosis: {
-                title: "Tıbbi Teşhis Sistemi",
+                title: "Yapay Zeka Tıbbi Teşhis Sistemi",
                 description: "Kullanıcı tarafından sağlanan semptomlardan potansiyel hastalıkları tahmin eden, .NET ve ML.NET ile geliştirilmiş makine öğrenimi tabanlı bir masaüstü uygulaması. Özellikler arasında doğal dilde semptom girişi, güven skoru ile hastalık tahmini ve WPF tabanlı kullanıcı dostu bir arayüz bulunur.",
                 duration: "5 Ay"
             },
@@ -1251,7 +1251,7 @@ const translations = {
                 duration: "4 أشهر"
             },
             medical_diagnosis: {
-                title: "نظام التشخيص الطبي",
+                title: "نظام التشخيص الطبي بالذكاء الاصطناعي",
                 description: "تطبيق سطح مكتب يعتمد على التعلم الآلي، تم تطويره باستخدام .NET وML.NET، يتنبأ بالأمراض المحتملة من الأعراض التي يقدمها المستخدم. يتضمن ميزات مثل إدخال الأعراض باللغة الطبيعية، التنبؤ بالأمراض مع درجة الثقة، وواجهة مستخدم سهلة الاستخدام تعتمد على WPF.",
                 duration: "5 أشهر"
             },
