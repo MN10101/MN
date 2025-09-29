@@ -1431,16 +1431,9 @@ footer {
         direction: rtl;
     }
 
-    /* ARABIC TEXT ORDER ON DESKTOP */
+    /* ARABIC TEXT ORDER ON DESKTOP - ONLY FOR TITLES */
     html[lang="ar"] .title-segment,
-    html[lang="ar"] .about-text p,
-    html[lang="ar"] .education-list li,
-    html[lang="ar"] .education-list strong,
-    html[lang="ar"] .education-detail,
-    html[lang="ar"] .skills-grid,
-    html[lang="ar"] .project-details,
-    html[lang="ar"] .service-card,
-    html[lang="ar"] .contact-info {
+    html[lang="ar"] .education-list strong {
         unicode-bidi: plaintext !important;
     }
 
@@ -1586,7 +1579,6 @@ footer {
 
     html[lang="ar"] .education-list li {
         text-align: right;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .education-detail {
@@ -1594,24 +1586,20 @@ footer {
         border-right: 2px solid var(--accent);
         padding-left: 0;
         padding-right: 1.2rem;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .skills-grid {
         text-align: right;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .project-details {
         text-align: right;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .form-group input,
     html[lang="ar"] .form-group textarea {
         text-align: right;
         direction: rtl;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .main-title {
@@ -1652,7 +1640,6 @@ footer {
     html[lang="ar"] .service-card,
     html[lang="ar"] .contact-info {
         text-align: right;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .toggle-details {
@@ -1670,37 +1657,33 @@ footer {
 @media (max-width: 1024px) {
     html[lang="ar"] { direction: rtl; }
 
-    /* ARABIC TEXT RENDERING - PREVENT WRONG WORD ORDER */
+    /* ARABIC TEXT RENDERING - ONLY FOR TITLES */
+    html[lang="ar"] .title-segment,
+    html[lang="ar"] .education-list strong {
+        unicode-bidi: plaintext !important;
+    }
+
     html[lang="ar"] .about-text p {
         line-height: 1.8 !important;
         text-align: right !important;
         word-spacing: normal !important;
         letter-spacing: normal !important;
         font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif !important;
-        word-break: keep-all !important;
-        overflow-wrap: normal !important;
-        white-space: normal !important;
-        unicode-bidi: plaintext !important;
+        hyphens: manual !important;
+        -webkit-hyphens: manual !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
     }
 
     html[lang="ar"] .about-text {
         text-align: right !important;
         line-height: 1.8 !important;
         word-break: keep-all !important;
-        unicode-bidi: plaintext !important;
     }
 
-    /* TECHNICAL TERMS ORDER - FORCE LTR FOR ENGLISH WORDS */
-    html[lang="ar"] .about-text p {
-        unicode-bidi: plaintext;
-    }
-
-    /* SPECIFIC FIX FOR ENGLISH WORDS IN ARABIC TEXT */
-    html[lang="ar"] .about-text p,
-    html[lang="ar"] .education-list li,
-    html[lang="ar"] .skills-grid {
-        unicode-bidi: plaintext;
-        text-align: right;
+    /* FIX SPECIFIC TECHNICAL TERMS WRAPPING */
+    html[lang="ar"] .about-text p br {
+        display: none !important;
     }
 
     html[lang="ar"] .hero .scroll-indicator,
@@ -1819,7 +1802,7 @@ footer {
     html[lang="ar"] .contact-link {
         text-align: right !important;
         direction: rtl !important;
-        unicode-bidi: plaintext !important;
+        unicode-bidi: embed;
     }
 
     html[lang="ar"] .education-detail {
@@ -1827,14 +1810,13 @@ footer {
         border-right: 2px solid var(--accent);
         padding-left: 0;
         padding-right: 1.2rem;
-        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .form-group input,
     html[lang="ar"] .form-group textarea {
         text-align: right !important;
         direction: rtl !important;
-        unicode-bidi: plaintext !important;
+        unicode-bidi: embed;
     }
 
     html[lang="ar"] .toggle-details { margin-right: 0; margin-left: 0.5rem; }
@@ -1846,7 +1828,7 @@ footer {
     html[lang="ar"] .skill-category h4 {
         font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
         text-align: center !important;
-        unicode-bidi: plaintext !important;
+        unicode-bidi: embed;
     }
 
     html[lang="ar"] .contact-link[href*="tel"] span {
@@ -2004,8 +1986,6 @@ footer {
         z-index: 999 !important;
     }
 }
-
-
 
 @media (max-width: 768px) {
     body {
