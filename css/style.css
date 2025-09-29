@@ -1650,6 +1650,29 @@ footer {
 @media (max-width: 1024px) {
     html[lang="ar"] { direction: rtl; }
 
+    html[lang="ar"] .about-text p {
+        line-height: 1.8 !important;
+        text-align: right !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif !important;
+        hyphens: manual !important;
+        -webkit-hyphens: manual !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    html[lang="ar"] .about-text {
+        text-align: right !important;
+        line-height: 1.8 !important;
+        word-break: keep-all !important;
+    }
+
+    /* FIX SPECIFIC TECHNICAL TERMS WRAPPING */
+    html[lang="ar"] .about-text p br {
+        display: none !important; /* Remove any forced line breaks causing issues */
+    }
+
     html[lang="ar"] .hero .scroll-indicator,
     html[lang="ar"] header.hero .scroll-indicator,
     html[lang="ar"] .back-to-top,
@@ -1933,6 +1956,8 @@ footer {
         z-index: 999 !important;
     }
 }
+
+
 
 @media (max-width: 768px) {
     body {
