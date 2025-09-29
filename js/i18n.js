@@ -1085,7 +1085,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java مطور",
+                title: "مطور Java",
                 details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: JDBC، SQL متقدم<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
             },
             it_specialist: {
@@ -1143,7 +1143,7 @@ const translations = {
             "python-ai": "مكتبات Python للذكاء الاصطناعي"
         },
         title: {
-            "java-backend": "مطور Java",
+            "java-backend": "Java مطور",
             "full-stack": "مهندس برمجيات فول ستاك",
             ai: "متحمس للذكاء الاصطناعي"
         },

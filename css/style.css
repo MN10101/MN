@@ -1431,6 +1431,19 @@ footer {
         direction: rtl;
     }
 
+    /* ARABIC TEXT ORDER ON DESKTOP */
+    html[lang="ar"] .title-segment,
+    html[lang="ar"] .about-text p,
+    html[lang="ar"] .education-list li,
+    html[lang="ar"] .education-list strong,
+    html[lang="ar"] .education-detail,
+    html[lang="ar"] .skills-grid,
+    html[lang="ar"] .project-details,
+    html[lang="ar"] .service-card,
+    html[lang="ar"] .contact-info {
+        unicode-bidi: plaintext !important;
+    }
+
     /* MOVED TO LEFT SIDE FOR ARABIC ONLY - DESKTOP */
     html[lang="ar"] .section-indicators {
         left: 2rem !important;
@@ -1477,6 +1490,7 @@ footer {
         min-width: max-content;
         width: 100%;
         font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .main-title .title-line[data-i18n="name.last"] {
@@ -1537,7 +1551,7 @@ footer {
         display: inline-block;
     }
 
-    /* Fix for Arabic title transitions to prevent layout shift - DESKTOP */
+    /* Arabic title transitions to prevent layout shift - DESKTOP */
     html[lang="ar"] .title-slider {
         position: relative;
         height: 3.5rem;
@@ -1572,6 +1586,7 @@ footer {
 
     html[lang="ar"] .education-list li {
         text-align: right;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .education-detail {
@@ -1579,20 +1594,24 @@ footer {
         border-right: 2px solid var(--accent);
         padding-left: 0;
         padding-right: 1.2rem;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .skills-grid {
         text-align: right;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .project-details {
         text-align: right;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .form-group input,
     html[lang="ar"] .form-group textarea {
         text-align: right;
         direction: rtl;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .main-title {
@@ -1633,6 +1652,7 @@ footer {
     html[lang="ar"] .service-card,
     html[lang="ar"] .contact-info {
         text-align: right;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .toggle-details {
@@ -1650,27 +1670,37 @@ footer {
 @media (max-width: 1024px) {
     html[lang="ar"] { direction: rtl; }
 
+    /* ARABIC TEXT RENDERING - PREVENT WRONG WORD ORDER */
     html[lang="ar"] .about-text p {
         line-height: 1.8 !important;
         text-align: right !important;
         word-spacing: normal !important;
         letter-spacing: normal !important;
         font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif !important;
-        hyphens: manual !important;
-        -webkit-hyphens: manual !important;
-        word-break: normal !important;
-        overflow-wrap: anywhere !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .about-text {
         text-align: right !important;
         line-height: 1.8 !important;
         word-break: keep-all !important;
+        unicode-bidi: plaintext !important;
     }
 
-    /* FIX SPECIFIC TECHNICAL TERMS WRAPPING */
-    html[lang="ar"] .about-text p br {
-        display: none !important; /* Remove any forced line breaks causing issues */
+    /* TECHNICAL TERMS ORDER - FORCE LTR FOR ENGLISH WORDS */
+    html[lang="ar"] .about-text p {
+        unicode-bidi: plaintext;
+    }
+
+    /* SPECIFIC FIX FOR ENGLISH WORDS IN ARABIC TEXT */
+    html[lang="ar"] .about-text p,
+    html[lang="ar"] .education-list li,
+    html[lang="ar"] .skills-grid {
+        unicode-bidi: plaintext;
+        text-align: right;
     }
 
     html[lang="ar"] .hero .scroll-indicator,
@@ -1707,7 +1737,7 @@ footer {
         font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
         position: static;
         box-sizing: border-box !important;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
         letter-spacing: 0.02em;
     }
 
@@ -1755,7 +1785,7 @@ footer {
         display: block;
         width: 100%;
         text-align: right;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .title-segment.java-backend::before,
@@ -1789,7 +1819,7 @@ footer {
     html[lang="ar"] .contact-link {
         text-align: right !important;
         direction: rtl !important;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .education-detail {
@@ -1797,13 +1827,14 @@ footer {
         border-right: 2px solid var(--accent);
         padding-left: 0;
         padding-right: 1.2rem;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .form-group input,
     html[lang="ar"] .form-group textarea {
         text-align: right !important;
         direction: rtl !important;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .toggle-details { margin-right: 0; margin-left: 0.5rem; }
@@ -1815,7 +1846,7 @@ footer {
     html[lang="ar"] .skill-category h4 {
         font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
         text-align: center !important;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .contact-link[href*="tel"] span {
@@ -1863,6 +1894,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* ADD SPECIFIC FIX FOR MOBILE TEXT ORDER */
+    html[lang="ar"] .about-text p,
+    html[lang="ar"] .education-list li {
+        unicode-bidi: plaintext !important;
+        text-align: justify !important;
+    }
+    
     html[lang="ar"] .section-indicators,
     html[lang="ar"] .back-to-top { left: 0.8rem; right: auto; }
 
@@ -1877,7 +1915,7 @@ footer {
         padding: 0.6rem 1.8rem 0.6rem 0.8rem !important;
         letter-spacing: 0.02em !important;
         line-height: 1.5 !important;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .dynamic-title {
@@ -1911,11 +1949,21 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* EXTRA FIX FOR SMALL SCREENS */
+    html[lang="ar"] .about-text p {
+        font-size: 0.9rem !important;
+        line-height: 1.9 !important;
+        text-align: justify !important;
+        padding: 0 0.2rem !important;
+        unicode-bidi: plaintext !important;
+        word-spacing: normal !important;
+    }
+    
     html[lang="ar"] .title-segment {
         font-size: clamp(0.75rem, 4vw, 1rem) !important;
         padding: 0.5rem 1.5rem 0.5rem 0.5rem !important;
         line-height: 1.5 !important;
-        unicode-bidi: embed;
+        unicode-bidi: plaintext !important;
     }
 
     html[lang="ar"] .dynamic-title {
