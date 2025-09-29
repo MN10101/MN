@@ -347,17 +347,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Create indicators dynamically
-    if (indicatorsContainer) {
-        sections.forEach((section, index) => {
-            const sectionId = section.getAttribute('id');
-            const sectionTitle = sectionLabels[sectionId] || section.querySelector('.section-title')?.textContent || sectionId;
-            const indicator = document.createElement('div');
-            indicator.classList.add('section-indicator');
-            indicator.setAttribute('data-section', sectionId);
-            indicator.innerHTML = `<span>${sectionTitle}</span>`;
-            indicatorsContainer.appendChild(indicator);
-        });
-    }
+    sections.forEach((section, index) => {
+        const sectionId = section.getAttribute('id');
+        const sectionTitle = sectionLabels[sectionId] || section.querySelector('.section-title')?.textContent || sectionId;
+        
+        // Split the title into words for better fitting
+        let displayText = sectionTitle;
+        
+        // Custom splitting for different sections
+        switch(sectionId) {
+            case 'about':
+                displayText = 'About<br>Me';
+                break;
+            case 'projects':
+                displayText = 'Featured<br>Projects';
+                break;
+            case 'services':
+                displayText = 'Services<br>& Pricing';
+                break;
+            case 'contact':
+                displayText = 'Get In<br>Touch';
+                break;
+            default:
+                // Auto-split long titles (max 2 lines)
+                const words = sectionTitle.split(' ');
+                if (words.length > 2) {
+                    const mid = Math.ceil(words.length / 2);
+                    displayText = words.slice(0, mid).join(' ') + '<br>' + words.slice(mid).join(' ');
+                }
+        }
+        
+        const indicator = document.createElement('div');
+        indicator.classList.add('section-indicator');
+        indicator.setAttribute('data-section', sectionId);
+        indicator.innerHTML = `<span>${displayText}</span>`;
+        indicatorsContainer.appendChild(indicator);
+    });
 
     // Handle scroll events
     function handleScroll() {
