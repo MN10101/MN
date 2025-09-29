@@ -30,6 +30,12 @@
     });
 })();
 
+// Function to get URL parameters
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
 // Dynamic title animation - WITH ARABIC SUPPORT (FIXED)
 const titleSlider = document.querySelector('.title-slider');
 const titleUnderline = document.querySelector('.title-underline');
@@ -122,20 +128,6 @@ function restartTitleAnimation() {
     titleInterval = setInterval(rotateTitle, 3000);
 }
 
-// Call initialization on page load
-document.addEventListener('DOMContentLoaded', () => {
-    restartTitleAnimation();
-    
-    // Also re-initialize when language changes
-    const languageSelect = document.getElementById('language-select');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', () => {
-            // Small delay to allow the language change to take effect
-            setTimeout(restartTitleAnimation, 100);
-        });
-    }
-});
-
 // Cursor trail effect
 const trails = [];
 const trailCount = 10;
@@ -214,40 +206,53 @@ backToTopButton.addEventListener('click', (e) => {
     });
 });
 
-// Form submission and redirect
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('.contact-form');
-    if (!contactForm) {
-        console.error('Contact form not found!');
-        return;
-    }
-
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(contactForm);
-        const formAction = contactForm.getAttribute('action');
-
-        try {
-            const response = await fetch(formAction, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                window.location.href = 'thank-you.html';
-            } else {
-                const errorData = await response.json();
-                console.error('Form submission error:', errorData, 'Status:', response.status);
-                alert(`Form submission failed: ${errorData.error || 'Unknown error'}. Please try again later.`);
-            }
-        } catch (error) {
-            console.error('Network or other error:', error.message);
-            alert('A network error occurred. Please check your connection and try again.');
+// Function to update back to home links
+function updateBackToHomeLinks(lang) {
+    const backToHomeLinks = document.querySelectorAll('a[href="index.html"], a[href*="index.html"]');
+    backToHomeLinks.forEach(link => {
+        if (link.getAttribute('id') !== 'language-select') { // Don't modify language select
+            link.href = `index.html?lang=${lang}`;
         }
     });
+}
+
+// Main DOM Content Loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize title animation
+    restartTitleAnimation();
+    
+    // Form submission handler
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const formAction = contactForm.getAttribute('action');
+            const currentLang = document.documentElement.lang || 'en';
+
+            try {
+                const response = await fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Redirect to thank-you page with language parameter
+                    window.location.href = `thank-you.html?lang=${currentLang}`;
+                } else {
+                    const errorData = await response.json();
+                    console.error('Form submission error:', errorData);
+                    alert(`Form submission failed: ${errorData.error || 'Unknown error'}`);
+                }
+            } catch (error) {
+                console.error('Network error:', error);
+                alert('A network error occurred. Please check your connection.');
+            }
+        });
+    }
 
     // Smooth scrolling for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -281,17 +286,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Pause animation on hover for better readability
-    document.querySelector('.tech-orbits').addEventListener('mouseenter', () => {
-        document.querySelectorAll('.orbit').forEach(orbit => {
-            orbit.style.animationPlayState = 'paused';
+    const techOrbits = document.querySelector('.tech-orbits');
+    if (techOrbits) {
+        techOrbits.addEventListener('mouseenter', () => {
+            document.querySelectorAll('.orbit').forEach(orbit => {
+                orbit.style.animationPlayState = 'paused';
+            });
         });
-    });
 
-    document.querySelector('.tech-orbits').addEventListener('mouseleave', () => {
-        document.querySelectorAll('.orbit').forEach(orbit => {
-            orbit.style.animationPlayState = 'running';
+        techOrbits.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.orbit').forEach(orbit => {
+                orbit.style.animationPlayState = 'running';
+            });
         });
-    });
+    }
 
     // Keep orbit labels upright
     const orbitWrappers = document.querySelectorAll('.orbit');
@@ -339,15 +347,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Create indicators dynamically
-    sections.forEach((section, index) => {
-        const sectionId = section.getAttribute('id');
-        const sectionTitle = sectionLabels[sectionId] || section.querySelector('.section-title')?.textContent || sectionId;
-        const indicator = document.createElement('div');
-        indicator.classList.add('section-indicator');
-        indicator.setAttribute('data-section', sectionId);
-        indicator.innerHTML = `<span>${sectionTitle}</span>`;
-        indicatorsContainer.appendChild(indicator);
-    });
+    if (indicatorsContainer) {
+        sections.forEach((section, index) => {
+            const sectionId = section.getAttribute('id');
+            const sectionTitle = sectionLabels[sectionId] || section.querySelector('.section-title')?.textContent || sectionId;
+            const indicator = document.createElement('div');
+            indicator.classList.add('section-indicator');
+            indicator.setAttribute('data-section', sectionId);
+            indicator.innerHTML = `<span>${sectionTitle}</span>`;
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
 
     // Handle scroll events
     function handleScroll() {
@@ -356,12 +366,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide indicators when near the top of the page
         if (currentScrollY <= 100) {
-            indicatorsContainer.classList.add('hidden');
+            if (indicatorsContainer) indicatorsContainer.classList.add('hidden');
             indicators.forEach(indicator => indicator.classList.remove('active'));
             lastScrollY = currentScrollY;
             return;
         } else {
-            indicatorsContainer.classList.remove('hidden');
+            if (indicatorsContainer) indicatorsContainer.classList.remove('hidden');
         }
 
         sections.forEach((section, index) => {
@@ -371,9 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if section is in viewport
             const isInView = rect.top >= -window.innerHeight * 0.2 && rect.top <= window.innerHeight * 0.5;
 
-            if (isInView) {
+            if (isInView && indicator) {
                 indicator.classList.add('active');
-            } else {
+            } else if (indicator) {
                 indicator.classList.remove('active');
             }
         });
@@ -396,20 +406,31 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', throttle(handleScroll, 100));
 
     // Make indicators clickable
-    indicatorsContainer.addEventListener('click', (e) => {
-        const indicator = e.target.closest('.section-indicator');
-        if (indicator) {
-            const sectionId = indicator.getAttribute('data-section');
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+    if (indicatorsContainer) {
+        indicatorsContainer.addEventListener('click', (e) => {
+            const indicator = e.target.closest('.section-indicator');
+            if (indicator) {
+                const sectionId = indicator.getAttribute('data-section');
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
-    });
+        });
+    }
 
     // Initial check on page load
     handleScroll();
+
+    // Also re-initialize when language changes
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', () => {
+            // Small delay to allow the language change to take effect
+            setTimeout(restartTitleAnimation, 100);
+        });
+    }
 });

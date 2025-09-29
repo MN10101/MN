@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div id="particles-js"></div>
@@ -24,7 +25,7 @@
     <div class="thank-you-container">
         <h2 data-i18n="thank_you.heading">Thank You!</h2>
         <p data-i18n="thank_you.message">Your message has been sent successfully. I'll get back to you soon.</p>
-        <a href="index.html" class="btn" data-i18n="thank_you.back">Back to Home</a>
+        <a href="index.html" class="btn" data-i18n="thank_you.back" id="backToHome">Back to Home</a>
     </div>
 
     <footer>
@@ -36,22 +37,68 @@
         </div>
     </footer>
 
-    <!-- Cookie Consent Popup -->
-    <div class="cookie-consent" id="cookieConsent" style="display: none;">
-        <div class="cookie-content">
-            <h3 data-i18n="cookie.title">We Use Cookies</h3>
-            <p data-i18n="cookie.message">
-                This website uses cookies to enhance your browsing experience and provide personalized content. By clicking "Accept," you consent to the use of cookies. You can learn more in our <a href="/privacy-policy.html" data-i18n="cookie.policy">Privacy Policy</a>.
-            </p>
-            <div class="cookie-buttons">
-                <button class="btn cookie-accept" id="cookieAccept" data-i18n="cookie.accept">Accept</button>
-                <button class="btn cookie-decline" id="cookieDecline" data-i18n="cookie.decline">Decline</button>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/i18n.js"></script>
+    <script>
+        // Thank-you page specific initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get language from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang');
+            
+            let currentLang = 'en';
+            
+            if (lang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
+                currentLang = lang;
+                // Set the language select value
+                const languageSelect = document.getElementById('language-select');
+                if (languageSelect) {
+                    languageSelect.value = lang;
+                }
+            } else {
+                // Fallback to localStorage
+                const storedLang = localStorage.getItem('language');
+                if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(storedLang)) {
+                    currentLang = storedLang;
+                    const languageSelect = document.getElementById('language-select');
+                    if (languageSelect) {
+                        languageSelect.value = storedLang;
+                    }
+                }
+            }
+            
+            // Update content with the specified language
+            updateContent(currentLang);
+            
+            // Update "Back to Home" link to maintain language
+            const backToHomeLink = document.getElementById('backToHome');
+            if (backToHomeLink) {
+                backToHomeLink.href = `index.html?lang=${currentLang}`;
+            }
+            
+            // Handle language change on thank-you page
+            const languageSelect = document.getElementById('language-select');
+            if (languageSelect) {
+                languageSelect.addEventListener('change', (e) => {
+                    const newLang = e.target.value;
+                    if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(newLang)) {
+                        localStorage.setItem('language', newLang);
+                        updateContent(newLang);
+                        
+                        // Update URL with new language parameter
+                        const newUrl = new URL(window.location);
+                        newUrl.searchParams.set('lang', newLang);
+                        window.history.replaceState({}, '', newUrl);
+                        
+                        // Update "Back to Home" link
+                        if (backToHomeLink) {
+                            backToHomeLink.href = `index.html?lang=${newLang}`;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1335,14 +1335,14 @@ function updateContent(lang) {
 
     // Update toggle buttons dynamically
     document.querySelectorAll('.toggle-details').forEach(button => {
-    const details = button.nextElementSibling;
-    const isHidden = details.style.display === 'none' || !details.style.display;
-    button.textContent = isHidden ? translations[lang].education.toggle : 
-        lang === 'ar' ? 'إخفاء التفاصيل' :
-        lang === 'pl' ? 'Ukryj szczegóły' : 
-        lang === 'fr' ? 'Masquer les détails' : 
-        lang === 'tr' ? 'Detayları Gizle' : 
-        'Details ausblenden';
+        const details = button.nextElementSibling;
+        const isHidden = details.style.display === 'none' || !details.style.display;
+        button.textContent = isHidden ? translations[lang].education.toggle : 
+            lang === 'ar' ? 'إخفاء التفاصيل' :
+            lang === 'pl' ? 'Ukryj szczegóły' : 
+            lang === 'fr' ? 'Masquer les détails' : 
+            lang === 'tr' ? 'Detayları Gizle' : 
+            'Details ausblenden';
     });
 
     // Update section indicators
@@ -1407,6 +1407,45 @@ function getLanguageFromCountry(countryCode) {
     return lang;
 }
 
+// Function to get URL parameters
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Function to get current language from URL, localStorage, or geolocation
+async function getCurrentLanguage() {
+    // First check URL parameter
+    const urlLang = getUrlParameter('lang');
+    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(urlLang)) {
+        console.log(`Language from URL: ${urlLang}`);
+        return urlLang;
+    }
+    
+    // Then check localStorage
+    const storedLang = localStorage.getItem('language');
+    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(storedLang)) {
+        console.log(`Language from localStorage: ${storedLang}`);
+        return storedLang;
+    }
+    
+    // Then use geolocation/browser detection
+    const countryCode = await getCountryCode();
+    const geoLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
+    console.log(`Language from geolocation: ${geoLang}`);
+    return geoLang;
+}
+
+// Function to update back to home links
+function updateBackToHomeLinks(lang) {
+    const backToHomeLinks = document.querySelectorAll('a[href="index.html"], a[href*="index.html"]');
+    backToHomeLinks.forEach(link => {
+        if (link.getAttribute('id') !== 'language-select') {
+            link.href = `index.html?lang=${lang}`;
+        }
+    });
+}
+
 // Language switcher event listener with geolocation
 document.addEventListener('DOMContentLoaded', async () => {
     const languageSelect = document.getElementById('language-select');
@@ -1415,21 +1454,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // Log initial localStorage state
-    console.log('Initial localStorage:', { language: localStorage.getItem('language') });
-
-    // Clear localStorage on every load to force geolocation
-    localStorage.removeItem('language');
-    console.log('Cleared localStorage.language');
-
-    // Use geolocation or browser language
-    const countryCode = await getCountryCode();
-    const selectedLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
+    // Get current language
+    const selectedLang = await getCurrentLanguage();
 
     // Set the language select value and update content
     console.log(`Setting language to: ${selectedLang}`);
     languageSelect.value = selectedLang;
+    localStorage.setItem('language', selectedLang);
     updateContent(selectedLang);
+
+    // Update back to home links
+    updateBackToHomeLinks(selectedLang);
 
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
@@ -1438,6 +1473,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log(`Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
             updateContent(lang);
+            
+            // Update URL with language parameter without reloading
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', newUrl);
+            
+            // Update all back to home links
+            updateBackToHomeLinks(lang);
         } else {
             console.warn(`Invalid language selected: ${lang}`);
         }
