@@ -1,3 +1,8 @@
+// Ensure the title is valid on load
+if (typeof document.title !== 'string' || document.title.includes('[object Object]')) {
+    document.title = "Mahmoud Najmeh | Full-Stack Engineer";
+}
+
 // Title Protection Guard
 (function() {
     // List of allowed titles
@@ -16,7 +21,7 @@
     let lastValidTitle = document.title;
     const titleObserver = new MutationObserver(() => {
         if (!allowedTitles.includes(document.title)) {
-            console.warn('Invalid title detected:', document.title);
+            // console.warn('Invalid title detected:', document.title);
             document.title = lastValidTitle;
         } else {
             lastValidTitle = document.title;
@@ -459,3 +464,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Add this to your main.js - Force correct text for Arabic education titles on mobile
+function fixArabicEducationTitles() {
+    if (document.documentElement.lang === 'ar' && window.innerWidth <= 1024) {
+        const javaTitle = document.querySelector('[data-i18n="education.java.title"]');
+        const itTitle = document.querySelector('[data-i18n="education.it_specialist.title"]');
+        
+        if (javaTitle) javaTitle.textContent = "Java مطور";
+        if (itTitle) itTitle.textContent = "اخصائي تكنولوجيا المعلومات في مجال تطوير التطبيقات";
+    }
+}
+
+// Call it on page load and when language changes
+document.addEventListener('DOMContentLoaded', fixArabicEducationTitles);
+window.addEventListener('resize', fixArabicEducationTitles);
+
+// Also call it when language changes
+const languageSelect = document.getElementById('language-select');
+if (languageSelect) {
+    languageSelect.addEventListener('change', () => {
+        setTimeout(fixArabicEducationTitles, 100);
+    });
+}

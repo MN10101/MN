@@ -1962,39 +1962,6 @@ footer {
     }
 }
 
-/* NUCLEAR OPTION - Force spacing for Arabic on all mobile devices */
-@media (max-width: 1024px) {
-    html[lang="ar"] .section-indicators {
-        bottom: 90px !important;
-        z-index: 9998;
-        transform: translateY(-10px) !important;
-    }
-    
-    html[lang="ar"] .back-to-top {
-        bottom: 40px !important;
-        z-index: 9999;
-        transform: translateY(-10px) !important;
-    }
-    
-    html[lang="ar"] .hero-content {
-        padding-bottom: 30px !important;
-    }
-    
-    html[lang="ar"] .dynamic-title {
-        margin-bottom: 30px !important;
-        padding-bottom: 25px !important;
-    }
-    
-    html[lang="ar"] .title-mask {
-        margin-bottom: 20px !important;
-    }
-    
-    /* Extra space at the bottom of hero section */
-    html[lang="ar"] .hero {
-        padding-bottom: 50px !important;
-    }
-}
-
 @media (max-width: 768px) {
     body {
         font-size: 16px;

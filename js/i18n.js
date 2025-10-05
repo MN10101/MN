@@ -75,6 +75,10 @@ const translations = {
             ml: "Machine Learning",
             cv: "Computer Vision",
             "python-ai": "Python AI Libraries",
+            machine_learning: "Machine Learning",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
         },
         title: {
             "java-backend": "JAVA DEVELOPER",
@@ -276,6 +280,7 @@ const translations = {
             css: "CSS",
             javascript: "JavaScript",
             postgresql: "PostgreSQL",
+            database: "Database",
             canvas: "Canvas",
             frontend: "Frontend",
             dotnet: ".NET",
@@ -287,7 +292,11 @@ const translations = {
             mysql: "MySQL",
             ml: "Machine Learning",
             cv: "Computer Vision",
-            "python-ai": "Python AI-Bibliotheken"
+            "python-ai": "Python AI-Bibliotheken",
+            machine_learning: "Maschinelles Lernen",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
         },
         title: {
             "java-backend": "JAVA ENTWICKLER",
@@ -489,6 +498,7 @@ const translations = {
             css: "CSS",
             javascript: "JavaScript",
             postgresql: "PostgreSQL",
+            database: "Baza danych",
             canvas: "Canvas",
             frontend: "Frontend",
             dotnet: ".NET",
@@ -500,7 +510,11 @@ const translations = {
             mysql: "MySQL",
             ml: "Uczenie Maszynowe",
             cv: "Wizja Komputerowa",
-            "python-ai": "Biblioteki AI Pythona"
+            "python-ai": "Biblioteki AI Pythona",
+            machine_learning: "Uczenie Maszynowe",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
         },
         title: {
             "java-backend": "PROGRAMISTA JAVA",
@@ -655,6 +669,7 @@ const translations = {
         },
         about: {
             description: "Ingénieur Full-Stack dévoué avec une solide expérience en programmation orientée objet et un vif intérêt pour le développement web et l'IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET. Mise en œuvre réussie de projets web avec un accent sur le développement full-stack (backend et frontend) et le travail d'équipe.",
+            education: "Éducation"
         },
         education: {
             java: {
@@ -709,10 +724,16 @@ const translations = {
             docker: "Docker",
             git: "Git",
             postgresql: "PostgreSQL",
+            database: "Base de données",
             mysql: "MySQL",
             ml: "Apprentissage Automatique",
             cv: "Vision par Ordinateur",
-            "python-ai": "Bibliothèques IA Python"
+            "python-ai": "Bibliothèques IA Python",
+            machine_learning: "Apprentissage Automatique",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
+
         },
         title: {
             "java-backend": "DÉVELOPPEUR JAVA",
@@ -923,10 +944,15 @@ const translations = {
             docker: "Docker",
             git: "Git",
             postgresql: "PostgreSQL",
+            database: "Veritabanı",
             mysql: "MySQL",
             ml: "Makine Öğrenimi",
             cv: "Bilgisayarlı Görü",
-            "python-ai": "Python AI Kütüphaneleri"
+            "python-ai": "Python AI Kütüphaneleri",
+            machine_learning: "Makine Öğrenimi",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
         },
         title: {
             "java-backend": "JAVA GELİŞTİRİCİ",
@@ -1140,7 +1166,11 @@ const translations = {
             mysql: "MySQL",
             ml: "التعلم الآلي",
             cv: "الرؤية الحاسوبية",
-            "python-ai": "مكتبات Python للذكاء الاصطناعي"
+            "python-ai": "مكتبات Python للذكاء الاصطناعي",
+            machine_learning: "التعلم الآلي",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
         },
         title: {
             "java-backend": "Java مطور",
@@ -1293,6 +1323,8 @@ function updateContent(lang) {
     console.log(`Updating content to language: ${lang}`);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    document.title = translations[lang]?.title || "Mahmoud Najmeh | Full-Stack Engineer";
 
     // Update text content
     document.querySelectorAll('[data-i18n]').forEach(element => {
