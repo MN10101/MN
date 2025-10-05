@@ -19,7 +19,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java Developer",
+                title: "Java Programmer",
                 details: "- Programming fundamentals, Agile methodologies<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- Databases: JDBC, Advanced SQL<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs and Cloud: AWS, GCP"
             },
             it_specialist: {
@@ -81,7 +81,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "JAVA DEVELOPER",
+            "java-backend": "JAVA PROGRAMMER",
             "full-stack": "FULL-STACK ENGINEER",
             ai: "AI ENTHUSIAST"
         },
@@ -237,7 +237,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java Entwickler",
+                title: "Java-Programmierer",
                 details: "- Programmiergrundlagen, agile Methoden<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- Datenbanken: JDBC, fortgeschrittenes SQL<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs und Cloud: AWS, GCP"
             },
             it_specialist: {
@@ -299,7 +299,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "JAVA ENTWICKLER",
+            "java-backend": "JAVA-PROGRAMMIERER",
             "full-stack": "FULL-STACK INGENIEUR",
             ai: "KI-BEGEISTERTER"
         },
@@ -673,7 +673,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Développeur Java",
+                title: "Programmeur Java",
                 details: "- Fondamentaux de la programmation, méthodologies Agiles<br>- Java : POO, Streams, Concurrence, Maven, Gradle, Tests<br>- Bases de données : JDBC, SQL avancé<br>- Frameworks : Spring Boot, Hibernate, Spring Security<br>- API REST et Cloud : AWS, GCP"
             },
             it_specialist: {
@@ -736,7 +736,7 @@ const translations = {
 
         },
         title: {
-            "java-backend": "DÉVELOPPEUR JAVA",
+            "java-backend": "PROGRAMMEUR JAVA",
             "full-stack": "INGÉNIEUR FULL-STACK",
             ai: "ENTHOUSIASTE D'IA"
         },
@@ -892,7 +892,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java Geliştirici",
+                title: "Java Programcısı",
                 details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
             },
             it_specialist: {
@@ -955,7 +955,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "JAVA GELİŞTİRİCİ",
+            "java-backend": "JAVA PROGRAMCISI",
             "full-stack": "FULL-STACK MÜHENDİSİ",
             ai: "YAPAY ZEKA TUTKUNU"
         },
@@ -1111,7 +1111,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "مطور Java",
+                title: "مبرمج جافا",
                 details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: JDBC، SQL متقدم<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
             },
             it_specialist: {
@@ -1173,7 +1173,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "Java مطور",
+            "java-backend": "مبرمج جافا",
             "full-stack": "مهندس برمجيات فول ستاك",
             ai: "متحمس للذكاء الاصطناعي"
         },
