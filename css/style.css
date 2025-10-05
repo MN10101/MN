@@ -1962,6 +1962,65 @@ footer {
     }
 }
 
+/* SAFARI FOR iPHONES */
+@media not all and (min-resolution: 0.001dpcm) {
+    html[lang="ar"] .section-indicators,
+    html[lang="ar"] .back-to-top {
+        margin-bottom: 20px !important;
+    }
+    
+    html[lang="ar"] .section-indicators {
+        bottom: 80px !important;
+    }
+    
+    html[lang="ar"] .back-to-top {
+        bottom: 30px !important;
+    }
+    
+    /* Extra spacing for section names */
+    html[lang="ar"] .title-segment {
+        margin-bottom: 10px !important;
+        padding-bottom: 15px !important;
+    }
+}
+
+/* Alternative Safari detection using supports query */
+@supports (-webkit-touch-callout: none) {
+    html[lang="ar"] .section-indicators,
+    html[lang="ar"] .back-to-top {
+        margin-bottom: 15px !important;
+    }
+    
+    html[lang="ar"] .section-indicators {
+        bottom: 75px !important;
+    }
+    
+    html[lang="ar"] .back-to-top {
+        bottom: 25px !important;
+    }
+}
+
+/* Specific Safari + iPhone combination */
+@media screen and (max-width: 1024px) and (-webkit-touch-callout: none) {
+    html[lang="ar"] .dynamic-title {
+        padding-bottom: 20px !important;
+    }
+    
+    html[lang="ar"] .title-mask {
+        margin-bottom: 15px !important;
+    }
+    
+    html[lang="ar"] .section-indicators {
+        z-index: 9998 !important;
+        bottom: 85px !important;
+    }
+    
+    html[lang="ar"] .back-to-top {
+        z-index: 9999 !important;
+        bottom: 35px !important;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 16px;
