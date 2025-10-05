@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Mahmoud Najmeh | Full-Stack Engineer</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="pl">Polish</option>
+            <option value="fr">French</option>
+            <option value="tr">Turkish</option>
+            <option value="ar">العربية</option>
+        </select>
+    </div>
+
+    <div class="section-indicators"></div>
+    <div class="cursor-trail"></div>
+    
+    <header class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-image-wrapper">
+                    <img src="images/profile.jpg" alt="Mahmoud Najmeh" class="profile-image">
+                    <div class="tech-orbits">
+                        <div class="orbit java" data-tech="Java">
+                            <div class="label-wrapper"><span data-i18n="tech.java">Java</span></div>
+                        </div>
+                        <div class="orbit python" data-tech="Python">
+                            <div class="label-wrapper"><span data-i18n="tech.python">Python</span></div>
+                        </div>
+                        <div class="orbit csharp" data-tech="C#">
+                            <div class="label-wrapper"><span data-i18n="tech.csharp">C#</span></div>
+                        </div>
+                        <div class="orbit javascript" data-tech="JavaScript">
+                            <div class="label-wrapper"><span data-i18n="tech.javascript">JavaScript</span></div>
+                        </div>
+                        <div class="orbit sql" data-tech="SQL">
+                            <div class="label-wrapper"><span data-i18n="tech.sql">SQL</span></div>
+                        </div>
+                        <div class="orbit spring" data-tech="Spring Boot">
+                            <div class="label-wrapper"><span data-i18n="tech.spring">Spring Boot</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="title-container">
+                <h1 class="main-title">
+                    <span class="title-line" data-i18n="name.first">Mahmoud</span>
+                    <span class="title-line" data-i18n="name.last">Najmeh</span>
+                </h1>
+                
+                <div class="dynamic-title">
+                    <div class="title-mask">
+                        <div class="title-slider">
+                            <span class="title-segment full-stack" data-i18n="title.full-stack">FULL-STACK ENGINEER</span>
+                            <span class="title-segment java-backend active" data-i18n="title.java-backend">JAVA DEVELOPER</span>
+                            <span class="title-segment ai" data-i18n="title.ai">AI ENTHUSIAST</span>
+                        </div>
+                    </div>
+                    <div class="title-underline"></div>
+                </div>
+            </div>
+            
+            <div class="contact-links">
+                <a href="mailto:mn.de@outlook.com" class="contact-link email">
+                    <i class="fas fa-envelope"></i>
+                    <span>mn.de@outlook.com</span>
+                </a>
+                <a href="tel:+491639769764" class="contact-link phone">
+                    <i class="fas fa-phone"></i>
+                    <span data-i18n="contact.phone">+49 163 9769764</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span data-i18n="explore">Explore</span>
+            <div class="arrow-down"></div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.about">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about.description">Dedicated software developer with expertise in OOP, 
+                        web, and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET, 
+                        with hands-on experience in machine learning, computer vision, and NLP projects. 
+                        Proven track record in building robust backend, full-stack, and AI-powered applications.</p>
+                    
+                    <h3 data-i18n="about.education">Education</h3>
+                    <ul class="education-list">
+                        <li>
+                            <strong data-i18n="education.java.title">Java Backend Developer</strong>
+                            <span>DCI Digital Career Institute, Berlin (06/2023 – 08/2024)</span>
+                            <button class="toggle-details" data-i18n="education.toggle">Show Details</button>
+                            <span class="education-detail" style="display: none;" data-i18n="education.java.details">
+                                - Programming fundamentals, Agile methodologies<br>
+                                - Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>
+                                - Databases: JDBC, Advanced SQL<br>
+                                - Frameworks: Spring Boot, Hibernate, Spring Security<br>
+                                - REST APIs and Cloud: AWS, GCP
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-i18n="education.it_specialist.title">IT Specialist for Application Development</strong>
+                            <span>Combard GmbH, Berlin (05/2020 – 05/2022)</span>
+                            <button class="toggle-details" data-i18n="education.toggle">Show Details</button>
+                            <span class="education-detail" style="display: none;" data-i18n="education.it_specialist.details">
+                                - OOP with Java SE, C# (.NET), Python, JavaScript, PHP<br>
+                                - Web and database development, Linux systems<br>
+                                - IT project management, business processes<br>
+                                - Mathematics and MS Office for IT Processes<br>
+                                - Technical English, communication skills
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills-container">
+                    <h3 data-i18n="skills.title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 data-i18n="skills.languages">Languages</h4>
+                            <ul class="icon-list">
+                                <li><i class="devicon-java-plain" title="Java" data-i18n-title="tech.java"></i></li>
+                                <li><i class="devicon-python-plain" title="Python" data-i18n-title="tech.python"></i></li>
+                                <li><i class="devicon-csharp-plain" title="C#" data-i18n-title="tech.csharp"></i></li>
+                                <li><i class="devicon-javascript-plain" title="JavaScript" data-i18n-title="tech.javascript"></i></li>
+                                <li><i class="devicon-mysql-plain" title="SQL" data-i18n-title="tech.sql"></i></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4 data-i18n="skills.frameworks">Frameworks</h4>
+                            <ul class="icon-list">
+                                <li><i class="devicon-spring-plain" title="Spring Boot" data-i18n-title="tech.spring"></i></li>
+                                <li><i class="devicon-django-plain" title="Django" data-i18n-title="tech.django"></i></li>
+                                <li><i class="devicon-dot-net-plain" title=".NET" data-i18n-title="tech.dotnet"></i></li>
+                                <li><i class="devicon-react-original" title="React" data-i18n-title="tech.react"></i></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4 data-i18n="skills.ai">AI & Machine Learning</h4>
+                            <ul class="icon-list">
+                                <li><i class="fas fa-brain" title="Machine Learning" data-i18n-title="tech.ml"></i></li>
+                                <li><i class="fas fa-robot" title="AI Development" data-i18n-title="tech.ai"></i></li>
+                                <li><i class="fas fa-language" title="NLP" data-i18n-title="tech.nlp"></i></li>
+                                <li><i class="fas fa-eye" title="Computer Vision" data-i18n-title="tech.cv"></i></li>
+                                <li><i class="devicon-tensorflow-original" title="TensorFlow" data-i18n-title="tech.tensorflow"></i></li>
+                                <li><i class="devicon-python-plain" title="Python AI Libraries" data-i18n-title="tech.python-ai"></i></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4 data-i18n="skills.tools">Tools & Platforms</h4>
+                            <ul class="icon-list">
+                                <li><i class="devicon-amazonwebservices-plain" title="AWS" data-i18n-title="tech.aws"></i></li>
+                                <li><i class="devicon-googlecloud-plain" title="GCP" data-i18n-title="tech.gcp"></i></li>
+                                <li><i class="devicon-docker-plain" title="Docker" data-i18n-title="tech.docker"></i></li>
+                                <li><i class="devicon-git-plain" title="Git" data-i18n-title="tech.git"></i></li>
+                                <li><i class="devicon-postgresql-plain" title="PostgreSQL" data-i18n-title="tech.postgresql"></i></li>
+                                <li><i class="devicon-mysql-plain" title="MySQL" data-i18n-title="tech.mysql"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section dark-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.projects">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/2.png" alt="Missing Person Alert System">
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="project.missing.title">Missing Person Alert System FullStack</h3>
+                        <p data-i18n="project.missing.description">Police tool developed with Spring Boot, SwiftUI & Jetpack Compose featuring Firebase push notifications, geolocation tracking, and admin panel.</p>
+                        <div class="project-tech">
+                            <span data-i18n="tech.spring">Spring Boot</span>
+                            <span data-i18n="tech.rest_api">REST API</span>
+                            <span data-i18n="tech.swift">JDBC</span>
+                            <span data-i18n="tech.postgresql">PostgreSQL</span>
+                            <span data-i18n="tech.swiftui">SwiftUI</span>
+                            <span data-i18n="tech.jetpack">Jetpack Compose</span>
+                            <span data-i18n="tech.firebase">Firebase</span>
+                            <span data-i18n="tech.integration">Integration Tests</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration" data-i18n="project.missing.duration">6 Months</span>
+                            <a href="https://github.com/MN10101/missing_person_alert" class="btn" target="_blank" data-i18n="project.view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/1.png" alt="Banking System">
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="project.banking.title">Banking System FullStack</h3>
+                        <p data-i18n="project.banking.description">Fullstack banking application with email/IP tracking, multi-currency support, transaction processing, and comprehensive testing with Mockito.</p>
+                        <div class="project-tech">
+                            <span data-i18n="tech.java">Java</span>
+                            <span data-i18n="tech.spring">Spring Boot</span>
+                            <span data-i18n="tech.rest_api">REST API</span>
+                            <span data-i18n="tech.swift">JDBC</span>
+                            <span data-i18n="tech.mysql">MySQL</span>
+                            <span data-i18n="tech.mockito">Mockito</span>
+                            <span data-i18n="tech.react">React</span>
+                            <span data-i18n="tech.integration">Integration Tests</span>
+                            
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration" data-i18n="project.banking.duration">6 Months</span>
+                            <a href="https://github.com/MN10101/Banking-System-FullStack" class="btn" target="_blank" data-i18n="project.view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/3.png" alt="AI Text Summarizer">
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="project.ai_text.title">AI Text Summarizer FullStack</h3>
+                        <p data-i18n="project.ai_text.description">Multilingual text summarization application powered by Spring Boot REST API with advanced NLP capabilities.</p>
+                        <div class="project-tech">
+                            <span data-i18n="tech.spring">Spring Boot</span>
+                            <span data-i18n="tech.rest_api">REST API</span>
+                            <span data-i18n="tech.ai">AI</span>
+                            <span data-i18n="tech.nlp">NLP</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration" data-i18n="project.ai_text.duration">2 Months</span>
+                            <a href="https://github.com/MN10101/ai-text-summarizer" class="btn" target="_blank" data-i18n="project.view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/4.jpeg" alt="Student Portal">
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="project.student.title">Student Portal FullStack</h3>
+                        <p data-i18n="project.student.description">Comprehensive educational platform featuring role-based access control, grading system, PDF export functionality, and online testing.</p>
+                        <div class="project-tech">
+                            <span data-i18n="tech.django">Django</span>
+                            <span data-i18n="tech.rest_api">REST API</span>
+                            <span data-i18n="tech.database">Database</span>
+                            <span data-i18n="tech.role_auth">Role-based Auth</span>
+                            <span data-i18n="tech.pdf_export">PDF Export</span>
+                            <span data-i18n="tech.ui_validation">UI Validation</span>
+                            <span data-i18n="tech.html5">HTML5</span> 
+                            <span data-i18n="tech.css">CSS</span>
+                            <span data-i18n="tech.javascript">JavaScript</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration" data-i18n="project.student.duration">4 Months</span>
+                            <a href="https://github.com/MN10101/language_learning" class="btn" target="_blank" data-i18n="project.view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/9.jpeg" alt="AI Face Analysis">
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="project.face_analysis.title">AI Face Analysis</h3>
+                        <p data-i18n="project.face_analysis.description">Image classification system built with Django and TensorFlow, featuring automated processing and custom GUI interface.</p>
+                        <div class="project-tech">
+                            <span data-i18n="tech.django">Django</span>
+                            <span data-i18n="tech.tensorflow">TensorFlow</span>
+                            <span data-i18n="tech.python">Python</span>
+                            <span data-i18n="tech.computer_vision">Computer Vision</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration" data-i18n="project.face_analysis.duration">4 Months</span>
+                            <a href="https://github.com/MN10101/Face_Analysis" class="btn" target="_blank" data-i18n="project.view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/7.png" alt="Medical Diagnosis System">
+                    </div>
+                    <div class="project-details">
+                        <h3 data-i18n="project.medical_diagnosis.title">Medical Diagnosis System</h3>
+                        <p data-i18n="project.medical_diagnosis.description">
+                            A machine learning-based desktop application built with .NET and ML.NET that predicts potential diseases from user-provided symptoms. Features include natural language symptom input, disease prediction with confidence score, and a WPF-based user-friendly interface.
+                        </p>
+                        <div class="project-tech">
+                            <span data-i18n="tech.dotnet">.NET</span>
+                            <span data-i18n="tech.mlnet">ML.NET</span>
+                            <span data-i18n="tech.wpf">WPF</span>
+                            <span data-i18n="tech.machine_learning">Machine Learning</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-duration" data-i18n="project.medical_diagnosis.duration">2 Months</span>
+                            <a href="https://github.com/MN10101/MedicalDiagnosisSystem" class="btn" target="_blank" data-i18n="project.view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section dark-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.services">Services & Pricing</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 3rem; color: var(--text-light);" data-i18n="services.subtitle">
+                Professional development services tailored to your business needs
+            </p>
+
+            <div class="services-grid">
+                <!-- Backend Development Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.backend.title">Backend Development</h3>
+                    <div class="service-price" data-i18n="services.backend.price">€2,500+</div>
+                    <ul class="service-features">
+                        <li data-i18n="services.backend.features.0">Spring Boot REST API development</li>
+                        <li data-i18n="services.backend.features.1">Database design & optimization</li>
+                        <li data-i18n="services.backend.features.2">Authentication & security implementation</li>
+                        <li data-i18n="services.backend.features.3">Microservices architecture</li>
+                        <li data-i18n="services.backend.features.4">API documentation & testing</li>
+                        <li data-i18n="services.backend.features.5">Deployment to cloud platforms</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="btn" data-i18n="services.cta">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Full-Stack Development Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.fullstack.title">Full-Stack Development</h3>
+                    <div class="service-price" data-i18n="services.fullstack.price">€4,000+</div>
+                    <ul class="service-features">
+                        <li data-i18n="services.fullstack.features.0">Complete web application development</li>
+                        <li data-i18n="services.fullstack.features.1">Spring Boot backend + React frontend</li>
+                        <li data-i18n="services.fullstack.features.2">Responsive UI/UX design</li>
+                        <li data-i18n="services.fullstack.features.3">Database integration</li>
+                        <li data-i18n="services.fullstack.features.4">User authentication system</li>
+                        <li data-i18n="services.fullstack.features.5">Admin dashboard</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="btn" data-i18n="services.cta">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- API Development Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.api.title">API Development</h3>
+                    <div class="service-price" data-i18n="services.api.price">€1,800+</div>
+                    <ul class="service-features">
+                        <li data-i18n="services.api.features.0">Custom REST API development</li>
+                        <li data-i18n="services.api.features.1">Database integration (PostgreSQL/MySQL)</li>
+                        <li data-i18n="services.api.features.2">JWT authentication</li>
+                        <li data-i18n="services.api.features.3">API documentation with Swagger/OpenAPI</li>
+                        <li data-i18n="services.api.features.4">Performance optimization</li>
+                        <li data-i18n="services.api.features.5">Deployment ready</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="btn" data-i18n="services.cta">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Business Website Package -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.website.title">Business Website Package</h3>
+                    <div class="service-price" data-i18n="services.website.price">€1,500-€3,000</div>
+                    <ul class="service-features">
+                        <li data-i18n="services.website.features.0">Professional portfolio website</li>
+                        <li data-i18n="services.website.features.1">Contact form with email notifications</li>
+                        <li data-i18n="services.website.features.2">Mobile responsive design</li>
+                        <li data-i18n="services.website.features.3">Basic SEO optimization</li>
+                        <li data-i18n="services.website.features.4">Content management system</li>
+                        <li data-i18n="services.website.features.5">Social media integration</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="btn" data-i18n="services.cta">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- AI Integration Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.ai.title">AI Integration</h3>
+                    <div class="service-price" data-i18n="services.ai.price">€3,500+</div>
+                    <ul class="service-features">
+                        <li data-i18n="services.ai.features.0">Text processing/summarization APIs</li>
+                        <li data-i18n="services.ai.features.1">Image analysis with TensorFlow</li>
+                        <li data-i18n="services.ai.features.2">Chatbot integration</li>
+                        <li data-i18n="services.ai.features.3">Machine learning model deployment</li>
+                        <li data-i18n="services.ai.features.4">Data visualization dashboards</li>
+                        <li data-i18n="services.ai.features.5">Custom AI solutions</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="btn" data-i18n="services.cta">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Maintenance & Support -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.maintenance.title">Maintenance & Support</h3>
+                    <div class="service-price" data-i18n="services.maintenance.price">€500/month</div>
+                    <ul class="service-features">
+                        <li data-i18n="services.maintenance.features.0">Regular software updates</li>
+                        <li data-i18n="services.maintenance.features.1">Bug fixes and troubleshooting</li>
+                        <li data-i18n="services.maintenance.features.2">Performance monitoring</li>
+                        <li data-i18n="services.maintenance.features.3">Security patches</li>
+                        <li data-i18n="services.maintenance.features.4">Database maintenance</li>
+                        <li data-i18n="services.maintenance.features.5">24/7 emergency support</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="#contact" class="btn" data-i18n="services.cta">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-note" data-i18n="services.note">
+                <p><strong>Note:</strong> All prices are estimates. Final pricing depends on project scope and requirements.
+                    Contact me for a personalized quote tailored to your specific needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.contact">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.info">Contact Information</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:mn.de@outlook.com" class="contact-link email">
+                                <span>mn.de@outlook.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+491639769764" class="contact-link phone">
+                                <span data-i18n="contact.phone">+49 163 9769764</span>
+                            </a>
+                        </li>
+                        <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/place/52.5200,13.4050/@52.5200,13.4050,14z" target="_blank" data-i18n="contact.location" class="contact-link email">Berlin, Germany</a>
+                        </li>
+                     </ul>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mahmoud-najmeh-b53172211" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/MN10101" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://drive.google.com/file/d/1GSQRCbW1jFE0_5NJSMy4hS-W49KhA3r5/view?usp=sharing" class="btn" target="_blank" data-i18n="contact.video">Video About Me</a>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/mldlzywn" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="form.name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" data-i18n-placeholder="form.email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="form.subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" data-i18n-placeholder="form.message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" data-i18n="form.submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">&copy; 2025 Mahmoud Najmeh. All rights reserved.</p>
+            <a href="#" class="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Popup -->
+  <!--   <div class="cookie-consent" id="cookieConsent" style="display: none;">
+        <div class="cookie-content">
+            <h3 data-i18n="cookie.title">We Use Cookies</h3>
+            <p data-i18n="cookie.message">
+                This website uses cookies to enhance your browsing experience and provide personalized content. By clicking "Accept," you consent to the use of cookies. You can learn more in our <a href="/privacy-policy.html" data-i18n="cookie.policy">Privacy Policy</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button class="btn cookie-accept" id="cookieAccept" data-i18n="cookie.accept">Accept</button>
+                <button class="btn cookie-decline" id="cookieDecline" data-i18n="cookie.decline">Decline</button>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>
