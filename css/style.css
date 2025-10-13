@@ -2010,7 +2010,7 @@ footer {
     }
 }
 
-/*  SAFARI SPECIFIC FIXES FOR ARABIC NON-DESKTOP  */
+/*  SAFARI SPECIFIC FOR ARABIC NON-DESKTOP  */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 1024px) {
         html[lang="ar"] .title-segment {
@@ -2025,7 +2025,7 @@ footer {
             position: fixed !important;
             left: 0.8rem !important;
             right: auto !important;
-            bottom: 1rem !important;
+            bottom: 1.8rem !important;
             -webkit-transform: translateZ(0) !important;
             transform: translateZ(0) !important;
             will-change: transform !important;
@@ -2078,7 +2078,7 @@ footer {
     @media (max-width: 768px) {
         html[lang="ar"] .section-indicators,
         html[lang="ar"] .back-to-top {
-            bottom: 0.8rem !important;
+            bottom: 1.4rem !important;
             left: 0.8rem !important;
         }
 
@@ -2090,7 +2090,7 @@ footer {
     @media (max-width: 480px) {
         html[lang="ar"] .section-indicators,
         html[lang="ar"] .back-to-top {
-            bottom: 0.6rem !important;
+            bottom: 1rem !important; 
             left: 0.6rem !important;
         }
     }
