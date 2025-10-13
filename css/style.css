@@ -1420,6 +1420,29 @@ footer {
     animation: flame-pulse 1.5s ease-in-out infinite;
 }
 
+/* Scrollbar styling global */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--primary);
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-dark);
+}
+
 /* Arabic RTL Specific Styles - DESKTOP ONLY */
 @media (min-width: 1025px) {
     html[lang="ar"] {
@@ -1884,6 +1907,27 @@ footer {
         display: inline-block !important;
         width: 0 !important;
     }
+}
+
+html[lang="ar"] {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--primary);
+}
+
+html[lang="ar"]::-webkit-scrollbar {
+    width: 8px;
+}
+
+html[lang="ar"]::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+html[lang="ar"]::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 4px;
+}
+html[lang="ar"]::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-dark);
 }
 
 /*  SAFARI SPECIFIC FIXES  */
