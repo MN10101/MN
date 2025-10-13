@@ -7,7 +7,7 @@ if (typeof document.title !== 'string' || document.title.includes('[object Objec
 (function() {
     // List of allowed titles
     const allowedTitles = [
-        "Mahmoud Najmeh | Full-Stack Engineer",
+        "Mahmoud Najmeh | Full-Stack Developer",
         "MN Portfolio",
         "Mahmoud Najmeh - Portfolio"
     ];
