@@ -1093,7 +1093,6 @@ const translations = {
         }
     },
     ar: {
-        // Arabic remains unchanged as requested
         title: "محمود نجمة | مهندس برمجيات فول ستاك",
         name: {
             first: "محمود",
