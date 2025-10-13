@@ -1,7 +1,7 @@
 // Translation map
 const translations = {
     en: {
-        title: "Mahmoud Najmeh | Full-Stack Engineer",
+        title: "Mahmoud Najmeh | Full-Stack Developer",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -14,7 +14,7 @@ const translations = {
             contact: "Get In Touch"
         },
         about: {
-            description: "Dedicated Full-Stack Engineer with solid experience in OOP and a strong interest in web and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET. Successful implementation of web projects with a focus on full-stack development (backend and frontend) and teamwork.",
+            description: "Dedicated Full-Stack Developer with solid experience in OOP and a strong interest in web and AI development. Proficient in Java, Spring Boot, Python, Django, and C# .NET. Successful implementation of web projects with a focus on full-stack development (backend and frontend) and teamwork.",
             education: "Education"
         },
         education: {
@@ -82,7 +82,7 @@ const translations = {
         },
         title: {
             "java-backend": "JAVA PROGRAMMER",
-            "full-stack": "FULL-STACK ENGINEER",
+            "full-stack": "FULL-STACK DEVELOPER",
             ai: "AI ENTHUSIAST"
         },
         services: {
@@ -219,7 +219,7 @@ const translations = {
         }
     },
     de: {
-        title: "Mahmoud Najmeh | Full-Stack Engineer",
+        title: "Mahmoud Najmeh | Full-Stack Entwickler",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -232,7 +232,7 @@ const translations = {
             contact: "Kontakt aufnehmen"
         },
         about: {
-            description: "Engagierter Full-Stack-Ingenieur mit fundierter Erfahrung in objektorientierter Programmierung und großem Interesse an Web- und KI-Entwicklung. Versiert in Java, Spring Boot, Python, Django und C# .NET. Erfolgreiche Umsetzung von Webprojekten mit Fokus auf Full-Stack-Entwicklung (Backend und Frontend) und Teamarbeit.",
+            description: "Engagierter Full-Stack-Entwickler mit fundierter Erfahrung in objektorientierter Programmierung und großem Interesse an Web- und KI-Entwicklung. Versiert in Java, Spring Boot, Python, Django und C# .NET. Erfolgreiche Umsetzung von Webprojekten mit Fokus auf Full-Stack-Entwicklung (Backend und Frontend) und Teamarbeit.",
             education: "Ausbildung"
         },
         education: {
@@ -300,7 +300,7 @@ const translations = {
         },
         title: {
             "java-backend": "JAVA-PROGRAMMIERER",
-            "full-stack": "FULL-STACK INGENIEUR",
+            "full-stack": "FULL-STACK ENTWICKLER",
             ai: "KI-BEGEISTERTER"
         },
         services: {
@@ -437,7 +437,7 @@ const translations = {
         }
     },
     pl: {
-        title: "Mahmoud Najmeh | Full-Stack Engineer",
+        title: "Mahmoud Najmeh | Full-Stack Developer",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -450,7 +450,7 @@ const translations = {
             contact: "Skontaktuj się"
         },
         about: {
-            description: "Zaangażowany inżynier Full-Stack z solidnym doświadczeniem w programowaniu obiektowym i dużym zainteresowaniem rozwojem aplikacji webowych oraz sztuczną inteligencją. Biegły w Java, Spring Boot, Python, Django oraz C# .NET. Pomyślna realizacja projektów webowych z naciskiem na rozwój full-stack (backend i frontend) oraz pracę zespołową.",
+            description: "Zaangażowany programista Full-Stack z solidnym doświadczeniem w programowaniu obiektowym i dużym zainteresowaniem rozwojem aplikacji webowych oraz sztuczną inteligencją. Biegły w Java, Spring Boot, Python, Django oraz C# .NET. Pomyślna realizacja projektów webowych z naciskiem na rozwój full-stack (backend i frontend) oraz pracę zespołową.",
             education: "Wykształcenie"
         },
         education: {
@@ -518,7 +518,7 @@ const translations = {
         },
         title: {
             "java-backend": "PROGRAMISTA JAVA",
-            "full-stack": "INŻYNIER FULL-STACK",
+            "full-stack": "PROGRAMISTA FULL-STACK",
             ai: "ENTUZJASTA SZTUCZNEJ INTELIGENCJI"
         },
         services: {
@@ -655,7 +655,7 @@ const translations = {
         }
     },
     fr: {
-        title: "Mahmoud Najmeh | Full-Stack Engineer",
+        title: "Mahmoud Najmeh | Développeur Full-Stack",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -668,7 +668,7 @@ const translations = {
             contact: "Me contacter"
         },
         about: {
-            description: "Ingénieur Full-Stack dévoué avec une solide expérience en programmation orientée objet et un vif intérêt pour le développement web et l'IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET. Mise en œuvre réussie de projets web avec un accent sur le développement full-stack (backend et frontend) et le travail d'équipe.",
+            description: "Développeur Full-Stack dévoué avec une solide expérience en programmation orientée objet et un vif intérêt pour le développement web et l'IA. Maîtrise de Java, Spring Boot, Python, Django et C# .NET. Mise en œuvre réussie de projets web avec un accent sur le développement full-stack (backend et frontend) et le travail d'équipe.",
             education: "Éducation"
         },
         education: {
@@ -737,7 +737,7 @@ const translations = {
         },
         title: {
             "java-backend": "PROGRAMMEUR JAVA",
-            "full-stack": "INGÉNIEUR FULL-STACK",
+            "full-stack": "DÉVELOPPEUR FULL-STACK",
             ai: "ENTHOUSIASTE D'IA"
         },
         services: {
@@ -874,7 +874,7 @@ const translations = {
         }
     },
     tr: {
-        title: "Mahmoud Najmeh | Full-Stack Mühendisi",
+        title: "Mahmoud Najmeh | Full-Stack Geliştirici",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -887,7 +887,7 @@ const translations = {
             contact: "İletişime Geç"
         },
         about: {
-            description: "Nesne tabanlı programlamada sağlam deneyime ve web ile yapay zeka geliştirmeye güçlü bir ilgiye sahip kararlı bir Full-Stack Mühendisi. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin. Full-stack geliştirme (backend ve frontend) ve ekip çalışmasına odaklanarak web projelerinin başarılı bir şekilde uygulanması.",
+            description: "Nesne tabanlı programlamada sağlam deneyime ve web ile yapay zeka geliştirmeye güçlü bir ilgiye sahip kararlı bir Full-Stack Geliştirici. Java, Spring Boot, Python, Django ve C# .NET konusunda yetkin. Full-stack geliştirme (backend ve frontend) ve ekip çalışmasına odaklanarak web projelerinin başarılı bir şekilde uygulanması.",
             education: "Eğitim"
         },
         education: {
@@ -956,7 +956,7 @@ const translations = {
         },
         title: {
             "java-backend": "JAVA PROGRAMCISI",
-            "full-stack": "FULL-STACK MÜHENDİSİ",
+            "full-stack": "FULL-STACK GELİŞTİRİCİ",
             ai: "YAPAY ZEKA TUTKUNU"
         },
         services: {
@@ -1092,7 +1092,8 @@ const translations = {
             back: "Ana Sayfaya Geri Dön"
         }
     },
-        ar: {
+    ar: {
+        // Arabic remains unchanged as requested
         title: "محمود نجمة | مهندس برمجيات فول ستاك",
         name: {
             first: "محمود",
