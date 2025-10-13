@@ -488,6 +488,58 @@ if (languageSelect) {
     });
 }
 
+// Thank-you page specific initialization
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang');
+    
+    let currentLang = 'en';
+    
+    if (lang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
+        currentLang = lang;
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = lang;
+        }
+    } else {
+        const storedLang = localStorage.getItem('language');
+        if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(storedLang)) {
+            currentLang = storedLang;
+            const languageSelect = document.getElementById('language-select');
+            if (languageSelect) {
+                languageSelect.value = storedLang;
+            }
+        }
+    }
+    
+    updateContent(currentLang);
+    
+    const backToHomeLink = document.getElementById('backToHome');
+    if (backToHomeLink) {
+        backToHomeLink.href = `index.html?lang=${currentLang}`;
+    }
+    
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', (e) => {
+            const newLang = e.target.value;
+            if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(newLang)) {
+                localStorage.setItem('language', newLang);
+                updateContent(newLang);
+                
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('lang', newLang);
+                window.history.replaceState({}, '', newUrl);
+                
+                if (backToHomeLink) {
+                    backToHomeLink.href = `index.html?lang=${newLang}`;
+                }
+            }
+        });
+    }
+});
+
+
 // Disable right-click
 // document.addEventListener('contextmenu', (event) => event.preventDefault());
 
