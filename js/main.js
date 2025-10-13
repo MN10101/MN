@@ -1,6 +1,6 @@
 // Ensure the title is valid on load
 if (typeof document.title !== 'string' || document.title.includes('[object Object]')) {
-    document.title = "Mahmoud Najmeh | Full-Stack Engineer";
+    document.title = "Mahmoud Najmeh | Full-Stack Developer";
 }
 
 // Title Protection Guard
@@ -487,3 +487,13 @@ if (languageSelect) {
         setTimeout(fixArabicEducationTitles, 100);
     });
 }
+
+// Disable right-click
+// document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+// Disable F12 and Ctrl+Shift+I
+/* document.addEventListener('keydown', (event) => {
+    if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+        event.preventDefault();
+    }
+}); */
