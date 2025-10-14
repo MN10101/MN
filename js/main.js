@@ -301,7 +301,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupEmailValidation();
 
-    setupVideoModal();
+    loadYouTubeAPI();
+
+    setupVideoModal();;
     
     // Form submission handler
     const contactForm = document.querySelector('.contact-form');
@@ -667,16 +669,44 @@ function trapFocus(element) {
   }
 }
 
+// YouTube IFrame API Implementation
+let player;
+
+// Load YouTube API
+const loadYouTubeAPI = () => {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+};
+
+// YouTube API ready callback
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtubeVideo', {
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    console.log('YouTube player ready');
+}
+
+function onPlayerStateChange(event) {
+    // Handle player state changes if needed
+}
+
 // Video Modal Setup
 function setupVideoModal() {
     const modal = document.getElementById('videoModal');
     const btn = document.getElementById('videoModalBtn');
     const closeBtn = document.querySelector('.close-btn');
-    const iframe = document.getElementById('youtubeVideo');
     const modalContent = document.querySelector('.modal-content');
 
     // Check if elements exist
-    if (!modal || !btn || !closeBtn || !iframe || !modalContent) return;
+    if (!modal || !btn || !closeBtn || !modalContent) return;
 
     // Check if we're on a mobile device
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -715,11 +745,10 @@ function setupVideoModal() {
         }
         trapFocus(modal);
 
-        // Start video playback
-        iframe.contentWindow.postMessage(
-            '{"event":"command","func":"playVideo","args":""}',
-            'https://www.youtube.com'
-        );
+        // Start video playback using YouTube API
+        if (player && typeof player.playVideo === 'function') {
+            player.playVideo();
+        }
     }
 
     // Close modal function
@@ -729,11 +758,10 @@ function setupVideoModal() {
         document.body.classList.remove('modal-open', 'mobile-modal-open');
         document.body.style.overflow = 'auto';
 
-        // Pause video when modal closes
-        iframe.contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            'https://www.youtube.com'
-        );
+        // Pause video using YouTube API
+        if (player && typeof player.pauseVideo === 'function') {
+            player.pauseVideo();
+        }
 
         // Return focus to the button that opened the modal
         btn.focus();
@@ -779,12 +807,13 @@ function setupVideoModal() {
     modalContent.addEventListener('click', (e) => e.stopPropagation());
     modalContent.addEventListener('touchend', (e) => e.stopPropagation());
     modalContent.addEventListener('touchmove', (e) => e.stopPropagation());
-    iframe.addEventListener('touchstart', (e) => e.stopPropagation());
+    
+    // Add touch event prevention for the iframe
+    const iframe = document.getElementById('youtubeVideo');
+    if (iframe) {
+        iframe.addEventListener('touchstart', (e) => e.stopPropagation());
+    }
 }
-
-// Call the function on DOM load
-document.addEventListener('DOMContentLoaded', setupVideoModal);
-
 
 // Disable right-click
 // document.addEventListener('contextmenu', (event) => event.preventDefault());
