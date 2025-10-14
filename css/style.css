@@ -1464,6 +1464,22 @@ html::-webkit-scrollbar-thumb:hover {
   outline-offset: 2px;
 }
 
+:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+  border-radius: 4px;
+  transition: outline-color 0.2s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+}
+
 .skip-link {
   position: absolute;
   top: -40px;
