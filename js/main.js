@@ -539,6 +539,107 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Video Popup Functionality 
+function initVideoPopup() {
+    const videoBtn = document.querySelector('a[href="/Vid/rr.mp4"]');
+    const modal = document.getElementById('videoModal');
+    const closeBtn = document.querySelector('.close');
+    const video = document.getElementById('aboutMeVideo');
+
+    if (!videoBtn || !modal) {
+        console.log('Video popup elements not found');
+        return;
+    }
+
+    // Video optimization for highest quality
+    function optimizeVideoPlayback() {
+        if (!video) return;
+        
+        // Set video to highest quality
+        video.preload = 'auto';
+        video.playsInline = true;
+        
+        // Try to enable hardware acceleration
+        video.style.transform = 'translateZ(0)';
+        
+        // Set video attributes for quality
+        video.setAttribute('autoplay', 'false');
+        video.setAttribute('muted', 'false');
+        video.setAttribute('controlsList', 'nodownload');
+        
+        console.log('Video optimized for quality playback');
+    }
+
+    // Monitor video quality (simplified)
+    function monitorVideoQuality() {
+        if (!video) return;
+        
+        video.addEventListener('loadedmetadata', function() {
+            console.log('Video dimensions:', video.videoWidth + 'x' + video.videoHeight);
+            console.log('Video duration:', video.duration + 's');
+            
+            // Auto-play at highest quality
+            video.play().catch(e => {
+                console.log('Auto-play prevented:', e);
+            });
+        });
+
+        video.addEventListener('canplay', function() {
+            console.log('Video can play at highest quality');
+        });
+    }
+
+    // Modified click handler
+    videoBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Optimize video when modal opens
+        setTimeout(optimizeVideoPlayback, 100);
+        
+        // Try to play video
+        if (video) {
+            video.play().catch(e => {
+                console.log('Auto-play prevented, user must click play');
+            });
+        }
+    });
+
+    // Close modal function
+    function closeModal() {
+        modal.style.display = 'none';
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+        document.body.style.overflow = '';
+    }
+
+    // Close modal when X is clicked
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+    });
+
+    // Initialize video monitoring
+    monitorVideoQuality();
+
+    console.log('Video popup initialized successfully');
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initVideoPopup();
+});
+
 
 // Disable right-click
 // document.addEventListener('contextmenu', (event) => event.preventDefault());
