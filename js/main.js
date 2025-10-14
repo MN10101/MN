@@ -671,23 +671,41 @@ function trapFocus(element) {
 
 // YouTube IFrame API Implementation
 let player;
+let isYouTubeAPILoaded = false;
 
 // Load YouTube API
 const loadYouTubeAPI = () => {
+    // Check if API is already loaded
+    if (window.YT && window.YT.Player) {
+        isYouTubeAPILoaded = true;
+        initializeYouTubePlayer();
+        return;
+    }
+    
     const tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
+    tag.onload = () => {
+        isYouTubeAPILoaded = true;
+    };
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 };
 
 // YouTube API ready callback
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtubeVideo', {
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
+    initializeYouTubePlayer();
+}
+
+function initializeYouTubePlayer() {
+    const iframe = document.getElementById('youtubeVideo');
+    if (iframe && window.YT) {
+        player = new YT.Player('youtubeVideo', {
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
 }
 
 function onPlayerReady(event) {
@@ -695,7 +713,39 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
-    // Handle player state changes if needed
+    // Handle player state changes
+    if (event.data === YT.PlayerState.ENDED) {
+        console.log('Video ended');
+    }
+}
+
+// Safe video control functions
+function playVideo() {
+    if (player && typeof player.playVideo === 'function') {
+        player.playVideo();
+    } else {
+        // Fallback: reload iframe with autoplay
+        const iframe = document.getElementById('youtubeVideo');
+        if (iframe) {
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('autoplay=1')) {
+                iframe.src = currentSrc.replace('autoplay=0', 'autoplay=1') + (currentSrc.includes('autoplay=') ? '' : '&autoplay=1');
+            }
+        }
+    }
+}
+
+function pauseVideo() {
+    if (player && typeof player.pauseVideo === 'function') {
+        player.pauseVideo();
+    } else {
+        // Fallback: reload iframe without autoplay
+        const iframe = document.getElementById('youtubeVideo');
+        if (iframe) {
+            const currentSrc = iframe.src;
+            iframe.src = currentSrc.replace('autoplay=1', 'autoplay=0');
+        }
+    }
 }
 
 // Video Modal Setup
@@ -745,10 +795,8 @@ function setupVideoModal() {
         }
         trapFocus(modal);
 
-        // Start video playback using YouTube API
-        if (player && typeof player.playVideo === 'function') {
-            player.playVideo();
-        }
+        // Start video playback using safe method
+        playVideo();
     }
 
     // Close modal function
@@ -758,10 +806,8 @@ function setupVideoModal() {
         document.body.classList.remove('modal-open', 'mobile-modal-open');
         document.body.style.overflow = 'auto';
 
-        // Pause video using YouTube API
-        if (player && typeof player.pauseVideo === 'function') {
-            player.pauseVideo();
-        }
+        // Pause video using safe method
+        pauseVideo();
 
         // Return focus to the button that opened the modal
         btn.focus();
