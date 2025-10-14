@@ -1443,6 +1443,21 @@ html::-webkit-scrollbar-thumb:hover {
     background-color: var(--accent-dark);
 }
 
+/* Email Validation */
+.validation-message {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    min-height: 1rem;
+}
+
+.validation-message.valid {
+    color: #22c55e;
+}
+
+.validation-message.invalid {
+    color: #ef4444;
+}
+
 /* Arabic RTL Specific Styles - DESKTOP ONLY */
 @media (min-width: 1025px) {
     html[lang="ar"] {

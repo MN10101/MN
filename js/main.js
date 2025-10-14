@@ -41,7 +41,7 @@ function getUrlParameter(name) {
     return urlParams.get(name);
 }
 
-// Dynamic title animation - WITH ARABIC SUPPORT (FIXED)
+// Dynamic title animation - WITH ARABIC SUPPORT
 const titleSlider = document.querySelector('.title-slider');
 const titleUnderline = document.querySelector('.title-underline');
 const titleSegments = document.querySelectorAll('.title-segment');
@@ -221,21 +221,118 @@ function updateBackToHomeLinks(lang) {
     });
 }
 
+// Email Validation Functions
+function validateEmail(email) {
+    const currentLang = document.documentElement.lang || 'en';
+    const t = translations[currentLang]?.validation || translations.en.validation;
+
+    // Basic email format validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+        return { isValid: false, message: t.invalidEmail };
+    }
+
+    // Common disposable email domains
+    const disposableDomains = [
+        'tempmail.com', 'fakeinbox.com', 'throwawaymail.com', 'guerrillamail.com',
+        'mailinator.com', '10minutemail.com', 'yopmail.com', 'trashmail.com',
+        'getairmail.com', 'dispostable.com', 'temp-mail.org', 'fake-mail.com',
+        'kvkgiew.com', 'maildrop.cc', 'mytemp.email', 'spambox.us', 'mailcatch.com',
+        'mailnesia.com', 'mintemail.com', 'sharklasers.com', 'spamgourmet.com',
+        'mail-temporaire.fr', 'jetable.org', 'mailnull.com', 'disposableemailaddresses.com','me.com','jiudhvie.com'
+    ];
+
+    const domain = email.split('@')[1].toLowerCase();
+    
+    if (disposableDomains.includes(domain)) {
+        return { isValid: false, message: t.disposableEmail };
+    }
+
+    // Check for suspicious patterns
+    if (email.length > 254) {
+        return { isValid: false, message: t.emailTooLong };
+    }
+
+    if (email.split('@')[0].length > 64) {
+        return { isValid: false, message: t.emailTooLong };
+    }
+
+    return { isValid: true, message: t.validEmail };
+}
+
+function setupEmailValidation() {
+    const emailInput = document.querySelector('input[type="email"]');
+    const validationMessage = document.getElementById('email-validation');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (!emailInput || !validationMessage) return;
+
+    let validationTimeout;
+
+    emailInput.addEventListener('input', function() {
+        clearTimeout(validationTimeout);
+        
+        validationTimeout = setTimeout(() => {
+            const email = this.value.trim();
+            
+            if (email === '') {
+                validationMessage.textContent = '';
+                validationMessage.className = 'validation-message';
+                if (submitBtn) submitBtn.disabled = false;
+                return;
+            }
+
+            const validation = validateEmail(email);
+            
+            validationMessage.textContent = validation.message;
+            validationMessage.className = `validation-message ${validation.isValid ? 'valid' : 'invalid'}`;
+            
+            if (submitBtn) {
+                submitBtn.disabled = !validation.isValid;
+            }
+        }, 500);
+    });
+}
+
 // Main DOM Content Loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize title animation
     restartTitleAnimation();
+
+    setupEmailValidation();
     
     // Form submission handler
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
+            // Final email validation
+            const emailInput = contactForm.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+            const validation = validateEmail(email);
+            
+            if (!validation.isValid) {
+                const validationMessage = document.getElementById('email-validation');
+                if (validationMessage) {
+                    validationMessage.textContent = validation.message;
+                    validationMessage.className = 'validation-message invalid';
+                }
+                emailInput.focus();
+                return;
+            }
+
             const formData = new FormData(contactForm);
             const formAction = contactForm.getAttribute('action');
             const currentLang = document.documentElement.lang || 'en';
 
             try {
+                // Show loading state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
                 const response = await fetch(formAction, {
                     method: 'POST',
                     body: formData,
@@ -245,7 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    // Redirect to thank-you page with language parameter
                     window.location.href = `thank-you.html?lang=${currentLang}`;
                 } else {
                     const errorData = await response.json();
@@ -255,6 +351,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error('Network error:', error);
                 alert('A network error occurred. Please check your connection.');
+            } finally {
+                // Reset button state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
             }
         });
     }
@@ -455,10 +558,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check on page load
     handleScroll();
 
-    // Also re-initialize when language changes
+    // re-initialize when language changes
     const languageSelect = document.getElementById('language-select');
     if (languageSelect) {
         languageSelect.addEventListener('change', () => {
+            // ✅ ADD THIS HERE
+            const validationMessage = document.getElementById('email-validation');
+            if (validationMessage) {
+                validationMessage.textContent = '';
+                validationMessage.className = 'validation-message';
+            }
+            
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+            }
+            
             // Small delay to allow the language change to take effect
             setTimeout(restartTitleAnimation, 100);
         });

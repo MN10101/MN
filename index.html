@@ -507,7 +507,10 @@
                         <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="form.name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" data-i18n-placeholder="form.email" required>
+                        <input type="email" name="email" placeholder="Your Email" data-i18n-placeholder="form.email" 
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+                            title="Please enter a valid email address" required>
+                        <div class="validation-message" id="email-validation"></div>
                     </div>
                     <div class="form-group">
                         <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="form.subject" required>
@@ -515,7 +518,7 @@
                     <div class="form-group">
                         <textarea name="message" placeholder="Your Message" data-i18n-placeholder="form.message" required></textarea>
                     </div>
-                    <button type="submit" class="btn" data-i18n="form.submit">Send Message</button>
+                    <button type="submit" class="btn" data-i18n="form.submit" id="submit-btn">Send Message</button>
                 </form>
             </div>
         </div>

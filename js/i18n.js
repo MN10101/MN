@@ -216,6 +216,13 @@ const translations = {
             heading: "Thank You!",
             message: "Your message has been sent successfully. I'll get back to you soon.",
             back: "Back to Home"
+        },
+        validation: {
+            validEmail: "Valid email address",
+            invalidEmail: "Please enter a valid email address",
+            disposableEmail: "Please use a permanent email address",
+            domainNotExist: "Email domain does not exist",
+            emailTooLong: "Email address is too long"
         }
     },
     de: {
@@ -434,6 +441,13 @@ const translations = {
             heading: "Vielen Dank!",
             message: "Ihre Nachricht wurde erfolgreich gesendet. Ich melde mich bald bei Ihnen.",
             back: "Zurück zur Startseite"
+        },
+        validation: {
+            validEmail: "Gültige E-Mail-Adresse",
+            invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+            disposableEmail: "Bitte verwenden Sie eine permanente E-Mail-Adresse",
+            domainNotExist: "E-Mail-Domain existiert nicht",
+            emailTooLong: "E-Mail-Adresse ist zu lang"
         }
     },
     pl: {
@@ -652,6 +666,13 @@ const translations = {
             heading: "Dziękujemy!",
             message: "Twoja wiadomość została pomyślnie wysłana. Odezwę się wkrótce.",
             back: "Powrót do strony głównej"
+        },
+        validation: {
+            validEmail: "Prawidłowy adres e-mail",
+            invalidEmail: "Proszę podać prawidłowy adres e-mail",
+            disposableEmail: "Proszę użyć stałego adresu e-mail",
+            domainNotExist: "Domena e-mail nie istnieje",
+            emailTooLong: "Adres e-mail jest zbyt długi"
         }
     },
     fr: {
@@ -871,6 +892,13 @@ const translations = {
             heading: "Merci !",
             message: "Votre message a été envoyé avec succès. Je vous répondrai bientôt.",
             back: "Retour à l'accueil"
+        },
+        validation: {
+            validEmail: "Adresse e-mail valide",
+            invalidEmail: "Veuillez saisir une adresse e-mail valide",
+            disposableEmail: "Veuillez utiliser une adresse e-mail permanente",
+            domainNotExist: "Le domaine de messagerie n'existe pas",
+            emailTooLong: "L'adresse e-mail est trop longue"
         }
     },
     tr: {
@@ -1090,6 +1118,13 @@ const translations = {
             heading: "Teşekkürler!",
             message: "Mesajınız başarıyla gönderildi. Yakında size geri döneceğim.",
             back: "Ana Sayfaya Geri Dön"
+        },
+        validation: {
+            validEmail: "Geçerli e-posta adresi",
+            invalidEmail: "Lütfen geçerli bir e-posta adresi girin",
+            disposableEmail: "Lütfen kalıcı bir e-posta adresi kullanın",
+            domainNotExist: "E-posta alan adı mevcut değil",
+            emailTooLong: "E-posta adresi çok uzun"
         }
     },
     ar: {
@@ -1308,6 +1343,13 @@ const translations = {
             heading: "شكرًا لك!",
             message: "تم إرسال رسالتك بنجاح. سأتواصل معك قريبًا.",
             back: "العودة إلى الصفحة الرئيسية"
+        },
+        validation: {
+            validEmail: "عنوان بريد إلكتروني صالح",
+            invalidEmail: "يرجى إدخال عنوان بريد إلكتروني صحيح",
+            disposableEmail: "يرجى استخدام عنوان بريد إلكتروني دائم",
+            domainNotExist: "نطاق البريد الإلكتروني غير موجود",
+            emailTooLong: "عنوان البريد الإلكتروني طويل جدًا"
         }
     }
 };
@@ -1320,11 +1362,30 @@ function updateContent(lang) {
         lang = 'en';
     }
 
+    // Clear contact form fields on language change
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.reset(); 
+    }
+
+    // Clear email validation message on language change
+    const validationMessage = document.getElementById('email-validation');
+    if (validationMessage) {
+        validationMessage.textContent = '';
+        validationMessage.className = 'validation-message';
+    }
+    
+    // re-enable submit button
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+        submitBtn.disabled = false;
+    }
+
     console.log(`Updating content to language: ${lang}`);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-    document.title = translations[lang]?.title || "Mahmoud Najmeh | Full-Stack Engineer";
+    document.title = translations[lang]?.title || "Mahmoud Najmeh | Full-Stack Developer";
 
     // Update text content
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -1428,7 +1489,6 @@ function getLanguageFromCountry(countryCode) {
         'PL': 'pl',     
         'FR': 'fr',      
         'TR': 'tr',      
-        // Arabic countries
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
