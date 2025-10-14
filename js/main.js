@@ -580,13 +580,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add this to your main.js - Force correct text for Arabic education titles on mobile
+// Force correct text for Arabic education titles on mobile
 function fixArabicEducationTitles() {
     if (document.documentElement.lang === 'ar' && window.innerWidth <= 1024) {
         const javaTitle = document.querySelector('[data-i18n="education.java.title"]');
         const itTitle = document.querySelector('[data-i18n="education.it_specialist.title"]');
         
-        if (javaTitle) javaTitle.textContent = "Java مطور";
+        if (javaTitle) javaTitle.textContent = "مبرمج جافا";
         if (itTitle) itTitle.textContent = "اخصائي تكنولوجيا المعلومات في مجال تطوير التطبيقات";
     }
 }
