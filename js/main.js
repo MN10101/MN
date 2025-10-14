@@ -300,6 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
     restartTitleAnimation();
 
     setupEmailValidation();
+
+    setupVideoModal();
     
     // Form submission handler
     const contactForm = document.querySelector('.contact-form');
@@ -653,6 +655,135 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Management for modals and dynamic content
+function trapFocus(element) {
+  const focusableElements = element.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  
+  if (focusableElements.length > 0) {
+    focusableElements[0].focus();
+  }
+}
+
+// Video Modal Setup
+function setupVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const btn = document.getElementById('videoModalBtn');
+    const closeBtn = document.querySelector('.close-btn');
+    const iframe = document.getElementById('youtubeVideo');
+    const modalContent = document.querySelector('.modal-content');
+
+    // Check if elements exist
+    if (!modal || !btn || !closeBtn || !iframe || !modalContent) return;
+
+    // Check if we're on a mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    // Function to trap focus within modal for accessibility
+    function trapFocus(element) {
+        const focusableElements = element.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        element.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        });
+
+        if (firstElement) firstElement.focus();
+    }
+
+    // Open modal function
+    function openModal(e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        if (isMobile) {
+            document.body.classList.add('mobile-modal-open');
+        }
+        trapFocus(modal);
+
+        // Start video playback
+        iframe.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            'https://www.youtube.com'
+        );
+    }
+
+    // Close modal function
+    function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open', 'mobile-modal-open');
+        document.body.style.overflow = 'auto';
+
+        // Pause video when modal closes
+        iframe.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            'https://www.youtube.com'
+        );
+
+        // Return focus to the button that opened the modal
+        btn.focus();
+    }
+
+    // Event listeners for opening modal
+    btn.addEventListener('click', openModal);
+    if (isMobile) {
+        btn.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            openModal(e);
+        });
+    }
+
+    // Event listeners for closing modal
+    closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeModal();
+    });
+
+    // Close modal when clicking/touching outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    modal.addEventListener('touchend', (e) => {
+        if (e.target === modal) {
+            e.preventDefault();
+            closeModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+
+    // Prevent modal content from closing when interacting inside
+    modalContent.addEventListener('click', (e) => e.stopPropagation());
+    modalContent.addEventListener('touchend', (e) => e.stopPropagation());
+    modalContent.addEventListener('touchmove', (e) => e.stopPropagation());
+    iframe.addEventListener('touchstart', (e) => e.stopPropagation());
+}
+
+// Call the function on DOM load
+document.addEventListener('DOMContentLoaded', setupVideoModal);
 
 
 // Disable right-click

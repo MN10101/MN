@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Mahmoud Najmeh | Full-Stack Engineer</title>
     <link rel="icon" type="image/x-icon" href="images/profile.jpg">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahmoud Najmeh",
+      "jobTitle": "Full-Stack Developer & AI Engineer",
+      "url": "https://mn10101.github.io/MN",
+      "image": "https://mn10101.github.io/MN/images/profile.jpg",
+      "email": "mn.de@outlook.com",
+      "telephone": "+491639769764",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://github.com/MN10101",
+        "https://www.linkedin.com/in/mahmoud-najmeh-b53172211"
+      ],
+      "knowsAbout": [
+        "Java", "Spring Boot", "Python", "Artificial Intelligence", 
+        "Web Development", "Backend Development", "Machine Learning",
+        "REST APIs", "Database Design", "Cloud Computing"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full-Stack Developer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Berlin"
+        }
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance Developer"
+      }
+    }
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -13,11 +57,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Mahmoud Najmeh | Full-Stack Developer & AI Engineer">
+    <meta property="og:description" content="Expert Java, Spring Boot, Python & AI Developer. Building robust backend systems and intelligent applications.">
+    <meta property="og:image" content="https://mn10101.github.io/MN/images/profile.jpg">
+    <meta property="og:url" content="https://mn10101.github.io/MN">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mahmoud Najmeh Portfolio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mahmoud Najmeh | Full-Stack Developer">
+    <meta name="twitter:description" content="Java, Spring Boot, Python & AI Developer">
+    <meta name="twitter:image" content="https://mn10101.github.io/MN/images/profile.jpg">
+    <meta name="twitter:image:alt" content="Mahmoud Najmeh - Full-Stack Developer">
+    <meta name="twitter:site" content="@MN10101">
+    <meta name="twitter:creator" content="@MN10101">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Mahmoud Najmeh - Expert Full-Stack Developer specializing in Java, Spring Boot, Python, Django, and AI development. Building robust applications.">
+    <meta name="keywords" content="Java Developer, Spring Boot, Python, AI, Full-Stack, Backend, Web Development, Machine Learning, Django, React, Berlin Developer">
+
+    <meta name="theme-color" content="#0f172a">
+    <meta name="color-scheme" content="dark light">
 </head>
 <body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Language Toggle -->
     <div class="language-toggle">
-        <select id="language-select">
+        <select id="language-select" aria-label="Select language">
             <option value="en">English</option>
             <option value="de">German</option>
             <option value="pl">Polish</option>
@@ -27,10 +101,10 @@
         </select>
     </div>
 
-    <div class="section-indicators"></div>
+    <div class="section-indicators" role="navigation" aria-label="Page sections"></div>
     <div class="cursor-trail"></div>
     
-    <header class="hero">
+    <header class="hero" role="banner" aria-label="Main header">
         <div id="particles-js"></div>
         <div class="hero-content">
             <div class="profile-container">
@@ -68,7 +142,7 @@
                 <div class="dynamic-title">
                     <div class="title-mask">
                         <div class="title-slider">
-                            <span class="title-segment full-stack" data-i18n="title.full-stack">FULL-STACK ENGINEER</span>
+                            <span class="title-segment full-stack" data-i18n="title.full-stack">FULL-STACK DEVELOPER</span>
                             <span class="title-segment java-backend active" data-i18n="title.java-backend">JAVA DEVELOPER</span>
                             <span class="title-segment ai" data-i18n="title.ai">AI ENTHUSIAST</span>
                         </div>
@@ -94,9 +168,9 @@
             <div class="arrow-down"></div>
         </div>
     </header>
-
+    <main id="main-content">
     <!-- About Me Section -->
-    <section id="about" class="section">
+    <section id="about" class="section" role="region" aria-labelledby="about-heading">
         <div class="container">
             <h2 class="section-title" data-i18n="section.about">About Me</h2>
             <div class="about-content">
@@ -143,7 +217,7 @@
                                 <li><i class="devicon-java-plain" title="Java" data-i18n-title="tech.java"></i></li>
                                 <li><i class="devicon-python-plain" title="Python" data-i18n-title="tech.python"></i></li>
                                 <li><i class="devicon-csharp-plain" title="C#" data-i18n-title="tech.csharp"></i></li>
-                                <li><i class="devicon-javascript-plain" title="JavaScript" data-i18n-title="tech.javascript"></i></li>
+                                <li><i class="devicon-javascript-plain" title="JavaScript"></i></li>
                                 <li><i class="devicon-mysql-plain" title="SQL" data-i18n-title="tech.sql"></i></li>
                             </ul>
                         </div>
@@ -174,7 +248,7 @@
                                 <li><i class="devicon-googlecloud-plain" title="GCP" data-i18n-title="tech.gcp"></i></li>
                                 <li><i class="devicon-docker-plain" title="Docker" data-i18n-title="tech.docker"></i></li>
                                 <li><i class="devicon-git-plain" title="Git" data-i18n-title="tech.git"></i></li>
-                                <li><i class="devicon-postgresql-plain" title="PostgreSQL" data-i18n-title="tech.postgresql"></i></li>
+                                <li><i class="devicon-postgresql-plain" title="PostgreSQL"></i></li>
                                 <li><i class="devicon-mysql-plain" title="MySQL" data-i18n-title="tech.mysql"></i></li>
                             </ul>
                         </div>
@@ -185,14 +259,14 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section dark-section">
+    <section id="projects" class="section dark-section" role="region" aria-labelledby="projects-heading">
         <div class="container">
             <h2 class="section-title" data-i18n="section.projects">Featured Projects</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/2.png" alt="Missing Person Alert System">
+                        <img src="images/2.png" alt="Missing Person Alert System Spring Boot Police Application" loading="lazy">
                     </div>
                     <div class="project-details">
                         <h3 data-i18n="project.missing.title">Missing Person Alert System FullStack</h3>
@@ -201,10 +275,12 @@
                             <span data-i18n="tech.spring">Spring Boot</span>
                             <span data-i18n="tech.rest_api">REST API</span>
                             <span data-i18n="tech.swift">JDBC</span>
-                            <span data-i18n="tech.postgresql">PostgreSQL</span>
+                            <span>PostgreSQL</span>
                             <span data-i18n="tech.swiftui">SwiftUI</span>
                             <span data-i18n="tech.jetpack">Jetpack Compose</span>
                             <span data-i18n="tech.firebase">Firebase</span>
+                            <span data-i18n="tech.html5">HTML5</span> 
+                            <span data-i18n="tech.css">CSS</span>
                             <span data-i18n="tech.integration">Integration Tests</span>
                         </div>
                         <div class="project-meta">
@@ -217,7 +293,7 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/1.png" alt="Banking System">
+                        <img src="images/1.png" alt="Banking System FullStack Java Spring Boot Application" loading="lazy">
                     </div>
                     <div class="project-details">
                         <h3 data-i18n="project.banking.title">Banking System FullStack</h3>
@@ -230,6 +306,7 @@
                             <span data-i18n="tech.mysql">MySQL</span>
                             <span data-i18n="tech.mockito">Mockito</span>
                             <span data-i18n="tech.react">React</span>
+                            <span data-i18n="tech.css">CSS</span>
                             <span data-i18n="tech.integration">Integration Tests</span>
                             
                         </div>
@@ -243,7 +320,7 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/3.png" alt="AI Text Summarizer">
+                        <img src="images/3.png" alt="AI Text Summarizer Natural Language Processing Application" loading="lazy">
                     </div>
                     <div class="project-details">
                         <h3 data-i18n="project.ai_text.title">AI Text Summarizer FullStack</h3>
@@ -253,6 +330,8 @@
                             <span data-i18n="tech.rest_api">REST API</span>
                             <span data-i18n="tech.ai">AI</span>
                             <span data-i18n="tech.nlp">NLP</span>
+                            <span data-i18n="tech.html5">HTML5</span> 
+                            <span data-i18n="tech.css">CSS</span>
                         </div>
                         <div class="project-meta">
                             <span class="project-duration" data-i18n="project.ai_text.duration">2 Months</span>
@@ -264,7 +343,7 @@
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/4.jpeg" alt="Student Portal">
+                        <img src="images/4.jpeg" alt="Student Portal FullStack Educational Platform" loading="lazy">
                     </div>
                     <div class="project-details">
                         <h3 data-i18n="project.student.title">Student Portal FullStack</h3>
@@ -278,7 +357,7 @@
                             <span data-i18n="tech.ui_validation">UI Validation</span>
                             <span data-i18n="tech.html5">HTML5</span> 
                             <span data-i18n="tech.css">CSS</span>
-                            <span data-i18n="tech.javascript">JavaScript</span>
+                            <span>JavaScript</span>
                         </div>
                         <div class="project-meta">
                             <span class="project-duration" data-i18n="project.student.duration">4 Months</span>
@@ -290,7 +369,7 @@
                 <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/9.jpeg" alt="AI Face Analysis">
+                        <img src="images/9.jpeg" alt="AI Face Analysis Image Classification System" loading="lazy">
                     </div>
                     <div class="project-details">
                         <h3 data-i18n="project.face_analysis.title">AI Face Analysis</h3>
@@ -299,6 +378,9 @@
                             <span data-i18n="tech.django">Django</span>
                             <span data-i18n="tech.tensorflow">TensorFlow</span>
                             <span data-i18n="tech.python">Python</span>
+                            <span data-i18n="tech.html5">HTML5</span> 
+                            <span data-i18n="tech.css">CSS</span>
+                            <span>JavaScript</span>
                             <span data-i18n="tech.computer_vision">Computer Vision</span>
                         </div>
                         <div class="project-meta">
@@ -311,7 +393,7 @@
                 <!-- Project 6 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/7.png" alt="Medical Diagnosis System">
+                        <img src="images/7.png" alt="Medical Diagnosis System ML.NET Desktop Application" loading="lazy">
                     </div>
                     <div class="project-details">
                         <h3 data-i18n="project.medical_diagnosis.title">Medical Diagnosis System</h3>
@@ -335,7 +417,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section dark-section">
+    <section id="services" class="section dark-section" role="region" aria-labelledby="services-heading">
         <div class="container">
             <h2 class="section-title" data-i18n="section.services">Services & Pricing</h2>
             <p class="section-subtitle" style="text-align: center; margin-bottom: 3rem; color: var(--text-light);" data-i18n="services.subtitle">
@@ -472,7 +554,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section" role="region" aria-labelledby="contact-heading">
         <div class="container">
             <h2 class="section-title" data-i18n="section.contact">Get In Touch</h2>
             <div class="contact-container">
@@ -495,11 +577,13 @@
                         <i class="fas fa-map-marker-alt"></i>
                             <a href="https://www.google.com/maps/place/52.5200,13.4050/@52.5200,13.4050,14z" target="_blank" data-i18n="contact.location" class="contact-link email">Berlin, Germany</a>
                         </li>
-                     </ul>
+                    </ul>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/mahmoud-najmeh-b53172211" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/MN10101" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://drive.google.com/file/d/1GSQRCbW1jFE0_5NJSMy4hS-W49KhA3r5/view?usp=sharing" class="btn" target="_blank" data-i18n="contact.video">Video About Me</a>
+                        <button class="btn video-btn" id="videoModalBtn" data-i18n="contact.video">
+                            <i class="fas fa-play-circle"></i> Video About Me
+                        </button>
                     </div>
                 </div>
                 <form class="contact-form" action="https://formspree.io/f/mldlzywn" method="POST">
@@ -524,6 +608,27 @@
         </div>
     </section>
 
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal" role="dialog" aria-labelledby="videoModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-btn" role="button" aria-label="Close video modal">&times;</span>
+            <div class="video-container">
+                <iframe 
+                    id="youtubeVideo"
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/JJoMd8HXweY?enablejsapi=1" 
+                    title="About Mahmoud Najmeh - Full-Stack Developer" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    </main>
     <footer>
         <div class="container">
             <p data-i18n="footer.copyright">&copy; 2025 Mahmoud Najmeh. All rights reserved.</p>
