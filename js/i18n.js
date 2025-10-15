@@ -1182,7 +1182,7 @@ const translations = {
         education: {
             java: {
                 title: "مبرمج جافا",
-                details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: JDBC، SQL متقدم<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
+                details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: \u202BJDBC\u202C، \u202BSQL احترافي\u202C<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
             },
             it_specialist: {
                 title: "اخصائي تكنولوجيا المعلومات في مجال تطوير التطبيقات",
