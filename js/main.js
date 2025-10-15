@@ -56,7 +56,7 @@ function rotateTitle() {
     
     // Different behavior for Arabic vs other languages
     if (isArabic) {
-        // For Arabic: Use opacity and position instead of display none/flex
+        // Opacity and position instead of display none/flex
         titleSegments.forEach((seg, index) => {
             if (index === currentIndex) {
                 seg.style.opacity = '1';
@@ -98,7 +98,7 @@ function initializeTitles() {
     const isArabic = document.documentElement.lang === 'ar';
     
     if (isArabic) {
-        // For Arabic: Show only the first title initially using opacity/position
+        // Show only the first title initially using opacity/position
         titleSegments.forEach((seg, index) => {
             if (index === 0) {
                 seg.style.opacity = '1';
@@ -114,7 +114,7 @@ function initializeTitles() {
         });
         titleSlider.style.transform = 'translateY(0)';
     } else {
-        // For other languages: Show all titles in slider
+        // For other languages Show all titles in slider
         titleSegments.forEach((seg, index) => {
             seg.style.opacity = '1';
             seg.style.visibility = 'visible';
@@ -215,7 +215,8 @@ backToTopButton.addEventListener('click', (e) => {
 function updateBackToHomeLinks(lang) {
     const backToHomeLinks = document.querySelectorAll('a[href="index.html"], a[href*="index.html"]');
     backToHomeLinks.forEach(link => {
-        if (link.getAttribute('id') !== 'language-select') { // Don't modify language select
+        // Avoid changing the language selector link
+        if (link.getAttribute('id') !== 'language-select') { 
             link.href = `index.html?lang=${lang}`;
         }
     });
@@ -311,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Final email validation
+            // Email validation
             const emailInput = contactForm.querySelector('input[type="email"]');
             const email = emailInput.value.trim();
             const validation = validateEmail(email);
@@ -566,7 +567,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const languageSelect = document.getElementById('language-select');
     if (languageSelect) {
         languageSelect.addEventListener('change', () => {
-            // ✅ ADD THIS HERE
             const validationMessage = document.getElementById('email-validation');
             if (validationMessage) {
                 validationMessage.textContent = '';
