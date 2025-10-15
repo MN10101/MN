@@ -19,7 +19,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java Programmer",
+                title: "Java Developer",
                 details: "- Programming fundamentals, Agile methodologies<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- Databases: JDBC, Advanced SQL<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs and Cloud: AWS, GCP"
             },
             it_specialist: {
@@ -81,7 +81,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "JAVA PROGRAMMER",
+            "java-backend": "JAVA DEVELOPER",
             "full-stack": "FULL-STACK DEVELOPER",
             ai: "AI ENTHUSIAST"
         },
@@ -251,7 +251,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java-Programmierer",
+                title: "Java-Entwickler",
                 details: "- Programmiergrundlagen, agile Methoden<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- Datenbanken: JDBC, fortgeschrittenes SQL<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs und Cloud: AWS, GCP"
             },
             it_specialist: {
@@ -313,7 +313,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "JAVA-PROGRAMMIERER",
+            "java-backend": "JAVA-ENTWICKLER",
             "full-stack": "FULL-STACK ENTWICKLER",
             ai: "KI-BEGEISTERTER"
         },
@@ -406,7 +406,7 @@ const translations = {
                 title: "Bankensystem FullStack",
                 description: "Full-Stack-Bankanwendung mit E-Mail/IP-Tracking, Unterstützung für mehrere Währungen, Transaktionsverarbeitung und umfassenden Tests mit Mockito.",
                 duration: "6 Monate",
-                impact: "Optimierte Finanzoperationen mit sicheren Multi-Währungs-Transaktionen, Reduzierung betrügerischer Aktivitäten um 60 % durch fortschrittliches IP-Tracking und verbesserte Kundenzufriedenheit durch Echtzeit-Transaktionsverarbeitung."
+                impact: "Optimierte Finanzoperationen mit sicheren Multi-Währungs-Transaktionen, Reduzierung betrügerlicher Aktivitäten um 60 % durch fortschrittliches IP-Tracking und verbesserte Kundenzufriedenheit durch Echtzeit-Transaktionsverarbeitung."
             },
             ai_text: {
                 title: "KI-Textzusammenfasser FullStack",
@@ -464,8 +464,8 @@ const translations = {
             emailTooLong: "E-Mail-Adresse ist zu lang"
         }
     },
-    pl: {
-        title: "Mahmoud Najmeh | Full-Stack Developer",
+        pl: {
+        title: "Mahmoud Najmeh | Programista Full-Stack",
         name: {
             first: "Mahmoud",
             last: "Najmeh"
@@ -715,7 +715,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Programmeur Java",
+                title: "Développeur Java",
                 details: "- Fondamentaux de la programmation, méthodologies Agiles<br>- Java : POO, Streams, Concurrence, Maven, Gradle, Tests<br>- Bases de données : JDBC, SQL avancé<br>- Frameworks : Spring Boot, Hibernate, Spring Security<br>- API REST et Cloud : AWS, GCP"
             },
             it_specialist: {
@@ -778,7 +778,7 @@ const translations = {
 
         },
         title: {
-            "java-backend": "PROGRAMMEUR JAVA",
+            "java-backend": "DÉVELOPPEUR JAVA",
             "full-stack": "DÉVELOPPEUR FULL-STACK",
             ai: "ENTHOUSIASTE D'IA"
         },
@@ -948,7 +948,7 @@ const translations = {
         },
         education: {
             java: {
-                title: "Java Programcısı",
+                title: "Java Geliştirici",
                 details: "- Programlama temelleri, Çevik metodolojiler<br>- Java: OOP, Akışlar, Eşzamanlılık, Maven, Gradle, Test<br>- Veritabanları: JDBC, Gelişmiş SQL<br>- Çerçeveler: Spring Boot, Hibernate, Spring Security<br>- REST API'leri ve Bulut: AWS, GCP"
             },
             it_specialist: {
@@ -1011,7 +1011,7 @@ const translations = {
             wpf: "WPF"
         },
         title: {
-            "java-backend": "JAVA PROGRAMCISI",
+            "java-backend": "JAVA GELİŞTİRİCİ",
             "full-stack": "FULL-STACK GELİŞTİRİCİ",
             ai: "YAPAY ZEKA TUTKUNU"
         },
@@ -1160,6 +1160,238 @@ const translations = {
             disposableEmail: "Lütfen kalıcı bir e-posta adresi kullanın",
             domainNotExist: "E-posta alan adı mevcut değil",
             emailTooLong: "E-posta adresi çok uzun"
+        }
+    },
+        ru: {
+        title: "Махмуд Наджмех | Full-Stack Разработчик",
+        name: {
+            first: "Махмуд",
+            last: "Наджмех"
+        },
+        explore: "Исследовать",
+        section: {
+            about: "Обо мне",
+            services: "Услуги и Цены",
+            projects: "Избранные проекты",
+            contact: "Связаться"
+        },
+        about: {
+            description: "Преданный Full-Stack разработчик с солидным опытом в ООП и сильным интересом к веб-разработке и искусственному интеллекту. Владеет Java, Spring Boot, Python, Django и C# .NET. Успешная реализация веб-проектов с фокусом на полную разработку (бэкенд и фронтенд) и командную работу.",
+            education: "Образование"
+        },
+        education: {
+            java: {
+                title: "Java Разработчик",
+                details: "- Основы программирования, Agile методологии<br>- Java: ООП, Потоки, Многопоточность, Maven, Gradle, Тестирование<br>- Базы данных: JDBC, Продвинутый SQL<br>- Фреймворки: Spring Boot, Hibernate, Spring Security<br>- REST API и Облако: AWS, GCP"
+            },
+            it_specialist: {
+                title: "IT Специалист по разработке приложений",
+                details: "- ООП с Java SE, C# (.NET), Python, JavaScript, PHP<br>- Веб-разработка и базы данных, Linux системы<br>- Управление IT проектами, бизнес-процессы<br>- Математика и MS Office для IT процессов<br>- Технический английский, коммуникативные навыки"
+            },
+            toggle: "Показать детали",
+            toggleHide: "Скрыть детали"
+        },
+        skills: {
+            title: "Технические навыки",
+            languages: "Языки программирования",
+            frameworks: "Фреймворки",
+            tools: "Инструменты и Платформы",
+            ai: "ИИ и Машинное обучение"
+        },
+        tech: {
+            java: "Java",
+            python: "Python",
+            csharp: "C#",
+            javascript: "JavaScript",
+            sql: "SQL",
+            spring: "Spring Boot",
+            swiftui: "SwiftUI",
+            jetpack: "Jetpack Compose",
+            firebase: "Firebase",
+            integration: "Интеграционные тесты",
+            mockito: "Mockito",
+            react: "React",
+            rest_api: "REST API",
+            ai: "ИИ",
+            nlp: "Обработка естественного языка",
+            django: "Django",
+            role_auth: "Ролевая авторизация",
+            pdf_export: "Экспорт PDF",
+            ui_validation: "Валидация интерфейса",
+            tensorflow: "TensorFlow",
+            computer_vision: "Компьютерное зрение",
+            html5: "HTML5",
+            css: "CSS",
+            javascript: "JavaScript",
+            postgresql: "PostgreSQL",
+            database: "База данных",
+            canvas: "Canvas",
+            frontend: "Фронтенд",
+            dotnet: ".NET",
+            aws: "AWS",
+            gcp: "GCP",
+            docker: "Docker",
+            git: "Git",
+            postgresql: "PostgreSQL",
+            mysql: "MySQL",
+            ml: "Машинное обучение",
+            cv: "Компьютерное зрение",
+            "python-ai": "Python AI библиотеки",
+            machine_learning: "Машинное обучение",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
+        },
+        title: {
+            "java-backend": "JAVA РАЗРАБОТЧИК",
+            "full-stack": "FULL-STACK РАЗРАБОТЧИК",
+            ai: "ЭНТУЗИАСТ ИИ"
+        },
+        services: {
+            subtitle: "Профессиональные услуги разработки, адаптированные под ваши бизнес-потребности",
+            note: "<strong>Примечание:</strong> Все цены являются ориентировочными. Окончательная стоимость зависит от объема проекта и требований. Свяжитесь со мной для получения персонализированного предложения, tailored под ваши конкретные потребности.",
+            cta: "Начать",
+            backend: {
+                title: "Бэкенд разработка",
+                price: "€2 500+",
+                features: [
+                    "Разработка Spring Boot REST API",
+                    "Дизайн и оптимизация баз данных",
+                    "Реализация аутентификации и безопасности",
+                    "Микросервисная архитектура",
+                    "Документация и тестирование API",
+                    "Развертывание на облачных платформах"
+                ]
+            },
+            fullstack: {
+                title: "Full-Stack разработка",
+                price: "€4 000+",
+                features: [
+                    "Полная разработка веб-приложений",
+                    "Spring Boot бэкенд + React фронтенд",
+                    "Адаптивный UI/UX дизайн",
+                    "Интеграция с базой данных",
+                    "Система аутентификации пользователей",
+                    "Административная панель"
+                ]
+            },
+            api: {
+                title: "Разработка API",
+                price: "€1 800+",
+                features: [
+                    "Кастомная разработка REST API",
+                    "Интеграция с базой данных (PostgreSQL/MySQL)",
+                    "JWT аутентификация",
+                    "Документация API с Swagger/OpenAPI",
+                    "Оптимизация производительности",
+                    "Готово к развертыванию"
+                ]
+            },
+            website: {
+                title: "Пакет бизнес-сайта",
+                price: "€1 500-€3 000",
+                features: [
+                    "Профессиональный сайт-портфолио",
+                    "Контактная форма с email уведомлениями",
+                    "Мобильный адаптивный дизайн",
+                    "Базовая SEO оптимизация",
+                    "Система управления контентом",
+                    "Интеграция с социальными сетями"
+                ]
+            },
+            ai: {
+                title: "Интеграция ИИ",
+                price: "€3 500+",
+                features: [
+                    "API обработки/суммаризации текста",
+                    "Анализ изображений с TensorFlow",
+                    "Интеграция чат-ботов",
+                    "Развертывание моделей машинного обучения",
+                    "Дашборды визуализации данных",
+                    "Кастомные ИИ решения"
+                ]
+            },
+            maintenance: {
+                title: "Обслуживание и поддержка",
+                price: "€500/месяц",
+                features: [
+                    "Регулярные обновления ПО",
+                    "Исправление ошибок и устранение неполадок",
+                    "Мониторинг производительности",
+                    "Безопасность и патчи",
+                    "Обслуживание базы данных",
+                    "Круглосуточная экстренная поддержка"
+                ]
+            }
+        },
+        project: {
+            impact: "Влияние:",
+            missing: {
+                title: "Система оповещения о пропавших лицах FullStack",
+                description: "Полицейский инструмент, разработанный с использованием Spring Boot, SwiftUI и Jetpack Compose, с push-уведомлениями Firebase, отслеживанием геолокации и админ-панелью.",
+                duration: "6 месяцев",
+                impact: "Улучшена общественная безопасность благодаря быстрым оповещениям о пропавших лицах, сокращено время реагирования полиции на 40% и улучшено вовлечение сообщества в инициативы безопасности."
+            },
+            banking: {
+                title: "Банковская система FullStack",
+                description: "Полнофункциональное банковское приложение с отслеживанием email/IP, поддержкой мультивалютности, обработкой транзакций и комплексным тестированием с Mockito.",
+                duration: "6 месяцев",
+                impact: "Оптимизированы финансовые операции с безопасными мультивалютными транзакциями, снижены мошеннические операции на 60% благодаря продвинутому IP-отслеживанию и улучшена удовлетворенность клиентов благодаря обработке транзакций в реальном времени."
+            },
+            ai_text: {
+                title: "ИИ суммаризатор текста FullStack",
+                description: "Многоязычное приложение для суммаризации текста, работающее на Spring Boot REST API с продвинутыми возможностями обработки естественного языка.",
+                duration: "2 месяца",
+                impact: "Увеличена эффективность потребления контента на 70%, поддержка 15+ языков для глобальной доступности и сокращено время чтения исследовательских и образовательных материалов за счет автоматизации суммаризации."
+            },
+            student: {
+                title: "Студенческий портал FullStack",
+                description: "Комплексная образовательная платформа с ролевым контролем доступа, системой оценок, функцией экспорта PDF и онлайн-тестированием.",
+                duration: "4 месяца",
+                impact: "Улучшены образовательные результаты для 500+ студентов, снижена административная нагрузка на 45% за счет автоматизированного оценивания и отчетности, и улучшена коммуникация между родителями и учителями с отслеживанием прогресса в реальном времени."
+            },
+            face_analysis: {
+                title: "ИИ анализ лиц",
+                description: "Система классификации изображений, построенная на Django и TensorFlow, с автоматической обработкой и кастомным графическим интерфейсом.",
+                duration: "4 месяца",
+                impact: "Достигнута 95% точность в задачах распознавания лиц, включены автоматизированные системы безопасности и аутентификации, и предоставлены ценные инсайты для психологического и поведенческого анализа через распознавание выражений лиц."
+            },
+            medical_diagnosis: {
+                title: "Медицинская диагностическая система с ИИ",
+                description: "Десктопное приложение на основе машинного обучения, построенное с использованием .NET и ML.NET, которое предсказывает потенциальные заболевания по симптомам, предоставленным пользователем. Функции включают ввод симптомов на естественном языке, предсказание заболеваний с оценкой уверенности и удобный интерфейс на основе WPF.",
+                duration: "2 месяца",
+                impact: "Помощь в предварительной диагностике для 1000+ пользователей с точностью 88%, сокращение ненужных визитов в больницу на 35% благодаря надежной оценке симптомов и расширение возможностей людей с доступной медицинской информацией для лучшего принятия решений."
+            },
+            view: "Посмотреть проект"
+        },
+        contact: {
+            info: "Контактная информация",
+            location: "Берлин, Германия",
+            video: "Видео обо мне",
+            phone: "+49 163 9769764"
+        },
+        form: {
+            name: "Ваше имя",
+            email: "Ваш email",
+            subject: "Тема",
+            message: "Ваше сообщение",
+            submit: "Отправить сообщение"
+        },
+        footer: {
+            copyright: "© 2025 Махмуд Наджмех. Все права защищены."
+        },
+        thank_you: {
+            title: "Спасибо",
+            heading: "Спасибо!",
+            message: "Ваше сообщение успешно отправлено. Я свяжусь с вами в ближайшее время.",
+            back: "Вернуться на главную"
+        },
+        validation: {
+            validEmail: "Действительный email адрес",
+            invalidEmail: "Пожалуйста, введите действительный email адрес",
+            disposableEmail: "Пожалуйста, используйте постоянный email адрес",
+            domainNotExist: "Домен email не существует",
+            emailTooLong: "Email адрес слишком длинный"
         }
     },
     ar: {
@@ -1477,6 +1709,7 @@ function updateContent(lang) {
             lang === 'pl' ? 'Ukryj szczegóły' : 
             lang === 'fr' ? 'Masquer les détails' : 
             lang === 'tr' ? 'Detayları Gizle' : 
+            lang === 'ru' ? 'Скрыть детали' : 
             'Details ausblenden';
     });
 
@@ -1503,7 +1736,9 @@ function getSupportedLanguage(browserLang) {
         'tr-TR': 'tr',
         'ar': 'ar',
         'ar-SA': 'ar',
-        'ar-EG': 'ar'
+        'ar-EG': 'ar',
+        'ru': 'ru',        
+        'ru-RU': 'ru'       
     };
     const primaryLang = browserLang.split('-')[0];
     const supportedLang = langMap[browserLang] || langMap[primaryLang] || 'en';
@@ -1531,6 +1766,7 @@ function getLanguageFromCountry(countryCode) {
         'PL': 'pl',     
         'FR': 'fr',      
         'TR': 'tr',      
+        'RU': 'ru',      
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
@@ -1551,14 +1787,14 @@ function getUrlParameter(name) {
 async function getCurrentLanguage() {
     // First check URL parameter
     const urlLang = getUrlParameter('lang');
-    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(urlLang)) {
+    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(urlLang)) {  
         console.log(`Language from URL: ${urlLang}`);
         return urlLang;
     }
     
     // Then check localStorage
     const storedLang = localStorage.getItem('language');
-    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(storedLang)) {
+    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(storedLang)) { 
         console.log(`Language from localStorage: ${storedLang}`);
         return storedLang;
     }
@@ -1603,7 +1839,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
-        if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
+        if (['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(lang)) { 
             console.log(`Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
             updateContent(lang);
