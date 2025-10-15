@@ -1447,7 +1447,15 @@ html::-webkit-scrollbar-thumb:hover {
 .validation-message {
     font-size: 0.8rem;
     margin-top: 0.25rem;
-    min-height: 1rem;
+    min-height: 0;
+    line-height: 1rem; 
+    height: auto; 
+    overflow: hidden; 
+}
+
+.validation-message:empty {
+    margin-top: 0; 
+    height: 0; 
 }
 
 .validation-message.valid {
