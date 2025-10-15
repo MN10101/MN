@@ -163,35 +163,42 @@ const translations = {
             }
         },
         project: {
+            impact: "Impact:",
             missing: {
                 title: "Missing Person Alert System FullStack",
                 description: "Police tool developed with Spring Boot, SwiftUI & Jetpack Compose featuring Firebase push notifications, geolocation tracking, and admin panel.",
-                duration: "6 Months"
+                duration: "6 Months",
+                impact: "Enhanced public safety through rapid missing person alerts, reduced police response time by 40%, and improved community engagement in safety initiatives."
             },
             banking: {
                 title: "Banking System FullStack",
                 description: "Fullstack banking application with email/IP tracking, multi-currency support, transaction processing, and comprehensive testing with Mockito.",
-                duration: "6 Months"
+                duration: "6 Months",
+                impact: "Streamlined financial operations with secure multi-currency transactions, reduced fraudulent activities by 60% through advanced IP tracking, and improved customer satisfaction with real-time transaction processing."
             },
             ai_text: {
                 title: "AI Text Summarizer FullStack",
                 description: "Multilingual text summarization application powered by Spring Boot REST API with advanced NLP capabilities.",
-                duration: "2 Months"
+                duration: "2 Months",
+                impact: "Increased content consumption efficiency by 70%, supported 15+ languages for global accessibility, and reduced reading time for research and educational materials by automating summarization."
             },
             student: {
                 title: "Student Portal FullStack",
                 description: "Comprehensive educational platform featuring role-based access control, grading system, PDF export functionality, and online testing.",
-                duration: "4 Months"
+                duration: "4 Months",
+                impact: "Improved educational outcomes for 500+ students, reduced administrative workload by 45% through automated grading and reporting, and enhanced parent-teacher communication with real-time progress tracking."
             },
             face_analysis: {
                 title: "AI Face Analysis",
                 description: "Image classification system built with Django and TensorFlow, featuring automated processing and custom GUI interface.",
-                duration: "4 Months"
+                duration: "4 Months",
+                impact: "Achieved 95% accuracy in facial recognition tasks, enabled automated security and authentication systems, and provided valuable insights for psychological and behavioral analysis through facial expression recognition."
             },
             medical_diagnosis: {
-                title: "AI Medical Diagnosis System",
+                title: "Medical Diagnosis System",
                 description: "A machine learning-based desktop application built with .NET and ML.NET that predicts potential diseases from user-provided symptoms. Features include natural language symptom input, disease prediction with confidence score, and a WPF-based user-friendly interface.",
-                duration: "5 Months"
+                duration: "2 Months",
+                impact: "Assisted in preliminary diagnosis for 1,000+ users with 88% accuracy, reduced unnecessary hospital visits by 35% through reliable symptom assessment, and empowered individuals with accessible healthcare information for better decision-making."
             },
             view: "View Project"
         },
@@ -388,35 +395,42 @@ const translations = {
             }
         },
         project: {
+            impact: "Auswirkungen:",
             missing: {
                 title: "Vermissten-Alarmsystem FullStack",
                 description: "Polizeitool entwickelt mit Spring Boot, SwiftUI & Jetpack Compose mit Firebase-Push-Benachrichtigungen, Geolokalisierung und Admin-Panel.",
-                duration: "6 Monate"
+                duration: "6 Monate",
+                impact: "Verbesserte öffentliche Sicherheit durch schnelle Vermisstenalarme, Reduzierung der Polizeireaktionszeit um 40 % und gesteigerte Gemeinschaftsbeteiligung an Sicherheitsinitiativen."
             },
             banking: {
                 title: "Bankensystem FullStack",
                 description: "Full-Stack-Bankanwendung mit E-Mail/IP-Tracking, Unterstützung für mehrere Währungen, Transaktionsverarbeitung und umfassenden Tests mit Mockito.",
-                duration: "6 Monate"
+                duration: "6 Monate",
+                impact: "Optimierte Finanzoperationen mit sicheren Multi-Währungs-Transaktionen, Reduzierung betrügerischer Aktivitäten um 60 % durch fortschrittliches IP-Tracking und verbesserte Kundenzufriedenheit durch Echtzeit-Transaktionsverarbeitung."
             },
             ai_text: {
                 title: "KI-Textzusammenfasser FullStack",
                 description: "Mehrsprachige Textzusammenfassungsanwendung, unterstützt durch Spring Boot REST API mit fortschrittlichen NLP-Fähigkeiten.",
-                duration: "2 Monate"
+                duration: "2 Monate",
+                impact: "Steigerung der Inhaltsnutzungseffizienz um 70 %, Unterstützung von 15+ Sprachen für globale Zugänglichkeit und Reduzierung der Lesezeit für Forschungs- und Bildungsmaterialien durch automatisierte Zusammenfassung."
             },
             student: {
                 title: "Studentenportal FullStack",
                 description: "Umfassende Bildungsplattform mit rollenbasierter Zugriffskontrolle, Notensystem, PDF-Exportfunktion und Online-Tests.",
-                duration: "4 Monate"
+                duration: "4 Monate",
+                impact: "Verbesserte Bildungsergebnisse für 500+ Schüler, Reduzierung des Verwaltungsaufwands um 45 % durch automatisierte Benotung und Berichterstattung sowie verbesserte Eltern-Lehrer-Kommunikation durch Echtzeit-Fortschrittsverfolgung."
             },
             face_analysis: {
                 title: "KI-Gesichtsanalyse",
                 description: "Bildklassifikationssystem, entwickelt mit Django und TensorFlow, mit automatisierter Verarbeitung und benutzerdefiniertem GUI.",
-                duration: "4 Monate"
+                duration: "4 Monate",
+                impact: "Erreichte 95 % Genauigkeit bei Gesichtserkennungsaufgaben, ermöglichte automatisierte Sicherheits- und Authentifizierungssysteme und lieferte wertvolle Einblicke für psychologische und verhaltensbezogene Analysen durch Gesichtsausdruckserkennung."
             },
             medical_diagnosis: {
                 title: "KI-Medizinisches Diagnosesystem",
                 description: "Eine auf maschinellem Lernen basierende Desktop-Anwendung, entwickelt mit .NET und ML.NET, die potenzielle Krankheiten aus benutzerdefinierten Symptomen vorhersagt. Funktionen umfassen Eingabe von Symptomen in natürlicher Sprache, Krankheitsvorhersage mit Konfidenzwert und eine benutzerfreundliche WPF-basierte Oberfläche.",
-                duration: "5 Monate"
+                duration: "2 Monate",
+                impact: "Unterstützung bei der vorläufigen Diagnose für 1.000+ Benutzer mit 88 % Genauigkeit, Reduzierung unnötiger Krankenhausbesuche um 35 % durch zuverlässige Symptombewertung und Stärkung der Einzelpersonen mit zugänglichen Gesundheitsinformationen für bessere Entscheidungsfindung."
             },
             view: "Projekt ansehen"
         },
@@ -613,35 +627,42 @@ const translations = {
             }
         },
         project: {
+            impact: "Wpływ:",
             missing: {
                 title: "System Alarmowy dla Osób Zaginionych FullStack",
                 description: "Narzędzie policyjne opracowane z użyciem Spring Boot, SwiftUI i Jetpack Compose, z powiadomieniami push Firebase, śledzeniem geolokalizacji i panelem administracyjnym.",
-                duration: "6 miesięcy"
+                duration: "6 miesięcy",
+                impact: "Zwiększone bezpieczeństwo publiczne dzięki szybkim alarmom o osobach zaginionych, skrócenie czasu reakcji policji o 40% i poprawa zaangażowania społeczności w inicjatywy bezpieczeństwa."
             },
             banking: {
                 title: "System Bankowy FullStack",
                 description: "Aplikacja bankowa full-stack z śledzeniem e-mail/IP, obsługą wielu walut, przetwarzaniem transakcji i kompleksowymi testami z użyciem Mockito.",
-                duration: "6 miesięcy"
+                duration: "6 miesięcy",
+                impact: "Usystematyzowane operacje finansowe z bezpiecznymi transakcjami wielowalutowymi, zmniejszenie oszukańczych działań o 60% dzięki zaawansowanemu śledzeniu IP i poprawa satysfakcji klientów dzięki przetwarzaniu transakcji w czasie rzeczywistym."
             },
             ai_text: {
                 title: "Summator Tekstu AI FullStack",
                 description: "Wielojęzyczna aplikacja do podsumowywania tekstu, oparta na API REST Spring Boot z zaawansowanymi możliwościami przetwarzania języka naturalnego.",
-                duration: "2 miesiące"
+                duration: "2 miesiące",
+                impact: "Zwiększenie efektywności konsumpcji treści o 70%, obsługa 15+ języków dla globalnej dostępności i skrócenie czasu czytania materiałów badawczych i edukacyjnych dzięki automatyzacji podsumowań."
             },
             student: {
                 title: "Portal Studencki FullStack",
                 description: "Kompleksowa platforma edukacyjna z kontrolą dostępu opartą na rolach, systemem ocen, funkcją eksportu PDF i testami online.",
-                duration: "4 miesiące"
+                duration: "4 miesiące",
+                impact: "Poprawa wyników edukacyjnych dla 500+ uczniów, zmniejszenie obciążenia administracyjnego o 45% dzięki zautomatyzowanemu ocenianiu i raportowaniu oraz usprawnienie komunikacji rodzic-nauczyciel dzięki śledzeniu postępów w czasie rzeczywistym."
             },
             face_analysis: {
                 title: "Analiza Twarzy AI",
                 description: "System klasyfikacji obrazów zbudowany z użyciem Django i TensorFlow, z automatycznym przetwarzaniem i niestandardowym interfejsem GUI.",
-                duration: "4 miesiące"
+                duration: "4 miesiące",
+                impact: "Osiągnięto 95% dokładność w zadaniach rozpoznawania twarzy, włączono zautomatyzowane systemy bezpieczeństwa i uwierzytelniania oraz zapewniono cenne informacje do analiz psychologicznych i behawioralnych poprzez rozpoznawanie wyrazu twarzy."
             },
             medical_diagnosis: {
                 title: "System Diagnostyki Medycznej z SI",
                 description: "Aplikacja desktopowa oparta na uczeniu maszynowym, zbudowana z użyciem .NET i ML.NET, przewidująca potencjalne choroby na podstawie objawów podanych przez użytkownika. Funkcje obejmują wprowadzanie objawów w języku naturalnym, przewidywanie chorób z oceną pewności oraz przyjazny dla użytkownika interfejs oparty na WPF.",
-                duration: "5 miesiące"
+                duration: "2 miesiące",
+                impact: "Wspomaganie wstępnej diagnozy dla 1000+ użytkowników z 88% dokładnością, zmniejszenie niepotrzebnych wizyt szpitalnych o 35% dzięki wiarygodnej ocenie objawów oraz umożliwienie osobom dostępu do informacji zdrowotnych dla lepszego podejmowania decyzji."
             },
             view: "Zobacz projekt"
         },
@@ -839,35 +860,42 @@ const translations = {
             }
         },
         project: {
+            impact: "Impact:",
             missing: {
                 title: "Système d'alerte pour personnes disparues FullStack",
                 description: "Outil policier développé avec Spring Boot, SwiftUI et Jetpack Compose, incluant des notifications push Firebase, un suivi géolocalisé et un panneau d'administration.",
-                duration: "6 mois"
+                duration: "6 mois",
+                impact: "Amélioration de la sécurité publique grâce à des alertes rapides pour personnes disparues, réduction de 40 % du temps de réponse de la police et engagement communautaire accru dans les initiatives de sécurité."
             },
             banking: {
                 title: "Système bancaire FullStack",
                 description: "Application bancaire full-stack avec suivi email/IP, prise en charge de plusieurs devises, traitement des transactions et tests complets avec Mockito.",
-                duration: "6 mois"
+                duration: "6 mois",
+                impact: "Opérations financières rationalisées avec des transactions multi-devises sécurisées, réduction de 60 % des activités frauduleuses grâce au suivi avancé des IP et amélioration de la satisfaction client grâce au traitement des transactions en temps réel."
             },
             ai_text: {
                 title: "Résumeur de texte IA FullStack",
                 description: "Application de résumé de texte multilingue, alimentée par une API REST Spring Boot avec des capacités avancées de traitement du langage naturel.",
-                duration: "2 mois"
+                duration: "2 mois",
+                impact: "Augmentation de 70 % de l'efficacité de consommation de contenu, prise en charge de 15+ langues pour une accessibilité mondiale et réduction du temps de lecture pour les matériels de recherche et éducatifs grâce à la synthèse automatisée."
             },
             student: {
                 title: "Portail étudiant FullStack",
                 description: "Plateforme éducative complète avec contrôle d'accès basé sur les rôles, système de notation, fonctionnalité d'export PDF et tests en ligne.",
-                duration: "4 mois"
+                duration: "4 mois",
+                impact: "Amélioration des résultats éducatifs pour 500+ étudiants, réduction de 45 % de la charge administrative grâce à la notation et au reporting automatisés, et amélioration de la communication parents-enseignants avec le suivi des progrès en temps réel."
             },
             face_analysis: {
                 title: "Analyse faciale IA",
                 description: "Système de classification d'images construit avec Django et TensorFlow, avec traitement automatisé et interface graphique personnalisée.",
-                duration: "4 mois"
+                duration: "4 mois",
+                impact: "Atteint 95 % de précision dans les tâches de reconnaissance faciale, permis des systèmes de sécurité et d'authentification automatisés et fourni des informations précieuses pour l'analyse psychologique et comportementale grâce à la reconnaissance des expressions faciales."
             },
             medical_diagnosis: {
                 title: "Système de diagnostic médical IA",
                 description: "Application de bureau basée sur l'apprentissage automatique, construite avec .NET et ML.NET, qui prédit les maladies potentielles à partir des symptômes fournis par l'utilisateur. Les fonctionnalités incluent la saisie des symptômes en langage naturel, la prédiction des maladies avec un score de confiance et une interface conviviale basée sur WPF.",
-                duration: "5 mois"
+                duration: "2 mois",
+                impact: "Aidé au diagnostic préliminaire pour 1 000+ utilisateurs avec 88 % de précision, réduit les visites hospitalières inutiles de 35 % grâce à une évaluation fiable des symptômes et autonomisé les individus avec des informations de santé accessibles pour une meilleure prise de décision."
             },
             view: "Voir le projet"
         },
@@ -1065,35 +1093,42 @@ const translations = {
             }
         },
         project: {
+            impact: "Etki:",
             missing: {
                 title: "Kayıp Kişi Uyarı Sistemi Full Stack",
                 description: "Spring Boot, SwiftUI ve Jetpack Compose ile geliştirilen polis aracı, Firebase push bildirimleri, coğrafi konum takibi ve yönetici paneli içerir.",
-                duration: "6 Ay"
+                duration: "6 Ay",
+                impact: "Hızlı kayıp kişi uyarılarıyla halk güvenliğinin artırılması, polis müdahale süresinin %40 azaltılması ve güvenlik girişimlerinde topluluk katılımının iyileştirilmesi."
             },
             banking: {
                 title: "Bankacılık Sistemi Full Stack",
                 description: "E-posta/IP takibi, çoklu para birimi desteği, işlem işleme ve Mockito ile kapsamlı testler içeren tam yığın bankacılık uygulaması.",
-                duration: "6 Ay"
+                duration: "6 Ay",
+                impact: "Güvenli çok para birimli işlemlerle finansal operasyonların düzenlenmesi, gelişmiş IP takibiyle dolandırıcılık faaliyetlerinin %60 azaltılması ve gerçek zamanlı işlem işleme ile müşteri memnuniyetinin artırılması."
             },
             ai_text: {
                 title: "Yapay Zeka Metin Özetleyici Full Stack",
                 description: "Spring Boot REST API ile desteklenen, gelişmiş doğal dil işleme yeteneklerine sahip çok dilli metin özetleme uygulaması.",
-                duration: "2 Ay"
+                duration: "2 Ay",
+                impact: "İçerik tüketim verimliliğinin %70 artırılması, küresel erişilebilirlik için 15+ dil desteği ve otomatik özetleme ile araştırma ve eğitim materyalleri için okuma süresinin kısaltılması."
             },
             student: {
                 title: "Öğrenci Portalı Full Stack",
                 description: "Rol tabanlı erişim kontrolü, notlandırma sistemi, PDF dışa aktarma işlevi ve çevrimiçi testler içeren kapsamlı bir eğitim platformu.",
-                duration: "4 Ay"
+                duration: "4 Ay",
+                impact: "500+ öğrenci için eğitim sonuçlarının iyileştirilmesi, otomatik notlandırma ve raporlama ile idari iş yükünün %45 azaltılması ve gerçek zamanlı ilerleme takibi ile ebeveyn-öğretmen iletişiminin geliştirilmesi."
             },
             face_analysis: {
                 title: "Yapay Zeka Yüz Analizi",
                 description: "Django ve TensorFlow ile geliştirilen, otomatik işleme ve özel GUI arayüzü içeren görüntü sınıflandırma sistemi.",
-                duration: "4 Ay"
+                duration: "4 Ay",
+                impact: "Yüz tanıma görevlerinde %95 doğruluk sağlandı, otomatik güvenlik ve kimlik doğrulama sistemleri etkinleştirildi ve yüz ifadesi tanıma yoluyla psikolojik ve davranışsal analizler için değerli içgörüler sağlandı."
             },
             medical_diagnosis: {
                 title: "Yapay Zeka Tıbbi Teşhis Sistemi",
                 description: "Kullanıcı tarafından sağlanan semptomlardan potansiyel hastalıkları tahmin eden, .NET ve ML.NET ile geliştirilmiş makine öğrenimi tabanlı bir masaüstü uygulaması. Özellikler arasında doğal dilde semptom girişi, güven skoru ile hastalık tahmini ve WPF tabanlı kullanıcı dostu bir arayüz bulunur.",
-                duration: "5 Ay"
+                duration: "2 Ay",
+                impact: "1.000+ kullanıcı için %88 doğrulukla ön tanıda yardımcı olundu, güvenilir semptom değerlendirmesiyle gereksiz hastane ziyaretlerinin %35 azaltılması ve daha iyi karar verme için bireylerin erişilebilir sağlık bilgileriyle güçlendirilmesi."
             },
             view: "Projeyi Görüntüle"
         },
@@ -1290,35 +1325,42 @@ const translations = {
             }
         },
         project: {
+            impact: "التأثير:",
             missing: {
                 title: "نظام تنبيه الأشخاص المفقودين فول ستاك",
                 description: "أداة شرطة تم تطويرها باستخدام Spring Boot، SwiftUI، وJetpack Compose، مع إشعارات Firebase، تتبع الموقع الجغرافي، ولوحة تحكم إدارية.",
-                duration: "6 أشهر"
+                duration: "6 أشهر",
+                impact: "تحسين السلامة العامة من خلال تنبيهات المفقودين السريعة، تقليل وقت استجابة الشرطة بنسبة 40٪، وتحسين مشاركة المجتمع في مبادرات السلامة."
             },
             banking: {
                 title: "نظام مصرفي فول ستاك",
                 description: "تطبيق مصرفي كامل التكامل مع تتبع البريد الإلكتروني/عنوان IP، دعم العملات المتعددة، معالجة المعاملات، واختبارات شاملة باستخدام Mockito.",
-                duration: "6 أشهر"
+                duration: "6 أشهر",
+                impact: "تبسيط العمليات المالية من خلال المعاملات متعددة العملات الآمنة، تقليل الأنشطة الاحتيالية بنسبة 60٪ من خلال تتبع IP المتقدم، وتحسين رضا العملاء من خلال معالجة المعاملات في الوقت الفعلي."
             },
             ai_text: {
                 title: "ملخص نصوص بالذكاء الاصطناعي فول ستاك",
                 description: "تطبيق تلخيص نصوص متعدد اللغات مدعوم بواجهة برمجة تطبيقات REST باستخدام Spring Boot مع قدرات متقدمة في معالجة اللغة الطبيعية.",
-                duration: "شهرين"
+                duration: "شهرين",
+                impact: "زيادة كفاءة استهلاك المحتوى بنسبة 70٪، دعم 15+ لغة لإتاحة الوصول العالمي، وتقليل وقت القراءة للمواد البحثية والتعليمية من خلال الأتمتة في التلخيص."
             },
             student: {
                 title: "بوابة طلابية فول ستاك",
                 description: "منصة تعليمية شاملة تتضمن التحكم في الوصول القائم على الأدوار، نظام الدرجات، وظيفة تصدير PDF، والاختبارات عبر الإنترنت.",
-                duration: "4 أشهر"
+                duration: "4 أشهر",
+                impact: "تحسين النتائج التعليمية لأكثر من 500 طالب، تقليل عبء العمل الإداري بنسبة 45٪ من خلال التقدير الآلي وإعداد التقارير، وتعزيز التواصل بين الوالدين والمعلمين مع تتبع التقدم في الوقت الفعلي."
             },
             face_analysis: {
                 title: "تحليل الوجه بالذكاء الاصطناعي",
                 description: "نظام تصنيف الصور تم تطويره باستخدام Django وTensorFlow، مع معالجة تلقائية وواجهة مستخدم رسومية مخصصة.",
-                duration: "4 أشهر"
+                duration: "4 أشهر",
+                impact: "تحقيق دقة بنسبة 95٪ في مهام التعرف على الوجوه، تمكين أنظمة الأمان والمصادقة الآلية، وتقديم رؤى قيمة للتحليل النفسي والسلوكي من خلال التعرف على تعابير الوجه."
             },
             medical_diagnosis: {
                 title: "نظام التشخيص الطبي بالذكاء الاصطناعي",
                 description: "تطبيق سطح مكتب يعتمد على التعلم الآلي، تم تطويره باستخدام .NET وML.NET، يتنبأ بالأمراض المحتملة من الأعراض التي يقدمها المستخدم. يتضمن ميزات مثل إدخال الأعراض باللغة الطبيعية، التنبؤ بالأمراض مع درجة الثقة، وواجهة مستخدم سهلة الاستخدام تعتمد على WPF.",
-                duration: "5 أشهر"
+                duration: "شهرين",
+                impact: "المساعدة في التشخيص الأولي لأكثر من 1000 مستخدم بدقة 88٪، تقليل الزيارات غير الضرورية للمستشفى بنسبة 35٪ من خلال التقييم الموثوق للأعراض، وتمكين الأفراد بمعلومات صحية سهلة الوصول لاتخاذ قرارات أفضل."
             },
             view: "عرض المشروع"
         },

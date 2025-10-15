@@ -1105,6 +1105,74 @@ color: var(--text);
     font-size: 0.9rem;
 }
 
+.project-impact {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.project-impact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.project-impact:hover::before {
+    opacity: 1;
+    animation: flame-pulse 1.5s ease-in-out infinite;
+}
+
+.project-impact strong {
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-impact span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+}
+
+/* RTL Support */
+html[lang="ar"] .project-impact {
+    border-left: none;
+    border-right: 4px solid var(--accent);
+    text-align: right;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .project-impact {
+        margin: 0.8rem 0;
+        padding: 0.6rem;
+    }
+    
+    .project-impact strong {
+        font-size: 0.85rem;
+    }
+    
+    .project-impact span {
+        font-size: 0.85rem;
+    }
+}
+
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
