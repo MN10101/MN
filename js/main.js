@@ -754,6 +754,7 @@ function setupVideoModal() {
     const btn = document.getElementById('videoModalBtn');
     const closeBtn = document.querySelector('.close-btn');
     const modalContent = document.querySelector('.modal-content');
+    let scrollPosition = 0; // Variable to store scroll position
 
     // Check if elements exist
     if (!modal || !btn || !closeBtn || !modalContent) return;
@@ -787,6 +788,8 @@ function setupVideoModal() {
     // Open modal function
     function openModal(e) {
         e.preventDefault();
+        // Save current scroll position
+        scrollPosition = window.scrollY || window.pageYOffset;
         modal.style.display = 'block';
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
@@ -805,6 +808,9 @@ function setupVideoModal() {
         modal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('modal-open', 'mobile-modal-open');
         document.body.style.overflow = 'auto';
+
+        // Restore scroll position
+        window.scrollTo(0, scrollPosition);
 
         // Pause video using safe method
         pauseVideo();
