@@ -1182,11 +1182,11 @@ const translations = {
         education: {
             java: {
                 title: "مبرمج جافا",
-                details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: \u202BJDBC\u202C، \u202BSQL احترافي\u202C<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST والسحابة: AWS، GCP"
+                details: "- أساسيات البرمجة، منهجيات Agile<br>- Java: البرمجة الكائنية OOP، التدفقات، التزامن، Maven، Gradle، الاختبارات<br>- قواعد البيانات: \u202BJDBC\u202C، \u202BSQL احترافي\u202C<br>- إطارات العمل: Spring Boot، Hibernate، Spring Security<br>- واجهات برمجة التطبيقات REST APIs والسحابة: AWS، GCP"
             },
             it_specialist: {
                 title: "اخصائي تكنولوجيا المعلومات في مجال تطوير التطبيقات",
-                details: "- البرمجة الكائنية باستخدام Java SE، C# (.NET)، Python، JavaScript، PHP<br>- تطوير الويب وقواعد البيانات، أنظمة Linux<br>- إدارة مشاريع تقنية المعلومات، العمليات التجارية<br>- الرياضيات وMS Office لعمليات تقنية المعلومات<br>- الإنجليزية التقنية، مهارات التواصل"
+                details: "- البرمجة الكائنية OOP باستخدام Java SE، C# (.NET)، Python، JavaScript، PHP<br>- تطوير الويب وقواعد البيانات، أنظمة Linux<br>- إدارة مشاريع تقنية المعلومات، العمليات التجارية<br>- الرياضيات وMS Office لعمليات تقنية المعلومات<br>- الإنجليزية التقنية، مهارات التواصل"
             },
             toggle: "إظهار التفاصيل",
             toggleHide: "إخفاء التفاصيل"
