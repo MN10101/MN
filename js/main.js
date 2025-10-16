@@ -308,10 +308,10 @@ function validateEmail(email) {
         'nonprofit.org', 'ngo.org'
     ];
 
-    const isAllowedDomain = allowedDomains.some(allowed => domain === allowed);
+    const isAllowedDomain = allowedDomains.some(allowed => domain === allowed || domain.endsWith('.' + allowed));
     
     if (!isAllowedDomain) {
-        return { isValid: false, message: 'Please use a major email provider like Gmail, Outlook, or Yahoo' };
+        return { isValid: false, message: t.useMajorProvider }; // Use translation here
     }
 
     return { isValid: true, message: t.validEmail };

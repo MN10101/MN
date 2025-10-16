@@ -229,7 +229,8 @@ const translations = {
             invalidEmail: "Please enter a valid email address",
             disposableEmail: "Please use a permanent email address",
             domainNotExist: "Email domain does not exist",
-            emailTooLong: "Email address is too long"
+            emailTooLong: "Email address is too long",
+            useMajorProvider: "Please use a major email provider like Gmail, Outlook, or Yahoo"
         }
     },
     de: {
@@ -461,7 +462,8 @@ const translations = {
             invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
             disposableEmail: "Bitte verwenden Sie eine permanente E-Mail-Adresse",
             domainNotExist: "E-Mail-Domain existiert nicht",
-            emailTooLong: "E-Mail-Adresse ist zu lang"
+            emailTooLong: "E-Mail-Adresse ist zu lang",
+             useMajorProvider: "Bitte verwenden Sie einen großen E-Mail-Anbieter wie Gmail, Outlook oder Yahoo"
         }
     },
         pl: {
@@ -693,7 +695,8 @@ const translations = {
             invalidEmail: "Proszę podać prawidłowy adres e-mail",
             disposableEmail: "Proszę użyć stałego adresu e-mail",
             domainNotExist: "Domena e-mail nie istnieje",
-            emailTooLong: "Adres e-mail jest zbyt długi"
+            emailTooLong: "Adres e-mail jest zbyt długi",
+            useMajorProvider: "Proszę użyć głównego dostawcy poczty e-mail, takiego jak Gmail, Outlook lub Yahoo"
         }
     },
     fr: {
@@ -926,7 +929,8 @@ const translations = {
             invalidEmail: "Veuillez saisir une adresse e-mail valide",
             disposableEmail: "Veuillez utiliser une adresse e-mail permanente",
             domainNotExist: "Le domaine de messagerie n'existe pas",
-            emailTooLong: "L'adresse e-mail est trop longue"
+            emailTooLong: "L'adresse e-mail est trop longue",
+            useMajorProvider: "Veuillez utiliser un fournisseur de messagerie majeur comme Gmail, Outlook ou Yahoo"
         }
     },
     tr: {
@@ -1159,7 +1163,8 @@ const translations = {
             invalidEmail: "Lütfen geçerli bir e-posta adresi girin",
             disposableEmail: "Lütfen kalıcı bir e-posta adresi kullanın",
             domainNotExist: "E-posta alan adı mevcut değil",
-            emailTooLong: "E-posta adresi çok uzun"
+            emailTooLong: "E-posta adresi çok uzun",
+            useMajorProvider: "Lütfen Gmail, Outlook veya Yahoo gibi büyük bir e-posta sağlayıcısı kullanın"
         }
     },
         ru: {
@@ -1391,7 +1396,8 @@ const translations = {
             invalidEmail: "Пожалуйста, введите действительный email адрес",
             disposableEmail: "Пожалуйста, используйте постоянный email адрес",
             domainNotExist: "Домен email не существует",
-            emailTooLong: "Email адрес слишком длинный"
+            emailTooLong: "Email адрес слишком длинный",
+             useMajorProvider: "Пожалуйста, используйте крупного поставщика электронной почты, такого как Gmail, Outlook или Yahoo"
         }
     },
     ar: {
@@ -1623,7 +1629,8 @@ const translations = {
             invalidEmail: "يرجى إدخال عنوان بريد إلكتروني صحيح",
             disposableEmail: "يرجى استخدام عنوان بريد إلكتروني دائم",
             domainNotExist: "نطاق البريد الإلكتروني غير موجود",
-            emailTooLong: "عنوان البريد الإلكتروني طويل جدًا"
+            emailTooLong: "عنوان البريد الإلكتروني طويل جدًا",
+            useMajorProvider: "يرجى استخدام مزود بريد إلكتروني رئيسي مثل Gmail أو Outlook أو Yahoo"
         }
     }
 };
