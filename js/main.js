@@ -360,7 +360,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadYouTubeAPI();
 
-    setupVideoModal();;
+    setupVideoModal();
+
+    initWeatherWidget();
     
     // Form submission handler
     const contactForm = document.querySelector('.contact-form');
@@ -922,6 +924,249 @@ function setupVideoModal() {
         iframe.addEventListener('touchstart', (e) => e.stopPropagation());
     }
 }
+
+// Weather functionality
+class WeatherWidget {
+    constructor() {
+        this.apiKey = '1b1286a2450ec4aaf41b6d5d7b7c1bee';
+        this.weatherWidget = document.getElementById('weatherWidget');
+        this.weatherContent = this.weatherWidget?.querySelector('.weather-content');
+        this.weatherLoading = this.weatherWidget?.querySelector('.weather-loading');
+        this.weatherError = this.weatherWidget?.querySelector('.weather-error');
+        
+        // Store current weather data to prevent unnecessary API calls
+        this.currentWeatherData = null;
+        this.isUserLocation = true;
+        
+        if (!this.weatherWidget) return;
+        
+        this.init();
+    }
+
+    async init() {
+        try {
+            await this.loadWeather();
+        } catch (error) {
+            console.error('Weather initialization failed:', error);
+            // Fallback to Berlin weather
+            await this.loadFallbackWeather();
+        }
+    }
+
+    async loadWeather() {
+        this.showLoading();
+        
+        try {
+            // Get user location first
+            const position = await this.getUserPosition();
+            const weatherData = await this.fetchWeatherData(position.coords.latitude, position.coords.longitude);
+            this.currentWeatherData = weatherData;
+            this.isUserLocation = true;
+            this.displayWeather(weatherData, true);
+        } catch (geoError) {
+            console.log('Geolocation failed, using fallback:', geoError);
+            // If geolocation fails, use Berlin as fallback
+            await this.loadFallbackWeather();
+        }
+    }
+
+    async loadFallbackWeather() {
+        try {
+            // Berlin coordinates as fallback
+            const weatherData = await this.fetchWeatherData(52.5200, 13.4050);
+            this.currentWeatherData = weatherData;
+            this.isUserLocation = false;
+            this.displayWeather(weatherData, false);
+        } catch (error) {
+            console.error('Fallback weather also failed:', error);
+            this.showError();
+        }
+    }
+
+    getUserPosition() {
+        return new Promise((resolve, reject) => {
+            if (!navigator.geolocation) {
+                reject(new Error('Geolocation not supported'));
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(resolve, reject, {
+                enableHighAccuracy: false,
+                // Reduced timeout for better UX
+                timeout: 8000, 
+                // 5 minutes cache
+                maximumAge: 300000 
+            });
+        });
+    }
+
+    async fetchWeatherData(lat, lon) {
+        // Get current language at the moment of API call
+        const currentLang = document.documentElement.lang || 'en';
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}&units=metric&lang=${currentLang}`;
+        
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`Weather API error: ${response.status}`);
+        }
+        
+        return await response.json();
+    }
+
+    displayWeather(data, isUserLocation = true) {
+        if (!this.weatherContent) return;
+
+        const temp = Math.round(data.main.temp);
+        const description = data.weather[0].description;
+        const city = data.name;
+        const country = data.sys.country;
+        const iconCode = data.weather[0].icon;
+
+        // Update weather content
+        this.weatherContent.querySelector('.temp-value').textContent = temp;
+        this.weatherContent.querySelector('.weather-desc').textContent = description;
+        
+        // Get current language for fallback message
+        const currentLang = document.documentElement.lang || 'en';
+        const t = translations[currentLang]?.weather || translations.en.weather;
+        
+        // Show location name with appropriate indicator
+        let locationText;
+        if (isUserLocation) {
+            locationText = `${city}, ${country}`;
+        } else {
+            // Use the translated fallback message
+            const fallbackText = t.fallback || 'Showing Berlin weather';
+            locationText = `${city}, ${country} (${fallbackText})`;
+        }
+        this.weatherContent.querySelector('.location-name').textContent = locationText;
+        
+        // Update weather icon
+        const weatherIcon = this.weatherContent.querySelector('.weather-icon i');
+        weatherIcon.className = this.getWeatherIcon(iconCode);
+
+        // Show content
+        this.hideLoading();
+        this.weatherContent.style.display = 'flex';
+        
+        // Demo badge for portfolio showcase 
+        this.addDemoBadge();
+    }
+
+    getWeatherIcon(iconCode) {
+        const iconMap = {
+            '01d': 'fas fa-sun',           
+            '01n': 'fas fa-moon',
+            '02d': 'fas fa-cloud-sun',
+            '02n': 'fas fa-cloud-moon',
+            '03d': 'fas fa-cloud',
+            '03n': 'fas fa-cloud',
+            '04d': 'fas fa-cloud',         
+            '04n': 'fas fa-cloud',
+            '09d': 'fas fa-cloud-rain',   
+            '09n': 'fas fa-cloud-rain',
+            '10d': 'fas fa-cloud-sun-rain',
+            '10n': 'fas fa-cloud-moon-rain',
+            '11d': 'fas fa-bolt',
+            '11n': 'fas fa-bolt',
+            '13d': 'fas fa-snowflake',
+            '13n': 'fas fa-snowflake',
+            '50d': 'fas fa-smog',
+            '50n': 'fas fa-smog'
+        };
+
+        return iconMap[iconCode] || 'fas fa-cloud';
+    }
+
+    showLoading() {
+        if (this.weatherLoading) {
+            this.weatherLoading.style.display = 'flex';
+        }
+        if (this.weatherContent) {
+            this.weatherContent.style.display = 'none';
+        }
+        if (this.weatherError) {
+            this.weatherError.style.display = 'none';
+        }
+    }
+
+    hideLoading() {
+        if (this.weatherLoading) {
+            this.weatherLoading.style.display = 'none';
+        }
+    }
+
+    showError() {
+        if (this.weatherError) {
+            this.weatherError.style.display = 'flex';
+        }
+        if (this.weatherLoading) {
+            this.weatherLoading.style.display = 'none';
+        }
+        if (this.weatherContent) {
+            this.weatherContent.style.display = 'none';
+        }
+    }
+
+    addDemoBadge() {
+        // Remove existing badge if any
+        const existingBadge = this.weatherWidget.querySelector('.weather-demo-badge');
+        if (existingBadge) {
+            existingBadge.remove();
+        }
+
+        const badge = document.createElement('div');
+        badge.className = 'weather-demo-badge';
+        badge.setAttribute('data-i18n', 'weather.demo');
+        
+        this.weatherWidget.style.position = 'relative';
+        this.weatherWidget.appendChild(badge);
+        
+        // Update translation for the badge
+        this.updateBadgeTranslation();
+    }
+
+    updateBadgeTranslation() {
+        const badge = this.weatherWidget.querySelector('.weather-demo-badge');
+        if (badge) {
+            const currentLang = document.documentElement.lang || 'en';
+            const t = translations[currentLang]?.weather || translations.en.weather;
+            badge.textContent = t.demo || 'Live Demo';
+        }
+    }
+
+    // Update weather when language changes
+    async updateLanguage() {
+        // Update badge first
+        this.updateBadgeTranslation();
+        
+        // Force a fresh API call with the new language
+        try {
+            await this.loadWeather();
+        } catch (error) {
+            console.error('Failed to update weather with new language:', error);
+            // If fresh load fails, try to update display with existing data
+            if (this.currentWeatherData) {
+                this.displayWeather(this.currentWeatherData, this.isUserLocation);
+            }
+        }
+    }
+}
+// Initialize weather widget
+let weatherWidget;
+
+function initWeatherWidget() {
+    weatherWidget = new WeatherWidget();
+}
+
+// Update weather on language change
+function updateWeatherOnLanguageChange() {
+    if (weatherWidget) {
+        weatherWidget.updateLanguage();
+    }
+}
+
 
 // Disable right-click
 // document.addEventListener('contextmenu', (event) => event.preventDefault());
