@@ -644,6 +644,11 @@ color: var(--text);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     animation: bounce 2s infinite;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .arrow-down {
@@ -1864,6 +1869,29 @@ textarea:focus-visible {
     .hero .scroll-indicator {
         margin-top: 1.5rem;
     }
+}
+
+html, body {
+    -webkit-overflow-scrolling: touch;
+}
+
+
+a, button, .contact-link, .social-link, .toggle-details, .btn, 
+.language-toggle, #language-select, .weather-widget,
+.scroll-indicator, .back-to-top {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.scroll-indicator {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    touch-action: pan-y;
+}
+
+
+.interactive-element {
+    touch-action: manipulation;
 }
 
 /* Arabic RTL Specific Styles - DESKTOP ONLY */

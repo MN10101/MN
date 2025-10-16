@@ -1166,6 +1166,51 @@ function updateWeatherOnLanguageChange() {
         weatherWidget.updateLanguage();
     }
 }
+// Fix for iOS Safari double-tap issue
+document.addEventListener('DOMContentLoaded', function() {
+    // Add touch event listeners to prevent double-tap issues
+    const interactiveElements = document.querySelectorAll(
+        'a, button, .contact-link, .social-link, .toggle-details, .btn, ' +
+        '.language-toggle, #language-select, .weather-widget, .scroll-indicator'
+    );
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+            // Add a small class to indicate touch
+            this.classList.add('touch-active');
+        }, { passive: true });
+        
+        element.addEventListener('touchend', function() {
+            // Remove the class after a short delay
+            setTimeout(() => {
+                this.classList.remove('touch-active');
+            }, 150);
+        }, { passive: true });
+    });
+    
+    // Specifically for scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Smooth scroll to about section
+            document.querySelector('#about').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// Alternative: Force single tap by preventing default on first touch
+document.addEventListener('touchstart', function(e) {
+    if (e.target.classList.contains('scroll-indicator') || 
+        e.target.closest('.scroll-indicator')) {
+        e.preventDefault();
+        document.querySelector('#about').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+}, { passive: false });
 
 
 // Disable right-click
