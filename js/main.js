@@ -227,26 +227,10 @@ function validateEmail(email) {
     const currentLang = document.documentElement.lang || 'en';
     const t = translations[currentLang]?.validation || translations.en.validation;
 
-    // Basic email format validation
+    // Email format validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
         return { isValid: false, message: t.invalidEmail };
-    }
-
-    // Common disposable email domains
-    const disposableDomains = [
-        'tempmail.com', 'fakeinbox.com', 'throwawaymail.com', 'guerrillamail.com',
-        'mailinator.com', '10minutemail.com', 'yopmail.com', 'trashmail.com',
-        'getairmail.com', 'dispostable.com', 'temp-mail.org', 'fake-mail.com',
-        'kvkgiew.com', 'maildrop.cc', 'mytemp.email', 'spambox.us', 'mailcatch.com',
-        'mailnesia.com', 'mintemail.com', 'sharklasers.com', 'spamgourmet.com',
-        'mail-temporaire.fr', 'jetable.org', 'mailnull.com', 'disposableemailaddresses.com','me.com','jiudhvie.com'
-    ];
-
-    const domain = email.split('@')[1].toLowerCase();
-    
-    if (disposableDomains.includes(domain)) {
-        return { isValid: false, message: t.disposableEmail };
     }
 
     // Check for suspicious patterns
@@ -254,8 +238,80 @@ function validateEmail(email) {
         return { isValid: false, message: t.emailTooLong };
     }
 
-    if (email.split('@')[0].length > 64) {
+    const localPart = email.split('@')[0];
+    if (localPart.length > 64) {
         return { isValid: false, message: t.emailTooLong };
+    }
+
+    // SMART DISPOSABLE DOMAIN DETECTION + PATTERN MATCHING
+    const domain = email.split('@')[1].toLowerCase();
+    
+    // MAJOR DISPOSABLE DOMAINS LIST
+    const majorDisposableDomains = [
+        'mailinator.com', '10minutemail.com', 'yopmail.com', 'guerrillamail.com',
+        'trashmail.com', 'temp-mail.org', 'sharklasers.com', 'getnada.com',
+        'dispostable.com', 'maildrop.cc', 'mytemp.email', 'mailnesia.com',
+        'tempmail.com', 'fakeinbox.com', 'throwawaymail.com'
+    ];
+
+    // SUSPICIOUS PATTERNS (Catches new disposable domains)
+    const suspiciousPatterns = [
+        /temp-?mail|tempemail/i,
+        /fake-?mail|fakeemail/i,
+        /throwaway|disposable/i,
+        /spam-?mail|trash-?mail/i,
+        /10min|15min|30min|60min/i,
+        /minute-?mail|hour-?mail/i,
+        /dummy-?mail|temporary/i,
+        /mailinator|guerrilla|yopmail|trashmail/i
+    ];
+
+    // SUSPICIOUS LOCAL PARTS (Username patterns)
+    const suspiciousLocalParts = [
+        /^test\d*$/i,
+        /^demo\d*$/i,
+        /^example\d*$/i,
+        /^temp\d*$/i,
+        /^fake\d*$/i,
+        // only numbers
+        /^\d+$/, 
+        /^abc$/i,
+        /testtest/i,
+        /asdfasdf/i,
+        /qwerty/i
+    ];
+
+    const isMajorDisposable = majorDisposableDomains.includes(domain);
+    const hasSuspiciousDomain = suspiciousPatterns.some(pattern => pattern.test(domain));
+    const hasSuspiciousLocalPart = suspiciousLocalParts.some(pattern => pattern.test(localPart));
+
+    if (isMajorDisposable || hasSuspiciousDomain || hasSuspiciousLocalPart) {
+        return { isValid: false, message: t.disposableEmail };
+    }
+
+    // ALLOW ONLY MAJOR PROVIDERS + COMMON DOMAINS
+    const allowedDomains = [
+        // Google
+        'gmail.com', 'googlemail.com', 'google.com',
+        // Microsoft
+        'outlook.com', 'hotmail.com', 'live.com', 'msn.com',
+        // Apple
+        'icloud.com', 'me.com', 'mac.com',
+        // Yahoo
+        'yahoo.com', 'ymail.com', 'rocketmail.com',
+        // Other major providers 
+        'protonmail.com', 'proton.me', 'aol.com', 'zoho.com',
+        'yandex.com', 'mail.com', 'gmx.com', 'gmx.net',
+        // Common business/education domains
+        'edu', 'university.edu', 'school.edu', 'college.edu',
+        'company.com', 'business.com', 'enterprise.com', 'organization.org',
+        'nonprofit.org', 'ngo.org'
+    ];
+
+    const isAllowedDomain = allowedDomains.some(allowed => domain === allowed);
+    
+    if (!isAllowedDomain) {
+        return { isValid: false, message: 'Please use a major email provider like Gmail, Outlook, or Yahoo' };
     }
 
     return { isValid: true, message: t.validEmail };
