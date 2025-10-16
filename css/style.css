@@ -644,11 +644,6 @@ color: var(--text);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     animation: bounce 2s infinite;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .arrow-down {
@@ -1705,7 +1700,7 @@ textarea:focus-visible {
     margin-left: auto;
     margin-right: auto;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 5;
 }
 
 .hero .weather-widget:hover {
@@ -1871,27 +1866,43 @@ textarea:focus-visible {
     }
 }
 
-html, body {
-    -webkit-overflow-scrolling: touch;
-}
-
-
-a, button, .contact-link, .social-link, .toggle-details, .btn, 
-.language-toggle, #language-select, .weather-widget,
-.scroll-indicator, .back-to-top {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    cursor: pointer;
-}
-
+/* Fix z-index and pointer events for scroll indicator and weather widget */
 .scroll-indicator {
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
-    touch-action: pan-y;
+    position: relative;
+    z-index: 100 !important; 
+    pointer-events: auto !important;
 }
 
+.weather-widget {
+    pointer-events: none !important; 
+}
 
-.interactive-element {
-    touch-action: manipulation;
+.weather-widget * {
+    pointer-events: auto !important; 
+}
+
+/* Ensure scroll indicator area is always clickable */
+.scroll-indicator::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    pointer-events: auto;
+}
+
+/* Mobile-specific fix */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        z-index: 200 !important; 
+    }
+    
+    .weather-widget {
+        margin-top: 0.5rem !important; 
+        margin-bottom: 0.5rem !important; 
+    }
 }
 
 /* Arabic RTL Specific Styles - DESKTOP ONLY */
