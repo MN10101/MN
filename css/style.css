@@ -164,12 +164,11 @@ html[lang="tr"] .section-indicator span {
 
 .hero {
     position: relative;
-    min-height: 120vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible; 
-    padding: 3rem 1rem; 
+    overflow: hidden;
 }
 
 #particles-js {
@@ -1686,10 +1685,10 @@ textarea:focus-visible {
     background: #0056b3;
 }
 
-/* Weather Widget Styles for Hero Section */
-.hero .weather-widget {
+/* Weather Widget Styles */
+.weather-widget {
     position: relative;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
     border-radius: 16px;
     padding: 1rem;
     margin-top: 1.5rem;
@@ -1700,17 +1699,16 @@ textarea:focus-visible {
     margin-left: auto;
     margin-right: auto;
     transition: all 0.3s ease;
-    z-index: 10;
 }
 
-.hero .weather-widget:hover {
+.weather-widget:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
                 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
-.hero .weather-loading,
-.hero .weather-error {
+.weather-loading,
+.weather-error {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1719,49 +1717,49 @@ textarea:focus-visible {
     font-size: 0.9rem;
 }
 
-.hero .weather-content {
+.weather-content {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.hero .weather-icon {
+.weather-icon {
     font-size: 2.5rem;
     color: var(--accent);
     min-width: 60px;
     text-align: center;
 }
 
-.hero .weather-info {
+.weather-info {
     flex: 1;
 }
 
-.hero .weather-temp {
+.weather-temp {
     display: flex;
     align-items: baseline;
     gap: 0.25rem;
     margin-bottom: 0.25rem;
 }
 
-.hero .temp-value {
+.temp-value {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text);
 }
 
-.hero .temp-unit {
+.temp-unit {
     font-size: 0.9rem;
     color: var(--text-light);
 }
 
-.hero .weather-desc {
+.weather-desc {
     font-size: 0.8rem;
     color: var(--text-light);
     margin-bottom: 0.5rem;
     text-transform: capitalize;
 }
 
-.hero .weather-location {
+.weather-location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1769,11 +1767,32 @@ textarea:focus-visible {
     color: var(--text-light);
 }
 
-.hero .weather-location i {
+.weather-location i {
     font-size: 0.7rem;
 }
 
-.hero .weather-demo-badge {
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .weather-widget {
+        max-width: 250px;
+        padding: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .weather-icon {
+        font-size: 2rem;
+        min-width: 50px;
+    }
+    
+    .temp-value {
+        font-size: 1.3rem;
+    }
+    
+    .weather-content {
+        gap: 0.8rem;
+    }
+}
+.weather-demo-badge {
     position: absolute;
     top: -8px;
     right: -8px;
@@ -1789,120 +1808,44 @@ textarea:focus-visible {
 }
 
 /* Weather Widget Location Styles */
-.hero .weather-widget .location-name::before {
+.weather-widget .location-name::before {
     content: '🌍 ';
     font-size: 0.7em;
 }
 
-.hero .weather-widget.user-location .location-name::before {
+.weather-widget.user-location .location-name::before {
     content: '📍 ';
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Mobile responsiveness for hero weather widget */
-@media (max-width: 768px) {
-    .hero .weather-widget {
-        max-width: 250px;
-        padding: 0.8rem;
-        margin-top: 1rem;
-    }
-    
-    .hero .weather-icon {
-        font-size: 2rem;
-        min-width: 50px;
-    }
-    
-    .hero .temp-value {
-        font-size: 1.3rem;
-    }
-    
-    .hero .weather-content {
-        gap: 0.8rem;
-    }
-    
-    .hero-content {
-        gap: 1rem;
-    }
-    
-    .contact-links {
-        gap: 0.5rem;
-        margin-bottom: 0.25rem;
-    }
-}
-
-/* Proper spacing in hero section */
-.hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.hero .scroll-indicator {
-    margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-    .hero .scroll-indicator {
-        margin-top: 1.5rem;
-    }
-}
-
-
-.scroll-indicator {
-    position: relative;
-    z-index: 100 !important; 
-    pointer-events: auto !important;
-}
-
+/* Weather Widget Styles with proper z-index */
 .weather-widget {
-    pointer-events: none !important; 
+    position: relative;
+    z-index: 10; 
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    border-radius: 16px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
 }
 
-.weather-widget * {
-    pointer-events: auto !important; 
+/* Make sure hero content has proper z-index too */
+.hero-content {
+    position: relative;
+    z-index: 5; 
 }
 
-/* Ensure scroll indicator area is always clickable */
-.scroll-indicator::before {
-    content: '';
+/* If particles are still covering it, we can be more aggressive */
+#particles-js {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    z-index: -1;
-    pointer-events: auto;
-}
-
-/* Mobile-specific fix */
-@media (max-width: 768px) {
-    .scroll-indicator {
-        z-index: 200 !important; 
-    }
-    
-    .weather-widget {
-        margin-top: 0.5rem !important; 
-        margin-bottom: 0.5rem !important; 
-    }
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
 }
 
 /* Arabic RTL Specific Styles - DESKTOP ONLY */
