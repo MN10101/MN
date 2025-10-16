@@ -1,3 +1,4 @@
+// Initialize particles.js with custom configuration
 particlesJS('particles-js', {
     particles: {
         number: { value: 80, density: { enable: true, value_area: 800 } },
