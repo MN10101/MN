@@ -1788,137 +1788,120 @@ textarea:focus-visible {
     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
 }
 
-/* Weather Widget Styles for About Section */
-.weather-widget {
-    position: relative;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-    border-radius: 16px;
-    padding: 1rem;
-    margin: 2rem auto 3rem auto; /* Added space above and below */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 0.3s ease;
-    z-index: 5;
-}
-
-.weather-widget:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-                0 0 20px rgba(59, 130, 246, 0.2);
-}
-
-.weather-loading,
-.weather-error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.weather-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.weather-icon {
-    font-size: 2.5rem;
-    color: var(--accent);
-    min-width: 60px;
-    text-align: center;
-}
-
-.weather-info {
-    flex: 1;
-}
-
-.weather-temp {
-    display: flex;
-    align-items: baseline;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-}
-
-.temp-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text);
-}
-
-.temp-unit {
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-.weather-desc {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-    text-transform: capitalize;
-}
-
-.weather-location {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    color: var(--text-light);
-}
-
-.weather-location i {
-    font-size: 0.7rem;
-}
-
-.weather-demo-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
-}
-
 /* Weather Widget Location Styles */
-.weather-widget .location-name::before {
+.hero .weather-widget .location-name::before {
     content: '🌍 ';
     font-size: 0.7em;
 }
 
-.weather-widget.user-location .location-name::before {
+.hero .weather-widget.user-location .location-name::before {
     content: '📍 ';
 }
 
-/* Mobile responsiveness for weather widget */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness for hero weather widget */
 @media (max-width: 768px) {
-    .weather-widget {
+    .hero .weather-widget {
         max-width: 250px;
         padding: 0.8rem;
-        margin: 1.5rem auto 2rem auto;
+        margin-top: 1rem;
     }
     
-    .weather-icon {
+    .hero .weather-icon {
         font-size: 2rem;
         min-width: 50px;
     }
     
-    .temp-value {
+    .hero .temp-value {
         font-size: 1.3rem;
     }
     
-    .weather-content {
+    .hero .weather-content {
         gap: 0.8rem;
+    }
+    
+    .hero-content {
+        gap: 1rem;
+    }
+    
+    .contact-links {
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* Proper spacing in hero section */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.hero .scroll-indicator {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero .scroll-indicator {
+        margin-top: 1.5rem;
+    }
+}
+
+
+.scroll-indicator {
+    position: relative;
+    z-index: 100 !important; 
+    pointer-events: auto !important;
+}
+
+.weather-widget {
+    pointer-events: none !important; 
+}
+
+.weather-widget * {
+    pointer-events: auto !important; 
+}
+
+/* Ensure scroll indicator area is always clickable */
+.scroll-indicator::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+    pointer-events: auto;
+}
+
+/* Mobile-specific fix */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        z-index: 200 !important; 
+    }
+    
+    .weather-widget {
+        margin-top: 0.5rem !important; 
+        margin-bottom: 0.5rem !important; 
     }
 }
 
