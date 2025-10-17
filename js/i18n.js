@@ -1724,17 +1724,25 @@ function updateContent(lang) {
 
     document.title = translations[lang]?.title || "Mahmoud Najmeh | Full-Stack Developer";
 
-    // Update text content
+    // Update text content WITH ERROR HANDLING
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
+        
+        // Skip weather-related translations that no longer exist
+        if (key.startsWith('weather.')) {
+            console.warn(`Skipping missing weather translation: ${key}`);
+            return; // Skip this element
+        }
+        
         const keys = key.split('.');
         let value = translations[lang];
         for (const k of keys) {
-            value = value[k];
-            if (!value) {
+            if (!value || !value[k]) {
                 console.warn(`Translation missing for key: ${key} in language: ${lang}`);
+                value = null;
                 break;
             }
+            value = value[k];
         }
         if (value) element.innerHTML = value;
     });
@@ -1745,8 +1753,8 @@ function updateContent(lang) {
         const keys = key.split('.');
         let value = translations[lang];
         for (const k of keys) {
+            if (!value || !value[k]) break;
             value = value[k];
-            if (!value) break;
         }
         if (value) element.placeholder = value;
     });
@@ -1757,8 +1765,8 @@ function updateContent(lang) {
         const keys = key.split('.');
         let value = translations[lang];
         for (const k of keys) {
+            if (!value || !value[k]) break;
             value = value[k];
-            if (!value) break;
         }
         if (value) element.title = value;
     });
@@ -1772,6 +1780,7 @@ function updateContent(lang) {
             lang === 'pl' ? 'Ukryj szczegóły' : 
             lang === 'fr' ? 'Masquer les détails' : 
             lang === 'tr' ? 'Detayları Gizle' : 
+            lang === 'ru' ? 'Скрыть детали' : 
             'Details ausblenden';
     });
 
@@ -1798,7 +1807,9 @@ function getSupportedLanguage(browserLang) {
         'tr-TR': 'tr',
         'ar': 'ar',
         'ar-SA': 'ar',
-        'ar-EG': 'ar'
+        'ar-EG': 'ar',
+        'ru': 'ru',        
+        'ru-RU': 'ru'       
     };
     const primaryLang = browserLang.split('-')[0];
     const supportedLang = langMap[browserLang] || langMap[primaryLang] || 'en';
@@ -1826,6 +1837,7 @@ function getLanguageFromCountry(countryCode) {
         'PL': 'pl',     
         'FR': 'fr',      
         'TR': 'tr',      
+        'RU': 'ru',      
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
@@ -1846,14 +1858,14 @@ function getUrlParameter(name) {
 async function getCurrentLanguage() {
     // First check URL parameter
     const urlLang = getUrlParameter('lang');
-    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(urlLang)) {
+    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(urlLang)) {  
         console.log(`Language from URL: ${urlLang}`);
         return urlLang;
     }
     
     // Then check localStorage
     const storedLang = localStorage.getItem('language');
-    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(storedLang)) {
+    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(storedLang)) { 
         console.log(`Language from localStorage: ${storedLang}`);
         return storedLang;
     }
@@ -1898,7 +1910,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
-        if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
+        if (['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(lang)) { 
             console.log(`Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
             updateContent(lang);
