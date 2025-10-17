@@ -797,8 +797,8 @@ color: var(--text);
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
 .skill-category h4 {
@@ -806,8 +806,8 @@ color: var(--text);
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
     white-space: normal;
-    overflow-wrap: break-word; 
-    padding: 0.2rem; 
+    overflow-wrap: break-word;
+    padding: 0.2rem;
 }
 
 .icon-list {
