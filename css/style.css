@@ -2545,6 +2545,863 @@ html[lang="ar"]::-webkit-scrollbar-thumb:hover {
     }
 }
 
+/* Arabic & Hebrew RTL Specific Styles - DESKTOP ONLY */
+@media (min-width: 1025px) {
+    html[lang="ar"], html[lang="he"] {
+        direction: rtl;
+        font-family: 'Noto Naskh Arabic', 'Tahoma', 'Arial', sans-serif;
+    }
+
+    html[lang="ar"] body, html[lang="he"] body {
+        direction: rtl;
+    }
+
+    /* ARABIC & HEBREW TEXT ORDER ON DESKTOP - ONLY FOR TITLES */
+    html[lang="ar"] .title-segment,
+    html[lang="ar"] .education-list strong,
+    html[lang="he"] .title-segment,
+    html[lang="he"] .education-list strong {
+        unicode-bidi: plaintext !important;
+    }
+
+    /* MOVED TO LEFT SIDE FOR ARABIC & HEBREW ONLY - DESKTOP */
+    html[lang="ar"] .section-indicators,
+    html[lang="he"] .section-indicators {
+        left: 2rem !important;
+        right: auto !important;
+    }
+
+    /* Scroll indicator moved to LEFT for Arabic & Hebrew - DESKTOP ONLY */
+    html[lang="ar"] .hero .scroll-indicator,
+    html[lang="ar"] header.hero .scroll-indicator,
+    html[lang="he"] .hero .scroll-indicator,
+    html[lang="he"] header.hero .scroll-indicator {
+        left: 2rem !important;
+        right: auto !important;
+        transform: none !important;
+        align-items: flex-start !important;
+    }
+
+    /* Language Toggle MOVED TO LEFT SIDE FOR ARABIC & HEBREW - DESKTOP */
+    html[lang="ar"] .language-toggle,
+    html[lang="he"] .language-toggle {
+        left: 1rem !important;
+        right: auto !important;
+    }
+
+    /* BACK-TO-TOP MOVED TO LEFT SIDE FOR ARABIC & HEBREW - DESKTOP */
+    html[lang="ar"] .back-to-top,
+    html[lang="he"] .back-to-top {
+        left: 2rem !important;
+        right: auto !important;
+    }
+
+    /* Arabic & Hebrew title styles for desktop */
+    html[lang="ar"] .title-segment,
+    html[lang="he"] .title-segment {
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        padding: 0.5rem 2.5rem 0.5rem 1rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: unset;
+        min-width: max-content;
+        width: 100%;
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        unicode-bidi: plaintext !important;
+    }
+
+    html[lang="ar"] .main-title .title-line[data-i18n="name.last"],
+    html[lang="he"] .main-title .title-line[data-i18n="name.last"] {
+        display: inline-block;
+        transform: translateY(0.8rem);
+    }
+
+    html[lang="ar"] .title-segment.active,
+    html[lang="he"] .title-segment.active {
+        color: var(--text);
+        font-weight: 700;
+    }
+
+    html[lang="ar"] .dynamic-title,
+    html[lang="he"] .dynamic-title {
+        width: 100%;
+        max-width: 90vw;
+        margin: 0 auto;
+        height: 3.5rem;
+    }
+
+    html[lang="ar"] .title-mask,
+    html[lang="he"] .title-mask {
+        width: 100%;
+        overflow: visible;
+        height: 100%;
+    }
+
+    html[lang="ar"] .title-slider,
+    html[lang="he"] .title-slider {
+        width: 100%;
+        height: 100%;
+    }
+
+    html[lang="ar"] .title-segment::before,
+    html[lang="he"] .title-segment::before {
+        content: '' !important;
+        position: absolute;
+        left: auto !important;
+        right: 1rem !important;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="he"] .title-segment.java-backend::before {
+        background: var(--java);
+    }
+
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="he"] .title-segment.full-stack::before {
+        background: var(--accent);
+    }
+
+    html[lang="ar"] .title-segment.ai::before,
+    html[lang="he"] .title-segment.ai::before {
+        background: var(--python);
+    }
+
+    html[lang="ar"] .contact-link[href*="tel"] span,
+    html[lang="he"] .contact-link[href*="tel"] span {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+        display: inline-block;
+    }
+
+    /* Arabic & Hebrew title transitions to prevent layout shift - DESKTOP */
+    html[lang="ar"] .title-slider,
+    html[lang="he"] .title-slider {
+        position: relative;
+        height: 3.5rem;
+        width: 100%;
+    }
+
+    html[lang="ar"] .title-segment,
+    html[lang="he"] .title-segment {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    html[lang="ar"] .title-segment:not(.active),
+    html[lang="he"] .title-segment:not(.active) {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    html[lang="ar"] .title-segment.active,
+    html[lang="he"] .title-segment.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    html[lang="ar"] .about-content,
+    html[lang="he"] .about-content {
+        text-align: right;
+    }
+
+    html[lang="ar"] .education-list li,
+    html[lang="he"] .education-list li {
+        text-align: right;
+    }
+
+    html[lang="ar"] .education-detail,
+    html[lang="he"] .education-detail {
+        border-left: none;
+        border-right: 2px solid var(--accent);
+        padding-left: 0;
+        padding-right: 1.2rem;
+    }
+
+    html[lang="ar"] .skills-grid,
+    html[lang="he"] .skills-grid {
+        text-align: right;
+    }
+
+    html[lang="ar"] .project-details,
+    html[lang="he"] .project-details {
+        text-align: right;
+    }
+
+    html[lang="ar"] .form-group input,
+    html[lang="ar"] .form-group textarea,
+    html[lang="he"] .form-group input,
+    html[lang="he"] .form-group textarea {
+        text-align: right;
+        direction: rtl;
+    }
+
+    html[lang="ar"] .main-title,
+    html[lang="he"] .main-title {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        letter-spacing: normal;
+    }
+
+    html[lang="ar"] .section-title,
+    html[lang="he"] .section-title {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+    }
+
+    html[lang="ar"] .service-title,
+    html[lang="ar"] .project-details h3,
+    html[lang="ar"] .skill-category h4,
+    html[lang="he"] .service-title,
+    html[lang="he"] .project-details h3,
+    html[lang="he"] .skill-category h4 {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+    }
+
+    html[lang="ar"] .contact-link[href*="tel"],
+    html[lang="ar"] .contact-link[href*="mailto"],
+    html[lang="he"] .contact-link[href*="tel"],
+    html[lang="he"] .contact-link[href*="mailto"] {
+        direction: ltr;
+        unicode-bidi: isolate;
+        flex-direction: row;
+    }
+
+    html[lang="ar"] .contact-link i,
+    html[lang="he"] .contact-link i {
+        margin-left: 0.5rem;
+        margin-right: 0;
+    }
+
+    html[lang="ar"] .contact-link.phone span,
+    html[lang="he"] .contact-link.phone span {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+        display: inline-block;
+    }
+
+    /* Ensure RTL layout for other elements */
+    html[lang="ar"] .about-text,
+    html[lang="ar"] .service-card,
+    html[lang="ar"] .contact-info,
+    html[lang="he"] .about-text,
+    html[lang="he"] .service-card,
+    html[lang="he"] .contact-info {
+        text-align: right;
+    }
+
+    html[lang="ar"] .toggle-details,
+    html[lang="he"] .toggle-details {
+        margin-right: 0;
+        margin-left: 0.5rem;
+    }
+
+    html[lang="ar"] .contact-link,
+    html[lang="he"] .contact-link {
+        justify-content: flex-end;
+        text-align: right;
+    }
+}
+
+/*  NON-DESKTOP DEVICES (Tablet & Mobile)  */
+@media (max-width: 1024px) {
+    html[lang="ar"], html[lang="he"] { direction: rtl; }
+
+    html[lang="ar"] .title-segment,
+    html[lang="ar"] .education-list strong,
+    html[lang="he"] .title-segment,
+    html[lang="he"] .education-list strong {
+        unicode-bidi: plaintext !important;
+    }
+
+    html[lang="ar"] .language-toggle,
+    html[lang="he"] .language-toggle {
+        left: 0.8rem !important;
+        right: auto !important;
+    }
+
+    html[lang="ar"] .about-text p,
+    html[lang="he"] .about-text p {
+        line-height: 1.8 !important;
+        text-align: right !important;
+        word-spacing: normal !important;
+        letter-spacing: normal !important;
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif !important;
+        hyphens: manual !important;
+        -webkit-hyphens: manual !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    html[lang="ar"] .about-text,
+    html[lang="he"] .about-text {
+        text-align: right !important;
+        line-height: 1.8 !important;
+        word-break: keep-all !important;
+    }
+
+    html[lang="ar"] .about-text p br,
+    html[lang="he"] .about-text p br { display: none !important; }
+
+    html[lang="ar"] .hero .scroll-indicator,
+    html[lang="ar"] header.hero .scroll-indicator,
+    html[lang="ar"] .back-to-top,
+    html[lang="ar"] .section-indicators,
+    html[lang="he"] .hero .scroll-indicator,
+    html[lang="he"] header.hero .scroll-indicator,
+    html[lang="he"] .back-to-top,
+    html[lang="he"] .section-indicators {
+        left: 0.8rem !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    .hero .scroll-indicator,
+    header.hero .scroll-indicator {
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+    }
+
+    html[lang="ar"] .title-underline,
+    html[lang="he"] .title-underline { display: block !important; }
+
+    html[lang="ar"] .title-segment,
+    html[lang="he"] .title-segment {
+        font-size: clamp(0.7rem, 3vw, 1rem) !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        line-height: 1.4 !important;
+        height: auto !important;
+        min-height: 3.2rem;
+        padding: 0.5rem 2rem 0.5rem 1.2rem !important;
+        text-align: right !important;
+        word-break: keep-all;
+        word-wrap: normal;
+        max-width: 100vw !important;
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        position: static;
+        box-sizing: border-box !important;
+        unicode-bidi: plaintext !important;
+        letter-spacing: 0.02em;
+    }
+
+    html[lang="ar"] .title-segment.active,
+    html[lang="he"] .title-segment.active {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    html[lang="ar"] .dynamic-title,
+    html[lang="he"] .dynamic-title {
+        height: auto !important;
+        min-height: 3.2rem;
+        max-width: 95vw !important;
+        overflow: visible !important;
+        width: 100%;
+        box-sizing: border-box !important;
+    }
+
+    html[lang="ar"] .title-mask,
+    html[lang="he"] .title-mask {
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    html[lang="ar"] .title-slider,
+    html[lang="he"] .title-slider {
+        position: relative !important;
+        height: auto !important;
+        transform: none !important;
+        width: 100%;
+    }
+
+    html[lang="ar"] .title-segment:not(.active),
+    html[lang="he"] .title-segment:not(.active) {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+
+    html[lang="ar"] .title-segment.active,
+    html[lang="he"] .title-segment.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+    }
+
+    html[lang="ar"] .title-segment span,
+    html[lang="he"] .title-segment span {
+        display: block;
+        width: 100%;
+        text-align: right;
+        unicode-bidi: plaintext !important;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="ar"] .title-segment.ai::before,
+    html[lang="he"] .title-segment.java-backend::before,
+    html[lang="he"] .title-segment.full-stack::before,
+    html[lang="he"] .title-segment.ai::before {
+        content: '' !important;
+        position: absolute !important;
+        right: 1rem !important;
+        left: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 0.5rem !important;
+        height: 0.5rem !important;
+        border-radius: 50% !important;
+        margin: 0 !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="he"] .title-segment.java-backend::before { background: var(--java) !important; }
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="he"] .title-segment.full-stack::before { background: var(--accent) !important; }
+    html[lang="ar"] .title-segment.ai::before,
+    html[lang="he"] .title-segment.ai::before { background: var(--python) !important; }
+
+    html[lang="ar"] .about-content,
+    html[lang="ar"] .education-list li,
+    html[lang="ar"] .skills-grid,
+    html[lang="ar"] .project-details,
+    html[lang="ar"] .about-text,
+    html[lang="ar"] .service-card,
+    html[lang="ar"] .contact-info,
+    html[lang="ar"] .contact-link,
+    html[lang="he"] .about-content,
+    html[lang="he"] .education-list li,
+    html[lang="he"] .skills-grid,
+    html[lang="he"] .project-details,
+    html[lang="he"] .about-text,
+    html[lang="he"] .service-card,
+    html[lang="he"] .contact-info,
+    html[lang="he"] .contact-link {
+        text-align: right !important;
+        direction: rtl !important;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .education-detail,
+    html[lang="he"] .education-detail {
+        border-left: none;
+        border-right: 2px solid var(--accent);
+        padding-left: 0;
+        padding-right: 1.2rem;
+    }
+
+    html[lang="ar"] .education-list li,
+    html[lang="ar"] .education-list strong,
+    html[lang="he"] .education-list li,
+    html[lang="he"] .education-list strong {
+        text-align: right !important;
+        direction: rtl !important;
+        unicode-bidi: embed !important;
+        display: block !important;
+    }
+
+    html[lang="ar"] .education-list li span,
+    html[lang="ar"] .education-list li strong,
+    html[lang="he"] .education-list li span,
+    html[lang="he"] .education-list li strong {
+        text-align: right !important;
+        direction: rtl !important;
+        unicode-bidi: embed !important;
+    }
+
+    html[lang="ar"] .form-group input,
+    html[lang="ar"] .form-group textarea,
+    html[lang="he"] .form-group input,
+    html[lang="he"] .form-group textarea {
+        text-align: right !important;
+        direction: rtl !important;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .toggle-details,
+    html[lang="he"] .toggle-details { margin-right: 0; margin-left: 0.5rem; }
+    html[lang="ar"] .contact-link,
+    html[lang="he"] .contact-link { justify-content: flex-end; }
+
+    html[lang="ar"] .section-title,
+    html[lang="ar"] .service-title,
+    html[lang="ar"] .project-details h3,
+    html[lang="ar"] .skill-category h4,
+    html[lang="he"] .section-title,
+    html[lang="he"] .service-title,
+    html[lang="he"] .project-details h3,
+    html[lang="he"] .skill-category h4 {
+        font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+        text-align: center !important;
+        unicode-bidi: embed;
+    }
+
+    html[lang="ar"] .contact-link[href*="tel"] span,
+    html[lang="he"] .contact-link[href*="tel"] span {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+    }
+
+    html[lang="ar"] .contact-link[href^="tel"],
+    html[lang="ar"] .contact-link[href^="mailto"],
+    html[lang="ar"] a.contact-link[href^="tel"],
+    html[lang="ar"] a.contact-link[href^="mailto"],
+    html[lang="he"] .contact-link[href^="tel"],
+    html[lang="he"] .contact-link[href^="mailto"],
+    html[lang="he"] a.contact-link[href^="tel"],
+    html[lang="he"] a.contact-link[href^="mailto"] {
+        direction: ltr !important;
+        unicode-bidi: isolate-override !important;
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        text-align: left !important;
+        white-space: nowrap !important;
+        padding-inline-start: 0.25rem !important;
+        padding-inline-end: 0.25rem !important;
+    }
+
+    html[lang="ar"] .contact-link[href^="tel"] span,
+    html[lang="ar"] .contact-link[href^="mailto"] span,
+    html[lang="he"] .contact-link[href^="tel"] span,
+    html[lang="he"] .contact-link[href^="mailto"] span {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+        white-space: nowrap !important;
+    }
+
+    html[lang="ar"] .contact-link .icon,
+    html[lang="ar"] .contact-link svg,
+    html[lang="ar"] .contact-link i,
+    html[lang="he"] .contact-link .icon,
+    html[lang="he"] .contact-link svg,
+    html[lang="he"] .contact-link i {
+        flex-shrink: 0 !important;
+        order: -1 !important;
+        margin-inline-end: 0.35rem !important;
+        margin-inline-start: 0 !important;
+    }
+
+    html[lang="ar"] .contact-link[href^="tel"] span::before,
+    html[lang="he"] .contact-link[href^="tel"] span::before {
+        content: '\200E' !important;
+        display: inline-block !important;
+        width: 0 !important;
+    }
+}
+
+html[lang="ar"], html[lang="he"] {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--primary);
+}
+
+html[lang="ar"]::-webkit-scrollbar,
+html[lang="he"]::-webkit-scrollbar {
+    width: 8px;
+}
+
+html[lang="ar"]::-webkit-scrollbar-track,
+html[lang="he"]::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+html[lang="ar"]::-webkit-scrollbar-thumb,
+html[lang="he"]::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 4px;
+}
+html[lang="ar"]::-webkit-scrollbar-thumb:hover,
+html[lang="he"]::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-dark);
+}
+
+/*  SAFARI SPECIFIC FIXES  */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 1024px) {
+        html[lang="ar"] .title-segment,
+        html[lang="ar"] .title-mask,
+        html[lang="ar"] .title-slider,
+        html[lang="he"] .title-segment,
+        html[lang="he"] .title-mask,
+        html[lang="he"] .title-slider {
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+        }
+
+        html[lang="ar"] .language-toggle,
+        html[lang="he"] .language-toggle {
+            left: 0.8rem !important;
+            right: auto !important;
+        }
+
+        html[lang="ar"] .section-indicators,
+        html[lang="ar"] .back-to-top,
+        html[lang="he"] .section-indicators,
+        html[lang="he"] .back-to-top {
+            position: fixed !important;
+            left: 0.8rem !important;
+            right: auto !important;
+            bottom: 1rem !important;
+            z-index: 999 !important;
+        }
+
+        html[lang="ar"] .education-list li,
+        html[lang="ar"] .education-list strong,
+        html[lang="he"] .education-list li,
+        html[lang="he"] .education-list strong {
+            text-align: right !important;
+            direction: rtl !important;
+            unicode-bidi: embed !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        html[lang="ar"] .section-indicators,
+        html[lang="ar"] .back-to-top,
+        html[lang="he"] .section-indicators,
+        html[lang="he"] .back-to-top {
+            bottom: 0.8rem !important;
+            left: 0.8rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        html[lang="ar"] .section-indicators,
+        html[lang="ar"] .back-to-top,
+        html[lang="he"] .section-indicators,
+        html[lang="he"] .back-to-top {
+            bottom: 0.6rem !important;
+            left: 0.6rem !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    html[lang="ar"] .about-text p,
+    html[lang="ar"] .education-list li,
+    html[lang="he"] .about-text p,
+    html[lang="he"] .education-list li {
+        unicode-bidi: plaintext !important;
+        text-align: justify !important;
+    }
+
+    html[lang="ar"] .section-indicators,
+    html[lang="ar"] .back-to-top,
+    html[lang="he"] .section-indicators,
+    html[lang="he"] .back-to-top { left: 0.8rem; right: auto; }
+
+    .hero .scroll-indicator,
+    header.hero .scroll-indicator {
+        left: 50%;
+        bottom: 0.8rem;
+    }
+
+    html[lang="ar"] .title-segment,
+    html[lang="he"] .title-segment {
+        font-size: clamp(0.8rem, 3.5vw, 1.1rem) !important;
+        padding: 0.6rem 1.8rem 0.6rem 0.8rem !important;
+        letter-spacing: 0.02em !important;
+        line-height: 1.5 !important;
+    }
+
+    html[lang="ar"] .dynamic-title,
+    html[lang="he"] .dynamic-title {
+        max-width: 98vw !important;
+        margin: 0 auto !important;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="ar"] .title-segment.ai::before,
+    html[lang="he"] .title-segment.java-backend::before,
+    html[lang="he"] .title-segment.full-stack::before,
+    html[lang="he"] .title-segment.ai::before {
+        right: 0.8rem !important;
+        width: 0.4rem !important;
+        height: 0.4rem !important;
+    }
+
+    html[lang="ar"] .hero-content,
+    html[lang="he"] .hero-content {
+        padding-left: 0.3rem !important;
+        padding-right: 0.3rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    html[lang="ar"] .section-indicators,
+    html[lang="ar"] .back-to-top,
+    html[lang="he"] .section-indicators,
+    html[lang="he"] .back-to-top { left: 1.5rem; right: auto; }
+
+    .hero .scroll-indicator,
+    header.hero .scroll-indicator { left: 50%; }
+}
+
+@media (max-width: 480px) {
+    html[lang="ar"] .about-text p,
+    html[lang="he"] .about-text p {
+        font-size: 0.9rem !important;
+        line-height: 1.9 !important;
+        text-align: justify !important;
+        padding: 0 0.2rem !important;
+        unicode-bidi: plaintext !important;
+        word-spacing: normal !important;
+    }
+
+    html[lang="ar"] .title-segment,
+    html[lang="he"] .title-segment {
+        font-size: clamp(0.75rem, 4vw, 1rem) !important;
+        padding: 0.5rem 1.5rem 0.5rem 0.5rem !important;
+        line-height: 1.5 !important;
+    }
+
+    html[lang="ar"] .dynamic-title,
+    html[lang="he"] .dynamic-title {
+        max-width: 100vw !important;
+    }
+
+    html[lang="ar"] .title-segment.java-backend::before,
+    html[lang="ar"] .title-segment.full-stack::before,
+    html[lang="ar"] .title-segment.ai::before,
+    html[lang="he"] .title-segment.java-backend::before,
+    html[lang="he"] .title-segment.full-stack::before,
+    html[lang="he"] .title-segment.ai::before {
+        right: 0.5rem !important;
+        width: 0.3rem !important;
+        height: 0.3rem !important;
+    }
+}
+
+/*  SAFARI SPECIFIC FOR ARABIC & HEBREW NON-DESKTOP  */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 1024px) {
+        html[lang="ar"] .title-segment,
+        html[lang="he"] .title-segment {
+            position: relative !important;
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+        }
+
+        html[lang="ar"] .section-indicators,
+        html[lang="ar"] .back-to-top,
+        html[lang="he"] .section-indicators,
+        html[lang="he"] .back-to-top {
+            position: fixed !important;
+            left: 0.8rem !important;
+            right: auto !important;
+            bottom: 1rem !important;
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+            z-index: 999 !important;
+        }
+
+        html[lang="ar"] .title-mask,
+        html[lang="he"] .title-mask {
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+        }
+
+        html[lang="ar"] .title-slider,
+        html[lang="he"] .title-slider {
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+        }
+
+        html[lang="ar"] .education-list li,
+        html[lang="ar"] .education-detail,
+        html[lang="he"] .education-list li,
+        html[lang="he"] .education-detail {
+            text-align: right !important;
+            direction: rtl !important;
+            unicode-bidi: embed !important;
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+        }
+
+        html[lang="ar"] .education-list strong,
+        html[lang="he"] .education-list strong {
+            display: block !important;
+            text-align: right !important;
+            direction: rtl !important;
+        }
+
+        html[lang="ar"] .education-detail,
+        html[lang="he"] .education-detail {
+            border-right: 2px solid var(--accent) !important;
+            border-left: none !important;
+            padding-right: 1.2rem !important;
+            padding-left: 0 !important;
+        }
+
+        html[lang="ar"] .education-list li::marker,
+        html[lang="he"] .education-list li::marker {
+            text-align: right !important;
+            direction: rtl !important;
+        }
+
+        html[lang="ar"] .title-segment span,
+        html[lang="he"] .title-segment span {
+            text-align: right !important;
+            direction: rtl !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        html[lang="ar"] .section-indicators,
+        html[lang="ar"] .back-to-top,
+        html[lang="he"] .section-indicators,
+        html[lang="he"] .back-to-top {
+            bottom: 0.8rem !important;
+            left: 0.8rem !important;
+        }
+
+        html[lang="ar"] .education-list strong,
+        html[lang="he"] .education-list strong {
+            text-align: right !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        html[lang="ar"] .section-indicators,
+        html[lang="ar"] .back-to-top,
+        html[lang="he"] .section-indicators,
+        html[lang="he"] .back-to-top {
+            bottom: 0.6rem !important;
+            left: 0.6rem !important;
+        }
+    }
+}
+
 
 @media (max-width: 768px) {
     body {
