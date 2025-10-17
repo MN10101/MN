@@ -231,15 +231,15 @@ const translations = {
             domainNotExist: "Email domain does not exist",
             emailTooLong: "Email address is too long",
             useMajorProvider: "Please use a major email provider like Gmail, Outlook, or Yahoo"
-        },
-        weather: {
-            loading: "Loading weather...",
-            unavailable: "Weather unavailable",
-            unknown: "Unknown",
-            unknown_location: "Unknown location",
-            demo: "Live Demo",
-            fallback: "Showing Berlin weather"
         }
+        // weather: {
+        //     loading: "Loading weather...",
+        //     unavailable: "Weather unavailable",
+        //     unknown: "Unknown",
+        //     unknown_location: "Unknown location",
+        //     demo: "Live Demo",
+        //     fallback: "Showing Berlin weather"
+        // }
     },
     de: {
         title: "Mahmoud Najmeh | Full-Stack Entwickler",
@@ -472,15 +472,15 @@ const translations = {
             domainNotExist: "E-Mail-Domain existiert nicht",
             emailTooLong: "E-Mail-Adresse ist zu lang",
              useMajorProvider: "Bitte verwenden Sie einen großen E-Mail-Anbieter wie Gmail, Outlook oder Yahoo"
-        },
-        weather: {
-            loading: "Wetter wird geladen...",
-            unavailable: "Wetter nicht verfügbar",
-            unknown: "Unbekannt",
-            unknown_location: "Unbekannter Ort",
-            demo: "Live Demo",
-            fallback: "Zeige Berlin Wetter"
         }
+        // weather: {
+        //     loading: "Wetter wird geladen...",
+        //     unavailable: "Wetter nicht verfügbar",
+        //     unknown: "Unbekannt",
+        //     unknown_location: "Unbekannter Ort",
+        //     demo: "Live Demo",
+        //     fallback: "Zeige Berlin Wetter"
+        // }
     },
         pl: {
         title: "Mahmoud Najmeh | Programista Full-Stack",
@@ -713,15 +713,15 @@ const translations = {
             domainNotExist: "Domena e-mail nie istnieje",
             emailTooLong: "Adres e-mail jest zbyt długi",
             useMajorProvider: "Proszę użyć głównego dostawcy poczty e-mail, takiego jak Gmail, Outlook lub Yahoo"
-        },
-        weather: {
-            loading: "Ładowanie pogody...",
-            unavailable: "Pogoda niedostępna",
-            unknown: "Nieznane",
-            unknown_location: "Nieznana lokalizacja",
-            demo: "Demo na żywo",
-            fallback: "Pokazuję pogodę w Berlinie"
         }
+        // weather: {
+        //     loading: "Ładowanie pogody...",
+        //     unavailable: "Pogoda niedostępna",
+        //     unknown: "Nieznane",
+        //     unknown_location: "Nieznana lokalizacja",
+        //     demo: "Demo na żywo",
+        //     fallback: "Pokazuję pogodę w Berlinie"
+        // }
     },
     fr: {
         title: "Mahmoud Najmeh | Développeur Full-Stack",
@@ -955,15 +955,15 @@ const translations = {
             domainNotExist: "Le domaine de messagerie n'existe pas",
             emailTooLong: "L'adresse e-mail est trop longue",
             useMajorProvider: "Veuillez utiliser un fournisseur de messagerie majeur comme Gmail, Outlook ou Yahoo"
-        },
-        weather: {
-            loading: "Chargement de la météo...",
-            unavailable: "Météo indisponible",
-            unknown: "Inconnu",
-            unknown_location: "Lieu inconnu",
-            demo: "Démo en direct",
-            fallback: "Affichage de la météo de Berlin"
         }
+        // weather: {
+        //     loading: "Chargement de la météo...",
+        //     unavailable: "Météo indisponible",
+        //     unknown: "Inconnu",
+        //     unknown_location: "Lieu inconnu",
+        //     demo: "Démo en direct",
+        //     fallback: "Affichage de la météo de Berlin"
+        // }
     },
     tr: {
         title: "Mahmoud Najmeh | Full-Stack Geliştirici",
@@ -1197,15 +1197,15 @@ const translations = {
             domainNotExist: "E-posta alan adı mevcut değil",
             emailTooLong: "E-posta adresi çok uzun",
             useMajorProvider: "Lütfen Gmail, Outlook veya Yahoo gibi büyük bir e-posta sağlayıcısı kullanın"
-        },
-        weather: {
-            loading: "Hava durumu yükleniyor...",
-            unavailable: "Hava durumu mevcut değil",
-            unknown: "Bilinmeyen",
-            unknown_location: "Bilinmeyen konum",
-            demo: "Canlı Demo",
-            fallback: "Berlin hava durumu gösteriliyor"
         }
+        // weather: {
+        //     loading: "Hava durumu yükleniyor...",
+        //     unavailable: "Hava durumu mevcut değil",
+        //     unknown: "Bilinmeyen",
+        //     unknown_location: "Bilinmeyen konum",
+        //     demo: "Canlı Demo",
+        //     fallback: "Berlin hava durumu gösteriliyor"
+        // }
     },
         ru: {
         title: "Махмуд Наджмех | Full-Stack Разработчик",
@@ -1438,15 +1438,15 @@ const translations = {
             domainNotExist: "Домен email не существует",
             emailTooLong: "Email адрес слишком длинный",
              useMajorProvider: "Пожалуйста, используйте крупного поставщика электронной почты, такого как Gmail, Outlook или Yahoo"
-        },
-        weather: {
-            loading: "Загрузка погоды...",
-            unavailable: "Погода недоступна",
-            unknown: "Неизвестно",
-            unknown_location: "Неизвестное местоположение",
-            demo: "Живая Демонстрация",
-            fallback: "Показываю погоду в Берлине"
         }
+        // weather: {
+        //     loading: "Загрузка погоды...",
+        //     unavailable: "Погода недоступна",
+        //     unknown: "Неизвестно",
+        //     unknown_location: "Неизвестное местоположение",
+        //     demo: "Живая Демонстрация",
+        //     fallback: "Показываю погоду в Берлине"
+        // }
     },
     ar: {
         title: "محمود نجمة | مهندس برمجيات فول ستاك",
@@ -1679,15 +1679,15 @@ const translations = {
             domainNotExist: "نطاق البريد الإلكتروني غير موجود",
             emailTooLong: "عنوان البريد الإلكتروني طويل جدًا",
             useMajorProvider: "يرجى استخدام مزود بريد إلكتروني رئيسي مثل Gmail أو Outlook أو Yahoo"
-        },
-        weather: {
-            loading: "جاري تحميل الطقس...",
-            unavailable: "الطقس غير متاح",
-            unknown: "غير معروف",
-            unknown_location: "موقع غير معروف",
-            demo: "عرض حي",
-            fallback: "عرض طقس برلين"
         }
+        // weather: {
+        //     loading: "جاري تحميل الطقس...",
+        //     unavailable: "الطقس غير متاح",
+        //     unknown: "غير معروف",
+        //     unknown_location: "موقع غير معروف",
+        //     demo: "عرض حي",
+        //     fallback: "عرض طقس برلين"
+        // }
     }
 };
 
@@ -1772,7 +1772,6 @@ function updateContent(lang) {
             lang === 'pl' ? 'Ukryj szczegóły' : 
             lang === 'fr' ? 'Masquer les détails' : 
             lang === 'tr' ? 'Detayları Gizle' : 
-            lang === 'ru' ? 'Скрыть детали' : 
             'Details ausblenden';
     });
 
@@ -1781,11 +1780,6 @@ function updateContent(lang) {
         const sectionId = indicator.getAttribute('data-section');
         indicator.querySelector('span').textContent = translations[lang].section[sectionId] || sectionId;
     });
-
-    // Update weather widget after a short delay to ensure DOM is updated
-    setTimeout(() => {
-        updateWeatherOnLanguageChange();
-    }, 100);
 }
 
 // Function to map browser language to supported languages
@@ -1804,9 +1798,7 @@ function getSupportedLanguage(browserLang) {
         'tr-TR': 'tr',
         'ar': 'ar',
         'ar-SA': 'ar',
-        'ar-EG': 'ar',
-        'ru': 'ru',        
-        'ru-RU': 'ru'       
+        'ar-EG': 'ar'
     };
     const primaryLang = browserLang.split('-')[0];
     const supportedLang = langMap[browserLang] || langMap[primaryLang] || 'en';
@@ -1834,7 +1826,6 @@ function getLanguageFromCountry(countryCode) {
         'PL': 'pl',     
         'FR': 'fr',      
         'TR': 'tr',      
-        'RU': 'ru',      
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
@@ -1855,14 +1846,14 @@ function getUrlParameter(name) {
 async function getCurrentLanguage() {
     // First check URL parameter
     const urlLang = getUrlParameter('lang');
-    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(urlLang)) {  
+    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(urlLang)) {
         console.log(`Language from URL: ${urlLang}`);
         return urlLang;
     }
     
     // Then check localStorage
     const storedLang = localStorage.getItem('language');
-    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(storedLang)) { 
+    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(storedLang)) {
         console.log(`Language from localStorage: ${storedLang}`);
         return storedLang;
     }
@@ -1901,18 +1892,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     localStorage.setItem('language', selectedLang);
     updateContent(selectedLang);
 
-    // Initialize weather widget after content is updated
-    setTimeout(() => {
-        initWeatherWidget();
-    }, 200);
-
     // Update back to home links
     updateBackToHomeLinks(selectedLang);
 
     // Handle manual language selection
-    languageSelect.addEventListener('change', async (e) => {
+    languageSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
-        if (['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(lang)) { 
+        if (['en', 'de', 'pl', 'fr', 'tr', 'ar'].includes(lang)) {
             console.log(`Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
             updateContent(lang);
@@ -1924,15 +1910,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Update all back to home links
             updateBackToHomeLinks(lang);
-
-            // Force weather widget to reload with new language
-            setTimeout(async () => {
-                if (weatherWidget) {
-                    await weatherWidget.loadWeather();
-                } else {
-                    initWeatherWidget();
-                }
-            }, 300);
         } else {
             console.warn(`Invalid language selected: ${lang}`);
         }
