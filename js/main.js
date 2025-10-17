@@ -954,75 +954,19 @@ class WeatherWidget {
     }
 
     async loadWeather() {
-    this.showLoading();
-    
-    try {
-        // IP-based geolocation 
-        const position = await this.getLocationFromIP();
-        const weatherData = await this.fetchWeatherData(position.lat, position.lon);
-        this.currentWeatherData = weatherData;
-        this.isUserLocation = false;
-        this.displayWeather(weatherData, false);
-    } catch (ipError) {
-        console.log('IP geolocation failed, trying browser geolocation:', ipError);
-        // If IP fails, than use browser geolocation
+        this.showLoading();
+        
         try {
+            // Get user location first
             const position = await this.getUserPosition();
             const weatherData = await this.fetchWeatherData(position.coords.latitude, position.coords.longitude);
             this.currentWeatherData = weatherData;
             this.isUserLocation = true;
             this.displayWeather(weatherData, true);
         } catch (geoError) {
-            console.log('All location methods failed, using fallback:', geoError);
+            console.log('Geolocation failed, using fallback:', geoError);
+            // If geolocation fails, use Berlin as fallback
             await this.loadFallbackWeather();
-        }
-    }
-}
-
-    async getLocationFromIP() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            
-            if (!response.ok) {
-                throw new Error('IP API failed');
-            }
-            
-            const data = await response.json();
-            
-            return {
-                lat: data.latitude,
-                lon: data.longitude,
-                city: data.city,
-                country: data.country_name
-            };
-        } catch (error) {
-            // Fallback to another IP service if first fails
-            return await this.getLocationFromIPFallback();
-        }
-    }
-
-    async getLocationFromIPFallback() {
-        try {
-            const response = await fetch('http://ip-api.com/json/');
-            
-            if (!response.ok) {
-                throw new Error('Fallback IP API failed');
-            }
-            
-            const data = await response.json();
-            
-            if (data.status === 'success') {
-                return {
-                    lat: data.lat,
-                    lon: data.lon,
-                    city: data.city,
-                    country: data.country
-                };
-            } else {
-                throw new Error('IP geolocation failed');
-            }
-        } catch (error) {
-            throw new Error('All IP geolocation methods failed');
         }
     }
 
