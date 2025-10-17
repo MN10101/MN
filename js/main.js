@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupVideoModal();
 
-    initWeatherWidget();
+    // initWeatherWidget();
     
     // Form submission handler
     const contactForm = document.querySelector('.contact-form');
