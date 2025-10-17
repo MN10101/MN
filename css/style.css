@@ -164,12 +164,11 @@ html[lang="tr"] .section-indicator span {
 
 .hero {
     position: relative;
-    min-height: 120vh; 
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible; 
-    padding: 3rem 1rem; 
+    overflow: hidden;
 }
 
 #particles-js {
@@ -1687,9 +1686,9 @@ textarea:focus-visible {
 }
 
 /* Weather Widget Styles */
-.hero .weather-widget {
+.weather-widget {
     position: relative;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
     border-radius: 16px;
     padding: 1rem;
     margin-top: 1.5rem;
@@ -1700,17 +1699,16 @@ textarea:focus-visible {
     margin-left: auto;
     margin-right: auto;
     transition: all 0.3s ease;
-    z-index: 10;
 }
 
-.hero .weather-widget:hover {
+.weather-widget:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
                 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
-.hero .weather-loading,
-.hero .weather-error {
+.weather-loading,
+.weather-error {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1719,49 +1717,49 @@ textarea:focus-visible {
     font-size: 0.9rem;
 }
 
-.hero .weather-content {
+.weather-content {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.hero .weather-icon {
+.weather-icon {
     font-size: 2.5rem;
     color: var(--accent);
     min-width: 60px;
     text-align: center;
 }
 
-.hero .weather-info {
+.weather-info {
     flex: 1;
 }
 
-.hero .weather-temp {
+.weather-temp {
     display: flex;
     align-items: baseline;
     gap: 0.25rem;
     margin-bottom: 0.25rem;
 }
 
-.hero .temp-value {
+.temp-value {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text);
 }
 
-.hero .temp-unit {
+.temp-unit {
     font-size: 0.9rem;
     color: var(--text-light);
 }
 
-.hero .weather-desc {
+.weather-desc {
     font-size: 0.8rem;
     color: var(--text-light);
     margin-bottom: 0.5rem;
     text-transform: capitalize;
 }
 
-.hero .weather-location {
+.weather-location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1769,11 +1767,32 @@ textarea:focus-visible {
     color: var(--text-light);
 }
 
-.hero .weather-location i {
+.weather-location i {
     font-size: 0.7rem;
 }
 
-.hero .weather-demo-badge {
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .weather-widget {
+        max-width: 250px;
+        padding: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .weather-icon {
+        font-size: 2rem;
+        min-width: 50px;
+    }
+    
+    .temp-value {
+        font-size: 1.3rem;
+    }
+    
+    .weather-content {
+        gap: 0.8rem;
+    }
+}
+.weather-demo-badge {
     position: absolute;
     top: -8px;
     right: -8px;
@@ -1788,91 +1807,45 @@ textarea:focus-visible {
     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
 }
 
-.hero .weather-widget .location-name::before {
+/* Weather Widget Location Styles */
+.weather-widget .location-name::before {
     content: '🌍 ';
     font-size: 0.7em;
 }
 
-.hero .weather-widget.user-location .location-name::before {
+.weather-widget.user-location .location-name::before {
     content: '📍 ';
 }
 
-.hero .weather-widget.ip-location {
-    border-color: rgba(34, 197, 94, 0.3);
-}
-
-.hero .weather-widget.user-location {
-    border-color: rgba(59, 130, 246, 0.3); 
-}
-
-@media (max-width: 768px) {
-    .hero .weather-widget {
-        max-width: 250px;
-        padding: 0.8rem;
-        margin-top: 1rem;
-    }
-    
-    .hero .weather-icon {
-        font-size: 2rem;
-        min-width: 50px;
-    }
-    
-    .hero .temp-value {
-        font-size: 1.3rem;
-    }
-    
-    .hero .weather-content {
-        gap: 0.8rem;
-    }
-    
-    .hero-content {
-        gap: 1rem;
-    }
-    
-    .contact-links {
-        gap: 0.5rem;
-        margin-bottom: 0.25rem;
-    }
-}
-
-.hero {
+/* Weather Widget Styles with proper z-index */
+.weather-widget {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-    text-align: center;
+    z-index: 10; 
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    border-radius: 16px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
 }
 
-.hero .scroll-indicator {
-    margin-top: 2rem;
+/* Make sure hero content has proper z-index too */
+.hero-content {
+    position: relative;
+    z-index: 5; 
 }
 
-@media (max-width: 768px) {
-    .hero .scroll-indicator {
-        margin-top: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    #particles-js {
-        display: none !important;
-    }
-}
-
+/* If particles are still covering it, we can be more aggressive */
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.weather-widget {
-    position: relative;
-    z-index: 100 !important;
+    z-index: 1; 
 }
 
 /* Arabic RTL Specific Styles - DESKTOP ONLY */
