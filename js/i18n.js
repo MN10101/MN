@@ -1688,6 +1688,239 @@ const translations = {
         //     demo: "عرض حي",
         //     fallback: "عرض طقس برلين"
         // }
+    },
+    he: {
+        title: "מחמוד נג'מה | מפתח Full-Stack",
+        name: {
+            first: "מחמוד",
+            last: "נג'מה"
+        },
+        explore: "גלה",
+        section: {
+            about: "אודות",
+            services: "שירותים ומחירים",
+            projects: "פרויקטים נבחרים",
+            contact: "צור קשר"
+        },
+        about: {
+            description: "מפתח Full-Stack מסור עם ניסיון מוצק בתכנות מונחה-עצמים ועניין חזק בפיתוח web ובינה מלאכותית. מיומן ב-Java, Spring Boot, Python, Django ו-C# .NET. מימוש מוצלח של פרויקטי web עם דגש על פיתוח full-stack (backend ו-frontend) ועבודת צוות.",
+            education: "השכלה"
+        },
+        education: {
+            java: {
+                title: "מפתח Java",
+                details: "- יסודות תכנות, מתודולוגיות Agile<br>- Java: OOP, Streams, Concurrency, Maven, Gradle, Testing<br>- מסדי נתונים: JDBC, SQL מתקדם<br>- Frameworks: Spring Boot, Hibernate, Spring Security<br>- REST APIs ו-Cloud: AWS, GCP"
+            },
+            it_specialist: {
+                title: "מומחה IT לפיתוח אפליקציות",
+                details: "- OOP עם Java SE, C# (.NET), Python, JavaScript, PHP<br>- פיתוח web ומסדי נתונים, מערכות Linux<br>- ניהול פרויקטי IT, תהליכים עסקיים<br>- מתמטיקה ו-MS Office לתהליכי IT<br>- אנגלית טכנית, כישורי תקשורת"
+            },
+            toggle: "הצג פרטים",
+            toggleHide: "הסתר פרטים"
+        },
+        skills: {
+            title: "כישורים טכניים",
+            languages: "שפות תכנות",
+            frameworks: "Frameworks",
+            tools: "כלים ופלטפורמות",
+            ai: "בינה מלאכותית ולמידת מכונה"
+        },
+        tech: {
+            java: "Java",
+            python: "Python",
+            csharp: "#C",
+            javascript: "JavaScript",
+            sql: "SQL",
+            spring: "Spring Boot",
+            swiftui: "SwiftUI",
+            jetpack: "Jetpack Compose",
+            firebase: "Firebase",
+            integration: "בדיקות אינטגרציה",
+            mockito: "Mockito",
+            react: "React",
+            rest_api: "REST API",
+            ai: "בינה מלאכותית",
+            nlp: "עיבוד שפה טבעית",
+            django: "Django",
+            role_auth: "אימות מבוסס תפקידים",
+            pdf_export: "ייצוא PDF",
+            ui_validation: "אימות ממשק משתמש",
+            tensorflow: "TensorFlow",
+            computer_vision: "ראייה ממוחשבת",
+            html5: "HTML5",
+            css: "CSS",
+            javascript: "JavaScript",
+            postgresql: "PostgreSQL",
+            database: "מסד נתונים",
+            canvas: "Canvas",
+            frontend: "Frontend",
+            dotnet: ".NET",
+            aws: "AWS",
+            gcp: "GCP",
+            docker: "Docker",
+            git: "Git",
+            postgresql: "PostgreSQL",
+            mysql: "MySQL",
+            ml: "למידת מכונה",
+            cv: "ראייה ממוחשבת",
+            "python-ai": "ספריות Python ל-AI",
+            machine_learning: "למידת מכונה",
+            swift: "Swift",
+            mlnet: "ML.NET",
+            wpf: "WPF"
+        },
+        title: {
+            "java-backend": "מפתח JAVA",
+            "full-stack": "מפתח FULL-STACK",
+            ai: "חובב בינה מלאכותית"
+        },
+        services: {
+            subtitle: "שירותי פיתוח מקצועיים המותאמים לצרכי העסק שלך",
+            note: "<strong>הערה:</strong> כל המחירים הם הערכות. המחיר הסופי תלוי בהיקף הפרויקט ובדרישות. צור איתי קשר להצעת מחיר מותאמת אישית שתתאים לצרכים הספציפיים שלך.",
+            cta: "התחל עכשיו",
+            backend: {
+                title: "פיתוח Backend",
+                price: "€2,500+",
+                features: [
+                    "פיתוח REST API עם Spring Boot",
+                    "עיצוב ואופטימיזציה של מסדי נתונים",
+                    "יישום אימות ואבטחה",
+                    "ארכיטקטורת microservices",
+                    "תיעוד ובדיקות API",
+                    "פריסה לפלטפורמות cloud"
+                ]
+            },
+            fullstack: {
+                title: "פיתוח Full-Stack",
+                price: "€4,000+",
+                features: [
+                    "פיתוח אפליקציות web מלאות",
+                    "Backend Spring Boot + frontend React",
+                    "עיצוב UI/UX רספונסיבי",
+                    "אינטגרציה עם מסד נתונים",
+                    "מערכת אימות משתמשים",
+                    "לוח בקרה מנהלים"
+                ]
+            },
+            api: {
+                title: "פיתוח API",
+                price: "€1,800+",
+                features: [
+                    "פיתוח REST API מותאם אישית",
+                    "אינטגרציה עם מסד נתונים (PostgreSQL/MySQL)",
+                    "אימות JWT",
+                    "תיעוד API עם Swagger/OpenAPI",
+                    "אופטימיזציית ביצועים",
+                    "מוכן לפריסה"
+                ]
+            },
+            website: {
+                title: "חבילת אתר עסקי",
+                price: "€1,500-€3,000",
+                features: [
+                    "אתר תיק עבודות מקצועי",
+                    "טופס יצירת קשר עם התראות אימייל",
+                    "עיצוב רספונסיבי לנייד",
+                    "אופטימיזציית SEO בסיסית",
+                    "מערכת ניהול תוכן",
+                    "אינטגרציה עם מדיה חברתית"
+                ]
+            },
+            ai: {
+                title: "אינטגרציית AI",
+                price: "€3,500+",
+                features: [
+                    "APIs לעיבוד/סיכום טקסט",
+                    "ניתוח תמונות עם TensorFlow",
+                    "אינטגרציית צ'אטבוטים",
+                    "פריסת מודלי למידת מכונה",
+                    "לוחות מחוונים להצגת נתונים",
+                    "פתרונות AI מותאמים אישית"
+                ]
+            },
+            maintenance: {
+                title: "תחזוקה ותמיכה",
+                price: "€500/חודש",
+                features: [
+                    "עדכוני תוכנה סדירים",
+                    "תיקון באגים ופתרון תקלות",
+                    "ניטור ביצועים",
+                    "עדכוני אבטחה",
+                    "תחזוקת מסד נתונים",
+                    "תמיכה דחופה 24/7"
+                ]
+            }
+        },
+        project: {
+            impact: "השפעה:",
+            missing: {
+                title: "מערכת התרעה על נעדרים FullStack",
+                description: "כלי משטרה שפותח עם Spring Boot, SwiftUI ו-Jetpack Compose, כולל התראות push של Firebase, מעקב מיקום גיאוגרפי ופאנל ניהול.",
+                duration: "6 חודשים",
+                impact: "שיפור הבטיחות הציבורית באמצעות התראות מהירות על נעדרים, הפחתת זמן התגובה של המשטרה ב-40% ושיפור מעורבות הקהילה ביוזמות בטיחות."
+            },
+            banking: {
+                title: "מערכת בנקאית FullStack",
+                description: "אפליקציית בנקאות מלאה עם מעקב אימייל/IP, תמיכה במטבעות מרובים, עיבוד עסקאות ובדיקות מקיפות עם Mockito.",
+                duration: "6 חודשים",
+                impact: "ייעול פעולות פיננסיות עם עסקאות רב-מטבע מאובטחות, הפחתת פעולות הונאה ב-60% באמצעות מעקב IP מתקדם ושיפור שביעות רצון הלקוחות באמצעות עיבוד עסקאות בזמן אמת."
+            },
+            ai_text: {
+                title: "מסכם טקסט AI FullStack",
+                description: "אפליקציית סיכום טקסט רב-לשונית, המופעלת על ידי REST API של Spring Boot עם יכולות מתקדמות של עיבוד שפה טבעית.",
+                duration: "2 חודשים",
+                impact: "הגדלת יעילות צריכת התוכן ב-70%, תמיכה ב-15+ שפות לנגישות גלובלית והפחתת זמן הקריאה לחומרי מחקר וחינוך באמצעות אוטומציה של סיכום."
+            },
+            student: {
+                title: "פורטל סטודנטים FullStack",
+                description: "פלטפורמה חינוכית מקיפה עם בקרת גישה מבוססת תפקידים, מערכת ציונים, פונקציית ייצוא PDF ומבחנים מקוונים.",
+                duration: "4 חודשים",
+                impact: "שיפור תוצאות חינוכיות עבור 500+ תלמידים, הפחתת עומס עבודה אדמיניסטרטיבי ב-45% באמצעות ציונים אוטומטיים ודיווח, ושיפור תקשורת הורים-מורים עם מעקב התקדמות בזמן אמת."
+            },
+            face_analysis: {
+                title: "ניתוח פנים AI",
+                description: "מערכת סיווג תמונות שנבנתה עם Django ו-TensorFlow, עם עיבוד אוטומטי וממשק GUI מותאם אישית.",
+                duration: "4 חודשים",
+                impact: "השגת דיוק של 95% במשימות זיהוי פנים, הפעלת מערכות אבטחה ואימות אוטומטיות וסיפק תובנות יקרות ערך לניתוח פסיכולוגי והתנהגותי באמצעות זיהוי הבעות פנים."
+            },
+            medical_diagnosis: {
+                title: "מערכת אבחון רפואי AI",
+                description: "אפליקציית שולחן עבודה מבוססת למידת מכונה, שנבנתה עם .NET ו-ML.NET, המנבאת מחלות פוטנציאליות מתסמינים שסופקו על ידי המשתמש. כוללת קלט תסמינים בשפה טבעית, חיזוי מחלות עם ציון ביטחון וממשק משתמש ידידותי מבוסס WPF.",
+                duration: "2 חודשים",
+                impact: "סיוע באבחון ראשוני עבור 1,000+ משתמשים עם דיוק של 88%, הפחתת ביקורים מיותרים בבית חולים ב-35% באמצעות הערכת תסמינים אמינה והעצמת אנשים עם מידע בריאותי נגיש לקבלת החלטות טובה יותר."
+            },
+            view: "צפה בפרויקט"
+        },
+        contact: {
+            info: "פרטי יצירת קשר",
+            location: "ברלין, גרמניה",
+            video: "סרטון עליי",
+            phone: "+49 163 9769764"
+        },
+        form: {
+            name: "שמך",
+            email: "האימייל שלך",
+            subject: "נושא",
+            message: "הודעתך",
+            submit: "שלח הודעה"
+        },
+        footer: {
+            copyright: "© 2025 מחמוד נג'מה. כל הזכויות שמורות."
+        },
+        thank_you: {
+            title: "תודה",
+            heading: "תודה!",
+            message: "הודעתך נשלחה בהצלחה. אחזור אליך בקרוב.",
+            back: "חזרה לדף הבית"
+        },
+        validation: {
+            validEmail: "כתובת אימייל תקינה",
+            invalidEmail: "אנא הזן כתובת אימייל תקינה",
+            disposableEmail: "אנא השתמש בכתובת אימייל קבועה",
+            domainNotExist: "דומיין האימייל אינו קיים",
+            emailTooLong: "כתובת האימייל ארוכה מדי",
+            useMajorProvider: "אנא השתמש בספק אימייל מרכזי כמו Gmail, Outlook או Yahoo"
+        }
     }
 };
 
@@ -1781,6 +2014,7 @@ function updateContent(lang) {
             lang === 'fr' ? 'Masquer les détails' : 
             lang === 'tr' ? 'Detayları Gizle' : 
             lang === 'ru' ? 'Скрыть детали' : 
+            lang === 'he' ? 'הסתר פרטים' :
             'Details ausblenden';
     });
 
@@ -1809,8 +2043,11 @@ function getSupportedLanguage(browserLang) {
         'ar-SA': 'ar',
         'ar-EG': 'ar',
         'ru': 'ru',        
-        'ru-RU': 'ru'       
+        'ru-RU': 'ru',
+        'he': 'he', 
+        'he-IL': 'he'    
     };
+
     const primaryLang = browserLang.split('-')[0];
     const supportedLang = langMap[browserLang] || langMap[primaryLang] || 'en';
     console.log(`Browser language: ${browserLang}, mapped to: ${supportedLang}`);
@@ -1841,8 +2078,10 @@ function getLanguageFromCountry(countryCode) {
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
-        'TN': 'ar', 'LY': 'ar', 'SD': 'ar', 'SO': 'ar'
+        'TN': 'ar', 'LY': 'ar', 'SD': 'ar', 'SO': 'ar',
+        'IL': 'he'
     };
+
     const lang = countryLangMap[countryCode] || 'en';
     console.log(`Country code: ${countryCode}, mapped to language: ${lang}`);
     return lang;
@@ -1858,14 +2097,14 @@ function getUrlParameter(name) {
 async function getCurrentLanguage() {
     // First check URL parameter
     const urlLang = getUrlParameter('lang');
-    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(urlLang)) {  
+    if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(urlLang)) {
         console.log(`Language from URL: ${urlLang}`);
         return urlLang;
     }
     
     // Then check localStorage
     const storedLang = localStorage.getItem('language');
-    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(storedLang)) { 
+    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(storedLang)) {
         console.log(`Language from localStorage: ${storedLang}`);
         return storedLang;
     }
@@ -1910,7 +2149,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Handle manual language selection
     languageSelect.addEventListener('change', (e) => {
         const lang = e.target.value;
-        if (['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru'].includes(lang)) { 
+        if (['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(lang)) { 
             console.log(`Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
             updateContent(lang);
