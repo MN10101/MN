@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mn10101.github.io/MN/sitemap.xml
