@@ -1657,7 +1657,7 @@ textarea:focus-visible {
     }
 }
 
-/* Ensure modal is above everything */
+/* Modal is above everything */
 .modal[style*="display: block"] {
     display: block !important;
 }
@@ -1686,7 +1686,7 @@ textarea:focus-visible {
 }
 
 /* Weather Widget Styles */
-.weather-widget {
+/* .weather-widget {
     position: relative;
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
     border-radius: 16px;
@@ -1769,10 +1769,10 @@ textarea:focus-visible {
 
 .weather-location i {
     font-size: 0.7rem;
-}
+} */
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .weather-widget {
         max-width: 250px;
         padding: 0.8rem;
@@ -1805,20 +1805,20 @@ textarea:focus-visible {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
-}
+} */
 
 /* Weather Widget Location Styles */
-.weather-widget .location-name::before {
+/* .weather-widget .location-name::before {
     content: '🌍 ';
     font-size: 0.7em;
 }
 
 .weather-widget.user-location .location-name::before {
     content: '📍 ';
-}
+} */
 
 /* Weather Widget Styles with proper z-index */
-.weather-widget {
+/* .weather-widget {
     position: relative;
     z-index: 10; 
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
@@ -1832,21 +1832,21 @@ textarea:focus-visible {
     margin-left: auto;
     margin-right: auto;
     transition: all 0.3s ease;
-}
+} */
 
-/* Make sure hero content has proper z-index too */
-.hero-content {
+/* Hero content */
+/* .hero-content {
     position: relative;
     z-index: 5; 
-}
+} */
 
-/* If particles are still covering it, we can be more aggressive */
-#particles-js {
+/* Particles.js Background */
+/* #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1; 
-}
+} */
 
 /* Arabic RTL Specific Styles - DESKTOP ONLY */
 @media (min-width: 1025px) {
@@ -2063,7 +2063,7 @@ textarea:focus-visible {
         display: inline-block;
     }
 
-    /* Ensure RTL layout for other elements */
+    /* RTL layout for other elements */
     html[lang="ar"] .about-text,
     html[lang="ar"] .service-card,
     html[lang="ar"] .contact-info {
@@ -2335,7 +2335,7 @@ html[lang="ar"]::-webkit-scrollbar-thumb:hover {
     background-color: var(--accent-dark);
 }
 
-/*  SAFARI SPECIFIC FIXES  */
+/*  SAFARI SPECIFIC */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 1024px) {
         html[lang="ar"] .title-segment,
@@ -2798,7 +2798,7 @@ html[lang="ar"]::-webkit-scrollbar-thumb:hover {
         display: inline-block;
     }
 
-    /* Ensure RTL layout for other elements */
+    /* RTL layout for other elements */
     html[lang="ar"] .about-text,
     html[lang="ar"] .service-card,
     html[lang="ar"] .contact-info,
@@ -3141,7 +3141,7 @@ html[lang="he"]::-webkit-scrollbar-thumb:hover {
     background-color: var(--accent-dark);
 }
 
-/*  SAFARI SPECIFIC FIXES  */
+/*  SAFARI SPECIFIC  */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 1024px) {
         html[lang="ar"] .title-segment,
@@ -3300,7 +3300,7 @@ html[lang="he"]::-webkit-scrollbar-thumb:hover {
     }
 }
 
-/*  SAFARI SPECIFIC FOR ARABIC & HEBREW NON-DESKTOP  */
+/*  SAFARI FOR ARABIC & HEBREW NON-DESKTOP  */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 1024px) {
         html[lang="ar"] .title-segment,
@@ -3614,14 +3614,14 @@ html[lang="he"]::-webkit-scrollbar-thumb:hover {
     }
 
     .title-underline {
-        height: 1px; /* Thin underline */
+        height: 1px;
         background: linear-gradient(90deg, var(--java), var(--spring), var(--python));
         width: 0;
         margin: 0 auto;
         transition: width 0.8s ease;
     }
 
-    /* Turkish-specific adjustment */
+    /* Turkish */
     html[lang="tr"] .title-segment {
         font-size: clamp(0.55rem, 2.3vw, 0.75rem);
     }
@@ -3980,13 +3980,13 @@ html[lang="he"]::-webkit-scrollbar-thumb:hover {
 .language-toggle {
     position: fixed;
     top: 1rem;
-    right: 1.5rem; /* moved slightly to the right */
+    right: 1.5rem; 
     z-index: 1000;
 }
 
 html[lang="ar"] .language-toggle {
     right: auto;
-    left: 1.5rem; /* moved slightly to the right for RTL */
+    left: 1.5rem; 
 }
 
 #language-select {
@@ -4020,7 +4020,7 @@ img {
 }
 
 
-/* Nest Hub Max (1280x800) specific fixes */
+/* Nest Hub Max (1280x800) */
 @media (max-width: 1280px) and (max-height: 800px) {
   body {
     overflow-x: hidden;
@@ -4046,7 +4046,7 @@ img {
   }
 }
 
-/* Nest Hub (1280x600) - same behavior as Nest Hub Max */
+/* Nest Hub (1280x600) */
 @media (max-width: 1280px) and (max-height: 600px) {
   body {
     overflow-x: hidden;
@@ -4095,7 +4095,7 @@ img {
   .contact-container { grid-template-columns: 2fr 3fr; gap: 3rem; }
 }
 
-/* Additional fixes for very short screens (Nest Hub) */
+/* Additional adjustments for screens (Nest Hub) */
 @media (max-height: 650px) {
   .hero-content {
     padding-top: 20px !important;
