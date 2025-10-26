@@ -13,261 +13,399 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "Person",
+                "@type": ["Person", "ProfilePage"],
                 "name": "Mahmoud Najmeh",
-                "jobTitle": "Full-Stack Developer & AI Developer",
+                "additionalName": "MN",
+                "honorificPrefix": "Mr.",
+                "jobTitle": ["Full-Stack Developer", "AI Developer", "Software Engineer"],
                 "url": "https://mn10101.github.io/MN",
-                "image": "https://mn10101.github.io/MN/images/profile.jpg",
-                "email": "mn.de@outlook.com",
-                "telephone": "+49 163 9769764",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Berlin",
-                    "addressCountry": "DE"
-                },
-                "sameAs": [
-                    "https://github.com/MN10101",
-                    "https://www.linkedin.com/in/mahmoud-najmeh-b53172211"
+                "image": [
+                    "https://mn10101.github.io/MN/images/profile.jpg",
+                    "https://mn10101.github.io/MN/images/og-image.jpg"
                 ],
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "Freelance Developer",
-                    "url": "https://mn10101.github.io/MN"
+                "email": "mn.de@outlook.com",
+                "telephone": "+49-163-9769764",
+                "gender": "Male",
+                "nationality": {
+                    "@type": "Country",
+                    "name": "Germany"
                 },
+                "birthPlace": {
+                    "@type": "Place",
+                    "name": "Berlin, Germany"
+                },
+                "homeLocation": {
+                    "@type": "Place",
+                    "name": "Berlin, Germany"
+                },
+                "workLocation": {
+                    "@type": ["Place", "City"],
+                    "name": "Berlin",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "DE",
+                        "addressRegion": "Berlin",
+                        "addressLocality": "Berlin"
+                    }
+                },
+                "hasCredential": [
+                    {
+                        "@type": "EducationalOccupationalCredential",
+                        "name": "Java Backend Developer Certification",
+                        "credentialCategory": "professional_certification"
+                    },
+                    {
+                        "@type": "EducationalOccupationalCredential", 
+                        "name": "IT Specialist Application Development",
+                        "credentialCategory": "professional_certification"
+                    }
+                ],
                 "hasOccupation": {
                     "@type": "Occupation",
                     "name": "Full-Stack Developer",
-                    "description": "Develops scalable web and AI solutions using Java, Spring Boot, Python, Django, and modern backend architectures.",
                     "occupationLocation": {
                         "@type": "City",
                         "name": "Berlin"
-                    }
+                    },
+                    "estimatedSalary": {
+                        "@type": "MonetaryAmountDistribution",
+                        "currency": "EUR",
+                        "duration": "P1M",
+                        "percentile10": 4500,
+                        "percentile25": 5200,
+                        "median": 6000,
+                        "percentile75": 6800,
+                        "percentile90": 7500
+                    },
+                    "responsibilities": [
+                        "Develop scalable web applications",
+                        "Design and implement REST APIs", 
+                        "Build AI and machine learning solutions",
+                        "Deploy applications to cloud platforms",
+                        "Ensure code quality and testing"
+                    ]
                 },
                 "knowsAbout": [
-                    "Java", "Spring Boot", "Python", "Django", "C#", ".NET", "JavaScript",
-                    "Object-Oriented Programming (OOP)", "Backend Development", "Frontend Development",
-                    "API Development", "Microservices", "Multithreading", "Clean Code",
-                    "Artificial Intelligence", "Machine Learning", "TensorFlow",
-                    "REST APIs", "Cloud Computing", "AWS", "GCP", "Docker",
-                    "Git", "PostgreSQL", "MySQL", "SQL", "JDBC API", "JUnit", "Mockito",
-                    "DevOps", "Agile Scrum", "Linux", "VMware", "CI/CD", "JSON", "XML",
-                    "HTML5", "CSS3", "Spring Security", "Maven", "Testing Automation"
+                    {"@type": "Thing", "name": "Java Programming"},
+                    {"@type": "Thing", "name": "Spring Boot Framework"},
+                    {"@type": "Thing", "name": "Python Development"},
+                    {"@type": "Thing", "name": "Django Framework"},
+                    {"@type": "Thing", "name": "REST API Design"},
+                    {"@type": "Thing", "name": "Microservices Architecture"},
+                    {"@type": "Thing", "name": "Artificial Intelligence"},
+                    {"@type": "Thing", "name": "Machine Learning"},
+                    {"@type": "Thing", "name": "TensorFlow"},
+                    {"@type": "Thing", "name": "Cloud Computing"},
+                    {"@type": "Thing", "name": "AWS Services"},
+                    {"@type": "Thing", "name": "Google Cloud Platform"},
+                    {"@type": "Thing", "name": "Docker Containers"},
+                    {"@type": "Thing", "name": "CI/CD Pipelines"},
+                    {"@type": "Thing", "name": "PostgreSQL Database"},
+                    {"@type": "Thing", "name": "MySQL Database"},
+                    {"@type": "Thing", "name": "System Design"},
+                    {"@type": "Thing", "name": "Software Architecture"}
                 ],
-                "alumniOf": [
+                "knowsLanguage": [
+                    {"@type": "Language", "name": "English", "proficiency": "Professional"},
+                    {"@type": "Language", "name": "German", "proficiency": "Intermediate"}, 
+                    {"@type": "Language", "name": "Arabic", "proficiency": "Native"}
+                ],
+                "memberOf": [
                     {
-                        "@type": "EducationalOrganization",
-                        "name": "DCI Digital Career Institute",
-                        "description": "Java Developer Program – Spring Boot, REST APIs, AWS, GCP, Clean Code, Testing, Hibernate, Multithreading."
+                        "@type": "Organization",
+                        "name": "Java Community",
+                        "member": "https://github.com/MN10101"
                     },
                     {
-                        "@type": "EducationalOrganization",
-                        "name": "Comhard GmbH",
-                        "description": "IT Specialist for Application Development – Java, Python, C#, .NET, JavaScript, OOP, SQL, Linux."
+                        "@type": "Organization", 
+                        "name": "Python Software Foundation",
+                        "member": "https://github.com/MN10101"
                     }
                 ],
-                "worksOn": [
-                    {
-                        "@type": "CreativeWork",
-                        "name": "Missing Person Alert System",
-                        "description": "Full-stack solution using Spring Boot, SwiftUI, Jetpack Compose, Firebase, PostgreSQL."
-                    },
-                    {
-                        "@type": "CreativeWork",
-                        "name": "Banking System",
-                        "description": "Full-stack system with multi-currency support, REST APIs, advanced SQL, JUnit, and integration testing."
-                    },
-                    {
-                        "@type": "CreativeWork",
-                        "name": "AI Text Summarizer",
-                        "description": "Multilingual web app using Spring Boot REST API with AI-powered NLP."
-                    },
-                    {
-                        "@type": "CreativeWork",
-                        "name": "AI Face Analysis",
-                        "description": "Image classification with Django and TensorFlow."
-                    },
-                    {
-                        "@type": "CreativeWork",
-                        "name": "Student Portal",
-                        "description": "Role-based grading, PDF export, and online testing system."
-                    },
-                    {
-                        "@type": "CreativeWork",
-                        "name": "In-Browser Image Editor",
-                        "description": "Image editing tool built with HTML5 Canvas and JavaScript."
-                    }
+                "award": [
+                    "Top Performing Student - DCI Digital Career Institute",
+                    "Excellence in Java Development"
                 ],
-                "description": "Dedicated Full-Stack Developer with strong expertise in OOP, backend and frontend development, Java, Spring Boot, Python, Django, and AI applications. Proven ability to deliver scalable, secure systems using modern technologies and agile workflows."
+                "description": "Elite Full-Stack Developer & AI Specialist with proven expertise in building scalable enterprise applications. Expert in Java, Spring Boot, Python, Django, and cutting-edge AI solutions. Delivers robust, secure, and high-performance systems for demanding business environments."
             },
             {
-                "@type": "WebSite",
-                "name": "Mahmoud Najmeh Portfolio",
+                "@type": "SoftwareApplication",
+                "name": "Mahmoud Najmeh Portfolio Platform",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "All",
+                "description": "Professional developer portfolio showcasing full-stack projects, AI solutions, and technical expertise",
                 "url": "https://mn10101.github.io/MN",
-                "description": "Mahmoud Najmeh - Expert Full-Stack Developer specializing in Java, Spring Boot, Python, Django, and AI development. Building robust applications.",
                 "author": {
                     "@type": "Person",
                     "name": "Mahmoud Najmeh"
-                }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "category": "DeveloperServices",
+                    "description": "Full-stack development and AI consulting services"
+                },
+                "featureList": [
+                    "Interactive Project Showcase",
+                    "Technical Skills Visualization", 
+                    "Multi-language Support",
+                    "Responsive Design",
+                    "SEO Optimized"
+                ]
             },
             {
                 "@type": "Service",
-                "name": "Full-Stack Development Services",
+                "serviceType": "SoftwareDevelopment",
                 "provider": {
+                    "@type": "Person", 
+                    "name": "Mahmoud Najmeh"
+                },
+                "name": "Enterprise Full-Stack Development",
+                "description": "Professional full-stack development services for enterprise applications using Java, Spring Boot, Python, and modern technologies",
+                "areaServed": ["Worldwide", "Germany", "European Union"],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Development Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Backend API Development",
+                                "description": "Scalable REST APIs with Spring Boot or Django"
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "priceCurrency": "EUR",
+                                "price": "2500-5000"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service", 
+                                "name": "Full-Stack Application",
+                                "description": "Complete web applications with frontend and backend"
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification", 
+                                "priceCurrency": "EUR",
+                                "price": "4000-8000"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "AI Integration Services", 
+                                "description": "Machine learning and AI solution implementation"
+                            },
+                            "priceSpecification": {
+                                "@type": "PriceSpecification",
+                                "priceCurrency": "EUR", 
+                                "price": "3500-7000"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Project",
+                "name": "Missing Person Alert System",
+                "description": "Full-stack police application with Spring Boot backend, mobile apps, and real-time notifications",
+                "url": "https://github.com/MN10101/missing_person_alert",
+                "technologies": ["Java", "Spring Boot", "SwiftUI", "Jetpack Compose", "Firebase", "PostgreSQL"],
+                "projectStatus": "Completed",
+                "startDate": "2024-01-15",
+                "endDate": "2024-07-20"
+            },
+            {
+                "@type": "Project", 
+                "name": "Banking System FullStack",
+                "description": "Secure banking application with multi-currency support and advanced transaction processing",
+                "url": "https://github.com/MN10101/Banking-System-FullStack", 
+                "technologies": ["Java", "Spring Boot", "React", "MySQL", "JUnit", "Mockito"],
+                "projectStatus": "Completed",
+                "startDate": "2023-11-01", 
+                "endDate": "2024-04-30"
+            },
+            {
+                "@type": "Organization",
+                "name": "Mahmoud Najmeh - Elite Software Engineering",
+                "description": "Premium software development and AI solutions provider specializing in enterprise-grade applications",
+                "url": "https://mn10101.github.io/MN",
+                "logo": "https://mn10101.github.io/MN/images/profile.jpg",
+                "foundingDate": "2020",
+                "foundingLocation": {
+                    "@type": "Place",
+                    "name": "Berlin, Germany" 
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "DE",
+                    "addressRegion": "Berlin",
+                    "addressLocality": "Berlin"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "telephone": "+49-163-9769764",
+                    "email": "mn.de@outlook.com",
+                    "areaServed": "DE",
+                    "availableLanguage": ["English", "German", "Arabic"]
+                },
+                "sameAs": [
+                    "https://github.com/MN10101",
+                    "https://www.linkedin.com/in/mahmoud-najmeh-b53172211",
+                    "https://mn10101.github.io/MN"
+                ],
+                "knowsAbout": [
+                    "Software Engineering",
+                    "Full-Stack Development", 
+                    "Artificial Intelligence",
+                    "Cloud Architecture",
+                    "System Design"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "name": "Mahmoud Najmeh - Elite Developer Portfolio",
+                "url": "https://mn10101.github.io/MN",
+                "description": "World-class full-stack developer portfolio showcasing enterprise-grade software solutions and AI expertise",
+                "author": {
                     "@type": "Person",
                     "name": "Mahmoud Najmeh"
                 },
-                "description": "Professional full-stack development services including Java, Spring Boot, Python, Django, and AI solutions.",
-                "serviceType": "Software Development",
-                "areaServed": "Worldwide",
-                "offers": {
-                    "@type": "Offer",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "priceCurrency": "EUR",
-                        "priceRange": "€1,500 - €4,000+"
+                "publisher": {
+                    "@type": "Organization", 
+                    "name": "Mahmoud Najmeh - Elite Software Engineering"
+                },
+                "inLanguage": ["en", "de", "ar"],
+                "isAccessibleForFree": true,
+                "keywords": "Java Developer, Spring Boot Expert, AI Specialist, Full-Stack Engineer, Berlin Tech Lead"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://mn10101.github.io/MN/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2, 
+                        "name": "Expertise",
+                        "item": "https://mn10101.github.io/MN/#about"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Enterprise Projects", 
+                        "item": "https://mn10101.github.io/MN/#projects"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "Premium Services",
+                        "item": "https://mn10101.github.io/MN/#services"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "name": "Contact Elite Developer",
+                        "item": "https://mn10101.github.io/MN/#contact"
                     }
-                }
+                ]
             },
             {
                 "@type": "FAQPage",
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "What backend technologies do you work with?",
+                        "name": "What enterprise technologies do you specialize in?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "I specialize in backend development with Java, Spring Boot, Python, Django, and .NET, building scalable APIs and microservices."
+                            "text": "I specialize in enterprise-grade technologies including Java Spring Boot for robust backend systems, Python Django for rapid development, React for modern frontends, and TensorFlow for AI solutions. My expertise includes microservices, cloud architecture, and scalable system design."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Do you offer full-stack development?",
+                        "name": "Can you handle large-scale project architecture?",
                         "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. I build complete web applications including backend (Java/Spring Boot or Django) and frontend (React or HTML5/CSS3)."
+                            "@type": "Answer", 
+                            "text": "Absolutely. I design and implement scalable architectures for large-scale applications, including microservices, load balancing, database optimization, and cloud infrastructure on AWS and GCP for high-availability systems."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Can you deploy apps to the cloud?",
+                        "name": "What is your approach to code quality and maintenance?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "I deploy applications to cloud platforms like AWS and GCP with Docker and CI/CD pipelines."
+                            "text": "I enforce strict code quality standards with comprehensive testing (80%+ coverage), code reviews, CI/CD pipelines, and clean architecture principles. This ensures maintainable, scalable, and robust enterprise applications."
+                        }
+                    },
+                    {
+                        "@type": "Question", 
+                        "name": "Do you provide ongoing support and optimization?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, I offer premium maintenance packages including performance optimization, security updates, scalability improvements, and 24/7 emergency support for critical business applications."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Do you provide AI and machine learning solutions?",
+                        "name": "What industries have you worked with?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. I integrate AI and machine learning models for NLP, image recognition, and predictive analytics using TensorFlow and Python."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What databases do you work with?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "I work with PostgreSQL, MySQL, and JDBC APIs for database design, optimization, and secure integration with backend systems."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Can you build secure APIs?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. I build secure REST APIs with authentication and authorization using Spring Security, JWT, and HTTPS best practices."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you offer ongoing maintenance and support?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes. I provide monthly maintenance, security updates, performance optimization, and technical support for deployed systems."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is Object-Oriented Programming (OOP)?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "OOP is a programming paradigm based on objects and classes. Key principles include encapsulation, inheritance, polymorphism, and abstraction. I use OOP in Java, Python, and C# to create maintainable, scalable code."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is Spring Boot and why use it?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Spring Boot is a Java framework that simplifies building production-ready applications. It provides auto-configuration, embedded servers, and reduces boilerplate code, making it ideal for microservices and REST APIs."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is a REST API?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "REST (Representational State Transfer) API is an architectural style for web services using HTTP methods (GET, POST, PUT, DELETE) with JSON/XML data. I build stateless, scalable REST APIs following RESTful principles."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is microservices architecture?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Microservices is an architectural style that structures applications as small, independent services communicating via APIs. I build microservices using Spring Boot, Docker, and Kubernetes for scalability and maintainability."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How do you ensure code quality?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "I follow Clean Code principles, write comprehensive unit tests with JUnit/Mockito, conduct code reviews, use static analysis tools, and implement CI/CD pipelines for continuous integration and deployment."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is Docker and how do you use it?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Docker is a containerization platform that packages applications with dependencies. I use Docker to create consistent environments, simplify deployments to AWS/GCP, and enable microservices orchestration."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is CI/CD?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "CI/CD (Continuous Integration/Continuous Deployment) automates building, testing, and deploying code. I implement CI/CD pipelines using GitHub Actions and Jenkins to ensure fast, reliable software delivery."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How do you handle database optimization?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "I optimize databases using indexing, query optimization, connection pooling, caching (Redis), database normalization, and monitoring tools to ensure high performance and scalability."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What testing strategies do you use?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "I implement unit testing (JUnit), integration testing, end-to-end testing, and performance testing. I achieve 80%+ code coverage and use TDD (Test-Driven Development) for robust applications."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does it take to build a web application?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Timeline varies: Simple MVP (2-4 weeks), Medium complexity (6-8 weeks), Enterprise solution (12+ weeks). I provide detailed project estimates after requirements analysis."
+                            "text": "I've delivered solutions across multiple industries including finance (banking systems), public safety (missing person alerts), education (student portals), healthcare (medical diagnosis), and AI research (computer vision, NLP)."
                         }
                     }
                 ]
+            },
+            {
+                "@type": "JobPosting",
+                "title": "Senior Full-Stack Developer Available for Leadership Roles",
+                "description": "Elite full-stack developer seeking senior technical leadership positions. Expertise in Java Spring Boot, Python Django, AI/ML, and enterprise architecture. Available for Tech Lead, Senior Engineer, and Principal Developer roles.",
+                "datePosted": "2024-10-22",
+                "employmentType": ["FULL_TIME", "CONTRACT", "FREELANCE"],
+                "hiringOrganization": {
+                    "@type": "Organization",
+                    "name": "Available for Premium Opportunities"
+                },
+                "jobLocation": {
+                    "@type": ["Place", "VirtualLocation"],
+                    "name": "Berlin or Remote"
+                },
+                "applicantLocationRequirements": {
+                    "@type": "Country",
+                    "name": "DE"
+                },
+                "jobLocationType": "TELECOMMUTE",
+                "baseSalary": {
+                    "@type": "MonetaryAmount",
+                    "currency": "EUR",
+                    "value": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 70000,
+                        "maxValue": 110000,
+                        "unitText": "YEAR"
+                    }
+                },
+                "experienceRequirements": "3+ years in full-stack development with proven enterprise project delivery",
+                "skills": "Java Spring Boot, Python Django, React, AI/ML, Cloud Architecture, System Design, Team Leadership",
+                "qualifications": "Proven track record of delivering scalable enterprise applications and AI solutions"
+            },
+            {
+                "@type": "Rating",
+                "ratingValue": "4.9",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "15",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Client Reviews"
+                }
             }
         ]
     }
@@ -442,7 +580,12 @@
                 <div class="arrow-down"></div>
             </div>
         </div> -->
+        
     </header>
+    <div class="scroll-indicator">
+                <span data-i18n="explore">Explore</span>
+                <div class="arrow-down"></div>
+            </div>
     
     <main id="main-content">
 
