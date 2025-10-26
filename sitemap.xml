@@ -29,33 +29,47 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Individual Project Details (Future Pages) -->
+  <!-- Project Repository Links (ACTUAL URLs) -->
   <url>
-    <loc>https://mn10101.github.io/MN/projects/missing-person-alert</loc>
+    <loc>https://github.com/MN10101/missing_person_alert</loc>
     <lastmod>2024-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://mn10101.github.io/MN/projects/banking-system</loc>
+    <loc>https://github.com/MN10101/Banking-System-FullStack</loc>
     <lastmod>2024-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://mn10101.github.io/MN/projects/ai-text-summarizer</loc>
+    <loc>https://github.com/MN10101/ai-text-summarizer</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://mn10101.github.io/MN/projects/medical-diagnosis-ai</loc>
+    <loc>https://github.com/MN10101/MedicalDiagnosisSystem</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/MN10101/language_learning</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/MN10101/Face_Analysis</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Premium Services -->
@@ -66,66 +80,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Service Categories (Future Pages) -->
-  <url>
-    <loc>https://mn10101.github.io/MN/services/enterprise-backend</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mn10101.github.io/MN/services/fullstack-development</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://mn10101.github.io/MN/services/ai-solutions</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Contact & Leadership -->
   <url>
     <loc>https://mn10101.github.io/MN/#contact</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- Technical Leadership Page (Future) -->
-  <url>
-    <loc>https://mn10101.github.io/MN/leadership</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Skills & Technologies -->
-  <url>
-    <loc>https://mn10101.github.io/MN/technologies</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Enterprise Architecture -->
-  <url>
-    <loc>https://mn10101.github.io/MN/architecture</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Career & Opportunities -->
-  <url>
-    <loc>https://mn10101.github.io/MN/career</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 
 </urlset>

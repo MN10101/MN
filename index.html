@@ -13,19 +13,16 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": ["Person", "ProfilePage"],
+                "@type": "Person",
                 "name": "Mahmoud Najmeh",
                 "additionalName": "MN",
                 "honorificPrefix": "Mr.",
-                "jobTitle": ["Full-Stack Developer", "AI Developer", "Software Engineer"],
+                "jobTitle": "Full-Stack Developer & AI Developer",
                 "url": "https://mn10101.github.io/MN",
-                "image": [
-                    "https://mn10101.github.io/MN/images/profile.jpg",
-                    "https://mn10101.github.io/MN/images/og-image.jpg"
-                ],
+                "image": "https://mn10101.github.io/MN/images/profile.jpg",
                 "email": "mn.de@outlook.com",
                 "telephone": "+49-163-9769764",
-                "gender": "Male",
+                "gender": "https://schema.org/Male",
                 "nationality": {
                     "@type": "Country",
                     "name": "Germany"
@@ -39,14 +36,8 @@
                     "name": "Berlin, Germany"
                 },
                 "workLocation": {
-                    "@type": ["Place", "City"],
-                    "name": "Berlin",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "DE",
-                        "addressRegion": "Berlin",
-                        "addressLocality": "Berlin"
-                    }
+                    "@type": "Place",
+                    "name": "Berlin, Germany"
                 },
                 "hasCredential": [
                     {
@@ -67,16 +58,6 @@
                         "@type": "City",
                         "name": "Berlin"
                     },
-                    "estimatedSalary": {
-                        "@type": "MonetaryAmountDistribution",
-                        "currency": "EUR",
-                        "duration": "P1M",
-                        "percentile10": 4500,
-                        "percentile25": 5200,
-                        "median": 6000,
-                        "percentile75": 6800,
-                        "percentile90": 7500
-                    },
                     "responsibilities": [
                         "Develop scalable web applications",
                         "Design and implement REST APIs", 
@@ -86,147 +67,48 @@
                     ]
                 },
                 "knowsAbout": [
-                    {"@type": "Thing", "name": "Java Programming"},
-                    {"@type": "Thing", "name": "Spring Boot Framework"},
-                    {"@type": "Thing", "name": "Python Development"},
-                    {"@type": "Thing", "name": "Django Framework"},
-                    {"@type": "Thing", "name": "REST API Design"},
-                    {"@type": "Thing", "name": "Microservices Architecture"},
-                    {"@type": "Thing", "name": "Artificial Intelligence"},
-                    {"@type": "Thing", "name": "Machine Learning"},
-                    {"@type": "Thing", "name": "TensorFlow"},
-                    {"@type": "Thing", "name": "Cloud Computing"},
-                    {"@type": "Thing", "name": "AWS Services"},
-                    {"@type": "Thing", "name": "Google Cloud Platform"},
-                    {"@type": "Thing", "name": "Docker Containers"},
-                    {"@type": "Thing", "name": "CI/CD Pipelines"},
-                    {"@type": "Thing", "name": "PostgreSQL Database"},
-                    {"@type": "Thing", "name": "MySQL Database"},
-                    {"@type": "Thing", "name": "System Design"},
-                    {"@type": "Thing", "name": "Software Architecture"}
+                    "Java Programming", "Spring Boot Framework", "Python Development",
+                    "Django Framework", "REST API Design", "Microservices Architecture",
+                    "Artificial Intelligence", "Machine Learning", "TensorFlow",
+                    "Cloud Computing", "AWS Services", "Google Cloud Platform",
+                    "Docker Containers", "CI/CD Pipelines", "PostgreSQL Database",
+                    "MySQL Database", "System Design", "Software Architecture"
                 ],
                 "knowsLanguage": [
-                    {"@type": "Language", "name": "English", "proficiency": "Professional"},
-                    {"@type": "Language", "name": "German", "proficiency": "Intermediate"}, 
-                    {"@type": "Language", "name": "Arabic", "proficiency": "Native"}
+                    {"@type": "Language", "name": "English"},
+                    {"@type": "Language", "name": "German"}, 
+                    {"@type": "Language", "name": "Arabic"}
                 ],
                 "memberOf": [
                     {
                         "@type": "Organization",
-                        "name": "Java Community",
-                        "member": "https://github.com/MN10101"
+                        "name": "Java Community"
                     },
                     {
                         "@type": "Organization", 
-                        "name": "Python Software Foundation",
-                        "member": "https://github.com/MN10101"
+                        "name": "Python Software Foundation"
                     }
                 ],
                 "award": [
                     "Top Performing Student - DCI Digital Career Institute",
                     "Excellence in Java Development"
                 ],
-                "description": "Elite Full-Stack Developer & AI Specialist with proven expertise in building scalable enterprise applications. Expert in Java, Spring Boot, Python, Django, and cutting-edge AI solutions. Delivers robust, secure, and high-performance systems for demanding business environments."
+                "description": "Elite Full-Stack Developer & AI Specialist with proven expertise in building scalable enterprise applications. Expert in Java, Spring Boot, Python, Django, and cutting-edge AI solutions."
             },
             {
-                "@type": "SoftwareApplication",
-                "name": "Mahmoud Najmeh Portfolio Platform",
-                "applicationCategory": "BusinessApplication",
-                "operatingSystem": "All",
-                "description": "Professional developer portfolio showcasing full-stack projects, AI solutions, and technical expertise",
+                "@type": "WebSite",
+                "name": "Mahmoud Najmeh - Elite Developer Portfolio",
                 "url": "https://mn10101.github.io/MN",
+                "description": "World-class full-stack developer portfolio showcasing enterprise-grade software solutions and AI expertise",
                 "author": {
                     "@type": "Person",
                     "name": "Mahmoud Najmeh"
                 },
-                "offers": {
-                    "@type": "Offer",
-                    "category": "DeveloperServices",
-                    "description": "Full-stack development and AI consulting services"
+                "publisher": {
+                    "@type": "Organization", 
+                    "name": "Mahmoud Najmeh - Elite Software Engineering"
                 },
-                "featureList": [
-                    "Interactive Project Showcase",
-                    "Technical Skills Visualization", 
-                    "Multi-language Support",
-                    "Responsive Design",
-                    "SEO Optimized"
-                ]
-            },
-            {
-                "@type": "Service",
-                "serviceType": "SoftwareDevelopment",
-                "provider": {
-                    "@type": "Person", 
-                    "name": "Mahmoud Najmeh"
-                },
-                "name": "Enterprise Full-Stack Development",
-                "description": "Professional full-stack development services for enterprise applications using Java, Spring Boot, Python, and modern technologies",
-                "areaServed": ["Worldwide", "Germany", "European Union"],
-                "hasOfferCatalog": {
-                    "@type": "OfferCatalog",
-                    "name": "Development Services",
-                    "itemListElement": [
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "Backend API Development",
-                                "description": "Scalable REST APIs with Spring Boot or Django"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "EUR",
-                                "price": "2500-5000"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service", 
-                                "name": "Full-Stack Application",
-                                "description": "Complete web applications with frontend and backend"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification", 
-                                "priceCurrency": "EUR",
-                                "price": "4000-8000"
-                            }
-                        },
-                        {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                "@type": "Service",
-                                "name": "AI Integration Services", 
-                                "description": "Machine learning and AI solution implementation"
-                            },
-                            "priceSpecification": {
-                                "@type": "PriceSpecification",
-                                "priceCurrency": "EUR", 
-                                "price": "3500-7000"
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "Project",
-                "name": "Missing Person Alert System",
-                "description": "Full-stack police application with Spring Boot backend, mobile apps, and real-time notifications",
-                "url": "https://github.com/MN10101/missing_person_alert",
-                "technologies": ["Java", "Spring Boot", "SwiftUI", "Jetpack Compose", "Firebase", "PostgreSQL"],
-                "projectStatus": "Completed",
-                "startDate": "2024-01-15",
-                "endDate": "2024-07-20"
-            },
-            {
-                "@type": "Project", 
-                "name": "Banking System FullStack",
-                "description": "Secure banking application with multi-currency support and advanced transaction processing",
-                "url": "https://github.com/MN10101/Banking-System-FullStack", 
-                "technologies": ["Java", "Spring Boot", "React", "MySQL", "JUnit", "Mockito"],
-                "projectStatus": "Completed",
-                "startDate": "2023-11-01", 
-                "endDate": "2024-04-30"
+                "inLanguage": ["en", "de", "ar"]
             },
             {
                 "@type": "Organization",
@@ -250,38 +132,55 @@
                     "contactType": "customer service",
                     "telephone": "+49-163-9769764",
                     "email": "mn.de@outlook.com",
-                    "areaServed": "DE",
-                    "availableLanguage": ["English", "German", "Arabic"]
+                    "areaServed": "DE"
                 },
                 "sameAs": [
                     "https://github.com/MN10101",
-                    "https://www.linkedin.com/in/mahmoud-najmeh-b53172211",
-                    "https://mn10101.github.io/MN"
-                ],
-                "knowsAbout": [
-                    "Software Engineering",
-                    "Full-Stack Development", 
-                    "Artificial Intelligence",
-                    "Cloud Architecture",
-                    "System Design"
+                    "https://www.linkedin.com/in/mahmoud-najmeh-b53172211"
                 ]
             },
             {
-                "@type": "WebSite",
-                "name": "Mahmoud Najmeh - Elite Developer Portfolio",
+                "@type": "Service",
+                "serviceType": "SoftwareDevelopment",
+                "provider": {
+                    "@type": "Person", 
+                    "name": "Mahmoud Najmeh"
+                },
+                "name": "Enterprise Full-Stack Development",
+                "description": "Professional full-stack development services for enterprise applications using Java, Spring Boot, Python, and modern technologies",
+                "areaServed": ["Worldwide", "Germany", "European Union"],
+                "offers": {
+                    "@type": "Offer",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "EUR",
+                        "price": "2500-8000"
+                    }
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Mahmoud Najmeh Portfolio Platform",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Any",
+                "description": "Professional developer portfolio showcasing full-stack projects and AI solutions",
                 "url": "https://mn10101.github.io/MN",
-                "description": "World-class full-stack developer portfolio showcasing enterprise-grade software solutions and AI expertise",
                 "author": {
                     "@type": "Person",
                     "name": "Mahmoud Najmeh"
-                },
-                "publisher": {
-                    "@type": "Organization", 
-                    "name": "Mahmoud Najmeh - Elite Software Engineering"
-                },
-                "inLanguage": ["en", "de", "ar"],
-                "isAccessibleForFree": true,
-                "keywords": "Java Developer, Spring Boot Expert, AI Specialist, Full-Stack Engineer, Berlin Tech Lead"
+                }
+            },
+            {
+                "@type": "Project",
+                "name": "Missing Person Alert System",
+                "description": "Full-stack police application with Spring Boot backend, mobile apps, and real-time notifications",
+                "url": "https://github.com/MN10101/missing_person_alert"
+            },
+            {
+                "@type": "Project", 
+                "name": "Banking System FullStack",
+                "description": "Secure banking application with multi-currency support and advanced transaction processing",
+                "url": "https://github.com/MN10101/Banking-System-FullStack"
             },
             {
                 "@type": "BreadcrumbList",
@@ -313,7 +212,7 @@
                     {
                         "@type": "ListItem",
                         "position": 5,
-                        "name": "Contact Elite Developer",
+                        "name": "Contact",
                         "item": "https://mn10101.github.io/MN/#contact"
                     }
                 ]
@@ -366,7 +265,7 @@
             {
                 "@type": "JobPosting",
                 "title": "Senior Full-Stack Developer Available for Leadership Roles",
-                "description": "Elite full-stack developer seeking senior technical leadership positions. Expertise in Java Spring Boot, Python Django, AI/ML, and enterprise architecture. Available for Tech Lead, Senior Engineer, and Principal Developer roles.",
+                "description": "Elite full-stack developer seeking senior technical leadership positions. Expertise in Java Spring Boot, Python Django, AI/ML, and enterprise architecture.",
                 "datePosted": "2024-10-22",
                 "employmentType": ["FULL_TIME", "CONTRACT", "FREELANCE"],
                 "hiringOrganization": {
@@ -374,37 +273,15 @@
                     "name": "Available for Premium Opportunities"
                 },
                 "jobLocation": {
-                    "@type": ["Place", "VirtualLocation"],
-                    "name": "Berlin or Remote"
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "DE"
+                    }
                 },
                 "applicantLocationRequirements": {
                     "@type": "Country",
                     "name": "DE"
-                },
-                "jobLocationType": "TELECOMMUTE",
-                "baseSalary": {
-                    "@type": "MonetaryAmount",
-                    "currency": "EUR",
-                    "value": {
-                        "@type": "QuantitativeValue",
-                        "minValue": 70000,
-                        "maxValue": 110000,
-                        "unitText": "YEAR"
-                    }
-                },
-                "experienceRequirements": "3+ years in full-stack development with proven enterprise project delivery",
-                "skills": "Java Spring Boot, Python Django, React, AI/ML, Cloud Architecture, System Design, Team Leadership",
-                "qualifications": "Proven track record of delivering scalable enterprise applications and AI solutions"
-            },
-            {
-                "@type": "Rating",
-                "ratingValue": "4.9",
-                "bestRating": "5",
-                "worstRating": "1",
-                "ratingCount": "15",
-                "author": {
-                    "@type": "Organization",
-                    "name": "Client Reviews"
                 }
             }
         ]
