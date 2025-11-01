@@ -78,7 +78,9 @@ const translations = {
             machine_learning: "Machine Learning",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "JAVA DEVELOPER",
@@ -231,7 +233,7 @@ const translations = {
             domainNotExist: "Email domain does not exist",
             emailTooLong: "Email address is too long",
             useMajorProvider: "Please use a major email provider like Gmail, Outlook, or Yahoo"
-        }
+        },
         // weather: {
         //     loading: "Loading weather...",
         //     unavailable: "Weather unavailable",
@@ -319,7 +321,9 @@ const translations = {
             machine_learning: "Maschinelles Lernen",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "JAVA-ENTWICKLER",
@@ -472,7 +476,7 @@ const translations = {
             domainNotExist: "E-Mail-Domain existiert nicht",
             emailTooLong: "E-Mail-Adresse ist zu lang",
              useMajorProvider: "Bitte verwenden Sie einen großen E-Mail-Anbieter wie Gmail, Outlook oder Yahoo"
-        }
+        },
         // weather: {
         //     loading: "Wetter wird geladen...",
         //     unavailable: "Wetter nicht verfügbar",
@@ -560,7 +564,9 @@ const translations = {
             machine_learning: "Uczenie Maszynowe",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "PROGRAMISTA JAVA",
@@ -713,7 +719,7 @@ const translations = {
             domainNotExist: "Domena e-mail nie istnieje",
             emailTooLong: "Adres e-mail jest zbyt długi",
             useMajorProvider: "Proszę użyć głównego dostawcy poczty e-mail, takiego jak Gmail, Outlook lub Yahoo"
-        }
+        },
         // weather: {
         //     loading: "Ładowanie pogody...",
         //     unavailable: "Pogoda niedostępna",
@@ -801,7 +807,9 @@ const translations = {
             machine_learning: "Apprentissage Automatique",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
 
         },
         title: {
@@ -955,7 +963,7 @@ const translations = {
             domainNotExist: "Le domaine de messagerie n'existe pas",
             emailTooLong: "L'adresse e-mail est trop longue",
             useMajorProvider: "Veuillez utiliser un fournisseur de messagerie majeur comme Gmail, Outlook ou Yahoo"
-        }
+        },
         // weather: {
         //     loading: "Chargement de la météo...",
         //     unavailable: "Météo indisponible",
@@ -1044,7 +1052,9 @@ const translations = {
             machine_learning: "Makine Öğrenimi",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "JAVA GELİŞTİRİCİ",
@@ -1197,7 +1207,7 @@ const translations = {
             domainNotExist: "E-posta alan adı mevcut değil",
             emailTooLong: "E-posta adresi çok uzun",
             useMajorProvider: "Lütfen Gmail, Outlook veya Yahoo gibi büyük bir e-posta sağlayıcısı kullanın"
-        }
+        },
         // weather: {
         //     loading: "Hava durumu yükleniyor...",
         //     unavailable: "Hava durumu mevcut değil",
@@ -1285,7 +1295,9 @@ const translations = {
             machine_learning: "Машинное обучение",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "JAVA РАЗРАБОТЧИК",
@@ -1438,7 +1450,7 @@ const translations = {
             domainNotExist: "Домен email не существует",
             emailTooLong: "Email адрес слишком длинный",
              useMajorProvider: "Пожалуйста, используйте крупного поставщика электронной почты, такого как Gmail, Outlook или Yahoo"
-        }
+        },
         // weather: {
         //     loading: "Загрузка погоды...",
         //     unavailable: "Погода недоступна",
@@ -1526,7 +1538,9 @@ const translations = {
             machine_learning: "التعلم الآلي",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "مبرمج جافا",
@@ -1679,7 +1693,7 @@ const translations = {
             domainNotExist: "نطاق البريد الإلكتروني غير موجود",
             emailTooLong: "عنوان البريد الإلكتروني طويل جدًا",
             useMajorProvider: "يرجى استخدام مزود بريد إلكتروني رئيسي مثل Gmail أو Outlook أو Yahoo"
-        }
+        },
         // weather: {
         //     loading: "جاري تحميل الطقس...",
         //     unavailable: "الطقس غير متاح",
@@ -1767,7 +1781,9 @@ const translations = {
             machine_learning: "למידת מכונה",
             swift: "Swift",
             mlnet: "ML.NET",
-            wpf: "WPF"
+            wpf: "WPF",
+            hibernate: "Hibernate",
+            websocket: "WebSocket"
         },
         title: {
             "java-backend": "מפתח JAVA",
@@ -1920,7 +1936,15 @@ const translations = {
             domainNotExist: "דומיין האימייל אינו קיים",
             emailTooLong: "כתובת האימייל ארוכה מדי",
             useMajorProvider: "אנא השתמש בספק אימייל מרכזי כמו Gmail, Outlook או Yahoo"
-        }
+        },
+        // weather: {
+        // loading: "טוען מזג אוויר...",
+        // unavailable: "מזג אוויר לא זמין",
+        // unknown: "לא ידוע",
+        // unknown_location: "מיקום לא ידוע",
+        // demo: "הדגמה חיה",
+        // fallback: "מציג מזג אוויר בברלין"
+        // }
     }
 };
 
