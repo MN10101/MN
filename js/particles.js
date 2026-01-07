@@ -160,7 +160,7 @@ class ParticleSystemManager {
             baseConfig.particles.line_linked.distance = 100;
         }
 
-        // Enhanced visuals for desktop
+        // Visuals for desktop
         if (!this.isMobile && this.isHighDPI) {
             baseConfig.particles.number.value = 120;
             baseConfig.particles.opacity.value = 0.8;
@@ -216,16 +216,25 @@ class ParticleSystemManager {
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
             let frameCount = 0;
             let lastTime = performance.now();
-            
+            let hasWarnedLowFPS = false; 
+
             const monitorFPS = () => {
                 frameCount++;
                 const currentTime = performance.now();
                 
                 if (currentTime - lastTime >= 1000) {
                     const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+                    
                     if (fps < 30) {
-                        console.warn(`⚠️ Low FPS: ${fps}. Consider reducing particle count.`);
+                        if (!hasWarnedLowFPS) {
+                            console.warn(`⚠️ Low FPS detected: ${fps}. Consider reducing particle count.`);
+                            hasWarnedLowFPS = true;
+                        }
+                    } else if (fps >= 40) {
+                        // Reset warning only if performance recovers significantly
+                        hasWarnedLowFPS = false;
                     }
+                    
                     frameCount = 0;
                     lastTime = currentTime;
                 }
@@ -277,7 +286,7 @@ class ParticleSystemManager {
         const container = document.getElementById('particles-js');
         if (!container) return;
         
-        // Create a simple CSS-based fallback
+        // Simple CSS-based fallback
         container.style.background = `
             radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
             radial-gradient(circle at 80% 20%, rgba(107, 114, 128, 0.15) 0%, transparent 50%),
@@ -285,7 +294,7 @@ class ParticleSystemManager {
         `;
         container.style.animation = 'gradientShift 15s ease infinite';
         
-        // Add CSS animation
+        // CSS animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes gradientShift {
@@ -332,19 +341,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.particleSystem = new ParticleSystemManager();
 });
 
-// Export for debugging
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    window.ParticleDebug = {
-        getInstance: () => window.particleSystem,
-        stats: () => {
-            if (window.particleSystem && window.particleSystem.particlesInstance) {
-                return {
-                    particleCount: window.particleSystem.config.particles.number.value,
-                    isMobile: window.particleSystem.isMobile,
-                    isHighDPI: window.particleSystem.isHighDPI
-                };
-            }
-            return null;
-        }
-    };
-}
