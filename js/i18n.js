@@ -218,7 +218,7 @@ const translations = {
             submit: "Send Message"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. All rights reserved."
+            copyright: "© 2026 Mahmoud Najmeh. All rights reserved."
         },
         thank_you: {
             title: "Thank You",
@@ -461,7 +461,7 @@ const translations = {
             submit: "Nachricht senden"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Alle Rechte vorbehalten."
+            copyright: "© 2026 Mahmoud Najmeh. Alle Rechte vorbehalten."
         },
         thank_you: {
             title: "Dankeschön",
@@ -704,7 +704,7 @@ const translations = {
             submit: "Wyślij wiadomość"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Wszelkie prawa zastrzeżone."
+            copyright: "© 2026 Mahmoud Najmeh. Wszelkie prawa zastrzeżone."
         },
         thank_you: {
             title: "Dziękujemy",
@@ -948,7 +948,7 @@ const translations = {
             submit: "Envoyer le message"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Tous droits réservés."
+            copyright: "© 2026 Mahmoud Najmeh. Tous droits réservés."
         },
         thank_you: {
             title: "Merci",
@@ -1192,7 +1192,7 @@ const translations = {
             submit: "Mesaj Gönder"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Tüm hakları saklıdır."
+            copyright: "© 2026 Mahmoud Najmeh. Tüm hakları saklıdır."
         },
         thank_you: {
             title: "Teşekkürler",
@@ -1435,7 +1435,7 @@ const translations = {
             submit: "Отправить сообщение"
         },
         footer: {
-            copyright: "© 2025 Махмуд Наджмех. Все права защищены."
+            copyright: "© 2026 Махмуд Наджмех. Все права защищены."
         },
         thank_you: {
             title: "Спасибо",
@@ -1678,7 +1678,7 @@ const translations = {
             submit: "إرسال الرسالة"
         },
        footer: {
-            copyright: "جميع الحقوق محفوظة محمود نجمة © 2025"
+            copyright: "جميع الحقوق محفوظة محمود نجمة © 2026"
         },
         thank_you: {
             title: "شكرًا",
@@ -1921,7 +1921,7 @@ const translations = {
             submit: "שלח הודעה"
         },
         footer: {
-            copyright: "© 2025 מחמוד נג'מה. כל הזכויות שמורות."
+            copyright: "© 2026 מחמוד נג'מה. כל הזכויות שמורות."
         },
         thank_you: {
             title: "תודה",
