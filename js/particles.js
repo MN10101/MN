@@ -60,7 +60,7 @@ class ParticleSystemManager {
                     }
                 },
                 size: {
-                    value: 3,
+                    value: 4,
                     random: true,
                     anim: {
                         enable: true,
