@@ -174,7 +174,7 @@ html[lang="tr"] .section-indicator span {
 }
 
 #particles-js {
-    position: fixed;
+    position: fixed; 
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -185,13 +185,12 @@ html[lang="tr"] .section-indicator span {
             rgba(30, 41, 59, 0.92) 50%, 
             rgba(51, 65, 85, 0.9) 100%);
     z-index: 1;
-    pointer-events: none;
     will-change: transform;
     transform: translateZ(0);
     filter: contrast(120%) brightness(110%);
 }
 
-/* Target both the default particles.js canvas class and any direct override */
+/* Target both possible canvas classes */
 #particles-js canvas,
 .particles-js-canvas-el {
     position: fixed !important;
@@ -203,7 +202,7 @@ html[lang="tr"] .section-indicator span {
     display: block;
 }
 
-/* Mobile responsiveness */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .hero {
         height: 100dvh; 
@@ -213,7 +212,7 @@ html[lang="tr"] .section-indicator span {
 
     #particles-js {
         width: 100vw !important;
-        height: 100dvh !important; 
+        height: 100dvh !important;
         background: 
             linear-gradient(135deg, 
                 rgba(15, 23, 42, 0.98) 0%, 
@@ -229,7 +228,7 @@ html[lang="tr"] .section-indicator span {
     }
 }
 
-/* High DPI displays enhancement */
+/* High DPI enhancement */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     #particles-js {
         filter: contrast(130%) brightness(115%);
@@ -243,7 +242,7 @@ canvas {
     image-rendering: crisp-edges;
 }
 
-/* Disable on reduced motion preference */
+/* Disable on reduced motion */
 @media (prefers-reduced-motion: reduce) {
     #particles-js {
         display: none !important;
@@ -269,6 +268,7 @@ canvas {
     position: relative;
     z-index: 11;
 }
+
 .profile-container {
     position: relative;
     width: 250px;
