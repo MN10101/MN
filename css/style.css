@@ -169,19 +169,62 @@ html[lang="tr"] .section-indicator span {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    isolation: isolate;
 }
 
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--primary);
+    background: 
+        linear-gradient(135deg, 
+            rgba(15, 23, 42, 0.95) 0%, 
+            rgba(30, 41, 59, 0.92) 50%, 
+            rgba(51, 65, 85, 0.9) 100%);
     z-index: 1;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+    will-change: transform;
+    transform: translateZ(0);
+    filter: contrast(120%) brightness(110%);
+}
+
+/* Performance optimization for mobile */
+@media (max-width: 768px) {
+    #particles-js {
+        background: 
+            linear-gradient(135deg, 
+                rgba(15, 23, 42, 0.98) 0%, 
+                rgba(30, 41, 59, 0.96) 100%);
+        filter: contrast(110%) brightness(105%);
+    }
+}
+
+/* High DPI displays enhancement */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #particles-js {
+        filter: contrast(130%) brightness(115%);
+    }
+}
+
+/* Particle canvas optimization */
+canvas[data-generated="true"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* Performance warning for low-end devices */
+@media (prefers-reduced-motion: reduce) {
+    #particles-js {
+        animation: none !important;
+    }
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,6 +232,14 @@ html[lang="tr"] .section-indicator span {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+.hero-content > * {
+    position: relative;
+    z-index: 11;
 }
 
 .profile-container {
