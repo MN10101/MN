@@ -6,6 +6,16 @@ const translations = {
             first: "Mahmoud",
             last: "Najmeh"
         },
+        languages: {
+            en: "English",
+            de: "German", 
+            pl: "Polish",
+            fr: "French",
+            tr: "Turkish",
+            ar: "Arabic",
+            ru: "Russian",
+            he: "Hebrew"
+        },
         explore: "Explore",
         section: {
             about: "About Me",
@@ -218,7 +228,7 @@ const translations = {
             submit: "Send Message"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. All rights reserved."
+            copyright: "© 2026 Mahmoud Najmeh. All rights reserved."
         },
         thank_you: {
             title: "Thank You",
@@ -248,6 +258,16 @@ const translations = {
         name: {
             first: "Mahmoud",
             last: "Najmeh"
+        },
+            languages: {
+            en: "Englisch",
+            de: "Deutsch",
+            pl: "Polnisch",
+            fr: "Französisch", 
+            tr: "Türkisch",
+            ar: "Arabisch",
+            ru: "Russisch",
+            he: "Hebräisch"
         },
         explore: "Entdecken",
         section: {
@@ -461,7 +481,7 @@ const translations = {
             submit: "Nachricht senden"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Alle Rechte vorbehalten."
+            copyright: "© 2026 Mahmoud Najmeh. Alle Rechte vorbehalten."
         },
         thank_you: {
             title: "Dankeschön",
@@ -491,6 +511,16 @@ const translations = {
         name: {
             first: "Mahmoud",
             last: "Najmeh"
+        },
+        languages: {
+            en: "angielski",
+            de: "niemiecki",
+            pl: "polski",
+            fr: "francuski",
+            tr: "turecki", 
+            ar: "arabski",
+            ru: "rosyjski",
+            he: "hebrajski"
         },
         explore: "Odkrywaj",
         section: {
@@ -704,7 +734,7 @@ const translations = {
             submit: "Wyślij wiadomość"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Wszelkie prawa zastrzeżone."
+            copyright: "© 2026 Mahmoud Najmeh. Wszelkie prawa zastrzeżone."
         },
         thank_you: {
             title: "Dziękujemy",
@@ -734,6 +764,16 @@ const translations = {
         name: {
             first: "Mahmoud",
             last: "Najmeh"
+        },
+            languages: {
+            en: "Anglais",
+            de: "Allemand",
+            pl: "Polonais",
+            fr: "Français",
+            tr: "Turc",
+            ar: "Arabe",
+            ru: "Russe", 
+            he: "Hébreu"
         },
         explore: "Explorer",
         section: {
@@ -948,7 +988,7 @@ const translations = {
             submit: "Envoyer le message"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Tous droits réservés."
+            copyright: "© 2026 Mahmoud Najmeh. Tous droits réservés."
         },
         thank_you: {
             title: "Merci",
@@ -978,6 +1018,16 @@ const translations = {
         name: {
             first: "Mahmoud",
             last: "Najmeh"
+        },
+            languages: {
+            en: "İngilizce",
+            de: "Almanca",
+            pl: "Lehçe",
+            fr: "Fransızca",
+            tr: "Türkçe",
+            ar: "Arapça",
+            ru: "Rusça",
+            he: "İbranice"
         },
         explore: "Keşfet",
         section: {
@@ -1192,7 +1242,7 @@ const translations = {
             submit: "Mesaj Gönder"
         },
         footer: {
-            copyright: "© 2025 Mahmoud Najmeh. Tüm hakları saklıdır."
+            copyright: "© 2026 Mahmoud Najmeh. Tüm hakları saklıdır."
         },
         thank_you: {
             title: "Teşekkürler",
@@ -1222,6 +1272,16 @@ const translations = {
         name: {
             first: "Махмуд",
             last: "Наджмех"
+        },
+            languages: {
+            en: "Английский",
+            de: "Немецкий",
+            pl: "Польский",
+            fr: "Французский",
+            tr: "Турецкий",
+            ar: "Арабский", 
+            ru: "Русский",
+            he: "Иврит"
         },
         explore: "Исследовать",
         section: {
@@ -1435,7 +1495,7 @@ const translations = {
             submit: "Отправить сообщение"
         },
         footer: {
-            copyright: "© 2025 Махмуд Наджмех. Все права защищены."
+            copyright: "© 2026 Махмуд Наджмех. Все права защищены."
         },
         thank_you: {
             title: "Спасибо",
@@ -1465,6 +1525,16 @@ const translations = {
         name: {
             first: "محمود",
             last: "نجمة"
+        },
+            languages: {
+            en: "الإنجليزية",
+            de: "الألمانية",
+            pl: "البولندية", 
+            fr: "الفرنسية",
+            tr: "التركية",
+            ar: "العربية",
+            ru: "الروسية",
+            he: "العبرية"
         },
         explore: "استكشف",
         section: {
@@ -1678,7 +1748,7 @@ const translations = {
             submit: "إرسال الرسالة"
         },
        footer: {
-            copyright: "جميع الحقوق محفوظة محمود نجمة © 2025"
+            copyright: "جميع الحقوق محفوظة محمود نجمة © 2026"
         },
         thank_you: {
             title: "شكرًا",
@@ -1708,6 +1778,16 @@ const translations = {
         name: {
             first: "מחמוד",
             last: "נג'מה"
+        },
+            languages: {
+            en: "אנגלית",
+            de: "גרמנית",
+            pl: "פולנית",
+            fr: "צרפתית",
+            tr: "טורקית",
+            ar: "ערבית",
+            ru: "רוסית",
+            he: "עברית"
         },
         explore: "גלה",
         section: {
@@ -1921,7 +2001,7 @@ const translations = {
             submit: "שלח הודעה"
         },
         footer: {
-            copyright: "© 2025 מחמוד נג'מה. כל הזכויות שמורות."
+            copyright: "© 2026 מחמוד נג'מה. כל הזכויות שמורות."
         },
         thank_you: {
             title: "תודה",
@@ -1981,7 +2061,7 @@ function updateContent(lang) {
 
     document.title = translations[lang]?.title || "Mahmoud Najmeh | Full-Stack Developer";
 
-    // Update text content WITH ERROR HANDLING
+    // Update text content
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         
@@ -2047,6 +2127,18 @@ function updateContent(lang) {
         const sectionId = indicator.getAttribute('data-section');
         indicator.querySelector('span').textContent = translations[lang].section[sectionId] || sectionId;
     });
+
+    // Update language dropdown options with translated language names
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect && translations[lang]?.languages) {
+        Array.from(languageSelect.options).forEach(option => {
+            const langCode = option.value;
+            if (translations[lang].languages[langCode]) {
+                // Only update with the translated language name, NO flag emojis
+                option.textContent = translations[lang].languages[langCode];
+            }
+        });
+    }
 }
 
 // Function to map browser language to supported languages
