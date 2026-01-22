@@ -2149,6 +2149,11 @@ function getSupportedLanguage(browserLang) {
         'en-GB': 'en',
         'de': 'de',
         'de-DE': 'de',
+        'de-AT': 'de',    
+        'de-CH': 'de',    
+        'de-LI': 'de',    
+        'de-LU': 'de',    
+        'de-BE': 'de',    
         'pl': 'pl',
         'pl-PL': 'pl',
         'fr': 'fr',
@@ -2187,15 +2192,22 @@ async function getCountryCode() {
 function getLanguageFromCountry(countryCode) {
     const countryLangMap = {
         'DE': 'de',      
-        'PL': 'pl',     
+        'AT': 'de',         
+        'CH': 'de',         
+        'LI': 'de',         
+        'LU': 'de',         
+        'BE': 'de',         
+        'PL': 'pl',         
         'FR': 'fr',      
         'TR': 'tr',      
-        'RU': 'ru',      
+        'RU': 'ru',     
+
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
         'TN': 'ar', 'LY': 'ar', 'SD': 'ar', 'SO': 'ar',
-        'IL': 'he'
+
+        'IL': 'he'       
     };
 
     const lang = countryLangMap[countryCode] || 'en';
