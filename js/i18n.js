@@ -95,7 +95,7 @@ const translations = {
         title: {
             "java-backend": "JAVA DEVELOPER",
             "full-stack": "FULL-STACK DEVELOPER",
-            ai: "AI ENTHUSIAST"
+            ai: "AI & ML"
         },
         services: {
             subtitle: "Professional development services tailored to your business needs",
@@ -348,7 +348,7 @@ const translations = {
         title: {
             "java-backend": "JAVA-ENTWICKLER",
             "full-stack": "FULL-STACK ENTWICKLER",
-            ai: "KI-BEGEISTERTER"
+            ai: "KI & ML"
         },
         services: {
             subtitle: "Professionelle Entwicklungsdienste, angepasst an Ihre Geschäftsanforderungen",
@@ -601,7 +601,7 @@ const translations = {
         title: {
             "java-backend": "PROGRAMISTA JAVA",
             "full-stack": "PROGRAMISTA FULL-STACK",
-            ai: "ENTUZJASTA SZTUCZNEJ INTELIGENCJI"
+            ai: "AI & ML"
         },
         services: {
             subtitle: "Profesjonalne usługi programistyczne dostosowane do potrzeb Twojej firmy",
@@ -855,7 +855,7 @@ const translations = {
         title: {
             "java-backend": "DÉVELOPPEUR JAVA",
             "full-stack": "DÉVELOPPEUR FULL-STACK",
-            ai: "ENTHOUSIASTE D'IA"
+            ai: "IA & ML"
         },
         services: {
             subtitle: "Services de développement professionnels adaptés aux besoins de votre entreprise",
@@ -1109,7 +1109,7 @@ const translations = {
         title: {
             "java-backend": "JAVA GELİŞTİRİCİ",
             "full-stack": "FULL-STACK GELİŞTİRİCİ",
-            ai: "YAPAY ZEKA TUTKUNU"
+            ai: "YAPAY ZEKA & ML"
         },
         services: {
             subtitle: "İş ihtiyaçlarınıza göre uyarlanmış profesyonel geliştirme hizmetleri",
@@ -1362,7 +1362,7 @@ const translations = {
         title: {
             "java-backend": "JAVA РАЗРАБОТЧИК",
             "full-stack": "FULL-STACK РАЗРАБОТЧИК",
-            ai: "ЭНТУЗИАСТ ИИ"
+            ai: "ИИ & ML"
         },
         services: {
             subtitle: "Профессиональные услуги разработки, адаптированные под ваши бизнес-потребности",
@@ -1615,7 +1615,7 @@ const translations = {
         title: {
             "java-backend": "مبرمج جافا",
             "full-stack": "مهندس برمجيات فول ستاك",
-            ai: "متحمس للذكاء الاصطناعي"
+            ai: "مطور الذكاء الاصطناعي والتعلم الآلي"
         },
         services: {
             subtitle: "خدمات تطوير احترافية مصممة خصيصًا لتلبية احتياجات عملك",
@@ -1868,7 +1868,7 @@ const translations = {
         title: {
             "java-backend": "מפתח JAVA",
             "full-stack": "מפתח FULL-STACK",
-            ai: "חובב בינה מלאכותית"
+            ai: "מפתח בינה מלאכותית ולמידת מכונה"
         },
         services: {
             subtitle: "שירותי פיתוח מקצועיים המותאמים לצרכי העסק שלך",
