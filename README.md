@@ -14,14 +14,21 @@ Designed to showcase projects, skills, and professional background.
 
 ## 📁 Project Structure
 
-.github/ \# GitHub workflows (if configured) css/ ├── animations.css \#
-Animation styles └── style.css \# Main styling images/ \# Images and
-assets js/ ├── i18n.js \# Internationalization logic ├── main.js \# Main
-JavaScript logic └── particles.js \# Background particle effects
+.github/               # GitHub workflows (if configured)
+css/
+   ├── animations.css  # Animation styles
+   └── style.css       # Main styling
+images/                # Images and assets
+js/
+   ├── i18n.js         # Internationalization logic
+   ├── main.js         # Main JavaScript logic
+   └── particles.js    # Background particle effects
 
-.gitattributes index.html \# Main entry point robots.txt \# SEO
-configuration sitemap.xml \# Search engine sitemap thank-you.html \#
-Thank you page (form submission)
+.gitattributes
+index.html             # Main entry point
+robots.txt             # SEO configuration
+sitemap.xml            # Search engine sitemap
+thank-you.html         # Thank you page (form submission)
 
 ------------------------------------------------------------------------
 
