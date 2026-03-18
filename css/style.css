@@ -1969,12 +1969,17 @@ textarea:focus-visible {
     }
 
     html[lang="ar"] .title-segment.full-stack::before {
-        background: var(--accent);
+        background: var(--full-stack);
     }
 
     html[lang="ar"] .title-segment.ai::before {
         background: var(--python);
     }
+
+    html[lang="ar"] .title-segment.data-engineering::before {
+        background: var(--data-engineering);
+    }
+    
 
     html[lang="ar"] .contact-link[href*="tel"] span {
         direction: ltr !important;
@@ -2972,9 +2977,7 @@ html[lang="ar"]::-webkit-scrollbar-thumb:hover {
     html[lang="ar"] .title-segment.java-backend::before,
     html[lang="ar"] .title-segment.full-stack::before,
     html[lang="ar"] .title-segment.ai::before,
-    html[lang="he"] .title-segment.java-backend::before,
-    html[lang="he"] .title-segment.full-stack::before,
-    html[lang="he"] .title-segment.ai::before {
+    html[lang="ar"] .title-segment.data-engineering::before {
         content: '' !important;
         position: absolute !important;
         right: 1rem !important;
@@ -2989,12 +2992,11 @@ html[lang="ar"]::-webkit-scrollbar-thumb:hover {
         z-index: 1 !important;
     }
 
-    html[lang="ar"] .title-segment.java-backend::before,
-    html[lang="he"] .title-segment.java-backend::before { background: var(--java) !important; }
-    html[lang="ar"] .title-segment.full-stack::before,
-    html[lang="he"] .title-segment.full-stack::before { background: var(--accent) !important; }
-    html[lang="ar"] .title-segment.ai::before,
-    html[lang="he"] .title-segment.ai::before { background: var(--python) !important; }
+    html[lang="ar"] .title-segment.java-backend::before { background: var(--java) !important; }
+    html[lang="ar"] .title-segment.full-stack::before { background: var(--full-stack) !important; }
+    html[lang="ar"] .title-segment.ai::before       { background: var(--python) !important; }
+    html[lang="ar"] .title-segment.data-engineering::before { background: var(--data-engineering) !important; }
+        
 
     html[lang="ar"] .about-content,
     html[lang="ar"] .education-list li,
