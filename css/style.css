@@ -30,58 +30,67 @@ body {
     direction: ltr;
 }
 
-/* Scroll Down Button */
-.scroll-down {
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(30, 41, 59, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 1px solid var(--accent);
-    transition: all 0.3s ease;
-    z-index: 1001;
-    animation: bounce 2s infinite;
-}
-
-.scroll-down:hover {
-    background: var(--accent);
-    transform: translateX(-50%) scale(1.1);
-}
-
-.scroll-down i {
-    color: var(--text);
-    font-size: 1rem;
-}
-
-.scroll-down:hover i {
-    transform: translateY(3px);
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
+/* Scroll Down Button - Desktop Only */
+@media (min-width: 769px) {
+    .scroll-down {
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid var(--accent);
+        transition: all 0.3s ease;
+        z-index: 1001;
+        animation: bounce 2s infinite;
     }
-    40% {
-        transform: translateX(-50%) translateY(-8px);
+
+    .scroll-down:hover {
+        background: var(--accent);
+        transform: translateX(-50%) scale(1.1);
     }
-    60% {
-        transform: translateX(-50%) translateY(-4px);
+
+    .scroll-down i {
+        color: var(--text);
+        font-size: 1rem;
+    }
+
+    .scroll-down:hover i {
+        transform: translateY(3px);
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-8px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-4px);
+        }
+    }
+
+    .scroll-down.hide {
+        opacity: 0;
+        visibility: hidden;
+        animation: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 }
 
-.scroll-down.hide {
-    opacity: 0;
-    visibility: hidden;
-    animation: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+/* Hide on mobile devices */
+@media (max-width: 768px) {
+    .scroll-down {
+        display: none;
+    }
 }
 
 /* Section Indicators */
