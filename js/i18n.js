@@ -2370,14 +2370,13 @@ function updateContent(lang) {
 
     document.title = translations[lang]?.title || "Mahmoud Najmeh | Full-Stack Developer";
 
-    // Update text content
+    // Text content
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         
-        // Skip weather-related translations that no longer exist
         if (key.startsWith('weather.')) {
             console.warn(`Skipping missing weather translation: ${key}`);
-            return; // Skip this element
+            return;
         }
         
         const keys = key.split('.');
@@ -2393,7 +2392,7 @@ function updateContent(lang) {
         if (value) element.innerHTML = value;
     });
 
-    // Update placeholder attributes
+    // Placeholder attributes
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
         const keys = key.split('.');
@@ -2405,7 +2404,7 @@ function updateContent(lang) {
         if (value) element.placeholder = value;
     });
 
-    // Update title attributes for tooltips
+    // Title attributes for tooltips
     document.querySelectorAll('[data-i18n-title]').forEach(element => {
         const key = element.getAttribute('data-i18n-title');
         const keys = key.split('.');
@@ -2417,7 +2416,7 @@ function updateContent(lang) {
         if (value) element.title = value;
     });
 
-    // Update toggle buttons dynamically
+    // Toggle buttons dynamically
     document.querySelectorAll('.toggle-details').forEach(button => {
         const details = button.nextElementSibling;
         const isHidden = details.style.display === 'none' || !details.style.display;
@@ -2431,19 +2430,18 @@ function updateContent(lang) {
             'Details ausblenden';
     });
 
-    // Update section indicators
+    // Section indicators
     document.querySelectorAll('.section-indicator').forEach(indicator => {
         const sectionId = indicator.getAttribute('data-section');
         indicator.querySelector('span').textContent = translations[lang].section[sectionId] || sectionId;
     });
 
-    // Update language dropdown options with translated language names
+    // Language dropdown options with translated language names
     const languageSelect = document.getElementById('language-select');
     if (languageSelect && translations[lang]?.languages) {
         Array.from(languageSelect.options).forEach(option => {
             const langCode = option.value;
             if (translations[lang].languages[langCode]) {
-                // Only update with the translated language name, NO flag emojis
                 option.textContent = translations[lang].languages[langCode];
             }
         });
@@ -2453,29 +2451,14 @@ function updateContent(lang) {
 // Function to map browser language to supported languages
 function getSupportedLanguage(browserLang) {
     const langMap = {
-        'en': 'en',
-        'en-US': 'en',
-        'en-GB': 'en',
-        'de': 'de',
-        'de-DE': 'de',
-        'de-AT': 'de',    
-        'de-CH': 'de',    
-        'de-LI': 'de',    
-        'de-LU': 'de',    
-        'de-BE': 'de',    
-        'pl': 'pl',
-        'pl-PL': 'pl',
-        'fr': 'fr',
-        'fr-FR': 'fr',
-        'tr': 'tr',
-        'tr-TR': 'tr',
-        'ar': 'ar',
-        'ar-SA': 'ar',
-        'ar-EG': 'ar',
-        'ru': 'ru',        
-        'ru-RU': 'ru',
-        'he': 'he', 
-        'he-IL': 'he'    
+        'en': 'en', 'en-US': 'en', 'en-GB': 'en',
+        'de': 'de', 'de-DE': 'de', 'de-AT': 'de', 'de-CH': 'de', 'de-LI': 'de', 'de-LU': 'de', 'de-BE': 'de',
+        'pl': 'pl', 'pl-PL': 'pl',
+        'fr': 'fr', 'fr-FR': 'fr',
+        'tr': 'tr', 'tr-TR': 'tr',
+        'ar': 'ar', 'ar-SA': 'ar', 'ar-EG': 'ar',
+        'ru': 'ru', 'ru-RU': 'ru',
+        'he': 'he', 'he-IL': 'he'    
     };
 
     const primaryLang = browserLang.split('-')[0];
@@ -2484,44 +2467,81 @@ function getSupportedLanguage(browserLang) {
     return supportedLang;
 }
 
-// Function to get country code using geolocation API
+// Function to get country code using geolocation API with fallback
 async function getCountryCode() {
-    try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        console.log(`Geolocation API returned country code: ${data.country_code}`);
-        return data.country_code;
-    } catch (error) {
-        console.error('Error fetching geolocation:', error);
-        return null;
+    const services = [
+        {
+            url: 'https://ipapi.co/json/',
+            parser: (data) => data.country_code
+        },
+        {
+            url: 'https://ip-api.com/json/',
+            parser: (data) => data.countryCode
+        },
+        {
+            url: 'https://api.country.is/',
+            parser: (data) => data.country
+        }
+    ];
+    
+    for (const service of services) {
+        try {
+            const response = await fetch(service.url);
+            const data = await response.json();
+            const countryCode = service.parser(data);
+            if (countryCode) {
+                console.log(`Geolocation API (${service.url}) returned country code: ${countryCode}`);
+                return countryCode;
+            }
+        } catch (error) {
+            console.warn(`Geolocation service ${service.url} failed:`, error);
+            continue;
+        }
     }
+    
+    console.error('All geolocation services failed');
+    return null;
 }
 
-// Function to map country code to supported language
+// Function to map country code to supported language (ALWAYS returns a language, default 'en')
 function getLanguageFromCountry(countryCode) {
     const countryLangMap = {
-        'DE': 'de',      
-        'AT': 'de',         
-        'CH': 'de',         
-        'LI': 'de',         
-        'LU': 'de',         
-        'BE': 'de',         
-        'PL': 'pl',         
-        'FR': 'fr',      
-        'TR': 'tr',      
-        'RU': 'ru',     
-
+        'DE': 'de', 'AT': 'de', 'CH': 'de', 'LI': 'de', 'LU': 'de', 'BE': 'de',
+        'PL': 'pl',
+        'FR': 'fr',
+        'TR': 'tr',
+        'RU': 'ru',
         'SA': 'ar', 'EG': 'ar', 'JO': 'ar', 'LB': 'ar', 'QA': 'ar',
         'AE': 'ar', 'BH': 'ar', 'KW': 'ar', 'OM': 'ar', 'YE': 'ar',
         'SY': 'ar', 'IQ': 'ar', 'PS': 'ar', 'MA': 'ar', 'DZ': 'ar',
         'TN': 'ar', 'LY': 'ar', 'SD': 'ar', 'SO': 'ar',
-
-        'IL': 'he'       
+        'IL': 'he'
     };
 
     const lang = countryLangMap[countryCode] || 'en';
     console.log(`Country code: ${countryCode}, mapped to language: ${lang}`);
     return lang;
+}
+
+// Function to get country name from country code
+function getCountryName(countryCode) {
+    const countryNames = {
+        'DE': 'Germany', 'AT': 'Austria', 'CH': 'Switzerland', 'LI': 'Liechtenstein', 'LU': 'Luxembourg', 'BE': 'Belgium',
+        'PL': 'Poland',
+        'FR': 'France',
+        'TR': 'Turkey',
+        'RU': 'Russia',
+        'SA': 'Saudi Arabia', 'EG': 'Egypt', 'JO': 'Jordan', 'LB': 'Lebanon', 'QA': 'Qatar',
+        'AE': 'UAE', 'BH': 'Bahrain', 'KW': 'Kuwait', 'OM': 'Oman', 'YE': 'Yemen',
+        'SY': 'Syria', 'IQ': 'Iraq', 'PS': 'Palestine', 'MA': 'Morocco', 'DZ': 'Algeria',
+        'TN': 'Tunisia', 'LY': 'Libya', 'SD': 'Sudan', 'SO': 'Somalia',
+        'IL': 'Israel',
+        'GB': 'United Kingdom', 'US': 'United States', 'CA': 'Canada', 'AU': 'Australia',
+        'JP': 'Japan', 'CN': 'China', 'IN': 'India', 'BR': 'Brazil', 'MX': 'Mexico',
+        'ES': 'Spain', 'IT': 'Italy', 'PT': 'Portugal', 'NL': 'Netherlands', 'SE': 'Sweden',
+        'NO': 'Norway', 'DK': 'Denmark', 'FI': 'Finland', 'IE': 'Ireland', 'NZ': 'New Zealand'
+    };
+    return countryNames[countryCode] || countryCode;
 }
 
 // Function to get URL parameters
@@ -2530,27 +2550,175 @@ function getUrlParameter(name) {
     return urlParams.get(name);
 }
 
-// Function to get current language from URL, localStorage, or geolocation
+// Function to show professional language suggestion popup
+function showLanguageSuggestion(suggestedLang, currentLang, countryCode) {
+    // Don't show if already showing
+    if (document.getElementById('lang-suggestion-popup')) return;
+    
+    const langNames = {
+        'en': 'English',
+        'de': 'German', 
+        'pl': 'Polish', 
+        'fr': 'French', 
+        'tr': 'Turkish', 
+        'ru': 'Russian', 
+        'ar': 'Arabic', 
+        'he': 'Hebrew'
+    };
+    
+    const countryName = getCountryName(countryCode);
+    const suggestedLanguageName = langNames[suggestedLang] || 'English';
+    const currentLanguageName = langNames[currentLang] || 'English';
+    
+    const popup = document.createElement('div');
+    popup.id = 'lang-suggestion-popup';
+    popup.innerHTML = `
+        <div style="position: fixed; bottom: 20px; right: 20px; background: white; border-radius: 12px; 
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.2); padding: 20px; z-index: 10000; 
+                    max-width: 350px; animation: slideIn 0.3s ease; font-family: system-ui, -apple-system, sans-serif;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 24px;">🌍</span>
+                <h3 style="margin: 0; font-size: 18px; color: #1a202c;">Location Detected</h3>
+            </div>
+            <p style="margin: 0 0 16px 0; color: #4a5568; line-height: 1.5;">
+                You're currently in ${countryName}. The local language is ${suggestedLanguageName}. 
+                Would you like to switch to ${suggestedLanguageName}?
+            </p>
+            <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                <button id="lang-keep" style="padding: 8px 16px; background: #e2e8f0; border: none; 
+                        border-radius: 6px; cursor: pointer; font-weight: 500; color: #1a202c;">
+                    Keep ${currentLanguageName}
+                </button>
+                <button id="lang-switch" style="padding: 8px 16px; background: #4299e1; color: white; 
+                        border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">
+                    Switch to ${suggestedLanguageName}
+                </button>
+            </div>
+        </div>
+        <style>
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(100%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            @media (max-width: 640px) {
+                #lang-suggestion-popup > div {
+                    left: 20px;
+                    right: 20px;
+                    bottom: 20px;
+                    max-width: none;
+                }
+            }
+        </style>
+    `;
+    
+    document.body.appendChild(popup);
+    
+    // Keep current language and remember that user declined switch
+    document.getElementById('lang-keep').onclick = async () => {
+        localStorage.setItem('language_declined_' + suggestedLang, 'true');
+        localStorage.setItem('last_detected_country', countryCode);
+        popup.remove();
+    };
+    
+    // Switch to detected language
+    document.getElementById('lang-switch').onclick = async () => {
+        localStorage.setItem('language', suggestedLang);
+        localStorage.setItem('last_detected_country', countryCode);
+        // Remove decline flags for this language
+        localStorage.removeItem('language_declined_' + suggestedLang);
+        
+        // Update content
+        updateContent(suggestedLang);
+        
+        // Update select dropdown
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) languageSelect.value = suggestedLang;
+        
+        // Update URL without reload
+        const newUrl = new URL(window.location);
+        newUrl.searchParams.set('lang', suggestedLang);
+        window.history.replaceState({}, '', newUrl);
+        
+        popup.remove();
+    };
+}
+
+// Smart language detection
 async function getCurrentLanguage() {
     // First check URL parameter
     const urlLang = getUrlParameter('lang');
     if (urlLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(urlLang)) {
         console.log(`Language from URL: ${urlLang}`);
+        localStorage.setItem('language', urlLang);
+        const countryCode = await getCountryCode();
+        if (countryCode) localStorage.setItem('last_detected_country', countryCode);
         return urlLang;
     }
     
-    // Then check localStorage
-    const storedLang = localStorage.getItem('language');
-    if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(storedLang)) {
-        console.log(`Language from localStorage: ${storedLang}`);
-        return storedLang;
+    // Get current location
+    const countryCode = await getCountryCode();
+    console.log(`📍 Current country code: ${countryCode}`);
+    
+    // Get detected language (ALWAYS returns a language, default 'en')
+    let detectedLang = 'en';
+    if (countryCode) {
+        detectedLang = getLanguageFromCountry(countryCode);
+        console.log(`🗣️ Country ${countryCode} → Language: ${detectedLang}`);
+    } else {
+        // If geolocation fails, fallback to browser language
+        detectedLang = getSupportedLanguage(navigator.language || navigator.userLanguage);
+        console.log(`🌐 Geolocation failed, using browser language: ${detectedLang}`);
     }
     
-    // Then use geolocation/browser detection
-    const countryCode = await getCountryCode();
-    const geoLang = countryCode ? getLanguageFromCountry(countryCode) : getSupportedLanguage(navigator.language || navigator.userLanguage);
-    console.log(`Language from geolocation: ${geoLang}`);
-    return geoLang;
+    // Get saved preference
+    const storedLang = localStorage.getItem('language');
+    const lastDetectedCountry = localStorage.getItem('last_detected_country');
+    
+    console.log(`💾 Saved preference: ${storedLang || 'none'}`);
+    console.log(`📍 Last detected country: ${lastDetectedCountry || 'none'}`);
+    
+    // If no saved preference, use detected language
+    if (!storedLang) {
+        console.log(`✨ First visit - using detected language: ${detectedLang}`);
+        localStorage.setItem('language', detectedLang);
+        if (countryCode) localStorage.setItem('last_detected_country', countryCode);
+        return detectedLang;
+    }
+    
+    // Check if user previously declined this language
+    const declinedKey = `language_declined_${detectedLang}`;
+    const userDeclined = localStorage.getItem(declinedKey) === 'true';
+    console.log(`🚫 User declined ${detectedLang}? ${userDeclined}`);
+    
+    // If location changed AND user hasn't declined this language AND languages differ
+    if (countryCode && lastDetectedCountry && lastDetectedCountry !== countryCode && !userDeclined && storedLang !== detectedLang) {
+        console.log(`🔄 LOCATION CHANGED: ${lastDetectedCountry} → ${countryCode}`);
+        console.log(`🔄 LANGUAGE CHANGE: ${storedLang} → ${detectedLang}`);
+        // Store the suggestion data globally to show after content loads
+        window.pendingLanguageSuggestion = {
+            suggestedLang: detectedLang,
+            currentLang: storedLang,
+            countryCode: countryCode
+        };
+        // Keep current language until user decides
+        return storedLang; 
+    }
+    
+    // If no location change or user declined, update stored country
+    if (countryCode && lastDetectedCountry !== countryCode) {
+        console.log(`📝 Updating stored country: ${lastDetectedCountry} → ${countryCode}`);
+        localStorage.setItem('last_detected_country', countryCode);
+    }
+    
+    // Use saved preference
+    console.log(`✅ Using saved preference: ${storedLang}`);
+    return storedLang;
 }
 
 // Function to update back to home links
@@ -2563,7 +2731,48 @@ function updateBackToHomeLinks(lang) {
     });
 }
 
-// Language switcher event listener with geolocation
+// Function to show language detection notification
+async function showLanguageNotification() {
+    const urlLang = getUrlParameter('lang');
+    const storedLang = localStorage.getItem('language');
+    const detectedLang = await getCurrentLanguage();
+    
+    const langNames = {
+        'en': 'English',
+        'de': 'German', 
+        'pl': 'Polish', 
+        'fr': 'French', 
+        'tr': 'Turkish', 
+        'ru': 'Russian', 
+        'ar': 'Arabic', 
+        'he': 'Hebrew'
+    };
+    
+    // Show notification for ALL first-time visitors (including English)
+    const isFirstVisit = !localStorage.getItem('has_interacted');
+    if (!urlLang && !storedLang && isFirstVisit) {
+        const notification = document.getElementById('language-notification');
+        const notificationText = document.getElementById('lang-notification-text');
+        
+        const languageName = langNames[detectedLang] || 'English';
+        notificationText.textContent = `🌐 Website language set to ${languageName}. You can change it anytime.`;
+        notification.style.display = 'block';
+        
+        const closeBtn = document.getElementById('close-notification');
+        if (closeBtn) {
+            closeBtn.onclick = () => {
+                notification.style.display = 'none';
+                localStorage.setItem('has_interacted', 'true');
+            };
+        }
+        
+        setTimeout(() => {
+            if (notification) notification.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// Language switcher event listener with smart geolocation
 document.addEventListener('DOMContentLoaded', async () => {
     const languageSelect = document.getElementById('language-select');
     if (!languageSelect) {
@@ -2571,24 +2780,55 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // Get current language
+    // Mark that user has interacted with the page
+    if (!localStorage.getItem('has_interacted')) {
+        localStorage.setItem('has_interacted', 'true');
+    }
+
+    // Get current language with smart detection
     const selectedLang = await getCurrentLanguage();
 
     // Set the language select value and update content
-    console.log(`Setting language to: ${selectedLang}`);
+    console.log(`🎯 Setting language to: ${selectedLang}`);
     languageSelect.value = selectedLang;
-    localStorage.setItem('language', selectedLang);
     updateContent(selectedLang);
 
     // Update back to home links
     updateBackToHomeLinks(selectedLang);
+    
+    // Show suggestion popup if location changed
+    if (window.pendingLanguageSuggestion) {
+        setTimeout(() => {
+            showLanguageSuggestion(
+                window.pendingLanguageSuggestion.suggestedLang,
+                window.pendingLanguageSuggestion.currentLang,
+                window.pendingLanguageSuggestion.countryCode
+            );
+            delete window.pendingLanguageSuggestion;
+        }, 1000);
+    } else {
+        // Show simple notification for first-time visitors
+        await showLanguageNotification();
+    }
 
     // Handle manual language selection
-    languageSelect.addEventListener('change', (e) => {
+    languageSelect.addEventListener('change', async (e) => {
         const lang = e.target.value;
         if (['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(lang)) { 
-            console.log(`Manual language selection: ${lang}`);
+            console.log(`🖱️ Manual language selection: ${lang}`);
             localStorage.setItem('language', lang);
+            
+            // Clear decline flags for other languages when user manually selects
+            const languages = ['en', 'de', 'pl', 'fr', 'tr', 'ru', 'ar', 'he'];
+            languages.forEach(l => {
+                if (l !== lang) {
+                    localStorage.removeItem(`language_declined_${l}`);
+                }
+            });
+            
+            const countryCode = await getCountryCode();
+            if (countryCode) localStorage.setItem('last_detected_country', countryCode);
+            
             updateContent(lang);
             
             // Update URL with language parameter without reloading
@@ -2598,6 +2838,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Update all back to home links
             updateBackToHomeLinks(lang);
+            
+            // Hide any open notifications
+            const notification = document.getElementById('language-notification');
+            if (notification) notification.style.display = 'none';
+            
+            const popup = document.getElementById('lang-suggestion-popup');
+            if (popup) popup.remove();
         } else {
             console.warn(`Invalid language selected: ${lang}`);
         }

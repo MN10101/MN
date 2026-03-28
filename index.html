@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title data-i18n="title">Mahmoud Najmeh | Full-Stack Developer</title>
     <link rel="icon" type="image/x-icon" href="images/profile.jpg"> 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
+
+    <script>
+        // Quick language detection to prevent flash of wrong content
+        (function() {
+            const storedLang = localStorage.getItem('language');
+            if (storedLang && ['en', 'de', 'pl', 'fr', 'tr', 'ar', 'ru', 'he'].includes(storedLang)) {
+                document.documentElement.lang = storedLang;
+                if (storedLang === 'ar') document.documentElement.dir = 'rtl';
+            }
+        })();
+    </script>
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -389,6 +400,11 @@
             <option value="ar">العربية</option>
             <!-- <option value="he">עברית</option> -->
         </select>
+    </div>
+
+    <div id="language-notification" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #2d3748; color: white; padding: 12px 20px; border-radius: 8px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <span id="lang-notification-text"></span>
+        <button id="close-notification" style="margin-left: 12px; background: none; border: none; color: white; cursor: pointer;">✕</button>
     </div>
 
     <!-- NAVIGATION MENU -->
