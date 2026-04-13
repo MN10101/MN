@@ -78,7 +78,6 @@ const translations = {
         computer_vision: "Computer Vision",
         html5: "HTML5",
         css: "CSS",
-        javascript: "JavaScript",
         postgresql: "PostgreSQL",
         database: "Database",
         canvas: "Canvas",
@@ -104,7 +103,22 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
+        "delta-lake": "Delta Lake",
+
+        avro: "Avro",
+        schema_registry: "Schema Registry",
+        docker_compose: "Docker Compose",
+        rich_ui: "Rich UI",
+        stateful_processing: "Stateful Processing",
+        real_time_streaming: "Real-time Streaming",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        python: "Python",
+        etl: "ETL",
+        data_pipeline: "Data Pipeline"
     },
 
     title: {
@@ -253,6 +267,12 @@ const translations = {
             duration: "3 Months",
             impact: "Implemented a production-ready ETL pipeline with Dagster orchestration, containerized with Docker for consistent deployments, and integrated with PostgreSQL for reliable data storage. Features automated data validation, asset lineage tracking, and scheduled job execution for reproducible data workflows."
         },
+        fraud_detection: {
+            title: "Fraud Detection System (Kafka)",
+            description: "Real-time fraud detection system built with Apache Kafka featuring dual-format messaging (Avro + JSON), stateful stream processing, and a rich terminal-based monitoring UI.",
+            duration: "3 Months",
+            impact: "Achieved sub-second fraud detection latency with a 5-tier rules engine, reduced false positives through dynamic user profiling, and ensured full audit trail compliance using automated JSONL logging with daily rotation."
+        },
         view: "View Project"
     },
         contact: {
@@ -373,7 +393,6 @@ const translations = {
         computer_vision: "Computer Vision",
         html5: "HTML5",
         css: "CSS",
-        javascript: "JavaScript",
         postgresql: "PostgreSQL",
         database: "Database",
         canvas: "Canvas",
@@ -399,7 +418,21 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
+        "delta-lake": "Delta Lake",
+
+        avro: "Avro",
+        schema_registry: "Schema-Registry",
+        docker_compose: "Docker Compose",
+        rich_ui: "Rich UI",
+        stateful_processing: "Zustandsbehaftete Verarbeitung",
+        real_time_streaming: "Echtzeit-Streaming",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "Datenpipeline"
     },
 
     title: {
@@ -548,6 +581,12 @@ const translations = {
                 duration: "3 Monate",
                 impact: "Implementierung einer produktionsreifen ETL-Pipeline mit Dagster-Orchestrierung, containerisiert mit Docker für konsistente Deployments und integriert mit PostgreSQL für zuverlässige Datenspeicherung. Enthält automatisierte Datenvalidierung, Asset-Lineage-Tracking und geplante Jobausführung für reproduzierbare Daten-Workflows."
             },
+            fraud_detection: {
+                title: "Betrugserkennungssystem (Kafka)",
+                description: "Echtzeit-Betrugserkennungssystem auf Basis von Apache Kafka mit Dual-Format-Nachrichten (Avro + JSON), zustandsbehafteter Stream-Verarbeitung und einer umfangreichen Terminal-basierten Monitoring-Oberfläche.",
+                duration: "3 Monate",
+                impact: "Erreichte Betrugserkennung mit Latenz im Subsekundenbereich durch eine 5-stufige Regel-Engine, reduzierte False Positives durch dynamisches Nutzerprofiling und gewährleistete vollständige Audit-Trail-Compliance durch automatisiertes JSONL-Logging mit täglicher Rotation."
+            },
             view: "Projekt ansehen"
         },
         contact: {
@@ -668,7 +707,6 @@ const translations = {
         computer_vision: "Wizja komputerowa",
         html5: "HTML5",
         css: "CSS",
-        javascript: "JavaScript",
         postgresql: "PostgreSQL",
         database: "Baza danych",
         canvas: "Canvas",
@@ -680,7 +718,7 @@ const translations = {
         git: "Git",
         mysql: "MySQL",
         ml: "Uczenie Maszynowe",
-        cv: "Wizja Komputerowa",
+        cv: "Wizja komputerowa",
         "python-ai": "Biblioteki AI Pythona",
         machine_learning: "Uczenie Maszynowe",
         swift: "Swift",
@@ -694,7 +732,21 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
+        "delta-lake": "Delta Lake",
+
+        avro: "Avro",
+        schema_registry: "Rejestr schematów",
+        docker_compose: "Docker Compose",
+        rich_ui: "Rich UI",
+        stateful_processing: "Przetwarzanie stanowe",
+        real_time_streaming: "Strumieniowanie w czasie rzeczywistym",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "Pipeline danych"
     },
 
     title: {
@@ -843,6 +895,12 @@ const translations = {
                 duration: "3 miesiące",
                 impact: "Wdrożenie produkcyjnego pipeline’u ETL z orkiestracją Dagster, konteneryzacją w Docker dla spójnych wdrożeń oraz integracją z PostgreSQL dla niezawodnego przechowywania danych. Obejmuje automatyczną walidację danych, śledzenie zależności (data lineage) oraz harmonogramowane wykonywanie zadań dla powtarzalnych procesów danych."
             },
+            fraud_detection: {
+                title: "System wykrywania oszustw (Kafka)",
+                description: "System wykrywania oszustw w czasie rzeczywistym oparty na Apache Kafka, wykorzystujący komunikację w dwóch formatach (Avro + JSON), przetwarzanie strumieniowe ze stanem oraz zaawansowany interfejs monitorowania w terminalu.",
+                duration: "3 miesiące",
+                impact: "Osiągnięto wykrywanie oszustw z opóźnieniem poniżej jednej sekundy dzięki 5-poziomowemu silnikowi reguł, zmniejszono liczbę fałszywych alarmów poprzez dynamiczne profilowanie użytkowników oraz zapewniono pełną zgodność z audit trail dzięki automatycznemu logowaniu JSONL z codzienną rotacją."
+            },
             view: "Zobacz projekt"
         },
         contact: {
@@ -963,7 +1021,6 @@ const translations = {
         computer_vision: "Vision par ordinateur",
         html5: "HTML5",
         css: "CSS",
-        javascript: "JavaScript",
         postgresql: "PostgreSQL",
         canvas: "Canvas",
         frontend: "Frontend",
@@ -974,10 +1031,10 @@ const translations = {
         git: "Git",
         database: "Base de données",
         mysql: "MySQL",
-        ml: "Apprentissage Automatique",
+        ml: "Apprentissage automatique",
         cv: "Vision par ordinateur",
         "python-ai": "Bibliothèques IA Python",
-        machine_learning: "Apprentissage Automatique",
+        machine_learning: "Apprentissage automatique",
         swift: "Swift",
         mlnet: "ML.NET",
         wpf: "WPF",
@@ -989,7 +1046,21 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
+        "delta-lake": "Delta Lake",
+
+        avro: "Avro",
+        schema_registry: "Registre de schémas",
+        docker_compose: "Docker Compose",
+        rich_ui: "Interface riche",
+        stateful_processing: "Traitement avec état",
+        real_time_streaming: "Streaming en temps réel",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "Pipeline de données"
     },
 
     title: {
@@ -1138,6 +1209,12 @@ const translations = {
                 duration: "3 mois",
                 impact: "Déploiement d’un pipeline ETL prêt pour la production avec orchestration Dagster, conteneurisation via Docker pour des environnements cohérents et intégration PostgreSQL pour un stockage fiable. Inclut la validation automatique des données, le suivi des dépendances (data lineage) et l’exécution planifiée pour des flux de données reproductibles."
             },
+            fraud_detection: {
+                title: "Système de détection de fraude (Kafka)",
+                description: "Système de détection de fraude en temps réel basé sur Apache Kafka, utilisant des messages en double format (Avro + JSON), un traitement de flux avec état et une interface de monitoring avancée en terminal.",
+                duration: "3 mois",
+                impact: "Détection de fraude avec une latence inférieure à une seconde grâce à un moteur de règles à 5 niveaux, réduction des faux positifs via le profilage dynamique des utilisateurs et conformité complète aux exigences d’audit grâce à un logging JSONL automatisé avec rotation quotidienne."
+            },
             view: "Voir le projet"
         },
         contact: {
@@ -1258,7 +1335,6 @@ const translations = {
         computer_vision: "Bilgisayarlı Görü",
         html5: "HTML5",
         css: "CSS",
-        javascript: "JavaScript",
         postgresql: "PostgreSQL",
         mysql: "MySQL",
         canvas: "Canvas",
@@ -1284,9 +1360,22 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
-    },
+        "delta-lake": "Delta Lake",
 
+        avro: "Avro",
+        schema_registry: "Şema Kayıt Defteri",
+        docker_compose: "Docker Compose",
+        rich_ui: "Zengin Arayüz",
+        stateful_processing: "Durum bilgili işleme",
+        real_time_streaming: "Gerçek zamanlı akış",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "Veri Pipeline"
+    },
     title: {
         "java-backend": "JAVA GELİŞTİRİCİ",
         "full-stack": "FULL-STACK GELİŞTİRİCİ",
@@ -1433,6 +1522,12 @@ const translations = {
                 duration: "3 Ay",
                 impact: "Üretime hazır bir ETL pipeline’ı Dagster orkestrasyonu ile kuruldu, Docker ile tutarlı dağıtım ortamları sağlandı ve PostgreSQL ile güvenilir veri depolama entegre edildi. Otomatik veri doğrulama, veri bağımlılıklarının izlenmesi (data lineage) ve planlanmış görev yürütmeleri ile tekrarlanabilir veri süreçleri sağlandı."
             },
+            fraud_detection: {
+                title: "Dolandırıcılık Tespit Sistemi (Kafka)",
+                description: "Apache Kafka tabanlı, çift formatlı mesajlaşma (Avro + JSON), durum bilgili akış işleme ve gelişmiş terminal tabanlı izleme arayüzü içeren gerçek zamanlı dolandırıcılık tespit sistemi.",
+                duration: "3 Ay",
+                impact: "5 katmanlı kural motoru sayesinde saniyenin altında gecikmeyle dolandırıcılık tespiti sağlandı, dinamik kullanıcı profilleme ile yanlış pozitifler azaltıldı ve günlük rotasyonlu otomatik JSONL loglama ile tam denetim izi uyumluluğu sağlandı."
+            },
             view: "Projeyi Görüntüle"
         },
         contact: {
@@ -1577,9 +1672,22 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
-    },
+        "delta-lake": "Delta Lake",
 
+        avro: "Avro",
+        schema_registry: "Реестр схем",
+        docker_compose: "Docker Compose",
+        rich_ui: "Rich UI",
+        stateful_processing: "Обработка с состоянием",
+        real_time_streaming: "Потоковая обработка в реальном времени",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "Пайплайн данных"
+    },
     title: {
         "java-backend": "JAVA РАЗРАБОТЧИК",
         "full-stack": "FULL-STACK РАЗРАБОТЧИК",
@@ -1726,6 +1834,12 @@ const translations = {
                 duration: "3 месяца",
                 impact: "Развернут production-ready ETL-пайплайн с оркестрацией Dagster, контейнеризацией через Docker для стабильных окружений и интеграцией PostgreSQL для надежного хранения данных. Включает автоматическую валидацию данных, отслеживание зависимостей (data lineage) и планируемое выполнение задач для повторяемых процессов обработки данных."
             },
+            fraud_detection: {
+                title: "Система обнаружения мошенничества (Kafka)",
+                description: "Система обнаружения мошенничества в реальном времени на базе Apache Kafka с поддержкой двух форматов сообщений (Avro + JSON), потоковой обработки с сохранением состояния и продвинутым терминальным интерфейсом мониторинга.",
+                duration: "3 месяца",
+                impact: "Обнаружение мошенничества с задержкой менее одной секунды благодаря 5-уровневому движку правил, снижение ложных срабатываний за счёт динамического профилирования пользователей и обеспечение полной соответствия требованиям аудита благодаря автоматическому логированию в формате JSONL с ежедневной ротацией."
+            },
             view: "Посмотреть проект"
         },
         contact: {
@@ -1867,7 +1981,21 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
+        "delta-lake": "Delta Lake",
+
+        avro: "Avro",
+        schema_registry: "سجل المخططات",
+        docker_compose: "Docker Compose",
+        rich_ui: "واجهة غنية",
+        stateful_processing: "معالجة بحالة",
+        real_time_streaming: "بث في الوقت الحقيقي",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "خط أنابيب البيانات"
     },
     title: {
         "java-backend": "مبرمج جافا",
@@ -2007,6 +2135,12 @@ const translations = {
                 description: "خط أنابيب ETL تم بناؤه باستخدام Dagster وDocker وPostgreSQL، يعرض ممارسات حديثة في هندسة البيانات بما في ذلك التنسيق القائم على الأصول، التحقق من جودة البيانات، والجدولة التلقائية.",
                 duration: "3 أشهر",
                 impact: "تنفيذ خط ETL جاهز للإنتاج باستخدام Dagster للتنسيق، وDocker لبيئات نشر متسقة، وPostgreSQL لتخزين بيانات موثوق. يتضمن التحقق التلقائي من البيانات، تتبع تبعيات البيانات (data lineage)، وتنفيذ مهام مجدولة لعمليات بيانات قابلة للتكرار."
+            },
+            fraud_detection: {
+                title: "نظام كشف الاحتيال (Kafka)",
+                description: "نظام كشف احتيال يعمل في الوقت الحقيقي مبني على Apache Kafka، يدعم تنسيقي رسائل (Avro + JSON)، ومعالجة تدفقات بحالة (Stateful Processing)، وواجهة مراقبة متقدمة عبر الطرفية.",
+                duration: "3 أشهر",
+                impact: "تحقيق كشف احتيال بزمن استجابة أقل من ثانية باستخدام محرك قواعد مكوّن من 5 طبقات، تقليل الإنذارات الكاذبة عبر تحليل ديناميكي لملفات المستخدمين، وضمان التوافق الكامل مع متطلبات التدقيق من خلال تسجيل JSONL آلي مع تدوير يومي."
             },
             view: "عرض المشروع"
         },
@@ -2148,7 +2282,21 @@ const translations = {
         mlflow: "MLflow",
         dbt: "dbt",
         "great-expectations": "Great Expectations",
-        "delta-lake": "Delta Lake"
+        "delta-lake": "Delta Lake",
+
+        avro: "Avro",
+        schema_registry: "רישום סכמות",
+        docker_compose: "Docker Compose",
+        rich_ui: "ממשק עשיר",
+        stateful_processing: "עיבוד מבוסס מצב",
+        real_time_streaming: "סטרימינג בזמן אמת",
+        pytest: "Pytest",
+
+        dagster: "Dagster",
+        pandas: "Pandas",
+        sqlalchemy: "SQLAlchemy",
+        etl: "ETL",
+        data_pipeline: "צינור נתונים"
     },
     title: {
         "java-backend": "מפתח JAVA",
@@ -2288,6 +2436,12 @@ const translations = {
             description: "Pipeline ETL שנבנה עם Dagster, ‏Docker ו-PostgreSQL, כולל אורקסטרציה מבוססת assets, בדיקות איכות נתונים ותזמון אוטומטי.",
             duration: "3 חודשים",
             impact: "הטמעת pipeline מוכן לייצור עם Dagster, שימוש ב-Docker לפריסה עקבית ושילוב PostgreSQL לאחסון אמין. כולל בדיקות נתונים אוטומטיות, מעקב תלות נתונים (data lineage) והרצות מתוזמנות."
+        },
+        fraud_detection: {
+            title: "מערכת זיהוי הונאות (Kafka)",
+            description: "מערכת זיהוי הונאות בזמן אמת המבוססת על Apache Kafka, עם תמיכה בהודעות בשני פורמטים (Avro + JSON), עיבוד זרמים מצבי (Stateful Processing) וממשק ניטור מתקדם מבוסס טרמינל.",
+            duration: "3 חודשים",
+            impact: "השגת זיהוי הונאות עם זמן השהיה של פחות משנייה באמצעות מנוע חוקים בן 5 שכבות, הפחתת התראות שווא באמצעות פרופילינג דינמי של משתמשים, והבטחת תאימות מלאה לדרישות ביקורת באמצעות לוגים אוטומטיים בפורמט JSONL עם רוטציה יומית."
         },
         view: "צפה בפרויקט"
     },
