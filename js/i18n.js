@@ -2621,8 +2621,12 @@ function getSupportedLanguage(browserLang) {
     return supportedLang;
 }
 
-// Function to get country code using geolocation API with fallback
 async function getCountryCode() {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('Local development - skipping geolocation');
+        return null;
+    }
+    
     const services = [
         {
             url: 'https://ipapi.co/json/',
