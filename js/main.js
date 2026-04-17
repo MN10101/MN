@@ -1176,3 +1176,290 @@ function setupVideoModal() {
         event.preventDefault();
     }
 }); */
+
+ (function() {
+        const videoQualities = [
+            {
+                label: "360p",
+                url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                width: 640,
+                height: 360,
+                bitrate: 800
+            },
+            {
+                label: "480p",
+                url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+                width: 854,
+                height: 480,
+                bitrate: 1200
+            },
+            {
+                label: "720p HD",
+                url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4",
+                width: 1280,
+                height: 720,
+                bitrate: 2500
+            },
+            {
+                label: "1080p Full HD",
+                url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+                width: 1920,
+                height: 1080,
+                bitrate: 4500
+            }
+        ];
+
+        function getHighestQuality(qualities) {
+            if (!qualities.length) return null;
+            return [...qualities].sort((a, b) => {
+                const resA = a.height * a.width;
+                const resB = b.height * b.width;
+                return resB - resA;
+            })[0];
+        }
+
+        const videoElem = document.getElementById('smartVideo');
+        const activeResSpan = document.getElementById('activeResLabel');
+        const streamInfoSpan = document.getElementById('streamInfo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const btnTextSpan = document.getElementById('btnText');
+        const manualSelect = document.getElementById('manualQuality');
+        
+        let currentQuality = null;
+        let isAutoHighest = true;
+        let qualitiesList = [...videoQualities];
+        
+        function switchToQuality(qualityObj, isAuto = true) {
+            if (!qualityObj || !videoElem) return;
+            
+            const wasPlaying = !videoElem.paused && !videoElem.ended;
+            const currentTime = videoElem.currentTime;
+            
+            videoElem.src = qualityObj.url;
+            currentQuality = qualityObj;
+            
+            activeResSpan.textContent = qualityObj.label;
+            streamInfoSpan.innerHTML = `🎯 ${qualityObj.label} (${qualityObj.width}×${qualityObj.height}) active`;
+            
+            videoElem.load();
+            
+            videoElem.addEventListener('loadedmetadata', function onMeta() {
+                videoElem.currentTime = currentTime;
+                if (wasPlaying) {
+                    videoElem.play().catch(e => console.log("Autoplay blocked? resume manually", e));
+                }
+                videoElem.removeEventListener('loadedmetadata', onMeta);
+            }, { once: true });
+            
+            if (manualSelect && manualSelect.style.display !== 'none') {
+                for (let i = 0; i < manualSelect.options.length; i++) {
+                    if (manualSelect.options[i].value === qualityObj.label) {
+                        manualSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        function selectHighestResolutionAndPlay(autoplayAfterSwitch = true) {
+            const highest = getHighestQuality(qualitiesList);
+            if (!highest) {
+                streamInfoSpan.innerHTML = "⚠️ No quality available";
+                return;
+            }
+            
+            if (currentQuality && currentQuality.label === highest.label && videoElem.src === highest.url) {
+                if (autoplayAfterSwitch && videoElem.paused) {
+                    videoElem.play().catch(e => console.log("play blocked", e));
+                }
+                activeResSpan.textContent = highest.label;
+                streamInfoSpan.innerHTML = `🏆 ${highest.label} (max available)`;
+                return;
+            }
+            
+            switchToQuality(highest, true);
+            if (autoplayAfterSwitch) {
+                videoElem.play().catch(err => {
+                    console.log("Autoplay prevented, user must interact", err);
+                    if (btnTextSpan) btnTextSpan.innerText = "Play";
+                });
+            }
+        }
+        
+        function enforceHighestResolutionOnPlay() {
+            if (!isAutoHighest) return;
+            const highest = getHighestQuality(qualitiesList);
+            if (highest && currentQuality && highest.url !== videoElem.src) {
+                const wasPlaying = !videoElem.paused;
+                const oldTime = videoElem.currentTime;
+                videoElem.src = highest.url;
+                currentQuality = highest;
+                activeResSpan.textContent = highest.label;
+                streamInfoSpan.innerHTML = `✨ upgraded to ${highest.label}`;
+                videoElem.load();
+                videoElem.addEventListener('loadedmetadata', () => {
+                    videoElem.currentTime = oldTime;
+                    if (wasPlaying) videoElem.play().catch(e=>{});
+                }, { once: true });
+            }
+        }
+        
+        function beforePlayUpgrade() {
+            if (!isAutoHighest) return;
+            const highest = getHighestQuality(qualitiesList);
+            if (highest && (!currentQuality || highest.url !== videoElem.src)) {
+                const oldTime = videoElem.currentTime;
+                videoElem.src = highest.url;
+                currentQuality = highest;
+                activeResSpan.textContent = highest.label;
+                streamInfoSpan.innerHTML = `📈 upgraded to ${highest.label}`;
+                videoElem.load();
+                videoElem.currentTime = oldTime;
+            }
+        }
+        
+        if (videoElem) {
+            videoElem.addEventListener('play', () => {
+                const highest = getHighestQuality(qualitiesList);
+                if (highest && (!currentQuality || highest.url !== videoElem.src)) {
+                    const wasPlaying = true;
+                    const oldTime = videoElem.currentTime;
+                    videoElem.src = highest.url;
+                    currentQuality = highest;
+                    activeResSpan.textContent = highest.label;
+                    streamInfoSpan.innerHTML = `🚀 ${highest.label} (auto highest)`;
+                    videoElem.load();
+                    videoElem.currentTime = oldTime;
+                    videoElem.addEventListener('loadedmetadata', () => {
+                        if (wasPlaying) videoElem.play().catch(e => console.warn);
+                    }, { once: true });
+                } else if (highest) {
+                    activeResSpan.textContent = highest.label;
+                    streamInfoSpan.innerHTML = `🎉 ${highest.label} (max)`;
+                }
+                if (btnTextSpan) btnTextSpan.innerText = "Pause";
+            });
+        
+            videoElem.addEventListener('pause', () => {
+                if (btnTextSpan) btnTextSpan.innerText = "Play";
+            });
+        
+            videoElem.addEventListener('loadeddata', () => {
+                if (currentQuality) {
+                    activeResSpan.textContent = currentQuality.label;
+                    streamInfoSpan.innerHTML = `✅ ${currentQuality.label} ready`;
+                } else {
+                    const found = qualitiesList.find(q => videoElem.src.includes(q.url.split('/').pop()) || videoElem.src === q.url);
+                    if (found) {
+                        currentQuality = found;
+                        activeResSpan.textContent = found.label;
+                        streamInfoSpan.innerHTML = `🎬 ${found.label}`;
+                    }
+                }
+            });
+        }
+        
+        if (playPauseBtn) {
+            playPauseBtn.addEventListener('click', () => {
+                if (videoElem && videoElem.paused) {
+                    const highest = getHighestQuality(qualitiesList);
+                    if (highest && (!currentQuality || highest.url !== videoElem.src)) {
+                        const oldTime = videoElem.currentTime;
+                        videoElem.src = highest.url;
+                        currentQuality = highest;
+                        activeResSpan.textContent = highest.label;
+                        streamInfoSpan.innerHTML = `⚡ switching to ${highest.label} before play`;
+                        videoElem.load();
+                        videoElem.currentTime = oldTime;
+                        videoElem.addEventListener('loadedmetadata', () => {
+                            videoElem.play().catch(e => console.log);
+                        }, { once: true });
+                    } else {
+                        videoElem.play().catch(e => console.log);
+                    }
+                } else if (videoElem) {
+                    videoElem.pause();
+                }
+            });
+        }
+        
+        function initializePlayer() {
+            if (!videoElem) return;
+            const best = getHighestQuality(qualitiesList);
+            if (best) {
+                videoElem.src = best.url;
+                currentQuality = best;
+                activeResSpan.textContent = best.label;
+                streamInfoSpan.innerHTML = `🏅 ${best.label} (highest resolution preloaded)`;
+                videoElem.load();
+            } else if (streamInfoSpan) {
+                streamInfoSpan.innerHTML = "❌ No video sources";
+            }
+        }
+    
+        function buildManualSelector() {
+            if (!manualSelect) return;
+            manualSelect.innerHTML = '<option value="auto">⚡ Auto (Highest)</option>';
+            qualitiesList.forEach(q => {
+                const option = document.createElement('option');
+                option.value = q.label;
+                option.textContent = `${q.label} (${q.width}×${q.height})`;
+                manualSelect.appendChild(option);
+            });
+            manualSelect.addEventListener('change', (e) => {
+                if (e.target.value === 'auto') {
+                    isAutoHighest = true;
+                    selectHighestResolutionAndPlay(true);
+                } else {
+                    isAutoHighest = false;
+                    const selectedQuality = qualitiesList.find(q => q.label === e.target.value);
+                    if (selectedQuality && videoElem) {
+                        switchToQuality(selectedQuality, false);
+                        videoElem.play().catch(e=>console.log);
+                        if (activeResSpan) activeResSpan.textContent = selectedQuality.label;
+                        if (streamInfoSpan) streamInfoSpan.innerHTML = `🔧 manual: ${selectedQuality.label}`;
+                    }
+                }
+            });
+        }
+        
+        if (videoElem) {
+            initializePlayer();
+            buildManualSelector();
+            
+            const origPlay = videoElem.play;
+            videoElem.play = function() {
+                const highest = getHighestQuality(qualitiesList);
+                if (highest && (!currentQuality || highest.url !== videoElem.src)) {
+                    const oldTime = videoElem.currentTime;
+                    videoElem.src = highest.url;
+                    currentQuality = highest;
+                    if (activeResSpan) activeResSpan.textContent = highest.label;
+                    if (streamInfoSpan) streamInfoSpan.innerHTML = `🔄 upgrading to ${highest.label} before play`;
+                    videoElem.load();
+                    videoElem.currentTime = oldTime;
+                    return new Promise((resolve, reject) => {
+                        videoElem.addEventListener('loadedmetadata', () => {
+                            origPlay.call(videoElem).then(resolve).catch(reject);
+                        }, { once: true });
+                    });
+                }
+                return origPlay.call(videoElem);
+            };
+            
+            console.log("✅ Video player ready — automatically picks highest resolution on play");
+            window.selectHighestRes = selectHighestResolutionAndPlay;
+            
+            videoElem.addEventListener('error', (e) => {
+                console.warn("Video error, falling back to next quality", e);
+                const sorted = [...qualitiesList].sort((a,b) => (b.height*b.width) - (a.height*a.width));
+                const currentIndex = sorted.findIndex(q => q.url === videoElem.src);
+                if (currentIndex !== -1 && currentIndex < sorted.length - 1) {
+                    const fallbackQuality = sorted[currentIndex + 1];
+                    if (streamInfoSpan) streamInfoSpan.innerHTML = `⚠️ fallback to ${fallbackQuality.label}`;
+                    switchToQuality(fallbackQuality);
+                    videoElem.play().catch(()=>{});
+                }
+            });
+        }
+    })();
