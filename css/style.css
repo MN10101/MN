@@ -36,11 +36,11 @@ body {
         position: fixed;
         bottom: 100px;
         left: 50%;
-        margin-left: -20px;
+        transform: translateX(-50%);
         width: 40px;
         height: 40px;
-        background: rgba(30, 41, 59, 0.85);
-        backdrop-filter: blur(8px);
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(10px);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -49,38 +49,32 @@ body {
         border: 1px solid var(--accent);
         transition: all 0.3s ease;
         z-index: 1001;
-        animation: bounceLinux 2s infinite;
-        will-change: transform;
+        animation: bounce 2s infinite;
     }
 
     .scroll-down:hover {
         background: var(--accent);
-        transform: scale(1.1);
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    .scroll-down i {
+        color: var(--text);
+        font-size: 1rem;
     }
 
     .scroll-down:hover i {
         transform: translateY(3px);
     }
 
-    .scroll-down i {
-        color: var(--text);
-        font-size: 1rem;
-        display: block;
-        line-height: 1;
-        font-smoothing: antialiased;
-        -webkit-font-smoothing: antialiased;
-        shape-rendering: geometricPrecision;
-    }
-
-    @keyframes bounceLinux {
+    @keyframes bounce {
         0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
         40% {
-            transform: translateY(-8px);
+            transform: translateX(-50%) translateY(-8px);
         }
         60% {
-            transform: translateY(-4px);
+            transform: translateX(-50%) translateY(-4px);
         }
     }
 
@@ -92,6 +86,7 @@ body {
     }
 }
 
+/* Hide on mobile devices */
 @media (max-width: 768px) {
     .scroll-down {
         display: none;
