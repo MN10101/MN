@@ -1919,7 +1919,7 @@ const translations = {
         },
         "data-engineering": {
             title: "هندسة البيانات باستخدام Python (شهادة IHK)",
-            details: "- برنامج معتمد بشهادة IHK<br>- جمع البيانات ودمجها: ETL/ELT، API، Web Scraping<br>- منصات البيانات السحابية: AWS Glue، BigQuery، dbt Cloud<br>- تدفقات البيانات: Apache Airflow، Kafka، Spark Streaming<br>- منصات البيانات: Delta Lake، Apache Iceberg، Lakehouse<br>- هندسة ML: <span dir=\"ltr\">MLflow, scikit-learn, Feature Stores</span><br>- جودة البيانات: Great Expectations، Data Lineage، Observability"
+            details: "- برنامج معتمد بشهادة IHK<br>- جمع البيانات ودمجها: ETL/ELT، API، Web Scraping<br>- منصات البيانات السحابية: AWS Glue، BigQuery، dbt Cloud<br>- تدفقات البيانات: Apache Airflow، Kafka، Spark Streaming<br>- منصات البيانات: Delta Lake، Apache Iceberg، Lakehouse<br>- هندسة ML: \u202BMLflow، scikit-learn، Feature Store\u202C<br>- جودة البيانات: Great Expectations، Data Lineage، Observability"
         },
         toggle: "إظهار التفاصيل",
         toggleHide: "إخفاء التفاصيل"
